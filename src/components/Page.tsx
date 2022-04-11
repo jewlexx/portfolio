@@ -1,9 +1,10 @@
-import type { FunctionComponent } from "react";
+import type { FunctionComponent, ReactNode } from "react";
 import Head from "next/head";
 
 interface PageProps {
   title: string;
   description: string;
+  children: ReactNode;
 }
 
 const Page: FunctionComponent<PageProps> = ({
