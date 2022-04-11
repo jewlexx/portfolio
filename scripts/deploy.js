@@ -6,9 +6,15 @@ const outDir = path.resolve(__dirname, '../out');
 
 fs.writeFileSync(path.join(outDir, '.nojekyll'), '');
 
-pages.publish(outDir, (err) => {
-  if (err) {
-    console.error(err);
-    process.exit(1);
-  }
-});
+pages.publish(
+  outDir,
+  {
+    dotfiles: true,
+  },
+  (err) => {
+    if (err) {
+      console.error(err);
+      process.exit(1);
+    }
+  },
+);
