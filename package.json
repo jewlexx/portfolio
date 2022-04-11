@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "deploy": "next build && next export && gh-pages -d out",
+    "deploy": "next build && next export && node scripts/deploy.js",
     "dev": "next dev",
     "format": "prettier --write --ignore-path=.gitignore .",
     "format:check": "prettier --check --ignore-path=.gitignore .",
