@@ -5,4 +5,7 @@ module.exports = {
     removeConsole: process.env.NODE_ENV === 'production',
     styledComponents: true,
   },
+  images: {
+    domains: ['avatars.githubusercontent.com'],
+  },
 };
