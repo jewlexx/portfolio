@@ -1,6 +1,6 @@
-import confetti from 'canvas-confetti';
-import { NextPage } from 'next';
+import type { NextPage } from 'next';
 import { useEffect } from 'react';
+import confetti from 'canvas-confetti';
 import Page from '../components/Page';
 import styles from '../styles/Home.module.scss';
 
