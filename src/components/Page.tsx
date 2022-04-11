@@ -1,6 +1,5 @@
 import type { FunctionComponent } from "react";
 import Head from "next/head";
-import WithDefaultGlobalStyles from "./WithDefaultGlobalStyles";
 
 interface PageProps {
   title: string;
@@ -13,14 +12,14 @@ const Page: FunctionComponent<PageProps> = ({
   children,
 }) => {
   return (
-    <WithDefaultGlobalStyles>
+    <>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {children}
-    </WithDefaultGlobalStyles>
+    </>
   );
 };
 
