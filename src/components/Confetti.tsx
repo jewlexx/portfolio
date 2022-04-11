@@ -3,6 +3,8 @@ import confetti from 'canvas-confetti';
 
 /**
  * NOTE: Could have been made a hook, but was done this way to better support static rendering
+ * The way it is done means that the confetti will only run in production, and this component will not even be rendered in development
+ * Additionally it will not be included in the bundle, so it will not be included in the development build
  */
 const Container: FunctionComponent = () => {
   useEffect(() => {
