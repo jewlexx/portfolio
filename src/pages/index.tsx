@@ -13,7 +13,10 @@ const Index: NextPage<IRootProps> = ({ enableConfetti }) => {
       {enableConfetti && <Confetti />}
       <main className={styles.container}>
         <h1>Welcome to my profile!</h1>
-        <h2>My name is Juliette Cordor</h2>
+        <h2>
+          My name is <span>Juliette Cordor</span> and my pronouns are{' '}
+          <span>She/Her</span>
+        </h2>
       </main>
     </Page>
   );
