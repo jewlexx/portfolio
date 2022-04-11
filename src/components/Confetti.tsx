@@ -42,7 +42,7 @@ const Container: FunctionComponent = () => {
       }
     };
 
-    frame();
+    setTimeout(frame, 1000);
   }, []);
 
   return <></>;
