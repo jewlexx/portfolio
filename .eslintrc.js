@@ -1,1 +1,4 @@
-module.exports = require('./config').eslint;
+/** @type {import('eslint').Linter.Config} */
+module.exports = {
+  extends: ['next/core-web-vitals', 'eslint-config-prettier'],
+};

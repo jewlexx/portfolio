@@ -19,12 +19,8 @@ require('ts-node').register({
   },
 });
 
-const eslint = require('./eslint.config').default;
-const prettier = require('./prettier.config').default;
 const next = require('./next.config').default;
 
 module.exports = {
-  eslint,
-  prettier,
   next,
 };
