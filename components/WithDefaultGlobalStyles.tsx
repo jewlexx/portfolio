@@ -1,4 +1,4 @@
-import type { FunctionComponent, ReactChild, ReactChildren } from "react";
+import type { FunctionComponent } from "react";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -26,9 +26,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const WithDefaultGlobalStyles: FunctionComponent<{
-  children: ReactChild;
-}> = ({ children }) => (
+const WithDefaultGlobalStyles: FunctionComponent = ({ children }) => (
   <>
     <GlobalStyle />
     {children}

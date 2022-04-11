@@ -1,11 +1,10 @@
-import type { FunctionComponent, ReactChildren } from "react";
+import type { FunctionComponent } from "react";
 import Head from "next/head";
 import WithDefaultGlobalStyles from "./WithDefaultGlobalStyles";
 
 interface PageProps {
   title: string;
   description: string;
-  children: ReactChildren;
 }
 
 const Page: FunctionComponent<PageProps> = ({
