@@ -15,22 +15,25 @@ const Index: NextPage = () => {
       '#ffa62d',
       '#ff36ff',
     ];
+    const baseOptions = {
+      particleCount: colors.length,
+      colors,
+    };
+
     const end = Date.now() + 5 * 1000;
 
     const frame = () => {
       confetti({
-        particleCount: colors.length,
+        ...baseOptions,
         angle: 60,
         spread: 55,
         origin: { x: 0, y: 0.6 },
-        colors,
       });
       confetti({
-        particleCount: colors.length,
+        ...baseOptions,
         angle: 120,
         spread: 55,
         origin: { x: 1, y: 0.6 },
-        colors,
       });
       if (Date.now() < end) {
         requestAnimationFrame(frame);
