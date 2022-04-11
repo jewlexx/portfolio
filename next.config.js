@@ -19,4 +19,4 @@ require("ts-node").register({
   },
 });
 
-module.exports = require("./config/next.config").default;
+module.exports = require("./config").next;
