@@ -2,7 +2,7 @@ import confetti from 'canvas-confetti';
 import { NextPage } from 'next';
 import { useEffect } from 'react';
 import Page from '../components/Page';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Home.module.scss';
 
 const Index: NextPage = () => {
   useEffect(() => {
