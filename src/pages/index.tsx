@@ -25,6 +25,14 @@ const Index: NextPage<IRootProps> = ({ enableConfetti }) => {
           My name is <span>Juliette Cordor</span> and my pronouns are{' '}
           <span>She/Her</span>
         </h2>
+
+        <Image
+          src="https://raw.githubusercontent.com/jewlexx/jewlexx/main/github-metrics.svg"
+          width="480px"
+          height="419px"
+          alt="My Github Statistics"
+          className={styles.stats}
+        />
       </main>
     </Page>
   );
