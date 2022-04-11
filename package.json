@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
+    "build": "npx cross-env NODE_ENV=production next build",
     "deploy": "next export && node scripts/deploy.js",
     "dev": "next dev",
     "format": "prettier --write --ignore-path=.gitignore .",
