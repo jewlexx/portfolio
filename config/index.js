@@ -11,7 +11,7 @@ require('ts-node').register({
     esModuleInterop: true,
     module: 'CommonJS',
     resolveJsonModule: true,
-    isolatedModules: true,
+    isolatedModules: false,
     incremental: true,
     downlevelIteration: true,
     sourceMap: false,
