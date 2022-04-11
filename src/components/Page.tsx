@@ -1,25 +1,15 @@
 import type { FunctionComponent, ReactNode } from 'react';
-import Head from 'next/head';
+import { type NextSeoProps, NextSeo } from 'next-seo';
 
-interface PageProps {
-  title: string;
-  description: string;
+interface PageProps extends NextSeoProps {
   children: ReactNode;
 }
 
-const Page: FunctionComponent<PageProps> = ({
-  title,
-  description,
-  children,
-}) => {
+const Page: FunctionComponent<PageProps> = (pageProps) => {
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      {children}
+      <NextSeo {...pageProps} />
+      {pageProps.children}
     </>
   );
 };
