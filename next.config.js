@@ -1,4 +1,2 @@
-/** @type {import('next').NextConfig} */
-module.exports = {
-  reactStrictMode: true,
-};
+require("ts-node").register();
+module.exports = require("./config/next.config").default;

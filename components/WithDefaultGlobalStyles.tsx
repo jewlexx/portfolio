@@ -1,5 +1,5 @@
+import type { FunctionComponent, ReactChild, ReactChildren } from "react";
 import { createGlobalStyle } from "styled-components";
-import React from "react";
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -26,13 +26,13 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const WithDefaultGlobalStyles: React.FC = ({ children }) => {
-  return (
-    <>
-      <GlobalStyle />
-      {children}
-    </>
-  );
-};
+const WithDefaultGlobalStyles: FunctionComponent<{
+  children: ReactChild;
+}> = ({ children }) => (
+  <>
+    <GlobalStyle />
+    {children}
+  </>
+);
 
 export default WithDefaultGlobalStyles;
