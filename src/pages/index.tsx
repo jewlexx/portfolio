@@ -1,9 +1,9 @@
 import type { GetStaticProps, NextPage } from 'next';
-import Image from 'next/image';
 import Page from 'components/Page';
 import Confetti from 'components/Confetti';
-import styles from 'styles/Home.module.scss';
 import PFP from 'components/PFP';
+import Stats from 'components/Stats';
+import styles from 'styles/Home.module.scss';
 
 interface IRootProps {
   enableConfetti: boolean;
@@ -21,13 +21,7 @@ const Index: NextPage<IRootProps> = ({ enableConfetti }) => {
           <span>She/Her</span>
         </h2>
 
-        <Image
-          src="https://raw.githubusercontent.com/jewlexx/jewlexx/main/github-metrics.svg"
-          width="480px"
-          height="419px"
-          alt="My Github Statistics"
-          className={styles.stats}
-        />
+        <Stats />
       </main>
     </Page>
   );
