@@ -1,5 +1,5 @@
-import type { FunctionComponent, ReactNode } from "react";
-import Head from "next/head";
+import type { FunctionComponent, ReactNode } from 'react';
+import Head from 'next/head';
 
 interface PageProps {
   title: string;

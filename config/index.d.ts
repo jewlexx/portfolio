@@ -1,6 +1,6 @@
-import type { Options } from "prettier";
-import type { Linter } from "eslint";
-import type { NextConfig } from "next";
+import type { Options } from 'prettier';
+import type { Linter } from 'eslint';
+import type { NextConfig } from 'next';
 
 interface Exports {
   prettier: Options;

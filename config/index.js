@@ -1,6 +1,6 @@
-require("ts-node").register({
+require('ts-node').register({
   compilerOptions: {
-    target: "ES6",
+    target: 'ES6',
     allowJs: true,
     skipLibCheck: true,
     strict: true,
@@ -9,7 +9,7 @@ require("ts-node").register({
     noEmit: true,
     noUncheckedIndexedAccess: true,
     esModuleInterop: true,
-    module: "CommonJS",
+    module: 'CommonJS',
     resolveJsonModule: true,
     isolatedModules: true,
     incremental: true,
@@ -19,9 +19,9 @@ require("ts-node").register({
   },
 });
 
-const eslint = require("./eslint.config").default;
-const prettier = require("./prettier.config").default;
-const next = require("./next.config").default;
+const eslint = require('./eslint.config').default;
+const prettier = require('./prettier.config').default;
+const next = require('./next.config').default;
 
 module.exports = {
   eslint,

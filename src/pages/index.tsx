@@ -1,6 +1,6 @@
-import { NextPage } from "next";
-import Page from "../components/Page";
-import LandingPageTemplate from "../templates/LandingPage/LandingPageTemplate";
+import { NextPage } from 'next';
+import Page from '../components/Page';
+import LandingPageTemplate from '../templates/LandingPage/LandingPageTemplate';
 
 const Index: NextPage = () => {
   return (
