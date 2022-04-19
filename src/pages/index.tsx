@@ -21,6 +21,10 @@ const Index: NextPage<IRootProps> = ({ enableConfetti }) => {
           My name is <span>Juliette Cordor</span> and my pronouns are{' '}
           <span>She/Her</span>
         </h2>
+        <desc>
+          Note: If you are here from something related to my legal identity, eg.
+          a job, my legal name is James Grasso, as I have not yet changed it
+        </desc>
 
         <Stats />
       </main>
