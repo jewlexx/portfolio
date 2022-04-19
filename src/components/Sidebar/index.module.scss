@@ -1,0 +1,25 @@
+.container {
+  position: fixed;
+}
+
+.hamburger {
+  /* top | right | bottom | left */
+  margin: 1rem 0 0 1rem;
+
+  color: white;
+  font-size: 2rem;
+
+  transition: transform 100ms ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+  .open {
+    display: none;
+  }
+  .closed {
+    display: block;
+  }
+}
