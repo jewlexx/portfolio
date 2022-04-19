@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next';
+import useConfetti from 'hooks/confetti';
 import Page from 'components/Page';
 import PFP from 'components/PFP';
-import useConfetti from 'components/Confetti';
 import Stats from 'components/Stats';
 import Sidebar from 'components/Sidebar';
 import styles from 'styles/Home.module.scss';
