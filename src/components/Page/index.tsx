@@ -6,12 +6,7 @@ interface PageProps extends NextSeoProps {
 }
 
 const Page: FunctionComponent<PageProps> = (pageProps) => {
-  return (
-    <>
-      <NextSeo {...pageProps} />
-      {pageProps.children}
-    </>
-  );
+  return <NextSeo {...pageProps}>{pageProps.children}</NextSeo>;
 };
 
 export default Page;
