@@ -1,13 +1,11 @@
-import { type FunctionComponent, useEffect } from 'react';
+import { useEffect } from 'react';
 import confetti from 'canvas-confetti';
 
-/**
- * NOTE: Could have been made a hook, but was done this way to better support static rendering
- * The way it is done means that the confetti will only run in production, and this component will not even be rendered in development
- * Additionally it will not be included in the bundle, so it will not be included in the development build
- */
-const Container: FunctionComponent = () => {
+const useConfetti = (enabled: boolean): void => {
   useEffect(() => {
+    if (!enabled) {
+      return;
+    }
     const colors = [
       '#26ccff',
       '#a25afd',
@@ -43,9 +41,7 @@ const Container: FunctionComponent = () => {
     };
 
     setTimeout(frame, 1000);
-  }, []);
-
-  return <></>;
+  }, [enabled]);
 };
 
-export default Container;
+export default useConfetti;

@@ -1,6 +1,6 @@
 import type { FunctionComponent } from 'react';
 import Image from 'next/image';
-import styles from './Stats.module.scss';
+import styles from './index.module.scss';
 
 const Stats: FunctionComponent = () => (
   <Image
