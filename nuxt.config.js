@@ -38,7 +38,7 @@ export default {
     base64: true,
 
     families: {
-      'Noto Sans': true,
+      'Noto Sans': [400],
     },
   },
 

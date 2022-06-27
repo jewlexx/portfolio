@@ -7,6 +7,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Nuxtjs fonts
+assets/css/fonts.css
+
 # Runtime data
 pids
 *.pid
