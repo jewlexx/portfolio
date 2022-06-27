@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
+    "build": "nuxt build && nuxt generate",
     "dev": "nuxt",
     "generate": "nuxt generate",
     "lint": "yarn lint:js && yarn lint:style && yarn lint:prettier",
