@@ -11,6 +11,8 @@
     </h2>
 
     <GithubStats />
+
+    <footer><small>More coming soon I promise...</small></footer>
   </main>
 </template>
 
@@ -22,7 +24,9 @@ export default Vue.extend({
 })
 </script>
 
-<style>
+<style lang="scss">
+$background-color: #1a1919;
+
 body {
   padding: 0;
   margin: 0;
@@ -42,8 +46,20 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #1a1919;
+  background-color: $background-color;
   color: #fff;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: darken($background-color, 2%);
 }
 
 .highlighted {
