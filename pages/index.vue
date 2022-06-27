@@ -22,7 +22,7 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="css">
+<style>
 body {
   padding: 0;
   margin: 0;
