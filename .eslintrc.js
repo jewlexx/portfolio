@@ -1,4 +1,15 @@
-/** @type {import('eslint').Linter.Config} */
 module.exports = {
-  extends: ['next/core-web-vitals', 'eslint-config-prettier'],
-};
+  root: true,
+  env: {
+    browser: true,
+    node: true,
+  },
+  extends: [
+    '@nuxtjs/eslint-config-typescript',
+    'plugin:nuxt/recommended',
+    'prettier',
+  ],
+  plugins: [],
+  // add your custom rules here
+  rules: {},
+}

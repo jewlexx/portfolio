@@ -1,43 +1,68 @@
-# jewlexx
+# portfolio
 
-🎉 Congratulations, your project was successfully bootstrapped with [Create Next Stack](https://github.com/akd-io/create-next-stack)!
-
-To get started, run:
+## Build Setup
 
 ```bash
-yarn dev
+# install dependencies
+$ yarn install
+
+# serve with hot reload at localhost:3000
+$ yarn dev
+
+# build for production and launch server
+$ yarn build
+$ yarn start
+
+# generate static project
+$ yarn generate
 ```
 
-## Scripts
+For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
-The table below provides names and descriptions of the npm scripts available in this project.
+## Special Directories
 
-Each script is run using `yarn <script-name>`. For example: `yarn dev`.
+You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
 
-| Name           | Description                                                                                                                                                                                                          |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dev`          | Runs the Next.js development server.                                                                                                                                                                                 |
-| `build`        | Generates a production build.                                                                                                                                                                                        |
-| `start`        | Runs the Next.js production server built using `build` script.                                                                                                                                                       |
-| `lint`         | Runs [ESLint](https://eslint.org/) to catch linting errors in the source code.                                                                                                                                       |
-| `format`       | Formats all source code in the project.                                                                                                                                                                              |
-| `format:check` | Checks the formatting of all code in the project.                                                                                                                                                                    |
-| `prepare`      | The [`prepare` life cycle script](https://docs.npmjs.com/cli/v7/using-npm/scripts#life-cycle-scripts) is used to set up Git pre-commit hooks when people run `yarn install`. This script should not be run manually. |
+### `assets`
 
-## Technologies
+The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
 
-The table below gives an overview of the technologies used in this project, as well as places to learn more about them.
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
 
-| Name                                                  | Links                                                                                                                                                        |
-| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Next.js](https://nextjs.org/)                        | [Docs](https://nextjs.org/docs) - [Learn Next.js](https://nextjs.org/learn) - [GitHub repo](https://github.com/vercel/next.js)                               |
-| [React](https://reactjs.org/)                         | [Docs](https://reactjs.org/docs/getting-started.html) - [GitHub repo](https://github.com/facebook/react)                                                     |
-| [TypeScript](https://www.typescriptlang.org/)         | [Docs](https://www.typescriptlang.org/docs/) - [GitHub repo](https://github.com/microsoft/TypeScript)                                                        |
-| [Styled Components](https://styled-components.com/)   | [Docs](https://styled-components.com/docs) - [GitHub repo](https://github.com/styled-components/styled-components)                                           |
-| [Framer Motion](https://www.framer.com/motion/)       | [Docs](https://www.framer.com/docs/) - [GitHub repo](https://github.com/framer/motion)                                                                       |
-| [ESLint](https://eslint.org/)                         | [Configuration](https://eslint.org/docs/user-guide/configuring/) - [Rules](https://eslint.org/docs/rules/) - [GitHub Repo](https://github.com/eslint/eslint) |
-| [Prettier](https://prettier.io/)                      | [Docs](https://prettier.io/docs/en/index.html) - [Options](https://prettier.io/docs/en/options.html) - [GitHub repo](https://github.com/prettier/prettier)   |
-| [Husky](https://typicode.github.io/husky/)            | [Docs](https://typicode.github.io/husky/) - [GitHub repo](https://github.com/typicode/husky)                                                                 |
-| [lint-staged](https://github.com/okonet/lint-staged)  | [GitHub repo](https://github.com/okonet/lint-staged)                                                                                                         |
-| [Yarn](https://yarnpkg.com/)                          | [CLI Docs](https://yarnpkg.com/cli) - [GitHub repo](https://github.com/yarnpkg/berry)                                                                        |
-| [GitHub Actions](https://github.com/features/actions) | [Docs](https://docs.github.com/en/actions) - [Workflow syntax](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions)              |
+### `components`
+
+The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
+
+### `layouts`
+
+Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
+
+### `pages`
+
+This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
+
+### `plugins`
+
+The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
+
+### `static`
+
+This directory contains your static files. Each file inside this directory is mapped to `/`.
+
+Example: `/static/robots.txt` is mapped as `/robots.txt`.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
+
+### `store`
+
+This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
