@@ -43,7 +43,7 @@ export default {
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxt/image'],
+  modules: ['@nuxt/image', '@layer0/nuxt/module'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
