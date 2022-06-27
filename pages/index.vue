@@ -9,6 +9,8 @@
       pronouns are
       <span class="highlighted">She/Her</span>
     </h2>
+
+    <GithubStats />
   </main>
 </template>
 
