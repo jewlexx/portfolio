@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from 'nuxt'
+import { defineNuxtConfig } from 'nuxt';
 
 export default defineNuxtConfig({
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -74,4 +74,4 @@ export default defineNuxtConfig({
   typescript: {
     shim: false,
   },
-})
+});
