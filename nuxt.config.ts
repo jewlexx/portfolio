@@ -70,4 +70,8 @@ export default defineNuxtConfig({
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  typescript: {
+    shim: false,
+  },
 })
