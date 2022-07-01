@@ -1,4 +1,12 @@
-.output/
+node_modules
+*.log*
+.nuxt
+.nitro
+.cache
+.output
+.vercel
+.env
+
 # Created by .ignore support plugin (hsz.mobi)
 ### Node template
 # Logs
