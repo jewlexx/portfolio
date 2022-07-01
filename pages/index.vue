@@ -16,13 +16,7 @@
   </main>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
-  name: 'IndexPage',
-})
-</script>
+<script lang="ts" setup></script>
 
 <style lang="scss">
 $background-color: #1a1919;
