@@ -21,7 +21,6 @@
     "*.**": "prettier --check --ignore-unknown"
   },
   "dependencies": {
-    "@nuxt/image": "0.7.1",
     "@nuxtjs/google-fonts": "2.0.0",
     "core-js": "3.23.3",
     "nuxt": "rc",

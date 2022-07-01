@@ -50,7 +50,8 @@ export default defineNuxtConfig({
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
-    '@nuxt/image',
+    // Currently Broken on Nuxt v3
+    // '@nuxt/image',
     // Google Fonts support - Currently Broken on Nuxt v3
     // '@nuxtjs/google-fonts',
   ],
