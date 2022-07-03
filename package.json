@@ -22,7 +22,7 @@
   "dependencies": {
     "@nuxt/content": "2.0.1",
     "@nuxtjs/google-fonts": "2.0.0",
-    "@vue/server-renderer": "2.7.0",
+    "@vue/server-renderer": "3.2.37",
     "core-js": "3.23.3",
     "nuxt": "rc",
     "vue": "3.2.37",
@@ -39,7 +39,7 @@
     "@nuxtjs/stylelint-module": "4.1.0",
     "@nuxtjs/vercel-builder": "0.22.1",
     "babel-core": "7.0.0-bridge.0",
-    "eslint": "8.18.0",
+    "eslint": "8.19.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-nuxt": "3.2.0",
     "eslint-plugin-vue": "9.1.1",
