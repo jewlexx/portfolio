@@ -8928,10 +8928,10 @@ vue-router@^4.0.16:
   dependencies:
     "@vue/devtools-api" "^6.0.0"
 
-vue-server-renderer@2.7.0:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/vue-server-renderer/-/vue-server-renderer-2.7.0.tgz#140dd0e2f4a99e85633d46b7f89d2cddc4f61859"
-  integrity sha512-9IZIYfbCw+yb7n7NIzByjOlRshllAavWAtpf0hRUxuKqBx95gnkB/za2KavKyo+gUxA3dGx9+syC01f/AyJHGQ==
+vue-server-renderer@2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/vue-server-renderer/-/vue-server-renderer-2.7.1.tgz#2641c66ee51505bdd1b3b2b03dfd0e8217a4c3b2"
+  integrity sha512-TPR49z0rnQfjbNs8sIPblbYdwTLtI/F2AukFyqiHYBloOuLfXZWCagZ5IWgZ8ec4q+SQfUd0/SQcRLhSGYNjjw==
   dependencies:
     chalk "^4.1.2"
     hash-sum "^2.0.0"
