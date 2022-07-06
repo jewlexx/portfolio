@@ -11,6 +11,7 @@
     "lint:prettier": "prettier --check .",
     "lint:style": "stylelint \"**/*.{css,scss,sass,html,vue}\" --ignore-path .gitignore",
     "lintfix": "prettier --write --list-different . && yarn lint:js --fix && yarn lint:style --fix",
+    "test": "echo 'No Test Specified'",
     "prepare": "nuxt prepare && husky install",
     "start": "nuxt start"
   },
