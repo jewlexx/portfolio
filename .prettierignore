@@ -1,6 +1,9 @@
 ###
 # Place your Prettier ignore content here
 renovate.json
+
+.output/
+
 ###
 # .gitignore content is duplicated here due to https://github.com/prettier/prettier/issues/8506
 
