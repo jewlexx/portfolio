@@ -27,7 +27,7 @@
     "core-js": "3.23.3",
     "nuxt": "rc",
     "vue": "3.2.37",
-    "webpack": "5.73.0"
+    "webpack": "5.74.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.18.2",
