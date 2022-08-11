@@ -1,57 +1,20 @@
 {
-  "name": "portfolio",
-  "version": "1.0.0",
+  "name": "@example/portfolio",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "lint": "yarn lint:js && yarn lint:style && yarn lint:prettier",
-    "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
-    "lint:prettier": "prettier --check .",
-    "lint:style": "stylelint \"**/*.{css,scss,sass,html,vue}\" --ignore-path .gitignore",
-    "lintfix": "prettier --write --list-different . && yarn lint:js --fix && yarn lint:style --fix",
-    "test": "echo 'No Test Specified'",
-    "prepare": "nuxt prepare && husky install",
-    "start": "nuxt start"
-  },
-  "lint-staged": {
-    "*.{js,ts,vue}": "eslint --cache",
-    "*.{css,scss,sass,html,vue}": "stylelint",
-    "*.**": "prettier --check --ignore-unknown"
-  },
-  "dependencies": {
-    "@nuxt/content": "2.0.1",
-    "@nuxtjs/google-fonts": "2.0.0",
-    "@vue/server-renderer": "3.2.37",
-    "core-js": "3.23.3",
-    "nuxt": "rc",
-    "vue": "3.2.37",
-    "webpack": "5.73.0"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.18.2",
-    "@commitlint/cli": "17.0.3",
-    "@commitlint/config-conventional": "17.0.3",
-    "@nuxt/types": "2.15.8",
-    "@nuxt/typescript-build": "2.1.0",
-    "@nuxtjs/eslint-config-typescript": "10.0.0",
-    "@nuxtjs/eslint-module": "3.1.0",
-    "@nuxtjs/stylelint-module": "4.1.0",
-    "@nuxtjs/vercel-builder": "0.22.1",
-    "babel-core": "7.0.0-bridge.0",
-    "eslint": "8.19.0",
-    "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-nuxt": "3.2.0",
-    "eslint-plugin-vue": "9.2.0",
-    "husky": "8.0.1",
-    "lint-staged": "13.0.3",
-    "postcss-html": "1.5.0",
-    "prettier": "2.7.1",
-    "sass": "1.53.0",
-    "stylelint": "14.9.1",
-    "stylelint-config-prettier": "9.0.3",
-    "stylelint-config-recommended-vue": "1.4.0",
-    "stylelint-config-standard": "26.0.0"
+    "@astrojs/preact": "^1.0.0",
+    "astro": "^1.0.1",
+    "sass": "^1.52.2"
+  },
+  "dependencies": {
+    "preact": "^10.7.3"
   }
 }
