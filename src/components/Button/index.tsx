@@ -1,8 +1,8 @@
-import { h } from 'preact';
+import type { FunctionComponent } from 'preact';
 import Styles from './styles.module.scss';
 
-function Button({ children }) {
+const Button: FunctionComponent = ({ children }) => {
   return <span className={Styles.button}>{children}</span>;
-}
+};
 
 export default Button;

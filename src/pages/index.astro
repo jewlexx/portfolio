@@ -2,22 +2,41 @@
 // Component Imports
 import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav/index.jsx';
-import Footer from '../components/Footer/index.jsx';
-import GithubStats from '../components/GithubStats.vue';
-import ProfilePicture from '../components/ProfilePicture.vue';
 
 // Data Fetching: List all Markdown posts in the repo.
 const projects = await Astro.glob('./project/**/*.md');
 const featuredProject = projects[0];
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+interface Link {
+	name: string;
+	url: string;
+	emoji: string;
+}
+
+const links: Link[] = [
+	{
+		'emoji': '👩‍💻',
+		name: 'Github',
+		url: 'github.com/jewlexx'
+	},
+	{
+		'emoji': '🕊️',
+		name: 'Twitter',
+		url: 'twitter.com/jewelexx'
+	},
+	{
+		'emoji': '🌲',
+		name: 'Linktree',
+		url: 'linktr.ee/jewelexx',
+	}
+];
+
 ---
 
 <html lang="en">
 
 <head>
-	<MainHead title="Jeanine White: Personal Site" description="Jeanine White: Developer, Speaker, and Writer..." />
+	<MainHead title="Juliette Cordor" description="Juliette Cordor, developer and other things also" />
 	<style lang="scss">
 		@import '../styles/palette.scss';
 
@@ -107,6 +126,7 @@ const featuredProject = projects[0];
 		}
 
 		.role {
+			text-decoration: none;
 			position: relative;
 			display: inline-block;
 			font-weight: 900;
@@ -163,11 +183,6 @@ const featuredProject = projects[0];
 			transition: clip-path cubic-bezier(0.4, 0, 0.5, 1) 150ms;
 		}
 
-		.desc {
-			font-size: var(--f-u2);
-			margin-top: 1.5rem;
-			margin-bottom: 0;
-		}
 
 		.subtitle {
 			display: block;
@@ -175,53 +190,30 @@ const featuredProject = projects[0];
 			font-size: var(--f-d6);
 			letter-spacing: -0.0625em;
 		}
-
-		.bio {
-			line-height: 2;
-			margin-bottom: 2rem;
-
-			>span:first-of-type {
-				line-height: 1;
-				margin-bottom: 0.5em;
-				display: block;
-				font-weight: 700;
-				font-size: var(--f-u4);
-			}
-		}
 	</style>
 </head>
 
 <body>
 	<Nav />
-	<header class="hero">
-		<div class="overlay">
-			<h1 class="title">
-				Juliette Cordor
-				<small class="subtitle"><span class="pronouns">(She/Her)</span></small>
-			</h1>
-			<div>
-				<span class="role">👩‍💻 Developer <span class="invert">👩‍💻 Developer</span></span>&nbsp;
-				<span class="role">🎤 Speaker <span class="invert">🎤 Speaker</span></span>&nbsp;
-				<span class="role">✏️ Writer <span class="invert">✏️ Writer</span></span>
-			</div>
-			<p class="desc">Lover of dogs, roadtrips, and poetry.</p>
-		</div>
-	</header>
 	<main>
-		<ProfilePicture />
-
-		<h1>Welcome to my digital portfolio!</h1>
-
-		<h2>
-			My name is <span class="highlighted">Juliette Cordor</span> and my
-			pronouns are
-			<span class="highlighted">She/Her</span>
-		</h2>
-
-		<GithubStats />
-
+		<header class="hero">
+			<div class="overlay">
+				<h1 class="title">
+					Juliette Cordor
+					<small class="subtitle"><span class="pronouns">(She/Her)</span></small>
+				</h1>
+				<div>
+					{links.map(({ emoji, name, url }) => (
+					<a href={`https://${url}`} class="role" target="_blank" rel="noopener noreferrer">
+						{emoji} {name}
+						<span class="invert">{emoji} {name}</span>
+					</a>
+					))}
+				</div>
+				<!-- <p class="desc">Desc Here</p> -->
+			</div>
+		</header>
 	</main>
-	<Footer />
 </body>
 
 </html>

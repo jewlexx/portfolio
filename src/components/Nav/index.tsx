@@ -1,7 +1,8 @@
+import type { FunctionComponent } from 'preact';
 import pfp from '/assets/pfp.jpg';
 import Styles from './styles.module.scss';
 
-function Nav() {
+const Nav: FunctionComponent = () => {
   return (
     <nav className={Styles.nav}>
       <a className={Styles.logolink} href="/">
@@ -33,5 +34,5 @@ function Nav() {
       </a>
     </nav>
   );
-}
+};
 export default Nav;

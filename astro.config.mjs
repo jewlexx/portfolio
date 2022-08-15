@@ -6,7 +6,7 @@ import vue from "@astrojs/vue";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [preact(), vue()],
+  integrations: [preact()],
   adapter: vercel(),
   output: "server"
 });
