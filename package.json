@@ -6,6 +6,7 @@
     "astro": "astro",
     "build": "astro build",
     "dev": "astro dev",
+    "format": "prettier --write src/**/*.{astro,tsx,scss}",
     "preview": "astro preview",
     "start": "astro dev"
   },
@@ -16,6 +17,8 @@
     "@astrojs/preact": "^1.0.0",
     "@astrojs/vercel": "^1.0.0",
     "astro": "^1.0.1",
+    "prettier": "^2.7.1",
+    "prettier-plugin-astro": "^0.5.0",
     "sass": "^1.52.2"
   }
 }
