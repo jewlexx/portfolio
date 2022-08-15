@@ -2,30 +2,25 @@
 import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav/index.jsx';
 
-const projects = (await Astro.glob('./project/**/*.md'))
-  .filter(({ frontmatter }) => !!frontmatter.publishDate)
-  .sort(
-    (a, b) =>
-      new Date(b.frontmatter.publishDate).valueOf() -
-      new Date(a.frontmatter.publishDate).valueOf()
-  );
 ---
 
 <html lang="en">
-  <head>
-    <MainHead title="All Projects | Juliette Cordor" />
-    <style lang="scss">
-      .grid {
-        display: grid;
-        grid-gap: 3rem;
-      }
-    </style>
-  </head>
 
-  <body>
-    <Nav />
-    <div class="wrapper">
-      <h1 class="title mt4 mb4">Coming Soon!</h1>
-    </div>
-  </body>
+<head>
+  <MainHead title="All Projects | Juliette Cordor" />
+  <style lang="scss">
+    .grid {
+      display: grid;
+      grid-gap: 3rem;
+    }
+  </style>
+</head>
+
+<body>
+  <Nav />
+  <div class="wrapper">
+    <h1 class="title mt4 mb4">Coming Soon!</h1>
+  </div>
+</body>
+
 </html>
