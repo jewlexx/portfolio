@@ -19,6 +19,6 @@
     "astro": "1.0.1",
     "prettier": "2.7.1",
     "prettier-plugin-astro": "0.5.0",
-    "sass": "1.52.2"
+    "sass": "1.54.4"
   }
 }
