@@ -1,12 +1,11 @@
 import type { FunctionComponent } from 'preact';
-import pfp from '/assets/pfp.jpg';
 import Styles from './styles.module.scss';
 
 const Nav: FunctionComponent = () => {
   return (
     <nav className={Styles.nav}>
       <a className={Styles.logolink} href="/">
-        <img className={Styles.monogram} src={pfp}></img>
+        <img className={Styles.monogram} src="/assets/pfp.jpg"></img>
       </a>
       <a className={Styles.link} href="/projects">
         Portfolio
