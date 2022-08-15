@@ -1,24 +1,24 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@astrojs/preact': ^1.0.0
-  '@astrojs/vercel': ^1.0.0
-  astro: ^1.0.1
-  preact: ^10.7.3
-  prettier: ^2.7.1
-  prettier-plugin-astro: ^0.5.0
-  sass: ^1.52.2
-
-dependencies:
-  preact: 10.10.2
-
-devDependencies:
-  '@astrojs/preact': 1.0.1_preact@10.10.2
+  '@astrojs/preact': 1.0.0
   '@astrojs/vercel': 1.0.0
-  astro: 1.0.2_sass@1.54.4
+  astro: 1.0.1
+  preact: 10.7.3
   prettier: 2.7.1
   prettier-plugin-astro: 0.5.0
-  sass: 1.54.4
+  sass: 1.52.2
+
+dependencies:
+  preact: 10.7.3
+
+devDependencies:
+  '@astrojs/preact': 1.0.0_preact@10.7.3
+  '@astrojs/vercel': 1.0.0
+  astro: 1.0.1_sass@1.52.2
+  prettier: 2.7.1
+  prettier-plugin-astro: 0.5.0
+  sass: 1.52.2
 
 packages:
 
@@ -96,8 +96,8 @@ packages:
       vfile-message: 3.1.2
     dev: true
 
-  /@astrojs/preact/1.0.1_preact@10.10.2:
-    resolution: {integrity: sha512-gDVvNP22rJiRSUdKwWmjZsm0LMBhWtMWoFc17PNYQVktw/XgWmYw68JPsfIg8Au6OOKTBbinRf/lhNicx6e2Rg==}
+  /@astrojs/preact/1.0.0_preact@10.7.3:
+    resolution: {integrity: sha512-xluOD8f5X46IIxjmYuYwhmNXJHUoYWJEsjiSj3GxIWnq9C32jJEtLj/+YOLdNghMuf2PHgUojkMsMQsJMTyZ8Q==}
     engines: {node: ^14.18.0 || >=16.12.0}
     peerDependencies:
       preact: ^10.6.5
@@ -105,8 +105,8 @@ packages:
       '@babel/core': 7.18.10
       '@babel/plugin-transform-react-jsx': 7.18.10_@babel+core@7.18.10
       babel-plugin-module-resolver: 4.1.0
-      preact: 10.10.2
-      preact-render-to-string: 5.2.1_preact@10.10.2
+      preact: 10.7.3
+      preact-render-to-string: 5.2.1_preact@10.7.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -733,8 +733,8 @@ packages:
       tslib: 2.4.0
     dev: true
 
-  /astro/1.0.2_sass@1.54.4:
-    resolution: {integrity: sha512-7Bmw8wGQnh/rRpybc6owYbAyr6SXKm7kX56gg82ABJbqnTQhbgOPtg8+k+KKkJekMU/gPe3LfMIh0+Ie+F9xUw==}
+  /astro/1.0.1_sass@1.52.2:
+    resolution: {integrity: sha512-oQltZ7Yk+ShztRL5NO+nyXVIZqBHjlL6yn6oDeJ/a+6D/rN6KMZQquKP21j87nSwnSnEUjS73EsFsIEvrxG4Tw==}
     engines: {node: ^14.18.0 || >=16.12.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -790,7 +790,7 @@ packages:
       tsconfig-resolver: 3.0.1
       unist-util-visit: 4.1.0
       vfile: 5.3.4
-      vite: 3.0.5_sass@1.54.4
+      vite: 3.0.4_sass@1.52.2
       yargs-parser: 21.1.1
       zod: 3.18.0
     transitivePeerDependencies:
@@ -2994,17 +2994,17 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /preact-render-to-string/5.2.1_preact@10.10.2:
+  /preact-render-to-string/5.2.1_preact@10.7.3:
     resolution: {integrity: sha512-Wp3ner1aIVBpKg02C4AoLdBiw4kNaiFSYHr4wUF+fR7FWKAQzNri+iPfPp31sEhAtBfWoJrSxiEFzd5wp5zCgQ==}
     peerDependencies:
       preact: '>=10'
     dependencies:
-      preact: 10.10.2
+      preact: 10.7.3
       pretty-format: 3.8.0
     dev: true
 
-  /preact/10.10.2:
-    resolution: {integrity: sha512-GUXSsfwq4NKhlLYY5ctfNE0IjFk7Xo4952yPI8yMkXdhzeQmQ+FahZITe7CeHXMPyKBVQ8SoCmGNIy9TSOdhgQ==}
+  /preact/10.7.3:
+    resolution: {integrity: sha512-giqJXP8VbtA1tyGa3f1n9wiN7PrHtONrDyE3T+ifjr/tTkg+2N4d/6sjC9WyJKv8wM7rOYDveqy5ZoFmYlwo4w==}
 
   /preferred-pm/3.0.3:
     resolution: {integrity: sha512-+wZgbxNES/KlJs9q40F/1sfOd/j7f1O9JaHcW5Dsn3aUUOZg3L2bjpVUcKV2jvtElYfoTuQiNeMfQJ4kwUAhCQ==}
@@ -3311,8 +3311,8 @@ packages:
       suf-log: 2.5.3
     dev: true
 
-  /sass/1.54.4:
-    resolution: {integrity: sha512-3tmF16yvnBwtlPrNBHw/H907j8MlOX8aTBnlNX1yrKx24RKcJGPyLhFUwkoKBKesR3unP93/2z14Ll8NicwQUA==}
+  /sass/1.52.2:
+    resolution: {integrity: sha512-mfHB2VSeFS7sZlPv9YohB9GB7yWIgQNTGniQwfQ04EoQN0wsQEv7SwpCwy/x48Af+Z3vDeFXz+iuXM3HK/phZQ==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
@@ -3796,8 +3796,8 @@ packages:
       vfile-message: 3.1.2
     dev: true
 
-  /vite/3.0.5_sass@1.54.4:
-    resolution: {integrity: sha512-bRvrt9Tw8EGW4jj64aYFTnVg134E8hgDxyl/eEHnxiGqYk7/pTPss6CWlurqPOUzqvEoZkZ58Ws+Iu8MB87iMA==}
+  /vite/3.0.4_sass@1.52.2:
+    resolution: {integrity: sha512-NU304nqnBeOx2MkQnskBQxVsa0pRAH5FphokTGmyy8M3oxbvw7qAXts2GORxs+h/2vKsD+osMhZ7An6yK6F1dA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -3819,7 +3819,7 @@ packages:
       postcss: 8.4.16
       resolve: 1.22.1
       rollup: 2.77.3
-      sass: 1.54.4
+      sass: 1.52.2
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
