@@ -1,7 +1,7 @@
 <template>
     <nav class="nav">
         <a class="logolink" href="/" rel="prefetch">
-            <img class="monogram" src="/assets/pfp.jpg" />
+            <img alt="Personal Profile Picture" class="monogram" src="/assets/pfp.jpg" />
         </a>
         <a class="link" href="/projects">
             Portfolio
