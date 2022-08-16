@@ -52,49 +52,6 @@ const links: Link[] = [
       }
     }
 
-    .img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .gradient,
-    .gradient2 {
-      background-image: url('/assets/mesh-gradient.jpg');
-      background-size: cover;
-      pointer-events: none;
-      mix-blend-mode: screen;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 2;
-    }
-
-    .gradient2 {
-      mix-blend-mode: multiply;
-      background-size: cover;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 10;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      padding-left: 2rem;
-
-      @media (min-width: $w-s) {
-        padding-left: 4rem;
-      }
-    }
-
     .title {
       font-weight: 900;
       font-size: var(--f-u8);
@@ -113,13 +70,6 @@ const links: Link[] = [
       @media (min-width: 1200px) {
         grid-template-columns: 2fr 1fr;
       }
-    }
-
-    .sectionTitle {
-      font-weight: 700;
-      font-size: var(--f-u8);
-      margin-top: 4rem;
-      margin-bottom: 2rem;
     }
 
     .role {
