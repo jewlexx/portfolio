@@ -4,7 +4,7 @@ import Styles from './styles.module.scss';
 const Nav: FunctionComponent = () => {
   return (
     <nav className={Styles.nav}>
-      <a className={Styles.logolink} href="/">
+      <a className={Styles.logolink} href="/" rel="prefetch">
         <img className={Styles.monogram} src="/assets/pfp.jpg"></img>
       </a>
       <a className={Styles.link} href="/projects">
