@@ -15,10 +15,13 @@
   },
   "devDependencies": {
     "@astrojs/preact": "1.0.0",
+    "@astrojs/prefetch": "^0.0.7",
     "@astrojs/vercel": "1.0.0",
+    "@astrojs/vue": "^1.0.0",
     "astro": "1.0.1",
     "prettier": "2.7.1",
     "prettier-plugin-astro": "0.5.0",
-    "sass": "1.52.2"
+    "sass": "1.52.2",
+    "vue": "^3.2.30"
   }
 }
