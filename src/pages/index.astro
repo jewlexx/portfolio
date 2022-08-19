@@ -39,6 +39,11 @@ const links: Link[] = [
 
     $w-s: 750px;
 
+    html,
+    body {
+      background-color: $dark-gray;
+    }
+
     .pronouns {
       color: $cambridge-blue;
     }
@@ -72,12 +77,12 @@ const links: Link[] = [
 
     .title {
       font-weight: 900;
-      font-size: var(--f-u8);
+      font-size: $f-u8;
       margin-bottom: 0.5rem;
       margin-top: 0;
 
       @media (min-width: $w-s) {
-        font-size: var(--f-u12);
+        font-size: $f-u12;
       }
     }
 
@@ -95,13 +100,13 @@ const links: Link[] = [
       position: relative;
       display: inline-block;
       font-weight: 900;
-      color: var(--t-bg);
-      background-color: var(--t-fg);
+      color: $t-bg;
+      background-color: $t-fg;
       padding: 0.25em 0.5em;
       z-index: 2;
 
       @media (min-width: $w-s) {
-        font-size: var(--f-u3);
+        font-size: $f-u3;
       }
 
       +.role {
@@ -110,19 +115,19 @@ const links: Link[] = [
 
       &:nth-of-type(1) {
         .invert {
-          background-color: var(--c-pink);
+          background-color: $pink;
         }
       }
 
       &:nth-of-type(2) {
         .invert {
-          background-color: var(--c-blue);
+          background-color: $blue;
         }
       }
 
       &:nth-of-type(3) {
         .invert {
-          background-color: var(--c-green);
+          background-color: $green;
         }
       }
 
@@ -135,7 +140,7 @@ const links: Link[] = [
 
     .invert {
       position: absolute;
-      color: var(--t-fg);
+      color: $t-fg;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -145,13 +150,13 @@ const links: Link[] = [
       left: 0;
       pointer-events: none;
       clip-path: polygon(0% 100%, 100% 100%, 100% 200%, 0% 200%);
-      transition: clip-path cubic-bezier(0.4, 0, 0.5, 1) 150ms;
+      transition: clip-path cubibezier(0.4, 0, 0.5, 1) 150ms;
     }
 
     .subtitle {
       display: block;
       font-weight: 400;
-      font-size: var(--f-d6);
+      font-size: $f-d6;
       letter-spacing: -0.0625em;
     }
   </style>

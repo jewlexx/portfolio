@@ -25,7 +25,10 @@
 </template>
 
 <style lang="scss">
+@import '../styles/palette.scss';
+
 .nav {
+    background-color: lighten($dark-gray, 10%);
     display: flex;
     align-items: center;
     padding-top: 1rem;
@@ -37,24 +40,24 @@
 
 .logolink {
     display: block;
-    color: var(--t-fg);
+    color: $t-fg;
     text-decoration: none;
 }
 
 
 .link {
-    color: var(--t-subdue);
+    color: $t-subdue;
     display: block;
     margin-left: 1rem;
     text-decoration: none;
-    font-size: var(--f-d1);
+    font-size: $f-d1;
     text-transform: uppercase;
     padding-top: 0.75em;
     padding-bottom: 0.75em;
 
     &:focus,
     &:hover {
-        color: var(--t-active);
+        color: $t-active;
     }
 }
 
@@ -66,7 +69,7 @@
     width: 2em;
     height: 2em;
     margin-right: 0.5rem;
-    color: var(--c-black);
+    color: $black;
     font-weight: 900;
     letter-spacing: -0.125rem;
     border: 3px solid currentColor;
@@ -88,11 +91,11 @@
     display: block;
     width: 1.25rem;
     height: 1.25rem;
-    fill: var(--t-subdue);
+    fill: $t-subdue;
     transition: fill linear 150ms;
 
     &:hover {
-        fill: var(--t-active);
+        fill: $t-active;
     }
 }
 </style>

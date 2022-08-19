@@ -1,7 +1,7 @@
 ---
 import MainHead from '../components/MainHead.astro';
 import Button from '../components/Button.vue';
-import Nav from '../components/Nav/index.jsx';
+import Nav from '../components/Nav.vue';
 
 const { content } = Astro.props;
 ---
@@ -14,7 +14,7 @@ const { content } = Astro.props;
     .hero {
       padding: 8rem;
       display: flex;
-      background-color: var(--t-fg);
+      background-color: $t-fg;
       background-repeat: no-repeat;
       background-size: cover;
       min-height: 25vw;
@@ -30,42 +30,42 @@ const { content } = Astro.props;
       text-transform: uppercase;
 
       &:nth-of-type(1n) {
-        color: var(--c-green);
+        color: $green;
       }
 
       &:nth-of-type(2n) {
-        color: var(--c-orange);
+        color: $orange;
       }
 
       &:nth-of-type(3n) {
-        color: var(--c-blue);
+        color: $blue;
       }
 
       &:nth-of-type(4n) {
-        color: var(--c-pink);
+        color: $pink;
       }
     }
 
     .title {
-      font-size: var(--f-u10);
+      font-size: $f-u10;
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.0625em;
     }
 
     .leadIn {
-      color: var(--t-bg);
-      background-color: var(--t-fg);
+      color: $t-bg;
+      background-color: $t-fg;
     }
 
     .tagline {
       font-weight: 300;
-      font-size: var(--f-u3);
+      font-size: $f-u3;
       line-height: 1.5;
     }
 
     .content {
-      font-size: var(--f-u1);
+      font-size: $f-u1;
       line-height: 2.2;
     }
   </style>
