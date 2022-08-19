@@ -7,7 +7,9 @@ specifiers:
   '@astrojs/prefetch': ^0.0.7
   '@astrojs/vercel': 1.0.0
   '@astrojs/vue': ^1.0.0
+  '@types/node': 18.7.6
   astro: 1.0.1
+  lorem-ipsum: ^2.0.8
   preact: 10.7.3
   prettier: 2.7.1
   prettier-plugin-astro: 0.5.0
@@ -15,6 +17,7 @@ specifiers:
   vue: ^3.2.30
 
 dependencies:
+  lorem-ipsum: 2.0.8
   preact: 10.7.3
 
 devDependencies:
@@ -24,6 +27,7 @@ devDependencies:
   '@astrojs/prefetch': 0.0.7
   '@astrojs/vercel': 1.0.0
   '@astrojs/vue': 1.0.0_sass@1.52.2+vue@3.2.37
+  '@types/node': 18.7.6
   astro: 1.0.1_sass@1.52.2
   prettier: 2.7.1
   prettier-plugin-astro: 0.5.0
@@ -692,6 +696,10 @@ packages:
       '@types/unist': 2.0.6
     dev: true
 
+  /@types/node/18.7.6:
+    resolution: {integrity: sha512-EdxgKRXgYsNITy5mjjXjVE/CS8YENSdhiagGrLqjG0pvA2owgJ6i4l7wy/PFZGC0B1/H20lWKN7ONVDNYDZm7A==}
+    dev: true
+
   /@types/parse5/6.0.3:
     resolution: {integrity: sha512-SuT16Q1K51EAVPz1K29DJ/sXjhSQ0zjvsypYJ6tlwVsRV9jwW5Adq2ch8Dq8kDBCkYnELS7N7VNCSB5nC56t/g==}
     dev: true
@@ -1241,6 +1249,11 @@ packages:
   /comma-separated-tokens/2.0.2:
     resolution: {integrity: sha512-G5yTt3KQN4Yn7Yk4ed73hlZ1evrFKXeUW3086p3PRFNp7m2vIjI6Pg+Kgb+oyzhd9F2qdcoj67+y3SdxL5XWsg==}
     dev: true
+
+  /commander/9.4.0:
+    resolution: {integrity: sha512-sRPT+umqkz90UA8M1yqYfnHlZA7fF6nSphDtxeywPZ49ysjxDQybzk13CL+mXekDRG92skbcqCLVovuCusNmFw==}
+    engines: {node: ^12.20.0 || >=14}
+    dev: false
 
   /common-ancestor-path/1.0.1:
     resolution: {integrity: sha512-L3sHRo1pXXEqX8VU28kfgUY+YGsk09hPqZiZmLacNib6XNTCM8ubYeT7ryXQw8asB1sKgcU5lkB7ONug08aB8w==}
@@ -2340,6 +2353,14 @@ packages:
   /longest-streak/3.0.1:
     resolution: {integrity: sha512-cHlYSUpL2s7Fb3394mYxwTYj8niTaNHUCLr0qdiCXQfSjfuA7CKofpX2uSwEfFDQ0EB7JcnMnm+GjbqqoinYYg==}
     dev: true
+
+  /lorem-ipsum/2.0.8:
+    resolution: {integrity: sha512-5RIwHuCb979RASgCJH0VKERn9cQo/+NcAi2BMe9ddj+gp7hujl6BI+qdOG4nVsLDpwWEJwTVYXNKP6BGgbcoGA==}
+    engines: {node: '>= 8.x', npm: '>= 5.x'}
+    hasBin: true
+    dependencies:
+      commander: 9.4.0
+    dev: false
 
   /lru-cache/6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}

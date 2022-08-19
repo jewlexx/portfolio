@@ -11,6 +11,7 @@
     "start": "astro dev"
   },
   "dependencies": {
+    "lorem-ipsum": "^2.0.8",
     "preact": "10.7.3"
   },
   "devDependencies": {
@@ -20,6 +21,7 @@
     "@astrojs/prefetch": "^0.0.7",
     "@astrojs/vercel": "1.0.0",
     "@astrojs/vue": "^1.0.0",
+    "@types/node": "^16",
     "astro": "1.0.1",
     "prettier": "2.7.1",
     "prettier-plugin-astro": "0.5.0",
