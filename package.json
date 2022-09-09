@@ -1,31 +1,24 @@
 {
-  "name": "@example/portfolio",
-  "version": "0.0.1",
+  "name": "portfolio",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "astro": "astro",
-    "build": "astro build",
-    "dev": "astro dev",
-    "format": "prettier --write src/**/*.{astro,tsx,scss}",
-    "preview": "astro preview",
-    "start": "astro dev"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "lorem-ipsum": "^2.0.8",
-    "preact": "10.7.3"
+    "next": "12.3.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@astrojs/deno": "^1.0.0",
-    "@astrojs/mdx": "^0.10.0",
-    "@astrojs/preact": "1.0.0",
-    "@astrojs/prefetch": "^0.0.7",
-    "@astrojs/vercel": "1.0.0",
-    "@astrojs/vue": "^1.0.0",
-    "@types/node": "^16",
-    "astro": "1.0.1",
-    "prettier": "2.7.1",
-    "prettier-plugin-astro": "0.5.0",
-    "sass": "1.52.2",
-    "vue": "^3.2.30"
+    "@types/node": "18.7.16",
+    "@types/react": "18.0.18",
+    "@types/react-dom": "18.0.6",
+    "eslint": "8.23.0",
+    "eslint-config-next": "12.3.0",
+    "typescript": "4.8.3"
   }
 }
