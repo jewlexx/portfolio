@@ -1,7 +1,9 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
+import Giscus from '@giscus/react';
 
 import { getAllPostIds, readPostId, type PostMeta } from '../../lib/projects';
+import styles from '../../styles/Project.module.scss';
 
 interface RouteProps {
   project: string;
@@ -16,7 +18,26 @@ const Project: NextPage<RouteProps> = ({ project, contents, meta }) => {
         <title>{`About: ${meta.title}`}</title>
       </Head>
 
-      <main dangerouslySetInnerHTML={{ __html: contents }} />
+      <main className={styles.content}>
+        <div dangerouslySetInnerHTML={{ __html: contents }} />
+        <div className={styles.discussion}>
+          <h3>Discuss below</h3>
+          <Giscus
+            id="comments"
+            repo={`jewlexx/${project}`}
+            repoId=""
+            category="Announcements"
+            // categoryId="DIC_kwDOF1L2fM4B-hVS"
+            mapping="pathname"
+            reactionsEnabled="1"
+            emitMetadata="0"
+            inputPosition="top"
+            theme="preferred_color_scheme"
+            lang="en"
+            loading="lazy"
+          />
+        </div>
+      </main>
     </>
   );
 };
