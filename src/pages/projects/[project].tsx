@@ -1,24 +1,35 @@
-import type { GetStaticPaths } from 'next';
-import * as fs from 'fs/promises';
-import * as path from 'path';
+import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import { getAllPostIds, readPostId } from '../../lib/projects';
 
-export async function getAllPostIds() {
-  const postsDirectory = path.join(process.cwd(), 'src/projects');
-  const fileNames = await fs.readdir(postsDirectory);
-
-  return fileNames.map((fileName) => {
-    return {
-      params: {
-        id: fileName.replace(/\.md$/, ''),
-      },
-    };
-  });
+interface RouteProps {
+  project: string;
+  contents: string;
 }
 
-export const getStaticPaths: GetStaticPaths = async (q) => {
+const Project: NextPage<RouteProps> = ({ project, contents }) => {
+  return <></>;
+};
+
+export const getStaticProps: GetStaticProps<RouteProps> = async (query) => {
+  const projectId = query.params?.project as string;
+  const postContents = await readPostId(projectId);
+
+  return {
+    props: {
+      // Trust me :)
+      project: projectId,
+      contents: postContents,
+    },
+  };
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await getAllPostIds();
+
   return {
     paths,
     fallback: false,
   };
 };
+
+export default Project;
