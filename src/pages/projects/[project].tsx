@@ -15,6 +15,8 @@ const Project: NextPage<RouteProps> = ({ project, contents, meta }) => {
       <Head>
         <title>{`About: ${meta.title}`}</title>
       </Head>
+
+      <main dangerouslySetInnerHTML={{ __html: contents }} />
     </>
   );
 };
