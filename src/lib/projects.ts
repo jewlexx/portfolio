@@ -1,5 +1,13 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
+import * as matter from 'gray-matter';
+import { remark } from 'remark';
+import html from 'remark-html';
+
+export interface PostMeta {
+  upstream: string;
+  title: string;
+}
 
 export const getAllPostIds = async () => {
   const postsDirectory = path.join(process.cwd(), 'src/projects');
@@ -15,8 +23,22 @@ export const getAllPostIds = async () => {
 };
 
 export const readPostId = async (id: string) => {
-  return fs.readFile(
+  const fileContents = await fs.readFile(
     path.join(process.cwd(), 'src/projects', `${id}.md`),
     'utf8',
   );
+
+  const matterResult = matter(fileContents);
+
+  const contents = matterResult.content;
+
+  const htmlContents = await (
+    await remark().use(html).process(contents)
+  ).toString();
+
+  return {
+    project: id,
+    contents: htmlContents,
+    meta: matterResult.data as PostMeta,
+  };
 };

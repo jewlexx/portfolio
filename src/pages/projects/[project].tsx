@@ -1,12 +1,13 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import { getAllPostIds, readPostId } from '../../lib/projects';
+import { getAllPostIds, readPostId, type PostMeta } from '../../lib/projects';
 
 interface RouteProps {
   project: string;
   contents: string;
+  meta: PostMeta;
 }
 
-const Project: NextPage<RouteProps> = ({ project, contents }) => {
+const Project: NextPage<RouteProps> = ({ project, contents, meta }) => {
   return <></>;
 };
 
@@ -17,8 +18,7 @@ export const getStaticProps: GetStaticProps<RouteProps> = async (query) => {
   return {
     props: {
       // Trust me :)
-      project: projectId,
-      contents: postContents,
+      ...postContents,
     },
   };
 };
