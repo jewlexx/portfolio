@@ -23,12 +23,11 @@ const Project: NextPage<RouteProps> = ({ project, contents, meta }) => {
         <div className={styles.discussion}>
           <h3>Discuss below</h3>
           <Giscus
-            id="comments"
             repo={`jewlexx/${project}`}
             repoId=""
-            category="Announcements"
+            category="General"
             // categoryId="DIC_kwDOF1L2fM4B-hVS"
-            mapping="pathname"
+            mapping="title"
             reactionsEnabled="1"
             emitMetadata="0"
             inputPosition="top"
