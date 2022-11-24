@@ -3,11 +3,12 @@ import * as path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import axios from 'axios';
 
 export interface PostMeta {
   upstream: string;
   title: string;
-  content: string | null;
+  content?: string;
 }
 
 export const getAllPostIds = async () => {
@@ -31,7 +32,8 @@ export const readPostId = async (id: string) => {
 
   const matterResult = matter(fileContents);
 
-  const contents = matterResult.content;
+  const contents =
+    (matterResult.data.content as string) || matterResult.content;
 
   const htmlContents = await remark()
     .use(html)
