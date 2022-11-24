@@ -11,21 +11,20 @@
     "start": "astro dev"
   },
   "dependencies": {
-    "lorem-ipsum": "^2.0.8",
+    "lorem-ipsum": "2.0.8",
     "preact": "10.11.3"
   },
   "devDependencies": {
-    "@astrojs/deno": "^2.0.0",
-    "@astrojs/mdx": "^0.11.6",
+    "@astrojs/mdx": "0.11.6",
     "@astrojs/preact": "1.2.0",
-    "@astrojs/prefetch": "^0.1.1",
+    "@astrojs/prefetch": "0.1.1",
     "@astrojs/vercel": "2.3.4",
-    "@astrojs/vue": "^1.2.1",
-    "@types/node": "^18.11.9",
+    "@astrojs/vue": "1.2.1",
+    "@types/node": "18.11.9",
     "astro": "1.6.10",
     "prettier": "2.8.0",
     "prettier-plugin-astro": "0.7.0",
     "sass": "1.56.1",
-    "vue": "^3.2.45"
+    "vue": "3.2.45"
   }
 }
