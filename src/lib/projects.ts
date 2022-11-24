@@ -1,6 +1,6 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
-import * as matter from 'gray-matter';
+import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 
@@ -32,9 +32,10 @@ export const readPostId = async (id: string) => {
 
   const contents = matterResult.content;
 
-  const htmlContents = await (
-    await remark().use(html).process(contents)
-  ).toString();
+  const htmlContents = await remark()
+    .use(html)
+    .process(contents)
+    .then((x) => x.toString());
 
   return {
     project: id,
