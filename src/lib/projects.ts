@@ -32,8 +32,9 @@ export const readPostId = async (id: string) => {
 
   const matterResult = matter(fileContents);
 
-  const contents =
-    (matterResult.data.content as string) || matterResult.content;
+  const contents = matterResult.data.content
+    ? ((await axios.get(matterResult.data.content)).data as string)
+    : matterResult.content;
 
   const htmlContents = await remark()
     .use(html)
