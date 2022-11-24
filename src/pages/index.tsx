@@ -36,6 +36,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Nav />
+
       <main>
         <header className={styles.hero}>
           <div className={styles.overlay}>
@@ -50,7 +52,7 @@ const Home: NextPage = () => {
                 <a
                   key={`${emoji}-${name}-${url}`}
                   href={`https://${url}`}
-                  className="role"
+                  className={styles.role}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

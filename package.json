@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fontsource/inter": "4.5.14",
     "@giscus/react": "2.2.4",
     "gray-matter": "4.0.3",
     "next": "13.0.5",
