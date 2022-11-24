@@ -7,6 +7,7 @@ import html from 'remark-html';
 export interface PostMeta {
   upstream: string;
   title: string;
+  content: string | null;
 }
 
 export const getAllPostIds = async () => {

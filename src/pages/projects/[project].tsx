@@ -15,7 +15,7 @@ const Project: NextPage<RouteProps> = ({ project, contents, meta }) => {
   return (
     <>
       <Head>
-        <title>{`About: ${meta.title}`}</title>
+        <title>{meta.title}</title>
       </Head>
 
       <main className={styles.content}>
