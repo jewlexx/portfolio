@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { motion } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import Nav from '../components/Nav';
 import styles from '../styles/Home.module.scss';
 
@@ -29,6 +29,8 @@ const Home: NextPage = () => {
     },
   ];
 
+  const { scrollYProgress } = useScroll();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -42,34 +44,14 @@ const Home: NextPage = () => {
 
       <Nav />
 
-      <main>
-        <header className={styles.hero}>
-          <div className={styles.overlay}>
-            <h1 className={styles.title}>
-              Juliette Cordor
-              <small className={styles.subtitle}>
-                <span className={styles.pronouns}>(She/Her)</span>
-              </small>
-            </h1>
-            <div>
-              {links.map(({ emoji, name, url }) => (
-                <a
-                  key={`${emoji}-${name}-${url}`}
-                  href={`https://${url}`}
-                  className={styles.role}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {emoji} {name}
-                </a>
-              ))}
-            </div>
-          </div>
-        </header>
-      </main>
-
       {/* Downloaded from https://www.svgrepo.com/ under the CC0 license as detailed here: https://www.svgrepo.com/page/licensing */}
-      <motion.svg x="0px" y="0px" viewBox="0 0 473.931 473.931">
+      <motion.svg
+        x="0px"
+        y="0px"
+        viewBox="0 0 473.931 473.931"
+        className={styles.sun}
+        style={{ scaleX: scrollYProgress }}
+      >
         <circle
           style={{ fill: '#F2BE3E' }}
           cx="236.966"
@@ -98,6 +80,32 @@ const Home: NextPage = () => {
         <g></g>
         <g></g>
       </motion.svg>
+
+      <main>
+        <header className={styles.hero}>
+          <div className={styles.overlay}>
+            <h1 className={styles.title}>
+              Juliette Cordor
+              <small className={styles.subtitle}>
+                <span className={styles.pronouns}>(She/Her)</span>
+              </small>
+            </h1>
+            <div>
+              {links.map(({ emoji, name, url }) => (
+                <a
+                  key={`${emoji}-${name}-${url}`}
+                  href={`https://${url}`}
+                  className={styles.role}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {emoji} {name}
+                </a>
+              ))}
+            </div>
+          </div>
+        </header>
+      </main>
     </div>
   );
 };
