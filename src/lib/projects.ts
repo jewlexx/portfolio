@@ -28,7 +28,7 @@ export const getAllPostIds = async () => {
 export const readPostId = async (id: string) => {
   const fileContents = await fs.readFile(
     path.join(process.cwd(), 'src/projects', `${id}.md`),
-    'utf8',
+    'utf8'
   );
 
   const matterResult = matter(fileContents);
