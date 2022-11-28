@@ -11,7 +11,7 @@ const Nav: FunctionComponent = () => {
         <Image
           alt="Personal Profile Picture"
           className={styles.monogram}
-          src="/pfp.jpg"
+          src="/assets/pfp.jpg"
           width={128}
           height={128}
         />

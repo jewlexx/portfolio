@@ -47,6 +47,11 @@ const configuration = {
   }
 
   response.images.forEach((image) => {
+    // Only write favicon to root public dir
+    if (image.name === 'favicon.ico') {
+      fs.writeFileSync(`public/${image.name}`, image.contents);
+    }
+
     fs.writeFileSync(`public/icons/${image.name}`, image.contents);
   });
 
