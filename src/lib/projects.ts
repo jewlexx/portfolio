@@ -8,6 +8,7 @@ import axios from 'axios';
 export interface PostMeta {
   upstream: string;
   title: string;
+  description?: string;
   content?: string;
 }
 
