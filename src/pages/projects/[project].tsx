@@ -16,6 +16,13 @@ const Project: NextPage<RouteProps> = ({ project, contents, meta }) => {
     <>
       <Head>
         <title>{meta.title}</title>
+        {meta.description && (
+          <meta
+            name="description"
+            property="og:description"
+            content={meta.description}
+          />
+        )}
       </Head>
 
       <main className={styles.content}>
