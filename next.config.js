@@ -40,7 +40,7 @@ const configuration = {
 };
 
 (async () => {
-  const response = await favicons('public/assets/pfp.jpg');
+  const response = await favicons('public/assets/pfp.jpg', configuration);
 
   if (!fs.existsSync('public/icons')) {
     fs.mkdirSync('public/icons');
