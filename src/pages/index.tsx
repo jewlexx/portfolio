@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { motion, useScroll } from 'framer-motion';
 import Nav from '../components/Nav';
 import styles from '../styles/Home.module.scss';
 
@@ -29,8 +28,6 @@ const Home: NextPage = () => {
     },
   ];
 
-  const { scrollYProgress } = useScroll();
-
   return (
     <div className={styles.container}>
       <Head>
@@ -45,13 +42,7 @@ const Home: NextPage = () => {
       <Nav />
 
       {/* Downloaded from https://www.svgrepo.com/ under the CC0 license as detailed here: https://www.svgrepo.com/page/licensing */}
-      <motion.svg
-        x="0px"
-        y="0px"
-        viewBox="0 0 473.931 473.931"
-        className={styles.sun}
-        style={{ scaleX: scrollYProgress }}
-      >
+      <svg x="0px" y="0px" viewBox="0 0 473.931 473.931" className={styles.sun}>
         <circle
           style={{ fill: '#F2BE3E' }}
           cx="236.966"
@@ -79,7 +70,7 @@ const Home: NextPage = () => {
         <g></g>
         <g></g>
         <g></g>
-      </motion.svg>
+      </svg>
 
       <main>
         <header className={styles.hero}>
