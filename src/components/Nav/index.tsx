@@ -12,8 +12,8 @@ const Nav: FunctionComponent = () => {
           alt="Personal Profile Picture"
           className={styles.monogram}
           src="/assets/pfp.jpg"
-          width={128}
-          height={128}
+          width={32}
+          height={32}
         />
       </Link>
       <Link className={styles.link} href="/projects">
