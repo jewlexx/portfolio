@@ -51,7 +51,7 @@ $f-d18: 0.0877914951989026em;
 $t-bg: $black;
 $t-fg: $white;
 $t-subdue: $gray;
-$t-active: $blue;
+$t-active: lighten($gray, 20%);
 
 /* Coolors Exported Palette - https://coolors.co/dad6d6-92bfb1-f4ac45-694a38-a61c3c */
 
