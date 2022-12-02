@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaGithub, FaTwitter } from 'react-icons/fa';
+import { SiGithub, SiTwitter } from 'react-icons/si';
 
 import styles from './index.module.scss';
 
@@ -24,10 +24,10 @@ const Nav: FunctionComponent = () => {
         About
       </Link>
       <Link className={styles.social} href="https://twitter.com/jewelexx">
-        <FaTwitter className={styles.socialicon} />
+        <SiTwitter className={styles.socialicon} />
       </Link>
       <Link className={styles.social} href="https://github.com/jewlexx">
-        <FaGithub className={styles.socialicon} />
+        <SiGithub className={styles.socialicon} />
       </Link>
     </nav>
   );
