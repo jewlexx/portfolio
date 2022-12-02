@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { SiGithub, SiTwitter, SiLinktree } from 'react-icons/si';
 import Nav from '../components/Nav';
 import styles from '../styles/Home.module.scss';
+import SpringyText from '../components/SpringyText';
 
 interface Link {
   name: string;
@@ -80,7 +81,7 @@ const Home: NextPage = () => {
             <h1 className={styles.title}>
               Juliette Cordor
               <small className={styles.subtitle}>
-                <span className={styles.pronouns}>(She/Her)</span>
+                <SpringyText className={styles.pronouns}>(She/Her)</SpringyText>
               </small>
             </h1>
             <div>
