@@ -6,9 +6,9 @@ import Nav from '../components/Nav';
 import styles from '../styles/Home.module.scss';
 
 interface Link {
-  name: ReactNode;
+  name: string;
   url: string;
-  emoji: string;
+  emoji: ReactNode;
 }
 
 const Home: NextPage = () => {
