@@ -1,10 +1,12 @@
 import type { NextPage } from 'next';
+import type { ReactNode } from 'react';
 import Head from 'next/head';
+import { SiGithub, SiTwitter, SiLinktree } from 'react-icons/si';
 import Nav from '../components/Nav';
 import styles from '../styles/Home.module.scss';
 
 interface Link {
-  name: string;
+  name: ReactNode;
   url: string;
   emoji: string;
 }
@@ -12,17 +14,17 @@ interface Link {
 const Home: NextPage = () => {
   const links: Link[] = [
     {
-      emoji: '👩‍💻',
+      emoji: <SiGithub />,
       name: 'Github',
       url: 'github.com/jewlexx',
     },
     {
-      emoji: '🕊️',
+      emoji: <SiTwitter />,
       name: 'Twitter',
       url: 'twitter.com/jewelexx',
     },
     {
-      emoji: '🌲',
+      emoji: <SiLinktree />,
       name: 'Linktree',
       url: 'linktr.ee/jewelexx',
     },
