@@ -1,35 +1,22 @@
 <script>
-	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
-	import github from '$lib/images/github.svg';
+	import Fa from 'svelte-fa';
+	import { faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
 </script>
 
 <header>
-	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
-		</a>
-	</div>
-
 	<nav class="nav">
-		<a class={styles.logolink} href="/" rel="prefetch">
+		<a class="logolink" href="/" rel="prefetch">
 			<img alt="Profile" class="monogram" src="/assets/pfp.jpg" width={32} height={32} />
 		</a>
 		<a class="link" href="/projects">Portfolio</a>
 		<a class="link" href="/about">About</a>
-		<a class="social" href="https://twitter.com/jewelexx">
-			<SiTwitter class="socialicon" />
-		</a>
 		<a class="social" href="https://github.com/jewlexx">
-			<SiGithub class="socialicon" />
+			<Fa class="socialicon" icon={faGithub} />
+		</a>
+		<a class="social" href="https://www.instagram.com/juliette._.cordor/">
+			<Fa class="socialicon" icon={faInstagram} />
 		</a>
 	</nav>
-
-	<div class="corner">
-		<a href="https://github.com/sveltejs/kit">
-			<img src={github} alt="GitHub" />
-		</a>
-	</div>
 </header>
 
 <style lang="scss">
