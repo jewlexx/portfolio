@@ -1,28 +1,39 @@
-use avgcol::AverageColor;
-use neon::prelude::*;
+mod utils;
 
-/// Converts a url to an ico file to a png file
-fn convert_url(mut cx: FunctionContext) -> JsResult<JsObject> {
-    let arg = cx.argument::<JsString>(0)?;
-    let url = arg.value(&mut cx);
+use wasm_bindgen::prelude::*;
 
-    let average = smol::block_on(async move { AverageColor::from_url(url).await.unwrap() });
+// When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
+// allocator.
+#[cfg(feature = "wee_alloc")]
+#[global_allocator]
+static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
-    let result = cx.empty_object();
-
-    let colour_hex = format!("#{:02X}{:02X}{:02X}", average.0, average.1, average.2);
-
-    let is_light = cx.boolean(average.is_light());
-    let hex_string = cx.string(colour_hex);
-
-    result.set(&mut cx, "colourHex", hex_string)?;
-    result.set(&mut cx, "isLight", is_light)?;
-
-    Ok(result)
+#[wasm_bindgen]
+extern "C" {
+    fn alert(s: &str);
 }
 
-#[neon::main]
-fn main(mut cx: ModuleContext) -> NeonResult<()> {
-    cx.export_function("convertUrl", convert_url)?;
-    Ok(())
+#[wasm_bindgen]
+pub struct AverageColour {
+    pub r: u64,
+    pub g: u64,
+    pub b: u64,
+    pub is_light: bool,
+}
+
+#[wasm_bindgen]
+impl AverageColour {
+    #[wasm_bindgen(constructor)]
+    pub async fn new(url: String) -> Self {
+        let image_bytes = reqwest::get(url).await.unwrap().bytes().await.unwrap();
+
+        let average = avgcol::AverageColor::from_bytes(image_bytes).unwrap();
+
+        Self {
+            r: average.0,
+            g: average.1,
+            b: average.2,
+            is_light: average.is_light(),
+        }
+    }
 }

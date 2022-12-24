@@ -1,5 +1,6 @@
-target
-index.node
-**/node_modules
-**/.DS_Store
-npm-debug.log*
+/target
+**/*.rs.bk
+Cargo.lock
+bin/
+avgico/
+wasm-pack.log
