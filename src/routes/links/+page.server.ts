@@ -27,11 +27,14 @@ export const load = (async () => {
 			return link;
 		} else {
 			return {
-				faviconUrl: link.url.protocol + link.url.hostname + '/favicon.ico',
+				// Protocol doesn't include the "//" for some reason
+				faviconUrl: link.url.protocol + '//' + link.url.hostname + '/favicon.ico',
 				...link
 			};
 		}
 	});
+
+	console.log(links.map((x) => x.faviconUrl));
 
 	const colouredLinks: ColouredLink[] = await Promise.all(
 		links.map((link) => {
