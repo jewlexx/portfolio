@@ -1,4 +1,4 @@
-import { FastAverageColor, type FastAverageColorResult } from 'fast-average-color';
+import { getAverageColor } from 'fast-average-color-node';
 
 import type { PageServerLoad } from './$types';
 
@@ -9,12 +9,11 @@ interface Link {
 }
 
 interface ColouredLink extends Link {
-	colour: FastAverageColorResult;
+	// Hex string
+	colour: string;
 }
 
 export const load = (async () => {
-	const fac = new FastAverageColor();
-
 	const linksNoFavicon: Link[] = [
 		{
 			name: 'Twitch',
@@ -37,10 +36,10 @@ export const load = (async () => {
 	const colouredLinks: ColouredLink[] = await Promise.all(
 		links.map((link) => {
 			return (async () => {
-				const colour = await fac.getColorAsync(link.url.toString());
+				const colour = await getAverageColor(link.url.toString());
 
 				return {
-					colour: colour,
+					colour: colour.hex,
 					...link
 				};
 			})();
