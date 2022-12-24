@@ -1,8 +1,11 @@
 <script lang="ts">
+	import type { PageData } from './$types';
+
+	export let data: PageData;
 </script>
 
 <ul>
-	{#each links as link}
+	{#each data.links as link}
 		<li>
 			<img src={link.faviconUrl} alt={link.name} /><a
 				target="_blank"

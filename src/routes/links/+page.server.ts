@@ -12,7 +12,7 @@ interface ColouredLink extends Link {
 	colour: FastAverageColorResult;
 }
 
-export const load = (async ({ params }) => {
+export const load = (async () => {
 	const fac = new FastAverageColor();
 
 	const linksNoFavicon: Link[] = [
