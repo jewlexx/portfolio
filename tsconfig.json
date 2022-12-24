@@ -10,11 +10,11 @@
 		"sourceMap": true,
 		"strict": true,
 		"paths": {
-			"@": [
-				"src",
-			],
-			"@lib": [
+			"$lib": [
 				"src/lib"
+			],
+			"$lib/*": [
+				"src/lib/*"
 			]
 		}
 	}

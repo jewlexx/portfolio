@@ -18,8 +18,7 @@
 		"@fortawesome/free-solid-svg-icons": "^6.2.1",
 		"fast-average-color": "^9.2.0",
 		"fast-average-color-node": "^2.4.0",
-		"svelte-fa": "^3.0.3",
-		"svelte-image": "0.2.9"
+		"svelte-fa": "^3.0.3"
 	},
 	"devDependencies": {
 		"@fontsource/fira-mono": "^4.5.10",

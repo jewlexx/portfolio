@@ -1,13 +1,13 @@
 <script>
 	import Fa from 'svelte-fa';
-	import Image from 'svelte-image';
 	import { faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
+	import ProfilePicture from '$lib/images/pfp.jpg';
 </script>
 
 <header>
 	<nav class="nav">
 		<a class="logolink" href="/" rel="prefetch">
-			<Image alt="Profile" class="monogram" src="/assets/pfp.jpg" width={32} height={32} />
+			<img alt="Profile" class="monogram" src={ProfilePicture} width={32} height={32} />
 		</a>
 		<a class="link" href="/projects">Portfolio</a>
 		<a class="link" href="/about">About</a>
@@ -76,15 +76,4 @@
 			margin-left: 0.75rem;
 		}
 	}
-
-	/* .socialicon {
-		display: block;
-		width: 1.25rem;
-		height: 1.25rem;
-		fill: $t-subdue;
-		transition: fill linear 150ms;
-		&:hover {
-			fill: $t-active;
-		}
-	} */
 </style>
