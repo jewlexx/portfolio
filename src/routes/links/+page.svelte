@@ -1,28 +1,4 @@
 <script lang="ts">
-	interface Link {
-		name: string;
-		url: URL;
-		faviconUrl?: string;
-	}
-
-	const linksNoFavicon: Link[] = [
-		{
-			name: 'Twitch',
-			url: new URL('https://twitch.tv/sapphicjewl')
-		}
-	];
-
-	// Get the favicon url from the link
-	const links = linksNoFavicon.map((link) => {
-		if (link.faviconUrl) {
-			return link;
-		} else {
-			return {
-				faviconUrl: link.url.protocol + link.url.hostname + '/favicon.ico',
-				...link
-			};
-		}
-	});
 </script>
 
 <ul>
@@ -36,3 +12,12 @@
 		</li>
 	{/each}
 </ul>
+
+<style lang="scss">
+	li {
+		list-style: none;
+		background-color: red;
+		border-radius: 2rem;
+		padding: 1rem;
+	}
+</style>
