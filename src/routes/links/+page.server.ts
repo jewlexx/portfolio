@@ -1,4 +1,4 @@
-import { getAverageColor } from 'fast-average-color-node';
+import { convertUrl } from 'icopng';
 
 import type { PageServerLoad } from './$types';
 
@@ -39,10 +39,10 @@ export const load = (async () => {
 	const colouredLinks: ColouredLink[] = await Promise.all(
 		links.map((link) => {
 			return (async () => {
-				const colour = await getAverageColor(link.url.toString());
+				const colour = convertUrl(link.url.toString());
 
 				return {
-					colour: colour.hex,
+					colour: colour.colourHex,
 					...link
 				};
 			})();
