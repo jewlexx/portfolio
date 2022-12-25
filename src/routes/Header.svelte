@@ -12,7 +12,7 @@
 		<!-- <a class="link" href="/projects">Portfolio</a>
 		<a class="link" href="/about">About</a> -->
 		{#each links as link}
-			<a class="social" href={link.url.toString()}>
+			<a class="social" href={link.url}>
 				<Icon class="socialicon" icon={link.emoji} />
 			</a>
 		{/each}

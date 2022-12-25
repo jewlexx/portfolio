@@ -16,21 +16,21 @@ export const links: Link[] = [
 	{
 		emoji: faGithub,
 		name: 'Github',
-		url: 'github.com/jewlexx'
+		url: 'https://github.com/jewlexx'
 	},
 	{
 		emoji: faTwitch,
 		name: 'Twitch',
-		url: 'twitch.tv/sapphicjewl'
+		url: 'https://twitch.tv/sapphicjewl'
 	},
 	{
 		emoji: faTwitter,
 		name: 'Twitter',
-		url: 'twitter.com/jewelexx'
+		url: 'https://twitter.com/jewelexx'
 	},
 	{
 		emoji: faTree,
 		name: 'Linktree',
-		url: 'linktr.ee/jewelexx'
+		url: 'https://linktr.ee/jewelexx'
 	}
 ];
