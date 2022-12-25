@@ -6,12 +6,6 @@ const config = {
 	plugins: [sveltekit()],
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
-	},
-	resolve: {
-		alias: {
-			'@': path.resolve(__dirname, 'src'),
-			'@lib': path.resolve(__dirname, 'src/lib')
-		}
 	}
 };
 

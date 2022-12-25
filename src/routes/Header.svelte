@@ -21,7 +21,7 @@
 </header>
 
 <style lang="scss">
-	@import '@lib/styles/palette.scss';
+	@import '$lib/styles/palette.scss';
 
 	.nav {
 		background-color: lighten($dark-gray, 10%);
