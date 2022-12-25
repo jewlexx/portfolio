@@ -9,8 +9,8 @@
 		<a class="logolink" href="/" rel="prefetch">
 			<img alt="Profile" class="monogram" src={ProfilePicture} width={32} height={32} />
 		</a>
-		<a class="link" href="/projects">Portfolio</a>
-		<a class="link" href="/about">About</a>
+		<!-- <a class="link" href="/projects">Portfolio</a>
+		<a class="link" href="/about">About</a> -->
 		<a class="social" href="https://github.com/jewlexx">
 			<Fa class="socialicon" icon={faGithub} />
 		</a>
