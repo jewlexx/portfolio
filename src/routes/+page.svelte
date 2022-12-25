@@ -57,7 +57,12 @@
 				</h1>
 				<div>
 					{#each links as { emoji, name, url }}
-						<a href={`https://${url}`} class="role" target="_blank" rel="noopener noreferrer">
+						<a
+							href={`https://${url}`}
+							target="_blank"
+							rel="noopener noreferrer"
+							class={`role ${true ? 'motion' : ''}`}
+						>
 							<Icon icon={emoji} />
 							{name}
 						</a>
@@ -133,14 +138,21 @@
 		background-color: $t-fg;
 		padding: 0.25em 0.5em;
 		z-index: 2;
+
 		@media (min-width: $w-s) {
 			font-size: $f-u3;
 		}
+
 		+ .role {
 			margin-left: 1em;
 		}
-		transition: color 0.2s ease-in-out;
-		transition: background-color 0.2s ease-in-out;
+
+		// Only enable motion if the user has no preference
+		@media (prefers-reduced-motion: no-preference) {
+			transition: color 0.2s ease-in-out;
+			transition: background-color 0.2s ease-in-out;
+		}
+
 		&:hover {
 			color: $t-fg;
 			&:nth-of-type(1) {
