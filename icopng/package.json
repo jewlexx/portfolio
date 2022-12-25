@@ -1,8 +1,0 @@
-{
-    "scripts": {
-        "install": "wasm-pack build -t nodejs --out-dir avgico"
-    },
-    "volta": {
-        "node": "18.12.1"
-    }
-}
