@@ -1,7 +1,7 @@
 <script>
-	import Fa from 'svelte-fa';
-	import { faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
+	import Icon from 'svelte-fa';
 	import ProfilePicture from '$lib/images/pfp-128.avif';
+	import { links } from '$lib/links';
 </script>
 
 <header>
@@ -11,12 +11,11 @@
 		</a>
 		<!-- <a class="link" href="/projects">Portfolio</a>
 		<a class="link" href="/about">About</a> -->
-		<a class="social" href="https://github.com/jewlexx">
-			<Fa class="socialicon" icon={faGithub} />
-		</a>
-		<a class="social" href="https://www.instagram.com/juliette._.cordor/">
-			<Fa class="socialicon" icon={faInstagram} />
-		</a>
+		{#each links as link}
+			<a class="social" href={link.url}>
+				<Icon class="socialicon" icon={link.emoji} />
+			</a>
+		{/each}
 	</nav>
 </header>
 
@@ -71,6 +70,14 @@
 	.social {
 		display: block;
 		margin-left: auto;
+
+		@media (prefers-reduced-motion: no-preference) {
+			transition: font-size 50ms;
+		}
+
+		&:hover {
+			font-size: $f-u1;
+		}
 
 		+ .social {
 			margin-left: 0.75rem;

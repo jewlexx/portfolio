@@ -1,41 +1,6 @@
 <script lang="ts">
 	import Icon from 'svelte-fa';
-	import {
-		type IconDefinition,
-		faGithub,
-		faTwitch,
-		faTwitter
-	} from '@fortawesome/free-brands-svg-icons';
-	import { faTree } from '@fortawesome/free-solid-svg-icons';
-
-	interface Link {
-		name: string;
-		url: string;
-		emoji: IconDefinition;
-	}
-
-	const links: Link[] = [
-		{
-			emoji: faGithub,
-			name: 'Github',
-			url: 'github.com/jewlexx'
-		},
-		{
-			emoji: faTwitch,
-			name: 'Twitch',
-			url: 'twitch.tv/sapphicjewl'
-		},
-		{
-			emoji: faTwitter,
-			name: 'Twitter',
-			url: 'twitter.com/jewelexx'
-		},
-		{
-			emoji: faTree,
-			name: 'Linktree',
-			url: 'linktr.ee/jewelexx'
-		}
-	];
+	import { links } from '$lib/links';
 </script>
 
 <svelte:head>
