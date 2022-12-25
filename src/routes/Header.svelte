@@ -1,7 +1,7 @@
 <script>
 	import Fa from 'svelte-fa';
 	import { faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
-	import ProfilePicture from '$lib/images/pfp.jpg';
+	import ProfilePicture from '$lib/images/pfp-128.avif';
 </script>
 
 <header>
