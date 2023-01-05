@@ -1,35 +1,32 @@
-import {
-	type IconDefinition,
-	faGithub,
-	faTwitch,
-	faTwitter
-} from '@fortawesome/free-brands-svg-icons';
-import { faTree } from '@fortawesome/free-solid-svg-icons';
+import brandGithub from './images/icons/icons/brand-github.svg';
+import brandTwitch from './images/icons/icons/brand-twitch.svg';
+import brandTwitter from './images/icons/icons/brand-twitter.svg';
+import brandLinktree from './images/icons/icons/brand-linktree.svg';
 
 export interface Link {
 	name: string;
 	url: string;
-	emoji: IconDefinition;
+	emoji: string;
 }
 
 export const links: Link[] = [
 	{
-		emoji: faGithub,
+		emoji: brandGithub,
 		name: 'Github',
 		url: 'https://github.com/jewlexx'
 	},
 	{
-		emoji: faTwitch,
+		emoji: brandTwitch,
 		name: 'Twitch',
 		url: 'https://twitch.tv/sapphicjewl'
 	},
 	{
-		emoji: faTwitter,
+		emoji: brandTwitter,
 		name: 'Twitter',
 		url: 'https://twitter.com/jewelexx'
 	},
 	{
-		emoji: faTree,
+		emoji: brandLinktree,
 		name: 'Linktree',
 		url: 'https://linktr.ee/jewelexx'
 	}

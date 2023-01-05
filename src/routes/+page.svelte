@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Icon from 'svelte-fa';
 	import { links } from '$lib/links';
 </script>
 
@@ -12,31 +11,26 @@
 	/>
 </svelte:head>
 
-<div class="container">
-	<main>
-		<header class="hero">
-			<div class="overlay">
-				<h1 class="title">
-					Juliette Cordor
-					<small class="pronouns"> (She/Her) </small>
-				</h1>
-				<div>
-					{#each links as { emoji, name, url }}
-						<a
-							href={`https://${url}`}
-							target="_blank"
-							rel="noopener noreferrer"
-							class={`role ${true ? 'motion' : ''}`}
-						>
-							<Icon icon={emoji} />
-							{name}
-						</a>
-					{/each}
-				</div>
-			</div>
-		</header>
-	</main>
-</div>
+<header class="hero">
+	<div class="overlay">
+		<h1 class="title">
+			Juliette Cordor
+			<small class="pronouns"> (She/Her) </small>
+		</h1>
+		<div>
+			{#each links as { emoji, name, url }}
+				<a
+					href={`https://${url}`}
+					target="_blank"
+					rel="noopener noreferrer"
+					class={`role ${true ? 'motion' : ''}`}
+				>
+					<img src={emoji} alt={name} />
+				</a>
+			{/each}
+		</div>
+	</div>
+</header>
 
 <style lang="scss">
 	@import '$lib/styles/palette.scss';
@@ -60,13 +54,6 @@
 		}
 	}
 
-	.container {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		// align-items: center;
-	}
-
 	.overlay {
 		position: absolute;
 		top: 0;
@@ -87,9 +74,10 @@
 	.title {
 		font-weight: 900;
 		font-size: $f-u8;
-		margin-bottom: 0.5rem;
+		margin-bottom: 1rem;
 		margin-top: 0;
-		@media (min-width: $w-s) {
+
+		@media (min-width: 1024px) {
 			font-size: $f-u12;
 		}
 	}
@@ -103,13 +91,14 @@
 		background-color: $t-fg;
 		padding: 0.25em 0.5em;
 		z-index: 2;
+		border-radius: 0.25rem;
 
 		@media (min-width: $w-s) {
 			font-size: $f-u3;
 		}
 
 		+ .role {
-			margin-left: 1em;
+			margin-left: 0.5em;
 		}
 
 		// Only enable motion if the user has no preference
@@ -120,15 +109,24 @@
 
 		&:hover {
 			color: $t-fg;
+
+			img {
+				// Invert the icon, making the black icon white
+				filter: invert(100%);
+			}
+
 			&:nth-of-type(1) {
 				background-color: $black;
 			}
+
 			&:nth-of-type(2) {
 				background-color: $purple;
 			}
+
 			&:nth-of-type(3) {
 				background-color: $blue;
 			}
+
 			&:nth-of-type(4) {
 				background-color: $green;
 			}
