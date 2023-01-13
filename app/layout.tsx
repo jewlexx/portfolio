@@ -6,6 +6,8 @@ import {
   IconBrandTwitch,
   IconBrandTwitter,
   IconBrandLinktree,
+  IconHeadphones,
+  IconHeadphonesOff,
 } from '@tabler/icons';
 import Image from 'next/image';
 import useSound from 'use-sound';
@@ -85,6 +87,14 @@ export default function RootLayout({
                   <link.emoji className={styles.socialicon} />
                 </a>
               ))}
+              <a
+                className={styles.social}
+                onMouseEnter={() => clickIn()}
+                onMouseDown={() => clickOut()}
+                onClick={() => setSoundEnabled((enabled) => !enabled)}
+              >
+                {soundEnabled ? <IconHeadphones /> : <IconHeadphonesOff />}
+              </a>
             </>
           </nav>
         </header>
