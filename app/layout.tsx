@@ -1,3 +1,5 @@
+'use client';
+
 import {
   type TablerIcon,
   IconBrandGithub,
@@ -6,7 +8,8 @@ import {
   IconBrandLinktree,
 } from '@tabler/icons';
 import Image from 'next/image';
-import pfp from '../public/pfp.avif';
+import useSound from 'use-sound';
+import pfp from './assets/pfp.avif';
 import styles from './layout.module.scss';
 import './globals.css';
 
@@ -44,6 +47,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [clickIn] = useSound('/audio/click-in.mp3');
+  const [clickOut] = useSound('/audio/click-out.mp3');
+
   return (
     <html lang="en">
       <head />
@@ -63,7 +69,13 @@ export default function RootLayout({
               {/* <a class="link" href="/projects">Portfolio</a>
 		<a class="link" href="/about">About</a> */}
               {links.map((link) => (
-                <a className={styles.social} href={link.url} key={link.name}>
+                <a
+                  className={styles.social}
+                  href={link.url}
+                  key={link.name}
+                  onMouseEnter={() => clickIn()}
+                  onMouseLeave={() => clickOut()}
+                >
                   <link.emoji className={styles.socialicon} />
                 </a>
               ))}
