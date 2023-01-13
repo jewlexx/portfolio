@@ -9,9 +9,12 @@ import {
 } from '@tabler/icons';
 import Image from 'next/image';
 import useSound from 'use-sound';
+import createPersistedState from 'use-persisted-state';
 import pfp from './assets/pfp.avif';
 import styles from './layout.module.scss';
 import './globals.css';
+
+const useAudioEnabled = createPersistedState<boolean>('sound-enabled');
 
 interface Link {
   name: string;
@@ -47,8 +50,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [clickIn] = useSound('/audio/click-in.mp3');
-  const [clickOut] = useSound('/audio/click-out.mp3');
+  const [soundEnabled, setSoundEnabled] = useAudioEnabled(true);
+
+  const [clickIn] = useSound('/audio/click-in.mp3', { soundEnabled });
+  const [clickOut] = useSound('/audio/click-out.mp3', { soundEnabled });
 
   return (
     <html lang="en">
@@ -61,6 +66,7 @@ export default function RootLayout({
                 <Image
                   alt="Profile"
                   className={styles.monogram}
+                  priority
                   src={pfp}
                   width={32}
                   height={32}
@@ -74,7 +80,7 @@ export default function RootLayout({
                   href={link.url}
                   key={link.name}
                   onMouseEnter={() => clickIn()}
-                  onMouseLeave={() => clickOut()}
+                  onMouseDown={() => clickOut()}
                 >
                   <link.emoji className={styles.socialicon} />
                 </a>
