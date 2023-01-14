@@ -5,7 +5,7 @@ import Image from 'next/image';
 import createPersistedState from 'use-persisted-state';
 import useSound from 'use-sound';
 import links from './links';
-import pfp from './assets/pfp.avif';
+import pfp from '$static/pfp.jpg';
 import styles from './Header.module.scss';
 
 const useAudioEnabled = createPersistedState<boolean>('sound-enabled');
