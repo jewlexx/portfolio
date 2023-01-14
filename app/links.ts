@@ -12,7 +12,7 @@ export interface Link {
   emoji: TablerIcon;
 }
 
-export const links: Link[] = [
+const links: Link[] = [
   {
     emoji: IconBrandGithub,
     name: 'Github',
@@ -34,3 +34,5 @@ export const links: Link[] = [
     url: 'https://linktr.ee/jewelexx',
   },
 ];
+
+export default links;

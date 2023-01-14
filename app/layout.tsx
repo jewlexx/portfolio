@@ -1,17 +1,14 @@
 'use client';
 
-import {
-  IconHeadphones,
-  IconHeadphonesOff,
-} from '@tabler/icons';
+import { IconHeadphones, IconHeadphonesOff } from '@tabler/icons';
 import Image from 'next/image';
 import { Roboto } from '@next/font/google';
 import useSound from 'use-sound';
 import createPersistedState from 'use-persisted-state';
-import links from './links.ts'
+import links from './links';
 import pfp from './assets/pfp.avif';
 import styles from './layout.module.scss';
-import './globals.css';
+import './globals.scss';
 
 const useAudioEnabled = createPersistedState<boolean>('sound-enabled');
 
@@ -68,7 +65,7 @@ export default function RootLayout({
             </>
           </nav>
         </header>
-        <div className={styles.app}>{children}</div>
+        <div className={`${styles.app} ${roboto.className}`}>{children}</div>
       </body>
     </html>
   );
