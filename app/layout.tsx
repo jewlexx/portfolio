@@ -1,51 +1,21 @@
 'use client';
 
 import {
-  type TablerIcon,
-  IconBrandGithub,
-  IconBrandTwitch,
-  IconBrandTwitter,
-  IconBrandLinktree,
   IconHeadphones,
   IconHeadphonesOff,
 } from '@tabler/icons';
 import Image from 'next/image';
+import { Roboto } from '@next/font/google';
 import useSound from 'use-sound';
 import createPersistedState from 'use-persisted-state';
+import links from './links.ts'
 import pfp from './assets/pfp.avif';
 import styles from './layout.module.scss';
 import './globals.css';
 
 const useAudioEnabled = createPersistedState<boolean>('sound-enabled');
 
-interface Link {
-  name: string;
-  url: string;
-  emoji: TablerIcon;
-}
-
-const links: Link[] = [
-  {
-    emoji: IconBrandGithub,
-    name: 'Github',
-    url: 'https://github.com/jewlexx',
-  },
-  {
-    emoji: IconBrandTwitch,
-    name: 'Twitch',
-    url: 'https://twitch.tv/sapphicjewl',
-  },
-  {
-    emoji: IconBrandTwitter,
-    name: 'Twitter',
-    url: 'https://twitter.com/jewelexx',
-  },
-  {
-    emoji: IconBrandLinktree,
-    name: 'Linktree',
-    url: 'https://linktr.ee/jewelexx',
-  },
-];
+const roboto = Roboto({ weight: '400', subsets: ['latin'] });
 
 export default function RootLayout({
   children,

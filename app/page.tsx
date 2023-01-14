@@ -1,19 +1,17 @@
 import Image from 'next/image';
-import { Inter } from '@next/font/google';
+import { Roboto } from '@next/font/google';
 import styles from './page.module.css';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (<main className={styles.main}>
-    <header class="hero">
-	<div class="overlay">
-		<h1 class="title">
+	  <header className={ styles.hero}>
+	<div className={styles.overlay}>
+			  <h1 className={styles.title}>
 			Juliette Cordor
-			<small class="pronouns"> (She/Her) </small>
+			<small className={styles.pronouns}> (She/Her) </small>
 		</h1>
         <div>
-			{#each links as { emoji, name, url }}
+			{links.map({ emoji, name, url } => (
 				<a
 					href={`https://${url}`}
 					target="_blank"
@@ -21,8 +19,8 @@ export default function Home() {
 					class={`role ${true ? 'motion' : ''}`}
 				>
 					<img src={emoji} alt={name} />
-				</a>
-			{/each}
+				</a>))
+			}
 		</div>
 	</div>
 </header>
