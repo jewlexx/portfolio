@@ -25,6 +25,7 @@ export default function Header() {
               alt="Profile"
               className={styles.monogram}
               priority
+              quality={1}
               src={pfp}
               width={32}
               height={32}
