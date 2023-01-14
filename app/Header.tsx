@@ -34,6 +34,7 @@ export default function Header() {
 		<a class="link" href="/about">About</a> */}
           {links.map((link) => (
             <a
+              title={`${link.name} link`}
               className={styles.social}
               href={link.url}
               key={link.name}
@@ -44,6 +45,7 @@ export default function Header() {
             </a>
           ))}
           <button
+            title="Toggle Sound"
             className={styles.audioToggle}
             onMouseEnter={() => clickIn()}
             onClick={() => setSoundEnabled((enabled) => !enabled)}
