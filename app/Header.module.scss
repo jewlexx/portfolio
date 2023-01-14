@@ -64,7 +64,9 @@
   }
 }
 
-.social button {
+.audioToggle {
+  @extend .social;
+
   background: none;
   border: none;
 }

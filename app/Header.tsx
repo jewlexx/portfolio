@@ -43,14 +43,13 @@ export default function Header() {
               <link.emoji className={styles.socialicon} />
             </a>
           ))}
-          <a
-            className={styles.social}
+          <button
+            className={styles.audioToggle}
             onMouseEnter={() => clickIn()}
-            onMouseDown={() => clickOut()}
             onClick={() => setSoundEnabled((enabled) => !enabled)}
           >
             {soundEnabled ? <IconHeadphones /> : <IconHeadphonesOff />}
-          </a>
+          </button>
         </>
       </nav>
     </header>

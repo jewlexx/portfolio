@@ -9,6 +9,7 @@ specifiers:
   '@types/use-persisted-state': 0.3.1
   eslint: 8.31.0
   eslint-config-next: 13.1.2
+  eslint-plugin-jsx-a11y: 6.7.1
   next: 13.1.2
   prettier: ^2.8.3
   react: 18.2.0
@@ -35,6 +36,7 @@ devDependencies:
   '@types/use-persisted-state': 0.3.1
   eslint: 8.31.0
   eslint-config-next: 13.1.2_iukboom6ndih5an6iafl45j2fe
+  eslint-plugin-jsx-a11y: 6.7.1_eslint@8.31.0
   prettier: 2.8.3
   sass: 1.57.1
 

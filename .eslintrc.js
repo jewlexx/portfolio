@@ -1,0 +1,4 @@
+module.exports = {
+  extends: ['next/core-web-vitals', 'plugin:jsx-a11y/strict'],
+  plugins: ['jsx-a11y'],
+};
