@@ -1,4 +1,4 @@
-import brandGithub from './images/icons/icons/brand-github.svg';
+import brandGithub from '$icons/brand-github.svg';
 import brandTwitch from '$icons/brand-twitch.svg';
 import brandTwitter from '$icons/brand-twitter.svg';
 import brandLinktree from '$icons/brand-linktree.svg';
