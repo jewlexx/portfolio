@@ -1,7 +1,7 @@
 import brandGithub from './images/icons/icons/brand-github.svg';
-import brandTwitch from './images/icons/icons/brand-twitch.svg';
-import brandTwitter from './images/icons/icons/brand-twitter.svg';
-import brandLinktree from './images/icons/icons/brand-linktree.svg';
+import brandTwitch from '$icons/brand-twitch.svg';
+import brandTwitter from '$icons/brand-twitter.svg';
+import brandLinktree from '$icons/brand-linktree.svg';
 
 export interface Link {
 	name: string;

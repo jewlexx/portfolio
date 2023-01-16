@@ -18,6 +18,12 @@
 			],
 			"$static/*": [
 				"static/*"
+			],
+			"$components/*": [
+				"src/components/*"
+			],
+			"$icons/*": [
+				"static/images/icons/icons"
 			]
 		}
 	}
