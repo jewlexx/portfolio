@@ -55,7 +55,7 @@ export default function Header() {
     <header className={styles.header}>
       <nav className={styles.nav}>
         <>
-          <a className={styles.logolink} href="/" rel="prefetch">
+          <Link className={styles.logolink} href="/" rel="prefetch">
             <Image
               alt="Profile"
               className={styles.monogram}
@@ -65,7 +65,7 @@ export default function Header() {
               width={32}
               height={32}
             />
-          </a>
+          </Link>
           {/* <a class="link" href="/projects">Portfolio</a>
 		<a class="link" href="/about">About</a> */}
           <Link
