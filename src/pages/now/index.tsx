@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import styles from './page.module.scss';
+import styles from '../../styles/now.module.scss';
 
 export default function Home() {
   const [time, setTime] = useState(0);
