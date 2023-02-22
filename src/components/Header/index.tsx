@@ -1,16 +1,48 @@
-'use client';
-
 import { IconHeadphones, IconHeadphonesOff } from '@tabler/icons';
 import Image from 'next/image';
 import createPersistedState from 'use-persisted-state';
 import useSound from 'use-sound';
-import links from './links';
-import pfp from '$static/pfp.jpg';
-import styles from './Header.module.scss';
+import {
+  type TablerIcon,
+  IconBrandGithub,
+  IconBrandTwitch,
+  IconBrandTwitter,
+  IconBrandLinktree,
+} from '@tabler/icons';
+import styles from './index.module.scss';
+
+interface Link {
+  name: string;
+  url: string;
+  emoji: TablerIcon;
+}
 
 const useAudioEnabled = createPersistedState<boolean>('sound-enabled');
 
 export default function Header() {
+  const links: Link[] = [
+    {
+      emoji: IconBrandGithub,
+      name: 'Github',
+      url: 'https://github.com/jewlexx',
+    },
+    {
+      emoji: IconBrandTwitch,
+      name: 'Twitch',
+      url: 'https://twitch.tv/sapphicjewl',
+    },
+    {
+      emoji: IconBrandTwitter,
+      name: 'Twitter',
+      url: 'https://twitter.com/jewelexx',
+    },
+    {
+      emoji: IconBrandLinktree,
+      name: 'Linktree',
+      url: 'https://linktr.ee/jewelexx',
+    },
+  ];
+
   const [soundEnabled, setSoundEnabled] = useAudioEnabled(true);
 
   const [clickIn] = useSound('/audio/click-in.mp3', { soundEnabled });
@@ -26,7 +58,7 @@ export default function Header() {
               className={styles.monogram}
               priority
               quality={1}
-              src={pfp}
+              src="/pfp.jpg"
               width={32}
               height={32}
             />
