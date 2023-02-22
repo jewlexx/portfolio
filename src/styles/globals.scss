@@ -83,7 +83,9 @@ html,
 body {
   min-width: 100%;
   min-height: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {

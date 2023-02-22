@@ -50,7 +50,7 @@ export default function Header() {
   const [clickOut] = useSound('/audio/click-out.mp3', { soundEnabled });
 
   return (
-    <header>
+    <header className={styles.header}>
       <nav className={styles.nav}>
         <>
           <a className={styles.logolink} href="/" rel="prefetch">
