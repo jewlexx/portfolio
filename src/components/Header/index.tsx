@@ -91,7 +91,7 @@ export default function Header() {
             href={link.url}
             key={link.name}
             rel={link.rel}
-            onMouseEnter={() => clickIn}
+            onMouseEnter={() => clickIn()}
             onMouseDown={() => clickOut()}
           >
             <link.emoji className={styles.socialicon} />
