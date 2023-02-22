@@ -4,11 +4,16 @@ import { Roboto } from '@next/font/google';
 import Header from '../components/Header';
 import '../styles/globals.scss';
 
-const roboto = Roboto({ weight: '400', subsets: ['latin'] });
+const roboto = Roboto({ weight: '400', preload: true, subsets: ['latin'] });
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <main className={roboto.className}>
+    <>
+      <style jsx global>{`
+        html {
+          font-family: ${roboto.style.fontFamily};
+        }
+      `}</style>
       <Head>
         <title>Juliette Cordor</title>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -20,6 +25,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <Header />
       <Component {...pageProps} />
-    </main>
+    </>
   );
 }

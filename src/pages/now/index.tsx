@@ -16,9 +16,9 @@ export default function Home() {
   }, []);
 
   return (
-    <main className={styles.main}>
-      <h1>{time} </h1>
+    <div className={styles.main}>
+      <h1>{time}</h1>
       <p>seconds since 01/01/1970 (UTC)</p>
-    </main>
+    </div>
   );
 }
