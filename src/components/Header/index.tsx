@@ -1,20 +1,23 @@
-import { IconHeadphones, IconHeadphonesOff } from '@tabler/icons';
 import Image from 'next/image';
+import Link from 'next/link';
 import createPersistedState from 'use-persisted-state';
 import useSound from 'use-sound';
 import {
-  type TablerIcon,
+  type Icon,
+  IconClock,
   IconBrandGithub,
   IconBrandTwitch,
   IconBrandTwitter,
   IconBrandLinktree,
-} from '@tabler/icons';
+  IconHeadphones,
+  IconHeadphonesOff,
+} from '@tabler/icons-react';
 import styles from './index.module.scss';
 
 interface Link {
   name: string;
   url: string;
-  emoji: TablerIcon;
+  emoji: Icon;
 }
 
 const useAudioEnabled = createPersistedState<boolean>('sound-enabled');
@@ -49,10 +52,10 @@ export default function Header() {
   const [clickOut] = useSound('/audio/click-out.mp3', { soundEnabled });
 
   return (
-    <header>
+    <header className={styles.header}>
       <nav className={styles.nav}>
         <>
-          <a className={styles.logolink} href="/" rel="prefetch">
+          <Link className={styles.logolink} href="/" rel="prefetch">
             <Image
               alt="Profile"
               className={styles.monogram}
@@ -62,9 +65,18 @@ export default function Header() {
               width={32}
               height={32}
             />
-          </a>
+          </Link>
           {/* <a class="link" href="/projects">Portfolio</a>
 		<a class="link" href="/about">About</a> */}
+          <Link
+            title="Clock link"
+            className={styles.social}
+            href="/now"
+            onMouseEnter={() => clickIn()}
+            onMouseDown={() => clickOut()}
+          >
+            <IconClock />
+          </Link>
           {links.map((link) => (
             <a
               title={`${link.name} link`}
