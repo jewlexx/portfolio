@@ -1,8 +1,10 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import createPersistedState from 'use-persisted-state';
 import useSound from 'use-sound';
 import {
   type Icon,
+  IconClock,
   IconBrandGithub,
   IconBrandTwitch,
   IconBrandTwitter,
@@ -66,6 +68,15 @@ export default function Header() {
           </a>
           {/* <a class="link" href="/projects">Portfolio</a>
 		<a class="link" href="/about">About</a> */}
+          <Link
+            title="Clock link"
+            className={styles.social}
+            href="/now"
+            onMouseEnter={() => clickIn()}
+            onMouseDown={() => clickOut()}
+          >
+            <IconClock />
+          </Link>
           {links.map((link) => (
             <a
               title={`${link.name} link`}
