@@ -1,20 +1,21 @@
-import { IconHeadphones, IconHeadphonesOff } from '@tabler/icons';
 import Image from 'next/image';
 import createPersistedState from 'use-persisted-state';
 import useSound from 'use-sound';
 import {
-  type TablerIcon,
+  type Icon,
   IconBrandGithub,
   IconBrandTwitch,
   IconBrandTwitter,
   IconBrandLinktree,
-} from '@tabler/icons';
+  IconHeadphones,
+  IconHeadphonesOff,
+} from '@tabler/icons-react';
 import styles from './index.module.scss';
 
 interface Link {
   name: string;
   url: string;
-  emoji: TablerIcon;
+  emoji: Icon;
 }
 
 const useAudioEnabled = createPersistedState<boolean>('sound-enabled');
