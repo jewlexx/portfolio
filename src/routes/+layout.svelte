@@ -9,18 +9,7 @@
 <div class="flex flex-col min-h-full">
 	<Header />
 
-	<main>
+	<main class="flex flex-col box-border mx-0 my-auto w-screen h-[90vh]">
 		<slot />
 	</main>
 </div>
-
-<style>
-	main {
-		display: flex;
-		flex-direction: column;
-		width: 100vw;
-		height: 90vh;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-</style>
