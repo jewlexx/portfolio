@@ -19,8 +19,6 @@
 <style lang="scss">
 	@import '$lib/styles/palette.scss';
 
-	$w-s: 750px;
-
 	.pronouns {
 		color: $cambridge-blue;
 
@@ -63,57 +61,6 @@
 
 		@media (min-width: 1024px) {
 			font-size: $f-u12;
-		}
-	}
-
-	.role {
-		text-decoration: none;
-		position: relative;
-		display: inline-block;
-		font-weight: 900;
-		color: $t-bg;
-		background-color: $t-fg;
-		padding: 0.25em 0.5em;
-		z-index: 2;
-		border-radius: 0.25rem;
-
-		@media (min-width: $w-s) {
-			font-size: $f-u3;
-		}
-
-		+ .role {
-			margin-left: 0.5em;
-		}
-
-		// Only enable motion if the user has no preference
-		@media (prefers-reduced-motion: no-preference) {
-			transition: color 0.2s ease-in-out;
-			transition: background-color 0.2s ease-in-out;
-		}
-
-		&:hover {
-			color: $t-fg;
-
-			img {
-				// Invert the icon, making the black icon white
-				filter: invert(100%);
-			}
-
-			&:nth-of-type(1) {
-				background-color: $black;
-			}
-
-			&:nth-of-type(2) {
-				background-color: $purple;
-			}
-
-			&:nth-of-type(3) {
-				background-color: $blue;
-			}
-
-			&:nth-of-type(4) {
-				background-color: $green;
-			}
 		}
 	}
 </style>
