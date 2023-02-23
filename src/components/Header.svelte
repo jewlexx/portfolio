@@ -48,7 +48,7 @@
 <header>
 	<nav class="nav">
 		<a class="logolink" href="/" rel="prefetch">
-			<img alt="Profile" class="monogram" src="/images/pfp.jpg" width={32} height={32} />
+			<img alt="Profile" class="monogram" src="/images/pfp-32x.jpg" width={32} height={32} />
 		</a>
 
 		<!-- <a class="link" href="/projects">Portfolio</a>
