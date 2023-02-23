@@ -14,8 +14,8 @@
 </script>
 
 <div class="main">
-	<h1>{time}</h1>
-	<p>seconds since 01/01/1970 (UTC)</p>
+	<h1 class="font-bold text-5xl sm:text-8xl text-green-500 dark:text-green-400">{time}</h1>
+	<p class="text-2xl">seconds since 01/01/1970 (UTC)</p>
 </div>
 
 <style lang="scss">
@@ -26,14 +26,5 @@
 		flex-direction: column;
 		min-height: 100%;
 		min-width: 100%;
-
-		h1 {
-			font-size: 5rem;
-		}
-
-		p {
-			font-size: 1.7rem;
-			font-weight: lighter;
-		}
 	}
 </style>
