@@ -119,11 +119,11 @@
 		margin-left: auto;
 
 		@media (prefers-reduced-motion: no-preference) {
-			transition: font-size 50ms;
+			transition: transform 100ms ease-in-out;
 		}
 
 		&:hover {
-			font-size: $f-u1;
+			transform: scale(1.5);
 		}
 
 		+ .social {
