@@ -6,7 +6,7 @@
 	import '$lib/styles/global.scss';
 </script>
 
-<div class="app">
+<div class="flex flex-col min-h-full">
 	<Header />
 
 	<main>
@@ -15,12 +15,6 @@
 </div>
 
 <style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
 	main {
 		display: flex;
 		flex-direction: column;
