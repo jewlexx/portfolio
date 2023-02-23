@@ -8,25 +8,14 @@
 </svelte:head>
 
 <header class="hero">
-	<div class="overlay">
-		<h1 class="title">
-			Juliette Cordor
-			<small class="pronouns"> (She/Her) </small>
-		</h1>
+	<div class="flex flex-col pl-8 justify-center items-start w-full h-full absolute overlay">
+		<h1 class="title text-sm break-words">Juliette Cordor</h1>
+		<!-- <small class="pronouns text-3xl text-cambridge-blue"> (She/Her) </small> -->
 	</div>
 </header>
 
 <style lang="scss">
 	@import '$lib/styles/palette.scss';
-
-	.pronouns {
-		color: $cambridge-blue;
-
-		display: block;
-		font-weight: 400;
-		font-size: $f-d6;
-		letter-spacing: -0.0625em;
-	}
 
 	.hero {
 		position: relative;
@@ -37,17 +26,6 @@
 	}
 
 	.overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 10;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		justify-content: center;
-		padding-left: 2rem;
 		@media (min-width: $w-s) {
 			padding-left: 4rem;
 		}
@@ -55,7 +33,6 @@
 
 	.title {
 		font-weight: 900;
-		font-size: $f-u8;
 		margin-bottom: 1rem;
 		margin-top: 0;
 

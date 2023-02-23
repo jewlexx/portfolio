@@ -18,6 +18,13 @@ module.exports = {
 			'2xl': '1536px'
 			// => @media (min-width: 1536px) { ... }
 		},
+		colors: {
+			'light-gray': '#dad6d6ff',
+			'cambridge-blue': '#92bfb1ff',
+			'yellow-orange': '#f4ac45ff',
+			coffee: '#694a38ff',
+			'vivid-burgundy': '#a61c3cff'
+		},
 		extend: {}
 	},
 	plugins: []
