@@ -1,7 +1,3 @@
-<script lang="ts">
-	import { links } from '$lib/links';
-</script>
-
 <svelte:head>
 	<title>Juliette Cordor</title>
 	<meta
@@ -17,18 +13,6 @@
 			Juliette Cordor
 			<small class="pronouns"> (She/Her) </small>
 		</h1>
-		<div>
-			{#each links as { emoji, name, url }}
-				<a
-					href={`https://${url}`}
-					target="_blank"
-					rel="noopener noreferrer"
-					class={`role ${true ? 'motion' : ''}`}
-				>
-					<img src={emoji} alt={name} />
-				</a>
-			{/each}
-		</div>
 	</div>
 </header>
 

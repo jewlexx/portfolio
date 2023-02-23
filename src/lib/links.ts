@@ -1,32 +1,46 @@
-import brandGithub from '$icons/brand-github.svg';
-import brandTwitch from '$icons/brand-twitch.svg';
-import brandTwitter from '$icons/brand-twitter.svg';
-import brandLinktree from '$icons/brand-linktree.svg';
+import {
+	type Icon,
+	IconClock,
+	IconBrandGithub,
+	IconBrandTwitch,
+	IconBrandTwitter,
+	IconBrandLinktree,
+	IconBrandMastodon,
+	IconHeadphones,
+	IconHeadphonesOff
+} from '@tabler/icons-svelte';
 
 export interface Link {
 	name: string;
 	url: string;
-	emoji: string;
+	emoji: any;
+	rel?: string;
 }
 
 export const links: Link[] = [
 	{
-		emoji: brandGithub,
+		emoji: IconBrandGithub,
 		name: 'Github',
 		url: 'https://github.com/jewlexx'
 	},
 	{
-		emoji: brandTwitch,
+		emoji: IconBrandTwitch,
 		name: 'Twitch',
 		url: 'https://twitch.tv/sapphicjewl'
 	},
 	{
-		emoji: brandTwitter,
+		emoji: IconBrandTwitter,
 		name: 'Twitter',
 		url: 'https://twitter.com/jewelexx'
 	},
 	{
-		emoji: brandLinktree,
+		emoji: IconBrandMastodon,
+		name: 'Mastodon',
+		url: 'https://tech.lgbt/@jewelexx',
+		rel: 'me'
+	},
+	{
+		emoji: IconBrandLinktree,
 		name: 'Linktree',
 		url: 'https://linktr.ee/jewelexx'
 	}

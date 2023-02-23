@@ -1,22 +1,68 @@
-<script>
-	import Image from 'svelte-image';
-	import Icon from 'svelte-fa';
-	import { links } from '$lib/links';
-	import ProfilePicture from '$static/images/pfp.jpg';
+<script lang="ts">
+	import {
+		IconClock,
+		IconBrandGithub,
+		IconBrandTwitch,
+		IconBrandTwitter,
+		IconBrandLinktree,
+		IconBrandMastodon
+	} from '@tabler/icons-svelte';
+
+	interface Link {
+		name: string;
+		href: string;
+		emoji: any;
+		rel?: string;
+	}
+
+	const links: Link[] = [
+		{
+			emoji: IconBrandGithub,
+			name: 'Github',
+			href: 'https://github.com/jewlexx'
+		},
+		{
+			emoji: IconBrandTwitch,
+			name: 'Twitch',
+			href: 'https://twitch.tv/sapphicjewl'
+		},
+		{
+			emoji: IconBrandTwitter,
+			name: 'Twitter',
+			href: 'https://twitter.com/jewelexx'
+		},
+		{
+			emoji: IconBrandMastodon,
+			name: 'Mastodon',
+			href: 'https://tech.lgbt/@jewelexx',
+			rel: 'me'
+		},
+		{
+			emoji: IconBrandLinktree,
+			name: 'Linktree',
+			href: 'https://linktr.ee/jewelexx'
+		}
+	];
 </script>
 
 <header>
 	<nav class="nav">
 		<a class="logolink" href="/" rel="prefetch">
-			<Image alt="Profile" class="monogram" src={ProfilePicture} width={32} height={32} />
+			<img alt="Profile" class="monogram" src="/images/pfp.jpg" width={32} height={32} />
 		</a>
+
 		<!-- <a class="link" href="/projects">Portfolio</a>
 		<a class="link" href="/about">About</a> -->
-		{#each links as link}
-			<a class="social" href={link.url}>
-				<Icon class="socialicon" icon={link.emoji} />
+
+		{#each links as { href, name, rel, emoji: Emoji }}
+			<a class="social" title={`${name} Link`} {href} {rel}>
+				<Emoji />
 			</a>
 		{/each}
+
+		<a class="social" title="The time in seconds" href="/now">
+			<IconClock />
+		</a>
 	</nav>
 </header>
 
@@ -39,7 +85,7 @@
 		text-decoration: none;
 	}
 
-	.link {
+	/* .link {
 		color: $t-subdue;
 		display: block;
 		margin-left: 1rem;
@@ -52,7 +98,7 @@
 		&:hover {
 			color: $t-active;
 		}
-	}
+	} */
 
 	.monogram {
 		display: flex;
