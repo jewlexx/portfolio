@@ -11,19 +11,19 @@
 		"strict": true,
 		"paths": {
 			"$lib": [
-				"src/lib"
+				"./src/lib"
 			],
 			"$lib/*": [
-				"src/lib/*"
+				"./src/lib/*"
 			],
 			"$static/*": [
-				"static/*"
+				"./static/*"
 			],
 			"$components/*": [
-				"src/components/*"
+				"./src/components/*"
 			],
 			"$icons/*": [
-				"static/images/icons/icons"
+				"./static/images/icons/icons"
 			]
 		}
 	}

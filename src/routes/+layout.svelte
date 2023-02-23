@@ -1,4 +1,7 @@
 <script>
+	import '@fontsource/fira-mono';
+	import '@fontsource/roboto';
+
 	import Header from '$components/Header.svelte';
 	import '$lib/styles/global.scss';
 </script>
