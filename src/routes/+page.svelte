@@ -2,6 +2,11 @@
 	<title>Juliette Cordor</title>
 	<meta
 		name="description"
+		property="description"
+		content="Juliette Cordor, developer and other things also"
+	/>
+	<meta
+		name="description"
 		property="og:description"
 		content="Juliette Cordor, developer and other things also"
 	/>
