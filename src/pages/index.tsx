@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import { usePageSize } from '@/hooks/size';
 import { useMemo } from 'react';
 import { useMousePosition } from '@/hooks/pos';
+import styles from '@/styles/Home.module.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -46,14 +47,11 @@ export default function Home() {
         <header>
           <div className="flex flex-col pl-8 justify-center items-center w-full h-full absolute overlay">
             <Image
+              className={styles.icon}
               width={256}
               height={256}
               alt="Black and white image of Juliette's face"
-              src="/images/Traced Icon Inverted.png"
-              style={{
-                // Ensure it shows on the black screen
-                color: 'green',
-              }}
+              src="/images/Traced Icon.png"
             />
             <h1 className="title text-4xl sm:text-7xl break-words">
               Juliette

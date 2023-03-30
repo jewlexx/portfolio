@@ -1,0 +1,17 @@
+.icon {
+  background-color: #5acefd;
+  animation: bgColour 5s infinite linear;
+  border-radius: 50%;
+}
+
+@keyframes bgColour {
+  25% {
+    background-color: #f4a8bd;
+  }
+  50% {
+    background-color: #fff;
+  }
+  75% {
+    background-color: #f4a8bd;
+  }
+}
