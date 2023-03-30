@@ -1,12 +1,36 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
+import { usePageSize } from '@/hooks/size';
+import { useMemo } from 'react';
+import { useMousePosition } from '@/hooks/pos';
 
 const inter = Inter({ subsets: ['latin'] });
 
 // TODO: Reactive grid effect from https://www.youtube.com/watch?v=bAwEj_mSzOs and when clicked it turns to light and dark mode respectively
 
 export default function Home() {
+  const pageSize = usePageSize();
+  const mousePosition = useMousePosition();
+
+  console.log(pageSize.width, pageSize.height);
+
+  const mouseAngle = useMemo(() => {
+    let angle =
+      (Math.atan2(
+        pageSize.height - mousePosition.y,
+        pageSize.width - mousePosition.x,
+      ) *
+        180) /
+      Math.PI;
+
+    if (angle < 0) {
+      angle += 360;
+    }
+
+    return angle;
+  }, [pageSize, mousePosition]);
+
   return (
     <>
       <Head>
@@ -25,10 +49,10 @@ export default function Home() {
               width={256}
               height={256}
               alt="Black and white image of Juliette's face"
-              src="/images/Traced Icon.png"
+              src="/images/Traced Icon Inverted.png"
               style={{
                 // Ensure it shows on the black screen
-                filter: 'invert(1)',
+                filter: `hue-rotate(90deg)`,
               }}
             />
             <h1 className="title text-4xl sm:text-7xl break-words">
