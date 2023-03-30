@@ -14,8 +14,6 @@ export default function Home() {
   const pageSize = usePageSize();
   const mousePosition = useMousePosition();
 
-  console.log(pageSize.width, pageSize.height);
-
   const mouseAngle = useMemo(() => {
     let angle =
       (Math.atan2(
