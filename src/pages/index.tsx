@@ -52,7 +52,7 @@ export default function Home() {
               src="/images/Traced Icon Inverted.png"
               style={{
                 // Ensure it shows on the black screen
-                filter: `hue-rotate(90deg)`,
+                color: 'green',
               }}
             />
             <h1 className="title text-4xl sm:text-7xl break-words">
