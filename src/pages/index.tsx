@@ -11,25 +11,6 @@ const inter = Inter({ subsets: ['latin'] });
 // TODO: Reactive grid effect from https://www.youtube.com/watch?v=bAwEj_mSzOs and when clicked it turns to light and dark mode respectively
 
 export default function Home() {
-  const pageSize = usePageSize();
-  const mousePosition = useMousePosition();
-
-  const mouseAngle = useMemo(() => {
-    let angle =
-      (Math.atan2(
-        pageSize.height - mousePosition.y,
-        pageSize.width - mousePosition.x,
-      ) *
-        180) /
-      Math.PI;
-
-    if (angle < 0) {
-      angle += 360;
-    }
-
-    return angle;
-  }, [pageSize, mousePosition]);
-
   return (
     <>
       <Head>
