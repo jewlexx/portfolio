@@ -1,9 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { Inter } from 'next/font/google';
+import Layout from '@/components/Layout';
 import styles from '@/styles/Home.module.scss';
-
-const inter = Inter({ subsets: ['latin'] });
 
 // TODO: Reactive grid effect from https://www.youtube.com/watch?v=bAwEj_mSzOs and when clicked it turns to light and dark mode respectively
 
@@ -19,7 +17,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main style={inter.style}>
+      <Layout>
         <header>
           <div className="flex flex-col pl-8 justify-center items-center w-full h-full absolute overlay">
             <Image
@@ -42,7 +40,7 @@ export default function Home() {
             </small>
           </div>
         </header>
-      </main>
+      </Layout>
     </>
   );
 }
