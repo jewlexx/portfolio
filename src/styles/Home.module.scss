@@ -1,17 +1,32 @@
 .icon {
-  background-color: #5acefd;
+  background-color: #e40303;
   animation: bgColour 5s infinite linear;
   border-radius: 50%;
 }
 
 @keyframes bgColour {
+  0% {
+    background-color: #e40303;
+  }
+  12% {
+    background-color: #ff8c00;
+  }
   25% {
-    background-color: #f4a8bd;
+    background-color: #ffed00;
+  }
+  37% {
+    background-color: #008026;
   }
   50% {
-    background-color: #fff;
+    background-color: #24408e;
+  }
+  62% {
+    background-color: #732982;
   }
   75% {
-    background-color: #f4a8bd;
+    background-color: #ffafc8;
+  }
+  87% {
+    background-color: #74d7ee;
   }
 }
