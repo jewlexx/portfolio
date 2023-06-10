@@ -65,7 +65,7 @@ devDependencies:
     specifier: 3.4.3
     version: 3.4.3(postcss@8.4.24)(sass@1.63.3)(svelte@3.59.1)
   svelte-image:
-    specifier: 0.2.9
+    specifier: github:matyunya/svelte-image
     version: 0.2.9
   tailwindcss:
     specifier: 3.3.2

@@ -36,7 +36,7 @@
 		"sass": "1.63.3",
 		"svelte": "3.59.1",
 		"svelte-check": "3.4.3",
-		"svelte-image": "0.2.9",
+		"svelte-image": "github:matyunya/svelte-image",
 		"tailwindcss": "3.3.2",
 		"tslib": "2.5.3",
 		"typescript": "5.1.3",
