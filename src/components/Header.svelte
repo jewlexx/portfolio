@@ -7,6 +7,7 @@
 		IconBrandLinktree,
 		IconBrandMastodon
 	} from '@tabler/icons-svelte';
+	import Image from 'svelte-image/src/Image.svelte';
 
 	interface Link {
 		name: string;
@@ -48,7 +49,7 @@
 <header>
 	<nav class="nav">
 		<a class="logolink" href="/" rel="prefetch">
-			<img alt="Profile" class="monogram" src="/images/pfp-32x.jpg" width={32} height={32} />
+			<Image alt="Profile" class="monogram" src="/images/pfp-32x.jpg" width={32} height={32} />
 		</a>
 
 		<!-- <a class="link" href="/projects">Portfolio</a>
