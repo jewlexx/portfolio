@@ -1,7 +1,6 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import Layout from '@/components/Layout';
-import styles from '@/styles/Home.module.scss';
+import styles from './index.module.scss';
 
 // TODO: Reactive grid effect from https://www.youtube.com/watch?v=bAwEj_mSzOs and when clicked it turns to light and dark mode respectively
 
@@ -20,13 +19,6 @@ export default function Home() {
       <Layout>
         <header>
           <div className="flex flex-col pl-8 justify-center items-center w-full h-full absolute overlay">
-            <Image
-              className={styles.icon}
-              width={256}
-              height={256}
-              alt="Black and white image of Juliette's face"
-              src="/images/Traced Icon.png"
-            />
             <h1 className="title text-4xl sm:text-7xl break-words">
               Juliette
               <small className="pronouns text-2xl text-cambridge-blue">
