@@ -1,10 +1,21 @@
-import '@/styles/globals.css';
-import type { AppProps } from 'next/app';
+import { Metadata } from 'next';
 import Head from 'next/head';
+import Layout from '@/components/Layout';
+import React from 'react';
+import '@/styles/globals.scss';
 
-export default function App({ Component, pageProps }: AppProps) {
+export const metadata: Metadata = {
+  title: 'Juliette Cordor',
+  description: 'Juliette Cordor, developer and other things also',
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <>
+    <Layout>
       <Head>
         <link
           rel="apple-touch-icon"
@@ -25,7 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
-      <Component {...pageProps} />
-    </>
+      {children}
+    </Layout>
   );
 }
