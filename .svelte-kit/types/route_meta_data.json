@@ -1,0 +1,10 @@
+{
+	"/": [
+		"src/routes/+page.ts",
+		"src/routes/+page.server.ts"
+	],
+	"/binary": [],
+	"/now": [
+		"src/routes/now/+page.ts"
+	]
+}
