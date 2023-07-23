@@ -86,9 +86,9 @@ const Layout: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
             );
           })}
 
-          <a className={styles.social} title="The time in seconds" href="/now">
+          {/* <a className={styles.social} title="The time in seconds" href="/now">
             <IconClock />
-          </a>
+          </a> */}
         </nav>
       </header>
       {children}
