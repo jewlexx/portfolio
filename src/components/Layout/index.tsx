@@ -10,6 +10,7 @@ import {
   IconBrandLinktree,
   IconBrandMastodon,
 } from '@tabler/icons-react';
+import ProfilePhoto from '../images/Traced Icon.png'
 import styles from './index.module.scss';
 
 const roboto = Roboto({ subsets: ['latin'], weight: '400' });
@@ -50,6 +51,7 @@ export const links: Link[] = [
   },
 ];
 
+
 const Layout: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
   return (
     <main style={roboto.style}>
@@ -59,7 +61,7 @@ const Layout: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
             <Image
               alt="Profile"
               className={styles.monogram}
-              src="/images/Traced Icon.png"
+              src={ProfilePhoto}
               width={64}
               height={64}
             />
