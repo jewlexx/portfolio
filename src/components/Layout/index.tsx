@@ -3,14 +3,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Roboto } from 'next/font/google';
 import {
-  IconClock,
   IconBrandGithub,
   IconBrandTwitch,
   IconBrandTwitter,
   IconBrandLinktree,
   IconBrandMastodon,
 } from '@tabler/icons-react';
-import ProfilePhoto from '../images/Traced Icon.png'
+import ProfilePhoto from '../../images/Traced Icon.png'
 import styles from './index.module.scss';
 
 const roboto = Roboto({ subsets: ['latin'], weight: '400' });
