@@ -8,12 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@fortawesome/free-brands-svg-icons':
-        specifier: 6.4.2
-        version: 6.4.2
-      '@fortawesome/free-solid-svg-icons':
-        specifier: 6.4.2
-        version: 6.4.2
       '@tabler/icons-svelte':
         specifier: 2.30.0
         version: 2.30.0(svelte@4.2.0)
@@ -21,12 +15,6 @@ importers:
         specifier: 3.0.4
         version: 3.0.4
     devDependencies:
-      '@fontsource/fira-mono':
-        specifier: 5.0.8
-        version: 5.0.8
-      '@neoconfetti/svelte':
-        specifier: 1.0.0
-        version: 1.0.0
       '@playwright/test':
         specifier: 1.37.0
         version: 1.37.0
@@ -36,9 +24,6 @@ importers:
       '@sveltejs/kit':
         specifier: 1.22.5
         version: 1.22.5(svelte@4.2.0)(vite@4.4.9)
-      '@types/cookie':
-        specifier: 0.5.1
-        version: 0.5.1
       '@typescript-eslint/eslint-plugin':
         specifier: 6.3.0
         version: 6.3.0(@typescript-eslint/parser@6.3.0)(eslint@8.47.0)(typescript@5.1.6)
@@ -336,32 +321,6 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@fontsource/fira-mono@5.0.8:
-    resolution: {integrity: sha512-8OJiUK2lzJjvDlkmamEfhtpL1cyFApg1Pk4kE5Pw5UTf1ETF3Yy/pprgwV5I+LQPDjuFvinsinT9xSUZ2b/zuQ==}
-    dev: true
-
-  /@fortawesome/fontawesome-common-types@6.4.2:
-    resolution: {integrity: sha512-1DgP7f+XQIJbLFCTX1V2QnxVmpLdKdzzo2k8EmvDOePfchaIGQ9eCHj2up3/jNEbZuBqel5OxiaOJf37TWauRA==}
-    engines: {node: '>=6'}
-    requiresBuild: true
-    dev: false
-
-  /@fortawesome/free-brands-svg-icons@6.4.2:
-    resolution: {integrity: sha512-LKOwJX0I7+mR/cvvf6qIiqcERbdnY+24zgpUSouySml+5w8B4BJOx8EhDR/FTKAu06W12fmUIcv6lzPSwYKGGg==}
-    engines: {node: '>=6'}
-    requiresBuild: true
-    dependencies:
-      '@fortawesome/fontawesome-common-types': 6.4.2
-    dev: false
-
-  /@fortawesome/free-solid-svg-icons@6.4.2:
-    resolution: {integrity: sha512-sYwXurXUEQS32fZz9hVCUUv/xu49PEJEyUOsA51l6PU/qVgfbTb2glsTEaJngVVT8VqBATRIdh7XVgV1JF1LkA==}
-    engines: {node: '>=6'}
-    requiresBuild: true
-    dependencies:
-      '@fortawesome/fontawesome-common-types': 6.4.2
-    dev: false
-
   /@humanwhocodes/config-array@0.11.10:
     resolution: {integrity: sha512-KVVjQmNUepDVGXNuoRRdmmEjruj0KfiGSbS8LVc12LMsWDQzRXJ0qdhN8L8uUigKpfEHRhlaQFY0ib1tnUbNeQ==}
     engines: {node: '>=10.10.0'}
@@ -413,10 +372,6 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
-
-  /@neoconfetti/svelte@1.0.0:
-    resolution: {integrity: sha512-SmksyaJAdSlMa9cTidVSIqYo1qti+WTsviNDwgjNVm+KQ3DRP2Df9umDIzC4vCcpEYY+chQe0i2IKnLw03AT8Q==}
-    dev: true
 
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
