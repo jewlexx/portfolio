@@ -24,7 +24,7 @@
 					href={url}
 					target="_blank"
 					rel="noopener noreferrer"
-					class={`role ${true ? 'motion' : ''}`}
+					class="role"
 				>
 					<Emoji />
 				</a>
@@ -93,7 +93,7 @@
 		font-weight: 900;
 		color: $t-bg;
 		background-color: $t-fg;
-		padding: 0.25em 0.5em;
+		padding: 0.25em;
 		z-index: 2;
 		border-radius: 0.25rem;
 
@@ -113,10 +113,13 @@
 		@media (prefers-reduced-motion: no-preference) {
 			transition: color 0.2s ease-in-out;
 			transition: background-color 0.2s ease-in-out;
+			transition: transform 100ms ease-in-out;
 		}
 
 		&:hover {
 			color: $t-fg;
+
+			transform: scale(1.2);
 
 			img {
 				// Invert the icon, making the black icon white
