@@ -21,7 +21,7 @@
 		<div class="links-container">
 			{#each links as { emoji: Emoji, url }}
 				<a
-					href={`https://${url}`}
+					href={url}
 					target="_blank"
 					rel="noopener noreferrer"
 					class={`role ${true ? 'motion' : ''}`}
