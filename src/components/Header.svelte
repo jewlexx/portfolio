@@ -1,14 +1,13 @@
 <script>
-	import Image from 'svelte-image';
 	import Icon from 'svelte-fa';
 	import { links } from '$lib/links';
-	import ProfilePicture from '$static/images/pfp.jpg';
+	import ProfilePicture from '$images/pfp.jpg';
 </script>
 
 <header>
 	<nav class="nav">
 		<a class="logolink" href="/" rel="prefetch">
-			<Image alt="Profile" class="monogram" src={ProfilePicture} width={32} height={32} />
+			<img alt="Profile" class="monogram" src={ProfilePicture} width={32} height={32} />
 		</a>
 		<!-- <a class="link" href="/projects">Portfolio</a>
 		<a class="link" href="/about">About</a> -->
