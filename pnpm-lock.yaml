@@ -20,9 +20,6 @@ importers:
       svelte-fa:
         specifier: 3.0.3
         version: 3.0.3
-      svelte-sound:
-        specifier: 0.5.0
-        version: link:../svelte-sound
     devDependencies:
       '@fontsource/fira-mono':
         specifier: 4.5.10
@@ -2759,7 +2756,7 @@ packages:
   /mlly@1.0.0:
     resolution: {integrity: sha512-QL108Hwt+u9bXdWgOI0dhzZfACovn5Aen4Xvc8Jasd9ouRH4NjnrXEiyP3nVvJo91zPlYjVRckta0Nt2zfoR6g==}
     dependencies:
-      acorn: 8.8.1
+      acorn: 8.10.0
       pathe: 1.0.0
       pkg-types: 1.0.1
       ufo: 1.0.1
