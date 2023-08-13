@@ -1,7 +1,7 @@
 <script>
 	import Icon from 'svelte-fa';
 	import { links } from '$lib/links';
-	import ProfilePicture from '$images/pfp.jpg';
+	import ProfilePicture from '$lib/images/pfp.jpg';
 </script>
 
 <header>
