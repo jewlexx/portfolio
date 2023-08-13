@@ -10,9 +10,7 @@ const config = {
 	},
 	resolve: {
 		alias: {
-			$components: resolve('./src/components'),
-			$static: resolve('./static'),
-			$icons: resolve('./static/images/icons/icons')
+			$components: resolve('./src/lib/components')
 		}
 	}
 };
