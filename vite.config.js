@@ -1,10 +1,9 @@
 import { resolve } from 'path';
 import { sveltekit } from '@sveltejs/kit/vite';
-import image from 'svelte-image';
 
 /** @type {import('vite').UserConfig} */
 const config = {
-	plugins: [sveltekit(), image()],
+	plugins: [sveltekit()],
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
 	},
