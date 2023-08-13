@@ -21,7 +21,7 @@ export const links: Link[] = [
 	{
 		emoji: IconBrandTwitch,
 		name: 'Twitch',
-		url: 'https://twitch.tv/sapphicjewl'
+		url: 'https://twitch.tv/possiblyjuliette'
 	},
 	{
 		emoji: IconBrandTwitter,
