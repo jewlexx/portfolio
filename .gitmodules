@@ -1,0 +1,3 @@
+[submodule "static/images/icons"]
+	path = static/images/icons
+	url = https://github.com/tabler/tabler-icons.git
