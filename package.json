@@ -17,6 +17,7 @@
 	"dependencies": {
 		"@fortawesome/free-brands-svg-icons": "6.2.1",
 		"@fortawesome/free-solid-svg-icons": "6.2.1",
+		"@tabler/icons-svelte": "2.30.0",
 		"svelte-fa": "3.0.3"
 	},
 	"devDependencies": {
