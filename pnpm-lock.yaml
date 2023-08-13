@@ -20,6 +20,9 @@ importers:
       svelte-fa:
         specifier: 3.0.3
         version: 3.0.3
+      svelte-sound:
+        specifier: 0.5.0
+        version: link:../svelte-sound
     devDependencies:
       '@fontsource/fira-mono':
         specifier: 4.5.10

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { links } from '$lib/links';
+
 </script>
 
 <svelte:head>
@@ -17,8 +18,8 @@
 			Juliette Cordor
 			<small class="pronouns"> (She/Her) </small>
 		</h1>
-		<div>
-			{#each links as { emoji: Emoji, name, url }}
+		<div class="links-container">
+			{#each links as { emoji: Emoji, url }}
 				<a
 					href={`https://${url}`}
 					target="_blank"
@@ -82,16 +83,23 @@
 		}
 	}
 
+	.links-container {
+		display: flex;
+	}
+
 	.role {
 		text-decoration: none;
 		position: relative;
-		display: inline-block;
 		font-weight: 900;
 		color: $t-bg;
 		background-color: $t-fg;
 		padding: 0.25em 0.5em;
 		z-index: 2;
 		border-radius: 0.25rem;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 		@media (min-width: $w-s) {
 			font-size: $f-u3;
