@@ -38,7 +38,7 @@
 		text-decoration: none;
 	}
 
-	.link {
+	/* .link {
 		color: $t-subdue;
 		display: block;
 		margin-left: 1rem;
@@ -51,7 +51,7 @@
 		&:hover {
 			color: $t-active;
 		}
-	}
+	} */
 
 	.monogram {
 		display: flex;
