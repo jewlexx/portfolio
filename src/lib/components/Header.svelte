@@ -1,5 +1,5 @@
 <script>
-	import ProfilePicture from '$lib/assets/images/mirror selfie.webp?w=32&h=32';
+	import ProfilePicture from '$lib/assets/images/mirror selfie.webp';
 	import { links } from '$lib/links';
 </script>
 
