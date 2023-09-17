@@ -1,9 +1,10 @@
+import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import { sveltekit } from '@sveltejs/kit/vite';
+import { imagetools } from 'vite-imagetools'
 
-/** @type {import('vite').UserConfig} */
-const config = {
-	plugins: [sveltekit()],
+export default defineConfig({
+	plugins: [sveltekit(), imagetools()],
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
 	},
@@ -12,6 +13,5 @@ const config = {
 			$components: resolve('./src/lib/components')
 		}
 	}
-};
+});
 
-export default config;
