@@ -12,6 +12,7 @@
 		<h1 class="title">
 			Juliette Cordor
 			<small class="pronouns"> (She/Her) </small>
+			<small class="soon"> More coming soon... </small>
 		</h1>
 	</div>
 </header>
@@ -23,11 +24,16 @@
 
 	.pronouns {
 		color: $cambridge-blue;
-
 		display: block;
 		font-weight: 400;
 		font-size: $f-d6;
 		letter-spacing: -0.0625em;
+	}
+
+	.soon {
+		font-size: 1rem;
+		color: gray;
+		font-weight: 500;
 	}
 
 	.hero {
@@ -39,7 +45,6 @@
 	}
 
 	.overlay {
-		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -49,7 +54,6 @@
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: center;
-		padding-left: 2rem;
 		@media (min-width: $w-s) {
 			padding-left: 4rem;
 		}
@@ -57,7 +61,7 @@
 
 	.title {
 		font-weight: 900;
-		font-size: $f-u8;
+		font-size: $f-u6;
 		margin-bottom: 1rem;
 		margin-top: 0;
 

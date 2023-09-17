@@ -2,12 +2,12 @@
 import {
 	IconBrandGithub,
 	IconBrandTwitch,
-	IconBrandTwitter,
+	IconBrandX as IconBrandTwitter,
 	IconBrandLinktree
 } from '@tabler/icons-svelte';
 
 export interface Link {
-	name: string;
+	title: string;
 	url: string;
 	emoji: typeof IconBrandGithub;
 }
@@ -15,22 +15,22 @@ export interface Link {
 export const links: Link[] = [
 	{
 		emoji: IconBrandGithub,
-		name: 'Github',
+		title: 'GitHub',
 		url: 'https://github.com/jewlexx'
 	},
 	{
 		emoji: IconBrandTwitch,
-		name: 'Twitch',
+		title: 'Twitch',
 		url: 'https://twitch.tv/possiblyjuliette'
 	},
 	{
 		emoji: IconBrandTwitter,
-		name: 'Twitter',
+		title: 'X (Twitter)',
 		url: 'https://twitter.com/jewelexx'
 	},
 	{
 		emoji: IconBrandLinktree,
-		name: 'Linktree',
+		title: 'Linktree',
 		url: 'https://linktr.ee/jewelexx'
 	}
 ];

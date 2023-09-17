@@ -11,8 +11,8 @@
 		<!-- <a class="link" href="/projects">Portfolio</a>
 		<a class="link" href="/about">About</a> -->
 		<span class="links-container">
-			{#each links as { emoji: Emoji, url }}
-				<a href={url} target="_blank" rel="noopener noreferrer" class="role">
+			{#each links as { emoji: Emoji, url, title }}
+				<a href={url} {title} target="_blank" rel="noopener noreferrer" class="role">
 					<Emoji />
 				</a>
 			{/each}
