@@ -1,5 +1,4 @@
 <script>
-	import Icon from 'svelte-fa';
 	import { links } from '$lib/links';
 	import ProfilePicture from '$lib/assets/images/mirror selfie.webp?w=32&h=32';
 </script>
@@ -11,9 +10,9 @@
 		</a>
 		<!-- <a class="link" href="/projects">Portfolio</a>
 		<a class="link" href="/about">About</a> -->
-		{#each links as link}
-			<a class="social" href={link.url}>
-				<Icon class="socialicon" icon={link.emoji} />
+		{#each links as { emoji: Emoji, url }}
+			<a class="social" href={url}>
+				<Emoji class="socialicon" />
 			</a>
 		{/each}
 	</nav>
