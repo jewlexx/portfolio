@@ -22,6 +22,8 @@
     "eslint-plugin-prettier-vue": "^5.0.0",
     "eslint-plugin-vue": "^9.17.0",
     "nuxt": "^3.7.3",
+    "nuxt-simple-robots": "latest",
+    "nuxt-simple-sitemap": "latest",
     "prettier": "^3.0.3",
     "sass": "^1.68.0"
   }
