@@ -5,7 +5,7 @@
                 <img
                     alt="Profile"
                     class="monogram"
-                    src="/images/mirror selfie.webp"
+                    src="~/assets/images/mirror-selfie.webp"
                     width="32"
                     height="32"
                 />
