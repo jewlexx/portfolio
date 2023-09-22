@@ -5,6 +5,10 @@ export default defineNuxtConfig({
         name: "Juliette Cordor's Portfolio",
         description: 'Juliette Cordor, developer and other things also.',
         defaultLocale: 'en',
+        identity: {
+            type: 'Person',
+        },
+        twitter: '@jewelexx',
     },
     devtools: { enabled: true },
     css: ['@/scss/global.scss'],
