@@ -1,9 +1,8 @@
-/** @type {import('prettier').Config} */
-module.exports = {
-	parser: 'vue',
-	tabWidth: 4,
-	useTabs: false,
-	singleQuote: true,
-	trailingComma: 'none',
-	printWidth: 100
+/** @type {import('prettier').Config} */ module.exports = {
+    tabWidth: 4,
+    useTabs: false,
+    singleQuote: true,
+    trailingComma: 'all',
+    printWidth: 100,
+    semi: true
 };
