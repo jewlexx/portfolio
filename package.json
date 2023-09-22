@@ -1,44 +1,31 @@
 {
-	"name": "portfolio",
-	"version": "0.0.1",
-	"license": "MIT",
-	"type": "module",
-	"scripts": {
-		"build": "vite build",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"dev": "vite dev",
-		"format": "prettier --write .",
-		"lint": "prettier --check . && eslint .",
-		"preview": "vite preview",
-		"test": "playwright test",
-		"test:unit": "vitest"
-	},
-	"dependencies": {
-		"@tabler/icons-svelte": "2.30.0",
-		"svelte-fa": "3.0.4"
-	},
-	"devDependencies": {
-		"@playwright/test": "1.38.1",
-		"@sveltejs/adapter-auto": "2.1.0",
-		"@sveltejs/kit": "1.25.0",
-		"@typescript-eslint/eslint-plugin": "6.7.2",
-		"@typescript-eslint/parser": "6.7.2",
-		"@vite-pwa/sveltekit": "^0.2.7",
-		"eslint": "8.49.0",
-		"eslint-config-prettier": "9.0.0",
-		"eslint-plugin-svelte": "2.33.2",
-		"prettier": "3.0.3",
-		"prettier-plugin-svelte": "3.0.3",
-		"sass": "1.68.0",
-		"sharp": "0.32.6",
-		"svelte": "4.2.1",
-		"svelte-check": "3.5.2",
-		"tslib": "2.6.2",
-		"typescript": "5.2.2",
-		"vite": "4.4.9",
-		"vite-imagetools": "5.0.8",
-		"vite-plugin-wasm": "3.2.2",
-		"vitest": "0.34.4"
-	}
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "format": "prettier --write **/*",
+    "generate": "nuxt generate",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "@tabler/icons-vue": "^2.34.0"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxt/eslint-config": "^0.2.0",
+    "@nuxtseo/module": "^2.0.0-beta.15",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier-vue": "^5.0.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "nuxt": "^3.7.3",
+    "nuxt-simple-robots": "latest",
+    "nuxt-simple-sitemap": "latest",
+    "prettier": "^3.0.3",
+    "sass": "^1.68.0"
+  }
 }

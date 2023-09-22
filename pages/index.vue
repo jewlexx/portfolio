@@ -1,0 +1,63 @@
+<template>
+    <header class="hero">
+        <div class="overlay">
+            <h1 class="title">
+                Juliette Cordor
+                <small class="pronouns"> (She/Her) </small>
+                <small class="soon"> More coming soon... </small>
+            </h1>
+        </div>
+    </header>
+</template>
+
+<style lang="scss">
+@import '@/scss/palette.scss';
+
+.pronouns {
+    color: $cambridge-blue;
+    display: block;
+    font-weight: 400;
+    font-size: $f-d6;
+    letter-spacing: -0.0625em;
+}
+
+.soon {
+    font-size: 1rem;
+    color: gray;
+    font-weight: 500;
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    @media (min-width: $w-s) {
+        height: 45vw;
+    }
+}
+
+.overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    @media (min-width: $w-s) {
+        padding-left: 4rem;
+    }
+}
+
+.title {
+    font-weight: 900;
+    font-size: $f-u6;
+    margin-bottom: 1rem;
+    margin-top: 0;
+
+    @media (min-width: 1024px) {
+        font-size: $f-u12;
+    }
+}
+</style>
