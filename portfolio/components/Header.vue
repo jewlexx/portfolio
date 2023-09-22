@@ -13,7 +13,7 @@
 			<!-- <a class="link" href="/projects">Portfolio</a>
 			<a class="link" href="/about">About</a> -->
 			<span class="links-container">
-				<LinkDisplay v-for="link in links" :link="link" />
+				<LinkDisplay v-for="link in links" :key="link.title" :link="link" />
 			</span>
 		</nav>
 	</header>
