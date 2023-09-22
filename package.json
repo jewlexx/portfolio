@@ -5,8 +5,10 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "format": "prettier --write **/*",
     "generate": "nuxt generate",
     "postinstall": "nuxt prepare",
+    "lint": "eslint .",
     "preview": "nuxt preview"
   },
   "dependencies": {
@@ -15,8 +17,10 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxt/eslint-config": "^0.2.0",
-    "@nuxt/image": "rc",
     "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier-vue": "^5.0.0",
+    "eslint-plugin-vue": "^9.17.0",
     "nuxt": "^3.7.3",
     "prettier": "^3.0.3",
     "sass": "^1.68.0"
