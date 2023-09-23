@@ -38,6 +38,20 @@
 		display: block;
 		color: $t-fg;
 		text-decoration: none;
+
+		img {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 2em;
+			height: 2em;
+			margin-right: 0.5rem;
+			color: $black;
+			font-weight: 900;
+			letter-spacing: -0.125rem;
+			border: 3px solid currentColor;
+			border-radius: 50%;
+		}
 	}
 
 	/* .link {

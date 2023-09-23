@@ -1,5 +1,5 @@
 {
-	"files": ["index.d.ts", "./Options.d.ts"],
+	"files": ["src/index.d.ts", "src/main.d.ts", "src/Image.svelte.d.ts"],
 	"compilerOptions": {
 		"module": "commonjs",
 		"target": "esnext",
