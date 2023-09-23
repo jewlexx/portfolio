@@ -1,0 +1,13 @@
+{
+  "name": "@types/svelte-image",
+  "version": "1.0.0",
+  "description": "",
+  "types": "index",
+  "typesVersions": {
+    "<=4.8": {
+      "*": [
+        "ts4.8/*"
+      ]
+    }
+  }
+}
