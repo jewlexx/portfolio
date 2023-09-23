@@ -3,7 +3,6 @@ import { resolve } from 'path';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { SvelteKitPWA } from '@vite-pwa/sveltekit';
 import { imagetools } from 'vite-imagetools';
-import image from 'svelte-image';
 
 export default defineConfig({
 	optimizeDeps: {
