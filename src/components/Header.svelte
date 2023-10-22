@@ -8,6 +8,7 @@
 		<a class="logolink" href="/" rel="prefetch">
 			<img alt="Profile" class="monogram" src={ProfilePicture.src} width={32} height={32} />
 		</a>
+		<HeaderLink href="/blog">Blog</HeaderLink>
 		<!-- <a class="link" href="/projects">Portfolio</a>
 		<a class="link" href="/about">About</a> -->
 		<span class="links-container">
