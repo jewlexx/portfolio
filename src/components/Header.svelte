@@ -1,5 +1,6 @@
 <script>
 	import ProfilePicture from '../assets/images/mirror selfie.webp';
+	import HeaderLink from './HeaderLink.svelte';
 	import { links } from '../lib/links';
 </script>
 
@@ -8,9 +9,8 @@
 		<a class="logolink" href="/" rel="prefetch">
 			<img alt="Profile" class="monogram" src={ProfilePicture.src} width={32} height={32} />
 		</a>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<!-- <a class="link" href="/projects">Portfolio</a>
-		<a class="link" href="/about">About</a> -->
+		<a class="link" href="/projects">Portfolio</a>
+		<a class="link" href="/about">About</a>
 		<span class="links-container">
 			{#each links as { emoji: Emoji, url, title }}
 				<a href={url} {title} target="_blank" rel="noopener noreferrer" class="role">
