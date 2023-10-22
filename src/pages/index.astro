@@ -2,6 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.svelte';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+// TODO: A better solution than this
 import Stars from '../assets/stars.svg';
 ---
 
@@ -42,6 +43,8 @@ import Stars from '../assets/stars.svg';
 
 		width: 100vw;
 		height: 100vh;
+
+		user-select: none;
 	}
 
 	.silly {
