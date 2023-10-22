@@ -3,6 +3,9 @@ dist/
 # generated types
 .astro/
 
+# TEMP: Svelte output
+.svelte-kit
+
 # Node.gitignore
 # Logs
 logs
