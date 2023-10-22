@@ -21,14 +21,24 @@ const repoToUrl = (arg: string | undefined, ctx: z.RefinementCtx): string | unde
 
 }
 
+const httpOnly: [(arg: string | undefined) => boolean, message: string] = [(arg) => {
+	if (!arg) {
+		return true;
+	} else if (arg.startsWith('http')) {
+		return false;
+	} else {
+		return true
+	}
+}, "HTTP is not secure, and thus not supported"];
+
 const projects = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
 		heroImage: z.string().optional(),
-		repo: z.string().optional().transform(repoToUrl),
-		homepage: z.string().optional(),
+		repo: z.string().optional().transform(repoToUrl).refine(...httpOnly),
+		homepage: z.string().optional().refine(...httpOnly),
 	}),
 });
 
