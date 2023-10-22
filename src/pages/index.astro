@@ -11,15 +11,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Header title={SITE_TITLE} />
+		<!-- <Header title={SITE_TITLE} /> -->
 		<main class="hero">
-			<h1>🧑‍🚀Hello, Traveller!</h1>
-			<p>
-				My name is Juliette, and you have landed on my <span class="silly">silly little site</span>™.
-			</p>
-			<p>Feel free to check out <a href="/projects">some of my best projects</a>, or return to the <a href="https://www.google.com">ever-expansive web</a>.</p>
+			<div class="overlay">
+				<h1 class="title">🧑‍🚀Hello, Traveller!</h1>
+				<p>
+					My name is <span class="name">Juliette</span>, and you have landed on my <span class="silly">silly little site</span>™.
+				</p>
+				<p>Feel free to check out <a href="/projects">some of my best projects</a>, or return to the <a href="https://www.google.com">ever-expansive web</a>.</p>
+			</div>
 		</main>
-		<Footer />
+		<!-- <Footer /> -->
 	</body>
 </html>
 
@@ -28,8 +30,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 	$w-s: 750px;
 
+	p {
+		font-size: 1.3rem;
+		line-height: 0.2;
+	}
+
 	.silly {
 		color: $yellow-orange;
+	}
+
+	.name {
+		color: $cambridge-blue;
 	}
 
 	.pronouns {
@@ -49,10 +60,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	.hero {
 		position: relative;
 		overflow: hidden;
-		padding-bottom: 10vh;
-		// @media (min-width: $w-s) {
-		// 	height: 45vw;
-		// }
+		@media (min-width: $w-s) {
+			height: 45vw;
+		}
 	}
 
 	.overlay {
