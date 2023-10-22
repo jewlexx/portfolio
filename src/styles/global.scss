@@ -1,3 +1,5 @@
+@import './palette.scss';
+
 /*
   The CSS in this style tag is based off of Bear Blog's default CSS.
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
@@ -151,4 +153,58 @@ hr {
 	clip-path: inset(50%);
 	/* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+
+// Additional base css
+// TODO: Refactor all this and remove unused stuff
+
+// Base
+
+body {
+	margin: 0;
+	// color: $t-fg;
+	// background-color: $dark-gray;
+	// font-family: 'Inter', 'system-ui', sans-serif;
+}
+
+* {
+	box-sizing: content-box;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	color: $t-active;
+}
+
+h1 {
+	font-size: $f-u8;
+}
+
+// Utils
+
+// text align
+.tac {
+	text-align: center;
+}
+.tal {
+	text-align: left;
+}
+.tar {
+	text-align: right;
+}
+
+// wrapper
+.wrapper {
+	max-width: 80em;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+.wrapper__readable {
+	max-width: 50em;
 }
