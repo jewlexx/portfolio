@@ -20,6 +20,9 @@ importers:
       '@astrojs/svelte':
         specifier: ^4.0.3
         version: 4.0.3(astro@3.3.2)(svelte@4.2.2)(typescript@5.2.2)(vite@4.5.0)
+      '@tabler/icons':
+        specifier: ^2.39.0
+        version: 2.39.0
       '@tabler/icons-svelte':
         specifier: 2.39.0
         version: 2.39.0(svelte@4.2.2)
