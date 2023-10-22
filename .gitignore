@@ -1,5 +1,7 @@
-# Sveltekit files
-.svelte-kit/
+# build output
+dist/
+# generated types
+.astro/
 
 # Node.gitignore
 # Logs
