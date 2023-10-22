@@ -24,7 +24,7 @@ const repoToUrl = (arg: string | undefined, ctx: z.RefinementCtx): string | unde
 const httpOnly: [(arg: string | undefined) => boolean, message: string] = [(arg) => {
 	if (!arg) {
 		return true;
-	} else if (arg.startsWith('http')) {
+	} else if (!arg.startsWith('https')) {
 		return false;
 	} else {
 		return true
