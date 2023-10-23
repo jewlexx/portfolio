@@ -13,7 +13,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body>
 		<!-- <img src={Stars.src} class="stars" /> -->
-		<Stars client:only="svelte" />
+		<Stars client:load />
 		<Header title={SITE_TITLE} />
 		<main class="hero">
 			<div class="overlay">
