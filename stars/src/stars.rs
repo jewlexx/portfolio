@@ -77,6 +77,7 @@ impl Star {
 
         ctx.begin_path();
 
+        // Draw the 5 points of the star
         for _ in 0..5 {
             ctx.line_to(0.0, self.length);
             ctx.translate(0.0, self.length).unwrap();
@@ -88,13 +89,45 @@ impl Star {
 
         ctx.line_to(0.0, self.length);
         ctx.close_path();
-        ctx.set_fill_style(&JsValue::from_str(&format!(
-            "rgba(255, 255, 200, {})",
-            self.opacity
-        )));
+        ctx.set_fill_style(&{
+            let mut style = Colour::WHITE;
+            style.a = self.opacity;
+            style.into()
+        });
         ctx.set_shadow_blur(5.0);
         ctx.set_shadow_color("#fff");
         ctx.fill();
         ctx.restore();
+    }
+}
+
+struct Colour {
+    r: u8,
+    g: u8,
+    b: u8,
+    a: f64,
+}
+
+impl Colour {
+    pub const WHITE: Self = Self {
+        r: 255,
+        g: 255,
+        b: 255,
+        a: 1.0,
+    };
+
+    pub const BLACK: Self = Self {
+        r: 0,
+        g: 0,
+        b: 0,
+        a: 1.0,
+    };
+}
+
+impl From<Colour> for JsValue {
+    fn from(value: Colour) -> Self {
+        let Colour { r, g, b, a } = value;
+        let string = format!("rgba({r},{g},{b},{a})");
+        JsValue::from_str(&string)
     }
 }
