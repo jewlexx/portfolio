@@ -1,7 +1,8 @@
 mod utils;
 
+use rand::prelude::*;
 use wasm_bindgen::prelude::*;
-use web_sys::{HtmlCanvasElement, Window};
+use web_sys::{CanvasRenderingContext2d, HtmlCanvasElement, Window};
 
 #[wasm_bindgen(start)]
 pub fn start() {
@@ -24,6 +25,11 @@ pub struct WindowSize {
 }
 
 impl WindowSize {
+    pub fn new() -> Self {
+        let window = web_sys::window().unwrap();
+        WindowSize::from_window(window)
+    }
+
     pub fn from_window(window: Window) -> Self {
         let width = {
             let width = window.inner_width().unwrap();
@@ -42,13 +48,77 @@ impl WindowSize {
     }
 }
 
+struct Star {
+    x: usize,
+    y: usize,
+    length: f64,
+    opacity: f64,
+    factor: f64,
+    increment: f64,
+}
+
+impl Star {
+    pub fn new() -> Self {
+        let window_size = WindowSize::new();
+        let mut rng = rand::thread_rng();
+
+        Self {
+            x: rng.gen_range(0..window_size.width as usize),
+            y: rng.gen_range(0..window_size.height as usize),
+            length: rng.gen_range(1.0..=3.0),
+            opacity: rng.gen_range(0.0..=1.0),
+            factor: 1.0,
+            increment: rng.gen_range(0.0..0.3),
+        }
+    }
+
+    pub fn draw(&mut self, ctx: CanvasRenderingContext2d) {
+        let window_size = WindowSize::new();
+        ctx.rotate(std::f64::consts::PI * 1.0 / 10.0).unwrap();
+        ctx.save();
+        ctx.translate(self.x as f64, self.y as f64).unwrap();
+
+        let mut rng = rand::thread_rng();
+
+        if self.opacity > 1.0 {
+            self.factor = -1.0;
+        } else {
+            self.factor = 1.0;
+
+            self.x = rng.gen_range(0..window_size.width as usize);
+            self.y = rng.gen_range(0..window_size.height as usize);
+        }
+
+        self.opacity += self.increment * self.factor;
+
+        ctx.begin_path();
+
+        for _ in 0..5 {
+            ctx.line_to(0.0, self.length);
+            ctx.translate(0.0, self.length).unwrap();
+            ctx.rotate(std::f64::consts::PI * 2.0 / 10.0).unwrap();
+            ctx.line_to(0.0, -self.length);
+            ctx.translate(0.0, -self.length).unwrap();
+            ctx.rotate(-(std::f64::consts::PI * 6.0 / 10.0)).unwrap();
+        }
+
+        ctx.line_to(0.0, self.length);
+        ctx.close_path();
+        ctx.set_fill_style(&JsValue::from_str(&format!(
+            "rgba(255, 255, 200, {})",
+            self.opacity
+        )));
+        ctx.set_shadow_blur(5.0);
+        ctx.set_shadow_color("#fff");
+        ctx.fill();
+        ctx.restore();
+    }
+}
+
 #[wasm_bindgen]
 pub fn attach(canvas: HtmlCanvasElement) {
     use std::f64;
-    let window_size = {
-        let window = web_sys::window().unwrap();
-        WindowSize::from_window(window)
-    };
+    let window_size = WindowSize::new();
 
     const FPS: u16 = 60;
     const STARS: usize = 500;
@@ -66,7 +136,8 @@ pub fn attach(canvas: HtmlCanvasElement) {
     // Draw a smiley face
     context.begin_path();
 
-    for i in 0..STARS {}
+    let mut rng = rand::thread_rng();
+    let stars = (0..STARS).map(|_| Star::new()).collect::<Vec<_>>();
 
     // Draw the outer circle.
     context
