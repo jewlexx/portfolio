@@ -14,7 +14,8 @@
     "pkg/stars.d.ts"
   ],
   "scripts": {
-    "postinstall": "wasm-pack build"
+    "build": "wasm-pack build",
+    "postinstall": "pnpm build"
   },
   "devDependencies": {
     "wasm-pack": "0.12.1"
