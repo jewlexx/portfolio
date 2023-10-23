@@ -1,14 +1,11 @@
 <script>
-	import ProfilePicture from '../assets/images/mirror selfie.webp';
-	import HeaderLink from './HeaderLink.svelte';
+	import { SITE_TITLE } from '../consts';
 	import { links } from '../lib/links';
 </script>
 
 <header>
 	<nav class="nav">
-		<a class="logolink" href="/" rel="prefetch">
-			<img alt="Profile" class="monogram" src={ProfilePicture.src} width={32} height={32} />
-		</a>
+		<h2>{SITE_TITLE}</h2>
 		<a class="link" href="/projects">Portfolio</a>
 		<a class="link" href="/about">About</a>
 		<span class="links-container">
