@@ -11,7 +11,7 @@
 			stars.draw();
 		}
 
-		setInterval(drawLoop, 60 / 1000);
+		setInterval(drawLoop, 1000 / 60);
 
 		return stars.free;
 	});

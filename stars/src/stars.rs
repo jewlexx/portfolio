@@ -50,10 +50,10 @@ impl Star {
         Self {
             x: rng.gen_range(0..window_size.width as usize),
             y: rng.gen_range(0..window_size.height as usize),
-            length: rng.gen_range(1.0..=3.0),
+            length: rng.gen_range(1.0..=1.5) + 1.0,
             opacity: rng.gen_range(0.0..=1.0),
             factor: 1.0,
-            increment: rng.gen_range(0.0..0.3),
+            increment: rng.gen_range(0.0..0.03),
         }
     }
 
@@ -65,7 +65,7 @@ impl Star {
 
         if self.opacity > 1.0 {
             self.factor = -1.0;
-        } else {
+        } else if self.opacity <= 0.0 {
             self.factor = 1.0;
 
             let mut rng = rand::thread_rng();
