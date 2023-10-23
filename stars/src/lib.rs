@@ -55,6 +55,14 @@ impl Stars {
             .dyn_into::<web_sys::CanvasRenderingContext2d>()
             .unwrap();
 
+        let window_size = WindowSize::new();
+        context.clear_rect(
+            0.0,
+            0.0,
+            window_size.width as f64,
+            window_size.height as f64,
+        );
+
         for star in self.stars.iter_mut() {
             star.draw(&context);
         }
