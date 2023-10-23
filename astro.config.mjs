@@ -14,7 +14,7 @@ export default defineConfig({
 		plugins: [wasm()],
 		server: {
 			watch: {
-				ignored: ["./target/**/*"], // HERE
+				ignored: ["**/target/**/*"], // HERE
 			},
 		},
 	},
