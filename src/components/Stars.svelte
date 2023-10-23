@@ -10,3 +10,12 @@
 </script>
 
 <canvas id="stars" bind:this={canvas} />
+
+<style lang="scss">
+	#stars {
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		z-index: -1;
+	}
+</style>
