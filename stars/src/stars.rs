@@ -53,7 +53,7 @@ impl Star {
             length: rng.gen_range(1.0..=1.5) + 1.0,
             opacity: rng.gen_range(0.0..=1.0),
             factor: 1.0,
-            increment: rng.gen_range(0.0..0.03),
+            increment: rng.gen_range(0.0..0.01),
         }
     }
 
