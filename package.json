@@ -42,6 +42,6 @@
     "vite-imagetools": "5.1.2",
     "vite-plugin-pwa": "^0.16.5",
     "vite-plugin-wasm": "3.2.2",
-    "vitest": "0.34.5"
+    "vitest": "0.34.6"
   }
 }
