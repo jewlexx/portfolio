@@ -5,7 +5,8 @@ case $1 in
     echo "Installing Rustup..."
     # Install Rustup (compiler)
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-    # Adding binaries to path
+    echo "Adding binaries to path"
+    cat "$HOME/.cargo/env"
     source "$HOME/.cargo/env"
 
     echo "Installing wasm-pack..."
