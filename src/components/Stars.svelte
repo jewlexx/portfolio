@@ -12,6 +12,8 @@
 			requestAnimationFrame(drawLoop);
 		}
 
+		drawLoop();
+
 		return stars.free;
 	});
 </script>

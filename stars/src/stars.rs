@@ -63,13 +63,12 @@ impl Star {
         ctx.save();
         ctx.translate(self.x as f64, self.y as f64).unwrap();
 
-        let mut rng = rand::thread_rng();
-
         if self.opacity > 1.0 {
             self.factor = -1.0;
         } else {
             self.factor = 1.0;
 
+            let mut rng = rand::thread_rng();
             self.x = rng.gen_range(0..window_size.width as usize);
             self.y = rng.gen_range(0..window_size.height as usize);
         }
