@@ -21,6 +21,7 @@ pub fn greet() {
 #[wasm_bindgen]
 pub fn attach(canvas: HtmlCanvasElement) {
     use std::f64;
+    // canvas.set_width(value)
     let context = canvas
         .get_context("2d")
         .unwrap()

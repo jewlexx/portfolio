@@ -10,7 +10,12 @@ import wasm from 'vite-plugin-wasm';
 export default defineConfig({
 	site: 'https://www.jewelexx.com',
 	integrations: [mdx(), sitemap(), svelte()],
-	  vite: {
-    plugins: [wasm()],
-  },
+	vite: {
+		plugins: [wasm()],
+		server: {
+			watch: {
+				ignored: ["./target/**/*"], // HERE
+			},
+		},
+	},
 });
