@@ -1,0 +1,22 @@
+{
+  "name": "stars",
+  "version": "0.1.0",
+  "sideEffects": [
+    "./pkg/stars.js",
+    "./pkg/snippets/*"
+  ],
+  "module": "pkg/stars.js",
+  "types": "pkg/stars.d.ts",
+  "files": [
+    "pkg/stars_bg.wasm",
+    "pkg/stars.js",
+    "pkg/stars_bg.js",
+    "pkg/stars.d.ts"
+  ],
+  "scripts": {
+    "postinstall": "wasm-pack build"
+  },
+  "devDependencies": {
+    "wasm-pack": "0.12.1"
+  }
+}
