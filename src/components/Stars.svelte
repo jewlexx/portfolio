@@ -1,20 +1,20 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { Stars } from 'stars';
+import { onMount } from 'svelte';
+import { Stars } from 'stars';
 
-	let canvas: HTMLCanvasElement;
+let canvas: HTMLCanvasElement;
 
-	onMount(() => {
-		const stars = new Stars(canvas);
+onMount(() => {
+	const stars = new Stars(canvas);
 
-		function drawLoop() {
-			stars.draw();
-		}
+	function drawLoop() {
+		stars.draw();
+	}
 
-		setInterval(drawLoop, 1000 / 60);
+	setInterval(drawLoop, 1000 / 60);
 
-		return stars.free;
-	});
+	return stars.free;
+});
 </script>
 
 <canvas id="stars" bind:this={canvas} />
