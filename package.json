@@ -6,6 +6,7 @@
   "scripts": {
     "astro": "astro",
     "build": "astro build",
+    "build:ci": "ci.sh",
     "build:wasm": "cd stars && pnpm build",
     "dev": "astro dev",
     "preview": "astro preview",
