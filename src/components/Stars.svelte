@@ -1,11 +1,18 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import * as stars from 'stars';
+	import { Stars } from 'stars';
 
 	let canvas: HTMLCanvasElement;
 
 	onMount(() => {
-		stars.attach(canvas as HTMLCanvasElement);
+		const stars = new Stars(canvas);
+
+		function drawLoop() {
+			stars.draw();
+			requestAnimationFrame(drawLoop);
+		}
+
+		return stars.free;
 	});
 </script>
 

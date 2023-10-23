@@ -3,9 +3,8 @@ mod utils;
 
 use stars::*;
 
-use rand::prelude::*;
 use wasm_bindgen::prelude::*;
-use web_sys::{CanvasRenderingContext2d, HtmlCanvasElement, Window};
+use web_sys::{CanvasRenderingContext2d, HtmlCanvasElement};
 
 #[wasm_bindgen(start)]
 pub fn start() {
@@ -23,23 +22,39 @@ pub fn greet() {
 }
 
 #[wasm_bindgen]
-pub fn attach(canvas: HtmlCanvasElement) {
-    use std::f64;
-    let window_size = WindowSize::new();
+pub struct Stars {
+    canvas: HtmlCanvasElement,
+    stars: Vec<Star>,
+}
 
-    const FPS: u16 = 60;
-    const STARS: usize = 500;
+#[wasm_bindgen]
+impl Stars {
+    #[wasm_bindgen(constructor)]
+    pub fn new(canvas: HtmlCanvasElement) -> Self {
+        let window_size = WindowSize::new();
 
-    canvas.set_width(window_size.width);
-    canvas.set_height(window_size.height);
+        const FPS: u16 = 60;
+        const STARS: usize = 500;
 
-    let context = canvas
-        .get_context("2d")
-        .unwrap()
-        .unwrap()
-        .dyn_into::<web_sys::CanvasRenderingContext2d>()
-        .unwrap();
+        canvas.set_width(window_size.width);
+        canvas.set_height(window_size.height);
 
-    let mut rng = rand::thread_rng();
-    let stars = (0..STARS).map(|_| Star::new()).collect::<Vec<_>>();
+        let stars = (0..STARS).map(|_| Star::new()).collect::<Vec<_>>();
+
+        Self { canvas, stars }
+    }
+
+    pub fn draw(&mut self) {
+        let context = self
+            .canvas
+            .get_context("2d")
+            .unwrap()
+            .unwrap()
+            .dyn_into::<web_sys::CanvasRenderingContext2d>()
+            .unwrap();
+
+        for star in self.stars.iter_mut() {
+            star.draw(&context);
+        }
+    }
 }

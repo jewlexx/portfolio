@@ -57,7 +57,7 @@ impl Star {
         }
     }
 
-    pub fn draw(&mut self, ctx: CanvasRenderingContext2d) {
+    pub fn draw(&mut self, ctx: &CanvasRenderingContext2d) {
         let window_size = WindowSize::new();
         ctx.rotate(std::f64::consts::PI * 1.0 / 10.0).unwrap();
         ctx.save();
