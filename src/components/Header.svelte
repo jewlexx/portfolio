@@ -4,6 +4,7 @@
 	import HeaderLink from './HeaderLink.svelte';
 
 	export let title: string;
+	export let shortTitle: string = title.split(' ')[0];
 
 	let titleDisplay = title;
 
@@ -11,9 +12,10 @@
 		let smallSize = false;
 
 		function updateTitle() {
+			console.log('updated size');
 			if (window.innerWidth < window.innerHeight) {
 				if (!smallSize) {
-					titleDisplay = title.split(' ')[0];
+					titleDisplay = shortTitle;
 					smallSize = true;
 				}
 			} else if (smallSize) {

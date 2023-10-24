@@ -5,14 +5,19 @@ import Header from '../components/Header.svelte';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 
-type Props = CollectionEntry<'projects'>['data'];
+interface ExtraProps {
+	slug: string,
+}
+type Props = CollectionEntry<'projects'>['data'] & ExtraProps;
 
-const { title, description, heroImage, repo, homepage } = Astro.props;
+const { title, description, heroImage, repo, homepage, slug } = Astro.props;
+
+const pageTitle = `${title} | Juliette's Projects`;
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead title={pageTitle} description={description} />
 		<style>
 			main {
 				width: calc(100% - 2em);
@@ -55,7 +60,7 @@ const { title, description, heroImage, repo, homepage } = Astro.props;
 	</head>
 
 	<body>
-		<Header />
+		<Header title={pageTitle} shortTitle={slug} />
 		<main>
 			<article>
 				<div class="hero-image">

@@ -2,19 +2,21 @@
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.svelte';
 import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('projects'));
+
+const title = "Juliette's Projects";
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={title} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Header />
+		<Header title={title} shortTitle="Projects" />
 		<main>
 			<section>
 				<ul>
