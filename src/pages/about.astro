@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Project.astro';
+import { getEntry } from 'astro:content';
+
+const about = await getEntry('info', 'about');
+
+const { Content } = await about!.render();
+---
+
+<Layout
+	title={about.data.title}
+	description="Lorem ipsum dolor sit amet"
+	slug={about.data.title}
+>
+	<Content />
+</Layout>

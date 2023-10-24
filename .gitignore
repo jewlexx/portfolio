@@ -1,5 +1,20 @@
-# Sveltekit files
-.svelte-kit/
+# Yarn v2 files
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Rust
+target/
+Cargo.lock
+
+# build output
+dist/
+# generated types
+.astro/
 
 # Node.gitignore
 # Logs
