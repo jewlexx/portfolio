@@ -4,6 +4,7 @@ mod log;
 mod stars;
 mod utils;
 
+use log::WebLogging;
 use stars::*;
 
 use wasm_bindgen::prelude::*;
@@ -12,12 +13,7 @@ use web_sys::HtmlCanvasElement;
 #[wasm_bindgen(start)]
 pub fn start() {
     utils::set_panic_hook();
-}
-
-#[wasm_bindgen]
-extern "C" {
-    #[wasm_bindgen(js_namespace = console)]
-    fn log(s: &str);
+    WebLogging::init().expect("successfully initialized logging");
 }
 
 #[wasm_bindgen]
