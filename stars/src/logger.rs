@@ -1,7 +1,8 @@
 use std::sync::atomic::{AtomicBool, Ordering};
 
-use log::SetLoggerError;
-use wasm_bindgen::prelude::wasm_bindgen;
+use log::{LevelFilter, SetLoggerError};
+
+use super::log;
 
 pub struct WebLogging;
 
@@ -10,7 +11,10 @@ static ENABLED: AtomicBool = AtomicBool::new(false);
 
 impl WebLogging {
     pub fn init() -> Result<(), SetLoggerError> {
-        log::set_logger(&LOGGER).map(|_logger| ENABLED.store(true, Ordering::Relaxed))
+        log::set_logger(&LOGGER).map(|()| {
+            log::set_max_level(LevelFilter::Info);
+            ENABLED.store(true, Ordering::Relaxed);
+        })
     }
 }
 
@@ -21,21 +25,15 @@ impl log::Log for WebLogging {
 
     fn log(&self, record: &log::Record) {
         if self.enabled(record.metadata()) {
-            #[wasm_bindgen]
-            extern "C" {
-                #[wasm_bindgen(js_namespace = console)]
-                fn log(s: &str);
-            }
+            // let mid = if let Some((file, line)) =
+            //     record.file().and_then(|a| record.line().map(|b| (a, b)))
+            // {
+            //     format!(" {file}:{line} ")
+            // } else {
+            //     "".to_string()
+            // };
 
-            let mid = if let Some((file, line)) =
-                record.file().and_then(|a| record.line().map(|b| (a, b)))
-            {
-                format!(" {file}:{line} ")
-            } else {
-                "".to_string()
-            };
-
-            log(&format_args!("[{}{mid}] {}\n", record.level(), record.args()).to_string());
+            log(&format_args!("[{}] {}\n", record.level(), record.args()).to_string());
         }
     }
 

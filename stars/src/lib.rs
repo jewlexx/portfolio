@@ -11,12 +11,16 @@ use stars::*;
 use wasm_bindgen::prelude::*;
 use web_sys::HtmlCanvasElement;
 
+#[wasm_bindgen]
+extern "C" {
+    #[wasm_bindgen(js_namespace = console)]
+    fn log(s: &str);
+}
+
 #[wasm_bindgen(start)]
 pub fn start() {
     utils::set_panic_hook();
-    WebLogging::init().expect("successfully initialized logging");
-
-    info!("Initialized");
+    WebLogging::init().expect("successfull logger init");
 }
 
 #[wasm_bindgen]
@@ -29,6 +33,8 @@ pub struct Stars {
 impl Stars {
     #[wasm_bindgen(constructor)]
     pub fn new(canvas: HtmlCanvasElement) -> Self {
+        info!("Initialized");
+
         const STARS: usize = 500;
 
         let stars = (0..STARS).map(|_| Star::new()).collect::<Vec<_>>();
