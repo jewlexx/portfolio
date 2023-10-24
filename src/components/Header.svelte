@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { links } from '../lib/links';
 	import HeaderLink from './HeaderLink.svelte';
+	import ProfilePicture from '../assets/images/mirror selfie.webp';
 
 	export let title: string;
 	export let shortTitle: string = title.split(' ')[0];
@@ -35,7 +36,12 @@
 
 <header>
 	<nav class="nav">
-		<h2>{titleDisplay}</h2>
+		<span class="title-image">
+			<a class="logolink" href="/" rel="prefetch">
+				<img alt="Profile" class="monogram" src={ProfilePicture.src} />
+			</a>
+			<h2>{titleDisplay}</h2>
+		</span>
 		<HeaderLink class="link" href="/about">About</HeaderLink>
 		<HeaderLink class="link" href="/projects">Projects</HeaderLink>
 		<span class="links-container">
@@ -50,6 +56,23 @@
 
 <style lang="scss">
 	@import '../styles/palette.scss';
+
+	.title-image {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		a {
+			float: left;
+			img {
+				width: 3rem;
+				height: 3rem;
+			}
+		}
+		h2 {
+			float: right;
+		}
+	}
 
 	.nav {
 		background-color: lighten($dark-gray, 10%);
