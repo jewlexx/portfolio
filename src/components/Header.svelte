@@ -1,11 +1,39 @@
-<script>
-	import { SITE_TITLE } from '../consts';
+<script lang="ts">
+	import { onMount } from 'svelte';
 	import { links } from '../lib/links';
+
+	export let title: string;
+
+	let titleDisplay = title;
+
+	onMount(() => {
+		let smallSize = false;
+
+		function updateTitle() {
+			if (window.innerWidth < window.innerHeight) {
+				if (!smallSize) {
+					titleDisplay = title.split(' ')[0];
+					smallSize = true;
+				}
+			} else if (smallSize) {
+				titleDisplay = title;
+				smallSize = false;
+			}
+		}
+
+		updateTitle();
+
+		window.addEventListener('resize', updateTitle);
+		return () => {
+			console.log('freed');
+			window.removeEventListener('resize', updateTitle);
+		};
+	});
 </script>
 
 <header>
 	<nav class="nav">
-		<h2>{SITE_TITLE}</h2>
+		<h2>{titleDisplay}</h2>
 		<a class="link" href="/projects">Portfolio</a>
 		<a class="link" href="/about">About</a>
 		<span class="links-container">
