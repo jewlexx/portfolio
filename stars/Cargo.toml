@@ -31,4 +31,4 @@ getrandom = { version = "0.2.10", features = ["js"] }
 log = "0.4.20"
 
 [dev-dependencies]
-wasm-bindgen-test = "0.3.34"
+wasm-bindgen-test = "0.3.37"
