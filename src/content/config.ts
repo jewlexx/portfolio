@@ -18,18 +18,20 @@ const repoToUrl = (arg: string | undefined, ctx: z.RefinementCtx): string | unde
 		const [repo] = repoPath;
 		return `https://github.com/${GITHUB_USER}/${repo}`;
 	}
+};
 
-}
-
-const httpOnly: [(arg: string | undefined) => boolean, message: string] = [(arg) => {
-	if (!arg) {
-		return true;
-	} else if (!arg.startsWith('https')) {
-		return false;
-	} else {
-		return true
-	}
-}, "HTTP is not secure, and thus not supported"];
+const httpOnly: [(arg: string | undefined) => boolean, message: string] = [
+	(arg) => {
+		if (!arg) {
+			return true;
+		} else if (!arg.startsWith('https')) {
+			return false;
+		} else {
+			return true;
+		}
+	},
+	'HTTP is not secure, and thus not supported'
+];
 
 const projects = defineCollection({
 	// Type-check frontmatter using a schema
@@ -37,9 +39,28 @@ const projects = defineCollection({
 		title: z.string(),
 		description: z.string(),
 		heroImage: z.string().optional(),
-		repo: z.string().optional().transform(repoToUrl).refine(...httpOnly),
-		homepage: z.string().optional().refine(...httpOnly),
-	}),
+		repo: z
+			.string()
+			.optional()
+			.transform(repoToUrl)
+			.refine(...httpOnly),
+		homepage: z
+			.string()
+			.optional()
+			.refine(...httpOnly),
+		shields: z
+			.array(
+				z.object({
+					alt: z.string(),
+					src: z.string().refine(...httpOnly),
+					href: z
+						.string()
+						.optional()
+						.refine(...httpOnly)
+				})
+			)
+			.optional()
+	})
 });
 
 export const collections = { projects };
