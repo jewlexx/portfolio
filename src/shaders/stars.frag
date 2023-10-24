@@ -1,3 +1,6 @@
+// Currently unused
+// Adapated from https://godotshaders.com/shader/stars-shader/
+
 #version 100
 
 precision highp float;
