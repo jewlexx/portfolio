@@ -42,13 +42,9 @@ const pageTitle = `${title} | Juliette's Projects`;
 						<h1>{title}</h1>
 						{shields &&
 							(<p class="shields">
-								{shields?.map((shield) => {
-									if (shield.href) {
-										return (<a href={shield.href}><img src={shield.src} alt={shield.alt} /></a>)
-									} else {
-										return <img src={shield.src} alt={shield.alt} />
-									}
-								})}
+								{shields?.map((shield) =>
+									<a href={shield.href}><img src={shield.src} alt={shield.alt} /></a>
+								)}
 							</p>)
 						}
 						<hr />
@@ -103,7 +99,7 @@ main {
 }
 
 .shields {
-	* {
+	a {
 		margin-right: 0.5rem;
 	}
 }
