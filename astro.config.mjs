@@ -1,4 +1,7 @@
 import { defineConfig } from 'astro/config';
+
+import vercel from '@astrojs/vercel/serverless';
+
 import mdx from '@astrojs/mdx';
 import svelte from '@astrojs/svelte';
 
@@ -13,6 +16,8 @@ import wasm from 'vite-plugin-wasm';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://www.jewelexx.com',
+	output: 'server',
+	adapter: vercel(),
 	integrations: [mdx(), sitemap(), svelte(), AstroPWA(), robotsTxt(),  Compress()],
 	vite: {
 		plugins: [wasm()],
