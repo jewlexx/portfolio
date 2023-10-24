@@ -73,6 +73,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	.hero {
 		position: relative;
 		overflow: hidden;
+		padding: 1rem;
+
 		@media (min-width: $w-s) {
 			height: 45vw;
 		}
@@ -90,6 +92,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		justify-content: center;
 		@media (min-width: $w-s) {
 			padding-left: 4rem;
+		}
+
+		p {
+			line-height: 2rem;
+		    word-wrap:break-word;
 		}
 	}
 
