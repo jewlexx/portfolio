@@ -9,15 +9,14 @@ const { pathname } = Astro.url;
 
 <script>
 	export let href;
-	export let className;
 
 	const { pathname } = Astro.url;
 	const isActive = href === pathname || href === pathname.replace(/\/$/, '');
 </script>
 
 ---
-<a {href} class={`${className} ${isActive && 'active'}`}>
-	<slot />
+<a {href} class={`${$$restProps.class || ''} ${isActive && 'active'}`}>
+	<h3><slot /></h3>
 </a>
 
 <style lang="scss">

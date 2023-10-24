@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { links } from '../lib/links';
+	import HeaderLink from './HeaderLink.svelte';
 
 	export let title: string;
 
@@ -34,8 +35,8 @@
 <header>
 	<nav class="nav">
 		<h2>{titleDisplay}</h2>
-		<a class="link" href="/projects">Portfolio</a>
-		<a class="link" href="/about">About</a>
+		<HeaderLink class="link" href="/projects">Portfolio</HeaderLink>
+		<HeaderLink class="link" href="/about">About</HeaderLink>
 		<span class="links-container">
 			{#each links as { emoji: Emoji, url, title }}
 				<a href={url} {title} target="_blank" rel="noopener noreferrer" class="role">
