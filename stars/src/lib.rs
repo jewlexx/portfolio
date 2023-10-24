@@ -1,10 +1,11 @@
 #[macro_use]
-mod log;
+extern crate log;
 
+mod logger;
 mod stars;
 mod utils;
 
-use log::WebLogging;
+use logger::WebLogging;
 use stars::*;
 
 use wasm_bindgen::prelude::*;
@@ -14,6 +15,8 @@ use web_sys::HtmlCanvasElement;
 pub fn start() {
     utils::set_panic_hook();
     WebLogging::init().expect("successfully initialized logging");
+
+    info!("Initialized");
 }
 
 #[wasm_bindgen]
