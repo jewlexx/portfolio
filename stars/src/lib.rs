@@ -1,3 +1,6 @@
+#[macro_use]
+mod log;
+
 mod stars;
 mod utils;
 
@@ -17,12 +20,6 @@ extern "C" {
     fn log(s: &str);
 }
 
-macro_rules! console_log {
-    // Note that this is using the `log` function imported above during
-    // `bare_bones`
-    ($($t:tt)*) => (log(&format_args!($($t)*).to_string()))
-}
-
 #[wasm_bindgen]
 pub struct Stars {
     canvas: HtmlCanvasElement,
@@ -33,12 +30,7 @@ pub struct Stars {
 impl Stars {
     #[wasm_bindgen(constructor)]
     pub fn new(canvas: HtmlCanvasElement) -> Self {
-        let window_size = WindowSize::new();
-
         const STARS: usize = 500;
-
-        canvas.set_width(window_size.width);
-        canvas.set_height(window_size.height);
 
         let stars = (0..STARS).map(|_| Star::new()).collect::<Vec<_>>();
 
@@ -46,7 +38,6 @@ impl Stars {
     }
 
     pub fn draw(&mut self) {
-        console_log!("Drawing stars");
         let context = self
             .canvas
             .get_context("2d")
@@ -56,6 +47,10 @@ impl Stars {
             .unwrap();
 
         let window_size = WindowSize::new();
+
+        self.canvas.set_width(window_size.width);
+        self.canvas.set_height(window_size.height);
+
         context.clear_rect(
             0.0,
             0.0,
