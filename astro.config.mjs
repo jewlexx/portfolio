@@ -54,6 +54,18 @@ export default defineConfig({
 						src: '/favicon-16x16.png',
 						sizes: '16x16',
 						type: 'image/png'
+					},
+					{
+						src: '/apple-touch-icon.png',
+						sizes: '180x180'
+					},
+					{
+						src: '/android-chrome-192x192.png',
+						sizes: '192x192'
+					},
+					{
+						src: '/android-chrome-512x512.png',
+						sizes: '512x512'
 					}
 				]
 			}

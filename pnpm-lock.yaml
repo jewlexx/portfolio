@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  file-type@^9: ^10
+
 importers:
 
   .:
@@ -1854,7 +1857,7 @@ packages:
       any-base: 1.1.0
       buffer: 5.7.1
       exif-parser: 0.1.12
-      file-type: 9.0.0
+      file-type: 10.11.0
       load-bmfont: 1.4.1
       mkdirp: 0.5.6
       phin: 2.9.3
@@ -4198,6 +4201,11 @@ packages:
       flat-cache: 3.1.1
     dev: true
 
+  /file-type@10.11.0:
+    resolution: {integrity: sha512-uzk64HRpUZyTGZtVuvrjP0FYxzQrBf4rojot6J65YMEbwBLB0CWm0CLojVpwpmFmxcE/lkvYICgfcGozbBq6rw==}
+    engines: {node: '>=6'}
+    dev: true
+
   /file-type@17.1.1:
     resolution: {integrity: sha512-heRUMZHby2Qj6wZAA3YHeMlRmZNQTcb6VxctkGmM+mcM6ROQKvHpr7SS6EgdfEhH+s25LDshBjvPx/Ecm+bOVQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
@@ -4205,11 +4213,6 @@ packages:
       readable-web-to-node-stream: 3.0.2
       strtok3: 7.0.0
       token-types: 5.0.1
-    dev: true
-
-  /file-type@9.0.0:
-    resolution: {integrity: sha512-Qe/5NJrgIOlwijpq3B7BEpzPFcgzggOTagZmkXQY4LA6bsXKTUstK7Wp12lEJ/mLKTpvIZxmIuRcLYWT6ov9lw==}
-    engines: {node: '>=6'}
     dev: true
 
   /file-uri-to-path@1.0.0:
