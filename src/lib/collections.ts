@@ -18,10 +18,8 @@ export async function getProjects() {
 			data.heroImage = result.result.ogImage?.[0].url;
 		}
 
-		return {
-			...project,
-			data
-		};
+		project.data = data;
+		return project;
 	});
 
 	return Promise.all(projects);
