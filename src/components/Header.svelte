@@ -16,12 +16,12 @@
 			console.log('updated size');
 			if (window.innerWidth < window.innerHeight) {
 				if (!smallSize) {
-					titleDisplay = shortTitle;
+					// Disable short title
+					titleDisplay = undefined;
 					smallSize = true;
 				}
 			} else if (smallSize) {
-				// Disable short title
-				titleDisplay = undefined;
+				titleDisplay = title;
 				smallSize = false;
 			}
 		}
@@ -42,7 +42,9 @@
 				🌏
 				<!-- <img alt="Profile" class="monogram" src={ProfilePicture.src} /> -->
 			</a>
-			{titleDisplay && <h2>{titleDisplay}</h2>}
+			{#if titleDisplay}
+				<h2>{titleDisplay}</h2>
+			{/if}
 		</span>
 		<HeaderLink class="link" href="/about">About</HeaderLink>
 		<HeaderLink class="link" href="/projects">Projects</HeaderLink>
