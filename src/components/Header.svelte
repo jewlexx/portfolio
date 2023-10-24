@@ -46,8 +46,8 @@
 				<h2>{titleDisplay}</h2>
 			{/if}
 		</span>
-		<HeaderLink class="link" href="/about">About</HeaderLink>
-		<HeaderLink class="link" href="/projects">Projects</HeaderLink>
+		<HeaderLink class="link" href="/about"><h3>About</h3></HeaderLink>
+		<HeaderLink class="link" href="/projects"><h3>Projects</h3></HeaderLink>
 		<span class="links-container">
 			{#each links as { emoji: Emoji, url, title }}
 				<a href={url} {title} target="_blank" rel="noopener noreferrer" class="role">
