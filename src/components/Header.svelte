@@ -7,7 +7,7 @@
 	export let title: string;
 	export let shortTitle: string = title.split(' ')[0];
 
-	let titleDisplay = title;
+	let titleDisplay: string | undefined = title;
 
 	onMount(() => {
 		let smallSize = false;
@@ -20,7 +20,8 @@
 					smallSize = true;
 				}
 			} else if (smallSize) {
-				titleDisplay = title;
+				// Disable short title
+				titleDisplay = undefined;
 				smallSize = false;
 			}
 		}
@@ -41,7 +42,7 @@
 				🌏
 				<!-- <img alt="Profile" class="monogram" src={ProfilePicture.src} /> -->
 			</a>
-			<h2>{titleDisplay}</h2>
+			{titleDisplay && <h2>{titleDisplay}</h2>}
 		</span>
 		<HeaderLink class="link" href="/about">About</HeaderLink>
 		<HeaderLink class="link" href="/projects">Projects</HeaderLink>
