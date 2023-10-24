@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { links } from '../lib/links';
 	import HeaderLink from './HeaderLink.svelte';
-	import ProfilePicture from '../assets/images/mirror selfie.webp';
+	// import ProfilePicture from '../assets/images/pfp.jpg';
 
 	export let title: string;
 	export let shortTitle: string = title.split(' ')[0];
@@ -38,7 +38,8 @@
 	<nav class="nav">
 		<span class="title-image">
 			<a class="logolink" href="/" rel="prefetch">
-				<img alt="Profile" class="monogram" src={ProfilePicture.src} />
+				🌏
+				<!-- <img alt="Profile" class="monogram" src={ProfilePicture.src} /> -->
 			</a>
 			<h2>{titleDisplay}</h2>
 		</span>
@@ -59,18 +60,24 @@
 
 	.title-image {
 		display: flex;
-		flex-direction: row;
 		align-items: center;
 
 		a {
-			float: left;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			font-size: 2.5rem;
+			border: 5px solid black;
+			background-color: white;
+			border-radius: 100%;
+			padding: 0.75rem;
+			margin-right: 1rem;
+
 			img {
 				width: 3rem;
 				height: 3rem;
 			}
-		}
-		h2 {
-			float: right;
 		}
 	}
 
