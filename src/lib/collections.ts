@@ -11,12 +11,15 @@ export async function getProjects() {
 				url: data.repo
 			});
 			if (result.error) {
+				console.error('Error fetching og data');
 				return project;
 			}
 
 			// TODO: Get og info
 			data.heroImage = result.result.ogImage?.[0].url;
 		}
+
+		console.error('Could not get og data');
 
 		return {
 			...project,
