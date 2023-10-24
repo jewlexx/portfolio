@@ -36,8 +36,8 @@
 <header>
 	<nav class="nav">
 		<h2>{titleDisplay}</h2>
-		<HeaderLink class="link" href="/projects">Portfolio</HeaderLink>
 		<HeaderLink class="link" href="/about">About</HeaderLink>
+		<HeaderLink class="link" href="/projects">Projects</HeaderLink>
 		<span class="links-container">
 			{#each links as { emoji: Emoji, url, title }}
 				<a href={url} {title} target="_blank" rel="noopener noreferrer" class="role">
