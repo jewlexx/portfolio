@@ -19,7 +19,7 @@ const title = "Juliette's Projects";
 		<Header client:load title={title} shortTitle="Projects" />
 		<main>
 			<section>
-				<ul>
+				<ul class="project-list">
 					{posts.map((post) => (
 							<li>
 								<a href={`/projects/${post.slug}/`}>
@@ -36,19 +36,27 @@ const title = "Juliette's Projects";
 </html>
 
 <style lang="scss">
-	main {
-		width: 960px;
-	}
 	ul {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 2rem;
 		list-style-type: none;
-		margin: 0;
+		// margin: 0;
 		padding: 0;
+
+		// display: grid;
+
+		// gap: 50px;
+		// grid: 300px / auto auto auto;
+		// display: flex;
+
 	}
 	ul li {
-		width: calc(50% - 1rem);
+		// width: calc(50% - 1rem);
+
+		a img {
+			width: calc(50% - 1rem);
+		}
 	}
 	ul li * {
 		text-decoration: none;
