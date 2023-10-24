@@ -28,7 +28,6 @@
 
 		window.addEventListener('resize', updateTitle);
 		return () => {
-			console.log('freed');
 			window.removeEventListener('resize', updateTitle);
 		};
 	});
