@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { Icon } from 'astro-icon';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.svelte';
 import Footer from '../components/Footer.astro';
@@ -47,6 +48,19 @@ const pageTitle = `${title} | Juliette's Projects`;
 								)}
 							</p>)
 						}
+
+						<span class="links">
+							{repo &&
+								(<a href={repo} target="_blank" rel="noopener noreferrer">
+									<Icon pack="tabler" name="brand-git" />
+								</a>)
+							}
+							{homepage &&
+								(<a href={homepage} target="_blank" rel="noopener noreferrer">
+									<Icon pack="tabler" name="link" />
+								</a>)
+							}
+						</span>
 						<hr />
 					</div>
 					<slot />
@@ -101,6 +115,21 @@ main {
 .shields {
 	a {
 		margin-right: 0.5rem;
+	}
+}
+
+.links {
+	a {
+		margin: 0.5rem;
+	}
+
+	svg {
+		width: 3rem;
+		height: 3rem;
+		background-color: #282a2c;
+		border-radius: 5px;
+		box-shadow: inset 0px 0px 2px lighten(#282a2c, 10%);
+		padding: 0.2rem;
 	}
 }
 </style>
