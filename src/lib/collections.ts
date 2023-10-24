@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 export async function getProjects() {
 	const projects = await getCollection('projects');
 
-	projects.map(async (project) => {
+	const withOgIcons = projects.map(async (project) => {
 		const data = project.data;
 		if (data.repo) {
 			const result = await ogs({
@@ -22,5 +22,5 @@ export async function getProjects() {
 		return project;
 	});
 
-	return Promise.all(projects);
+	return Promise.all(withOgIcons);
 }
