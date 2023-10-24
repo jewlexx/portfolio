@@ -8,15 +8,20 @@ const { pathname } = Astro.url;
 --- -->
 
 <script>
+	import { onMount } from 'svelte';
+
 	export let href;
 
-	const { pathname } = Astro.url;
-	const isActive = href === pathname || href === pathname.replace(/\/$/, '');
+	let isActive = false;
+
+	onMount(() => {
+		const { pathname } = new URL(window.location.href);
+		isActive = href === pathname || href === pathname.replace(/\/$/, '');
+	});
 </script>
 
----
 <a {href} class={`${$$restProps.class || ''} ${isActive && 'active'}`}>
-	<h3><slot /></h3>
+	<slot />
 </a>
 
 <style lang="scss">
@@ -24,7 +29,7 @@ const { pathname } = Astro.url;
 		display: inline-block;
 		text-decoration: none;
 
-		.active {
+		&.active {
 			font-weight: bolder;
 			text-decoration: underline;
 		}
