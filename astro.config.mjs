@@ -15,7 +15,7 @@ import wasm from 'vite-plugin-wasm';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://www.jewelexx.com',
-	output: 'static',
+	output: 'server',
 	adapter: vercel({
 		webAnalytics: {
 			enabled: true
