@@ -7,9 +7,12 @@
 	onMount(() => {
 		const stars = new Stars(canvas);
 
-		stars.begin_drawing();
+		const stopper = stars.begin_drawing();
 
-		return stars.free;
+		return () => {
+			stopper();
+			stars.free();
+		};
 	});
 </script>
 

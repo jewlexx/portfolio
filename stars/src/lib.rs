@@ -7,7 +7,7 @@ mod logger;
 mod stars;
 mod utils;
 
-use std::rc::Rc;
+use std::{rc::Rc, sync::mpsc};
 
 use logger::WebLogging;
 use stars::*;
@@ -29,6 +29,7 @@ pub fn start() {
 pub struct Stars {
     canvas: HtmlCanvasElement,
     stars: Vec<Star>,
+    channel: (mpsc::Sender<()>, mpsc::Receiver<()>),
 }
 
 #[wasm_bindgen]
@@ -41,10 +42,14 @@ impl Stars {
 
         let stars = (0..STARS).map(|_| Star::new()).collect::<Vec<_>>();
 
-        Self { canvas, stars }
+        Self {
+            canvas,
+            stars,
+            channel: mpsc::channel(),
+        }
     }
 
-    pub fn begin_drawing(mut self) {
+    pub fn begin_drawing(mut self) -> JsValue {
         use std::cell::RefCell;
         let ctx = self
             .canvas
@@ -59,13 +64,31 @@ impl Stars {
 
         let ctx = Rc::new(ctx);
 
+        let stopper = {
+            let tx = self.channel.0.clone();
+            Closure::once_into_js(move || {
+                info!("Stopping painting stars");
+                tx.send(()).unwrap();
+            })
+        };
+
         *g.borrow_mut() = Some(Closure::new(move || {
+            if let Ok(()) = self.channel.1.try_recv() {
+                info!("Received stop signal. Stopping painting...");
+                // Drop our handle to this closure so that it will get cleaned
+                // up once we return.
+                let _ = f.borrow_mut().take();
+                info!("Dropped painter.");
+                return;
+            }
             debug!("Updating stars");
             self.draw(ctx.clone());
             utils::request_animation_frame(f.borrow().as_ref().unwrap());
         }));
 
         utils::request_animation_frame(g.borrow().as_ref().unwrap());
+
+        stopper
     }
 
     fn draw(&mut self, ctx: Rc<CanvasRenderingContext2d>) {
