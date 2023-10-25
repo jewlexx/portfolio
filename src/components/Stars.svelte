@@ -8,10 +8,11 @@
 		const stars = new Stars(canvas);
 
 		function drawLoop() {
+			requestAnimationFrame(drawLoop);
 			stars.draw();
 		}
 
-		setInterval(drawLoop, 1000 / 60);
+		drawLoop();
 
 		return stars.free;
 	});
