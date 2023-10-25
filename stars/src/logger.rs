@@ -12,7 +12,15 @@ static ENABLED: AtomicBool = AtomicBool::new(false);
 impl WebLogging {
     pub fn init() -> Result<(), SetLoggerError> {
         log::set_logger(&LOGGER).map(|()| {
-            log::set_max_level(LevelFilter::Info);
+            log::set_max_level(
+                const {
+                    if cfg!(debug_assertions) {
+                        LevelFilter::Trace
+                    } else {
+                        LevelFilter::Info
+                    }
+                },
+            );
             ENABLED.store(true, Ordering::Relaxed);
         })
     }

@@ -1,3 +1,5 @@
+#![feature(inline_const)]
+
 #[macro_use]
 extern crate log;
 
