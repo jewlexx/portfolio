@@ -9,6 +9,7 @@
 
 	let titleDisplay: string | undefined = title;
 	let smallSize = false;
+	let superSmallWidth = false;
 
 	onMount(() => {
 		function updateTitle() {
@@ -21,6 +22,12 @@
 			} else if (smallSize) {
 				// titleDisplay = title;
 				smallSize = false;
+			}
+
+			if (window.innerWidth < 500) {
+				superSmallWidth = true;
+			} else {
+				superSmallWidth = false;
 			}
 		}
 
@@ -45,7 +52,7 @@
 			{/if}
 		</span>
 		<!-- TODO: Add headerlinks on mobile screens -->
-		{#if !smallSize}
+		{#if !superSmallWidth}
 			<HeaderLink class="link" href="/about"><h3>About</h3></HeaderLink>
 			<HeaderLink class="link" href="/projects"><h3>Projects</h3></HeaderLink>
 		{/if}
