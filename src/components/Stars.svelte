@@ -11,7 +11,9 @@
 
 		return () => {
 			stopper();
-			stars.free();
+			// I believe that we don't need to call this, as the object is dropped after `begin_drawing` is called
+			// When calling this an error is logged saying that a null pointer was passed
+			// stars.free();
 		};
 	});
 </script>

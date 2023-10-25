@@ -78,7 +78,7 @@ impl Stars {
                 // Drop our handle to this closure so that it will get cleaned
                 // up once we return.
                 let _ = f.borrow_mut().take();
-                info!("Dropped painter.");
+                info!("Dropped painter callback.");
                 return;
             }
             debug!("Updating stars");
@@ -107,5 +107,11 @@ impl Stars {
         for star in self.stars.iter_mut() {
             star.draw(&ctx);
         }
+    }
+}
+
+impl Drop for Stars {
+    fn drop(&mut self) {
+        info!("Stopped painting stars.")
     }
 }
