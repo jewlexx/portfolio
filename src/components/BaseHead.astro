@@ -1,17 +1,19 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
+import { ViewTransitions } from 'astro:transitions';
 import '../styles/global.scss';
 
 interface Props {
 	title: string;
 	description: string;
 	image?: string;
+	animate?: boolean;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
+const { title, description, image = '/blog-placeholder-1.jpg', animate = true } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -50,3 +52,6 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <!-- PWA Stuffs -->
 <link rel="manifest" href="/manifest.webmanifest" />
 <meta name="theme-color" content="#25282a" />
+
+<!-- Animate between pages -->
+{animate && <ViewTransitions />}
