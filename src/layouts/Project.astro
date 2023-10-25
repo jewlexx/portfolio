@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import type { CollectionEntry } from 'astro:content';
 import { Icon } from 'astro-icon';
 import BaseHead from '../components/BaseHead.astro';
@@ -7,7 +8,7 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 
 interface ExtraProps {
-	slug: string,
+	slug: string;
 }
 type Props = CollectionEntry<'projects'>['data'] & ExtraProps;
 
@@ -19,6 +20,7 @@ const pageTitle = `${title} | Juliette's Projects`;
 <html lang="en">
 	<head>
 		<BaseHead title={pageTitle} description={description} />
+		<ViewTransitions />
 	</head>
 
 	<body>
@@ -41,24 +43,32 @@ const pageTitle = `${title} | Juliette's Projects`;
 							} -->
 						</div>
 						<h1>{title}</h1>
-						{shields &&
-							(<p class="shields">
-								{shields?.map((shield) =>
-									<a href={shield.href}><img src={shield.src} alt={shield.alt} /></a>
-								)}
-							</p>)
+						{
+							shields && (
+								<p class="shields">
+									{shields?.map((shield) => (
+										<a href={shield.href}>
+											<img src={shield.src} alt={shield.alt} />
+										</a>
+									))}
+								</p>
+							)
 						}
 
 						<span class="links">
-							{repo &&
-								(<a href={repo} target="_blank" rel="noopener noreferrer">
-									<Icon pack="tabler" name="brand-git" />
-								</a>)
+							{
+								repo && (
+									<a href={repo} target="_blank" rel="noopener noreferrer">
+										<Icon pack="tabler" name="brand-git" />
+									</a>
+								)
 							}
-							{homepage &&
-								(<a href={homepage} target="_blank" rel="noopener noreferrer">
-									<Icon pack="tabler" name="link" />
-								</a>)
+							{
+								homepage && (
+									<a href={homepage} target="_blank" rel="noopener noreferrer">
+										<Icon pack="tabler" name="link" />
+									</a>
+								)
 							}
 						</span>
 						<hr />
@@ -68,68 +78,67 @@ const pageTitle = `${title} | Juliette's Projects`;
 			</article>
 		</main>
 		<Footer />
+		<style lang="scss">
+			main {
+				width: calc(100% - 2em);
+				max-width: 100%;
+				margin: 0;
+			}
+			.hero-image {
+				width: 100%;
+
+				img {
+					display: block;
+					margin: 0 auto;
+					border-radius: 12px;
+					box-shadow: var(--box-shadow);
+				}
+			}
+			.prose {
+				width: 720px;
+				max-width: calc(100% - 2em);
+				margin: auto;
+				padding: 1em;
+				color: rgb(var(--gray-dark));
+			}
+			.title {
+				margin-bottom: 1em;
+				padding: 1em 0;
+				text-align: center;
+				line-height: 1;
+
+				h1 {
+					margin: 0 0 0.5em 0;
+				}
+			}
+			.date {
+				margin-bottom: 0.5em;
+				color: rgb(var(--gray));
+			}
+			.last-updated-on {
+				font-style: italic;
+			}
+
+			.shields {
+				a {
+					margin-right: 0.5rem;
+				}
+			}
+
+			.links {
+				a {
+					margin: 0.5rem;
+				}
+
+				svg {
+					width: 3rem;
+					height: 3rem;
+					background-color: #282a2c;
+					border-radius: 5px;
+					box-shadow: inset 0px 0px 2px lighten(#282a2c, 10%);
+					padding: 0.2rem;
+				}
+			}
+		</style>
 	</body>
 </html>
-
-<style lang="scss">
-main {
-	width: calc(100% - 2em);
-	max-width: 100%;
-	margin: 0;
-}
-.hero-image {
-	width: 100%;
-
-	img {
-		display: block;
-		margin: 0 auto;
-		border-radius: 12px;
-		box-shadow: var(--box-shadow);
-	}
-}
-.prose {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 1em;
-	color: rgb(var(--gray-dark));
-}
-.title {
-	margin-bottom: 1em;
-	padding: 1em 0;
-	text-align: center;
-	line-height: 1;
-
-	h1 {
-		margin: 0 0 0.5em 0;
-	}
-}
-.date {
-	margin-bottom: 0.5em;
-	color: rgb(var(--gray));
-}
-.last-updated-on {
-	font-style: italic;
-}
-
-.shields {
-	a {
-		margin-right: 0.5rem;
-	}
-}
-
-.links {
-	a {
-		margin: 0.5rem;
-	}
-
-	svg {
-		width: 3rem;
-		height: 3rem;
-		background-color: #282a2c;
-		border-radius: 5px;
-		box-shadow: inset 0px 0px 2px lighten(#282a2c, 10%);
-		padding: 0.2rem;
-	}
-}
-</style>
