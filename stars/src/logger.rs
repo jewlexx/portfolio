@@ -2,7 +2,28 @@ use std::sync::atomic::{AtomicBool, Ordering};
 
 use log::{LevelFilter, SetLoggerError};
 
-use super::log;
+use wasm_bindgen::prelude::*;
+
+#[wasm_bindgen]
+extern "C" {
+    #[wasm_bindgen(js_namespace = console)]
+    fn log(s: &str);
+
+    #[wasm_bindgen(js_namespace = console)]
+    fn info(s: &str);
+
+    #[wasm_bindgen(js_namespace = console)]
+    fn error(s: &str);
+
+    #[wasm_bindgen(js_namespace = console)]
+    fn warn(s: &str);
+
+    #[wasm_bindgen(js_namespace = console)]
+    fn debug(s: &str);
+
+    #[wasm_bindgen(js_namespace = console)]
+    fn trace(s: &str);
+}
 
 pub struct WebLogging;
 
@@ -33,15 +54,28 @@ impl log::Log for WebLogging {
 
     fn log(&self, record: &log::Record) {
         if self.enabled(record.metadata()) {
-            // let mid = if let Some((file, line)) =
-            //     record.file().and_then(|a| record.line().map(|b| (a, b)))
-            // {
-            //     format!(" {file}:{line} ")
-            // } else {
-            //     "".to_string()
-            // };
+            let mid = match record.level() {
+                log::Level::Error => {
+                    if let Some((file, line)) =
+                        record.file().and_then(|a| record.line().map(|b| (a, b)))
+                    {
+                        format!(" {file}:{line} ")
+                    } else {
+                        "".to_string()
+                    }
+                }
+                _ => "".to_string(),
+            };
 
-            log(&format_args!("[{}] {}\n", record.level(), record.args()).to_string());
+            let message = format_args!("[{}{mid}] {}\n", record.level(), record.args()).to_string();
+
+            match record.level() {
+                log::Level::Info => info(&message),
+                log::Level::Error => error(&message),
+                log::Level::Warn => warn(&message),
+                log::Level::Debug => debug(&message),
+                log::Level::Trace => trace(&message),
+            }
         }
     }
 

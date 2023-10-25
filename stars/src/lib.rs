@@ -19,12 +19,6 @@ use web_sys::{CanvasRenderingContext2d, HtmlCanvasElement};
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
-#[wasm_bindgen]
-extern "C" {
-    #[wasm_bindgen(js_namespace = console)]
-    fn log(s: &str);
-}
-
 #[wasm_bindgen(start)]
 pub fn start() {
     utils::set_panic_hook();
@@ -66,7 +60,7 @@ impl Stars {
         let ctx = Rc::new(ctx);
 
         *g.borrow_mut() = Some(Closure::new(move || {
-            debug!("Drawing");
+            debug!("Updating stars");
             self.draw(ctx.clone());
             utils::request_animation_frame(f.borrow().as_ref().unwrap());
         }));
