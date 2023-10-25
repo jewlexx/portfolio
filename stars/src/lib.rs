@@ -5,11 +5,13 @@ mod logger;
 mod stars;
 mod utils;
 
+use std::rc::Rc;
+
 use logger::WebLogging;
 use stars::*;
 
 use wasm_bindgen::prelude::*;
-use web_sys::HtmlCanvasElement;
+use web_sys::{CanvasRenderingContext2d, HtmlCanvasElement};
 
 #[cfg(feature = "wee_alloc")]
 #[global_allocator]
@@ -46,8 +48,9 @@ impl Stars {
         Self { canvas, stars }
     }
 
-    pub fn draw(&mut self) {
-        let context = self
+    pub fn begin_drawing(mut self) {
+        use std::cell::RefCell;
+        let ctx = self
             .canvas
             .get_context("2d")
             .unwrap()
@@ -55,12 +58,27 @@ impl Stars {
             .dyn_into::<web_sys::CanvasRenderingContext2d>()
             .unwrap();
 
+        let f = Rc::new(RefCell::new(None));
+        let g = f.clone();
+
+        let ctx = Rc::new(ctx);
+
+        *g.borrow_mut() = Some(Closure::new(move || {
+            debug!("Drawing");
+            self.draw(ctx.clone());
+            utils::request_animation_frame(f.borrow().as_ref().unwrap());
+        }));
+
+        utils::request_animation_frame(g.borrow().as_ref().unwrap());
+    }
+
+    fn draw(&mut self, ctx: Rc<CanvasRenderingContext2d>) {
         let window_size = WindowSize::new();
 
         self.canvas.set_width(window_size.width);
         self.canvas.set_height(window_size.height);
 
-        context.clear_rect(
+        ctx.clear_rect(
             0.0,
             0.0,
             window_size.width as f64,
@@ -68,7 +86,7 @@ impl Stars {
         );
 
         for star in self.stars.iter_mut() {
-            star.draw(&context);
+            star.draw(&ctx);
         }
     }
 }

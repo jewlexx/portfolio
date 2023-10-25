@@ -7,12 +7,7 @@
 	onMount(() => {
 		const stars = new Stars(canvas);
 
-		function drawLoop() {
-			requestAnimationFrame(drawLoop);
-			stars.draw();
-		}
-
-		drawLoop();
+		stars.begin_drawing();
 
 		return stars.free;
 	});

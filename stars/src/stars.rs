@@ -11,7 +11,7 @@ pub struct WindowSize {
 
 impl WindowSize {
     pub fn new() -> Self {
-        let window = web_sys::window().unwrap();
+        let window = crate::utils::window();
         WindowSize::from_window(window)
     }
 
