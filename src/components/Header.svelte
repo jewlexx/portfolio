@@ -8,20 +8,18 @@
 	export let shortTitle: string = title.split(' ')[0];
 
 	let titleDisplay: string | undefined = title;
+	let smallSize = false;
 
 	onMount(() => {
-		let smallSize = false;
-
 		function updateTitle() {
-			console.log('updated size');
 			if (window.innerWidth < window.innerHeight) {
 				if (!smallSize) {
 					// Disable short title
-					titleDisplay = undefined;
+					// titleDisplay = undefined;
 					smallSize = true;
 				}
 			} else if (smallSize) {
-				titleDisplay = title;
+				// titleDisplay = title;
 				smallSize = false;
 			}
 		}
@@ -42,12 +40,15 @@
 				🌏
 				<!-- <img alt="Profile" class="monogram" src={ProfilePicture.src} /> -->
 			</a>
-			{#if titleDisplay}
+			{#if !smallSize}
 				<h2>{titleDisplay}</h2>
 			{/if}
 		</span>
-		<HeaderLink class="link" href="/about"><h3>About</h3></HeaderLink>
-		<HeaderLink class="link" href="/projects"><h3>Projects</h3></HeaderLink>
+		<!-- TODO: Add headerlinks on mobile screens -->
+		{#if !smallSize}
+			<HeaderLink class="link" href="/about"><h3>About</h3></HeaderLink>
+			<HeaderLink class="link" href="/projects"><h3>Projects</h3></HeaderLink>
+		{/if}
 		<span class="links-container">
 			{#each links as { emoji: Emoji, url, title }}
 				<a href={url} {title} target="_blank" rel="noopener noreferrer" class="role">
