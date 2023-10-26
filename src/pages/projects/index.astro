@@ -43,6 +43,7 @@ const title = "Juliette's Projects";
 											transition:name={`${post.slug} hero`}
 										/>
 									)}
+									{post.data.toy && <span class="toy">🤏</span>}
 									<h4 class="title">{post.data.title}</h4>
 								</a>
 							</li>
@@ -95,6 +96,15 @@ const title = "Juliette's Projects";
 			}
 			ul li a {
 				display: block;
+				position: relative;
+				padding: 0.5rem;
+
+				span {
+					position: absolute;
+					top: 0;
+					left: 0;
+					font-size: 1.25rem;
+				}
 			}
 			.title {
 				margin: 0;
