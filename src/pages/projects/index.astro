@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.svelte';
 import Footer from '../../components/Footer.astro';
@@ -7,6 +6,16 @@ import { SITE_DESCRIPTION } from '../../consts';
 import { getProjects } from '../../lib/collections';
 
 const posts = await getProjects();
+
+posts.sort((a, b) => {
+	if (a.data.featured) {
+		return -1;
+	}
+	if (b.data.featured) {
+		return 1;
+	}
+	return 0;
+});
 
 const title = "Juliette's Projects";
 ---

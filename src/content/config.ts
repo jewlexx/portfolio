@@ -36,6 +36,7 @@ const httpOnly: [(arg: string | undefined) => boolean, message: string] = [
 const projects = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: z.object({
+		featured: z.boolean().optional(),
 		title: z.string(),
 		description: z.string(),
 		heroImage: z.string().optional(),
