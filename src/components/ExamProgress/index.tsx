@@ -22,22 +22,22 @@ const ExamProgress = () => {
 			<form class={styles.form}>
 				<span class={styles.questions}>
 					<label for="time">
-						Total Time:{' '}
+						Total Time (minutes):{' '}
 						<input
 							id="time"
-							type="time"
-							value={minutesToTime(time())}
-							onChange={(e) => setTime(timeToMinutes(e.target.value))}
+							type="number"
+							value={time()}
+							onChange={(e) => setTime(parseInt(e.target.value, 10))}
 						/>
 					</label>
 
 					<label for="time-spent">
-						Time Spent So Far:{' '}
+						Time Spent So Far (minutes):{' '}
 						<input
 							id="time-spent"
-							type="time"
-							value={minutesToTime(spentTime())}
-							onChange={(e) => setSpentTime(timeToMinutes(e.target.value))}
+							type="number"
+							value={time()}
+							onChange={(e) => setTime(parseInt(e.target.value, 10))}
 						/>
 					</label>
 				</span>
