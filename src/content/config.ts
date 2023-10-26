@@ -38,6 +38,7 @@ const projects = defineCollection({
 	schema: z.object({
 		featured: z.boolean().optional(),
 		toy: z.boolean().optional(),
+		hideHero: z.boolean().optional(),
 		title: z.string(),
 		description: z.string(),
 		heroImage: z.string().optional(),
