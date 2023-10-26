@@ -1,4 +1,4 @@
-import { createSignal } from 'solid-js';
+import { createSignal, createMemo } from 'solid-js';
 import { minutesToTime, timeToMinutes } from '../../lib/conversions';
 import styles from './index.module.scss';
 
@@ -8,7 +8,14 @@ import styles from './index.module.scss';
 const ExamProgress = () => {
 	const [marks, setMarks] = createSignal<number>(0);
 	const [time, setTime] = createSignal<number>(0);
+	const [spentTime, setSpentTime] = createSignal<number>(0);
 	const [questions, setQuestions] = createSignal<number>(0);
+
+	const marksPerMinute = createMemo(() => {
+		const mpm = marks() / time();
+
+		return isNaN(mpm) ? 0 : mpm;
+	});
 
 	return (
 		<div>
@@ -23,6 +30,16 @@ const ExamProgress = () => {
 							onChange={(e) => setTime(timeToMinutes(e.target.value))}
 						/>
 					</label>
+
+					<label for="time-spent">
+						Time Spent So Far:{' '}
+						<input
+							id="time-spent"
+							type="time"
+							value={minutesToTime(spentTime())}
+							onChange={(e) => setSpentTime(timeToMinutes(e.target.value))}
+						/>
+					</label>
 				</span>
 				<span class={styles.questions}>
 					<label for="marks">
@@ -33,8 +50,8 @@ const ExamProgress = () => {
 							value={marks()}
 							onChange={(e) => setMarks(parseInt(e.target.value, 10))}
 						/>
-					</label>{' '}
-					<label for="questions">
+					</label>
+					{/* <label for="questions">
 						Total Questions:{' '}
 						<input
 							id="questions"
@@ -42,11 +59,20 @@ const ExamProgress = () => {
 							value={questions()}
 							onChange={(v) => setQuestions(parseInt(v.target.value, 10))}
 						/>
-					</label>
+					</label> */}
 				</span>
 			</form>
 
-			<p>{marks() / time()} marks per minute</p>
+			{marksPerMinute() !== 0 && (
+				<div class={styles.output}>
+					<p>
+						You should be doing <span>{marksPerMinute()}</span> marks per minute
+					</p>
+					<p>
+						You should have <span>{marksPerMinute() * spentTime()}</span> marks completed so far
+					</p>
+				</div>
+			)}
 		</div>
 	);
 };
