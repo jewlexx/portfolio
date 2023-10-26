@@ -1,5 +1,4 @@
 import { createSignal, createMemo } from 'solid-js';
-import { minutesToTime, timeToMinutes } from '../../lib/conversions';
 import styles from './index.module.scss';
 
 // We need total questions, total marks to work out marks per minute
