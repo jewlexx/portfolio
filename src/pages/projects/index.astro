@@ -110,7 +110,9 @@ const title = "Juliette's Projects";
 					font-size: 1.25rem;
 
 					.tooltip {
-						visibility: hidden;
+						transition: opacity 100ms ease-in-out;
+						opacity: 0;
+						// visibility: hidden;
 						width: 120px;
 						background-color: rgba(0, 0, 0, 0.5);
 						color: #fff;
@@ -126,7 +128,8 @@ const title = "Juliette's Projects";
 					}
 
 					&:hover .tooltip {
-						visibility: visible;
+						// visibility: visible;
+						opacity: 1;
 					}
 				}
 			}
