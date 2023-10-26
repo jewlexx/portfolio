@@ -51,7 +51,8 @@
   },
   "pnpm": {
     "overrides": {
-      "file-type@^9": "^10"
+      "file-type@^9": "^10",
+      "typescript-esbuild": "^0.3"
     }
   }
 }
