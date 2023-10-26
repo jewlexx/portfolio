@@ -35,8 +35,8 @@ const ExamProgress = () => {
 						<input
 							id="time-spent"
 							type="number"
-							value={time()}
-							onChange={(e) => setTime(parseInt(e.target.value, 10))}
+							value={spentTime()}
+							onChange={(e) => setSpentTime(parseInt(e.target.value, 10))}
 						/>
 					</label>
 				</span>
