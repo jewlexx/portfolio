@@ -7,10 +7,21 @@ export function timeToMinutes(time: string): number {
 	return parsedHours + parsedMinutes;
 }
 
+function padToString(val: any, padding: string, length: number): string {
+	const valString = JSON.stringify(val);
+
+	if (valString.length >= length) {
+		return valString;
+	} else {
+		const requiredPadding = length - valString.length;
+		return `${padding.repeat(requiredPadding)}${val}`;
+	}
+}
+
 export function minutesToTime(minutes: number): string {
 	const parsedHours = minutes / 60;
-	const roundedHours = Math.round(parsedHours);
-	const roundedMinutes = Math.round((parsedHours - roundedHours) * 60);
+	const roundedHours = Math.floor(parsedHours);
+	const roundedMinutes = Math.round(minutes % 60);
 
-	return `${roundedHours}:${roundedMinutes}`;
+	return `${padToString(roundedHours, '0', 2)}:${padToString(roundedMinutes, '0', 2)}`;
 }
