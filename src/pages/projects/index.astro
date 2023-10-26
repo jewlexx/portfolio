@@ -43,7 +43,11 @@ const title = "Juliette's Projects";
 											transition:name={`${post.slug} hero`}
 										/>
 									)}
-									{post.data.toy && <span class="toy">🤏</span>}
+									{post.data.toy && (
+										<span class="toy">
+											🤏<span class="tooltip">Toy Project</span>
+										</span>
+									)}
 									<h4 class="title">{post.data.title}</h4>
 								</a>
 							</li>
@@ -71,9 +75,9 @@ const title = "Juliette's Projects";
 			ul li {
 				width: calc(50% - 1rem);
 
-				a img {
-					width: calc(50% - 1rem);
-				}
+				// a img {
+				// 	width: calc(50% - 1rem);
+				// }
 			}
 			ul li * {
 				text-decoration: none;
@@ -104,6 +108,26 @@ const title = "Juliette's Projects";
 					top: 0;
 					left: 0;
 					font-size: 1.25rem;
+
+					.tooltip {
+						visibility: hidden;
+						width: 120px;
+						background-color: rgba(0, 0, 0, 0.5);
+						color: #fff;
+						text-align: center;
+						border-radius: 6px;
+						padding: 5px 0;
+
+						/* Position the tooltip */
+						position: absolute;
+						z-index: 1;
+						top: 100%;
+						left: 50%;
+					}
+
+					&:hover .tooltip {
+						visibility: visible;
+					}
 				}
 			}
 			.title {
