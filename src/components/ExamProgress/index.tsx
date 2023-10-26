@@ -8,7 +8,7 @@ const ExamProgress = () => {
 	const [marks, setMarks] = createSignal<number>(0);
 	const [time, setTime] = createSignal<number>(0);
 	const [spentTime, setSpentTime] = createSignal<number>(0);
-	const [questions, setQuestions] = createSignal<number>(0);
+	// const [questions, setQuestions] = createSignal<number>(0);
 
 	const marksPerMinute = createMemo(() => {
 		const mpm = marks() / time();
@@ -64,9 +64,15 @@ const ExamProgress = () => {
 
 			{marksPerMinute() !== 0 && (
 				<div class={styles.output}>
-					<p>
-						You should be doing <span>{marksPerMinute()}</span> marks per minute
-					</p>
+					{marksPerMinute() < 1 ? (
+						<p>
+							You have <span>{1 / marksPerMinute()}</span> minutes per mark
+						</p>
+					) : (
+						<p>
+							You should be doing <span>{marksPerMinute()}</span> marks per minute
+						</p>
+					)}
 					<p>
 						You should have <span>{marksPerMinute() * spentTime()}</span> marks completed so far
 					</p>
