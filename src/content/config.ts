@@ -43,7 +43,7 @@ const projects = defineCollection({
 		description: z.string(),
 		heroImage: z.string().optional(),
 		// Transform string to Date object
-		pubDate: z.coerce.date(),
+		pubDate: z.coerce.date().optional(),
 		repo: z
 			.string()
 			.optional()
