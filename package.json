@@ -23,7 +23,6 @@
     "@tabler/icons": "^2.40.0",
     "@tabler/icons-svelte": "2.40.0",
     "astro": "^3.4.0",
-    "astro-icon": "^0.8.1",
     "nanostores": "^0.9.4",
     "open-graph-scraper": "^6.3.2",
     "solid-js": "^1.8.4",
