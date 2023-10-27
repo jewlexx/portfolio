@@ -20,37 +20,40 @@ const ExamProgress = () => {
 		<div>
 			<form class={styles.form}>
 				<span class={styles.questions}>
-					<label for="time">
+					<label>
 						Total Time (minutes):{' '}
 						<input
 							id="time"
 							type="number"
 							value={time()}
 							onChange={(e) => setTime(parseInt(e.target.value, 10))}
+							required
 						/>
 					</label>
 
-					<label for="time-spent">
+					<label>
 						Time Spent So Far (minutes):{' '}
 						<input
 							id="time-spent"
 							type="number"
 							value={spentTime()}
 							onChange={(e) => setSpentTime(parseInt(e.target.value, 10))}
+							required
 						/>
 					</label>
 				</span>
 				<span class={styles.questions}>
-					<label for="marks">
+					<label>
 						Total Marks:{' '}
 						<input
 							id="marks"
 							type="number"
 							value={marks()}
 							onChange={(e) => setMarks(parseInt(e.target.value, 10))}
+							required
 						/>
 					</label>
-					{/* <label for="questions">
+					{/* <label>
 						Total Questions:{' '}
 						<input
 							id="questions"
