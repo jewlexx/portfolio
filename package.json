@@ -47,6 +47,7 @@
     "postcss": "^8.4.31",
     "postcss-preset-env": "^9.2.0",
     "prettier": "3.0.3",
+    "prettier-plugin-astro": "^0.12.1",
     "prettier-plugin-svelte": "^3.0.3",
     "sass": "1.69.5",
     "sharp": "0.32.6",
