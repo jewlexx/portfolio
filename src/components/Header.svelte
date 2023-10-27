@@ -1,43 +1,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import Shrunk from './Shrunk/index.svelte';
 	import { links } from '../lib/links';
 	import HeaderLink from './HeaderLink.svelte';
 	// import ProfilePicture from '../assets/images/pfp.jpg';
 
 	export let title: string;
-	export let shortTitle: string = title.split(' ')[0];
-
-	let titleDisplay: string | undefined = title;
-	let smallSize = false;
-	let superSmallWidth = false;
-
-	onMount(() => {
-		function updateTitle() {
-			if (window.innerWidth < window.innerHeight) {
-				if (!smallSize) {
-					// Disable short title
-					// titleDisplay = undefined;
-					smallSize = true;
-				}
-			} else if (smallSize) {
-				// titleDisplay = title;
-				smallSize = false;
-			}
-
-			if (window.innerWidth < 500) {
-				superSmallWidth = true;
-			} else {
-				superSmallWidth = false;
-			}
-		}
-
-		updateTitle();
-
-		window.addEventListener('resize', updateTitle);
-		return () => {
-			window.removeEventListener('resize', updateTitle);
-		};
-	});
 </script>
 
 <header>
@@ -47,15 +15,13 @@
 				🌏
 				<!-- <img alt="Profile" class="monogram" src={ProfilePicture.src} /> -->
 			</a>
-			{#if !smallSize}
-				<h2>{titleDisplay}</h2>
-			{/if}
+			<h2><Shrunk long={title} /></h2>
 		</span>
 		<!-- TODO: Add headerlinks on mobile screens -->
-		{#if !superSmallWidth}
+		<Shrunk hide="portrait">
 			<HeaderLink class="link" href="/about"><h3>About</h3></HeaderLink>
 			<HeaderLink class="link" href="/projects"><h3>Projects</h3></HeaderLink>
-		{/if}
+		</Shrunk>
 		<span class="links-container">
 			{#each links as { emoji: Emoji, url, title }}
 				<a href={url} {title} target="_blank" rel="noopener noreferrer" class="role">
