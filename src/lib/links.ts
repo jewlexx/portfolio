@@ -5,6 +5,7 @@ import {
 	IconBrandX as IconBrandTwitter,
 	IconBrandLinktree,
 } from '@tabler/icons-svelte';
+import { Icon } from 'astro-icon';
 
 export interface Link {
 	title: string;

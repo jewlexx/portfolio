@@ -1,12 +1,14 @@
-<script lang="ts">
-	import { onMount } from 'svelte';
-	import Shrunk from './Shrunk/index.svelte';
-	import { links } from '../lib/links';
-	import HeaderLink from './HeaderLink.svelte';
-	// import ProfilePicture from '../assets/images/pfp.jpg';
+---
+import Shrunk from './Shrunk/index.svelte';
+import { links } from '../lib/links';
+import HeaderLink from './HeaderLink.svelte';
 
-	export let title: string;
-</script>
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
 
 <header>
 	<nav class="nav">
@@ -15,19 +17,21 @@
 				🌏
 				<!-- <img alt="Profile" class="monogram" src={ProfilePicture.src} /> -->
 			</a>
-			<h2><Shrunk long={title} /></h2>
+			<h2><Shrunk long={title} client:load /></h2>
 		</span>
 		<!-- TODO: Add headerlinks on mobile screens -->
-		<Shrunk hide="portrait">
+		<Shrunk hide="portrait" client:load>
 			<HeaderLink class="link" href="/about"><h3>About</h3></HeaderLink>
 			<HeaderLink class="link" href="/projects"><h3>Projects</h3></HeaderLink>
 		</Shrunk>
 		<span class="links-container">
-			{#each links as { emoji: Emoji, url, title }}
-				<a href={url} {title} target="_blank" rel="noopener noreferrer" class="role">
-					<Emoji />
-				</a>
-			{/each}
+			{
+				links.map(({ emoji: Emoji, url, title }) => (
+					<a href={url} {title} target="_blank" rel="noopener noreferrer" class="role">
+						<Emoji />
+					</a>
+				))
+			}
 		</span>
 	</nav>
 </header>

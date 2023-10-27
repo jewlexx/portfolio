@@ -1,6 +1,6 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.svelte';
+import Header from '../components/Header.astro';
 import Stars from '../components/Stars.svelte';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 // TODO: A better solution than this
@@ -14,7 +14,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<!-- <img src={Stars.src} class="stars" /> -->
 		<Stars client:load />
-		<Header client:load title={SITE_TITLE} />
+		<Header title={SITE_TITLE} />
 		<main class="hero">
 			<div class="overlay">
 				<h1 class="title">🧑‍🚀Hello, Traveller!</h1>

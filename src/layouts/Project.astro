@@ -2,7 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import { Icon } from 'astro-icon';
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.svelte';
+import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 interface ExtraProps {
@@ -21,7 +21,7 @@ const pageTitle = `${title} | Juliette's Projects`;
 	</head>
 
 	<body>
-		<Header client:load title={pageTitle} shortTitle={slug} />
+		<Header title={pageTitle} shortTitle={slug} />
 		<main>
 			<article>
 				<div class="hero-image">
