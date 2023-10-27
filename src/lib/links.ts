@@ -1,36 +1,32 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import {
-	IconBrandGithub,
-	IconBrandTwitch,
-	IconBrandX as IconBrandTwitter,
-	IconBrandLinktree,
-} from '@tabler/icons-svelte';
-import { Icon } from 'astro-icon';
+import BrandGithub from '@tabler/icons/brand-github.svg';
+import BrandTwitch from '@tabler/icons/brand-twitch.svg';
+import BrandTwitter from '@tabler/icons/brand-twitter.svg';
+import BrandLinktree from '@tabler/icons/brand-linktree.svg';
 
 export interface Link {
 	title: string;
 	url: string;
-	emoji: typeof IconBrandGithub;
+	icon: ImageMetadata;
 }
 
 export const links: Link[] = [
 	{
-		emoji: IconBrandGithub,
+		icon: BrandGithub,
 		title: 'GitHub',
 		url: 'https://github.com/jewlexx',
 	},
 	{
-		emoji: IconBrandTwitch,
+		icon: BrandTwitch,
 		title: 'Twitch',
 		url: 'https://twitch.tv/possiblyjuliette',
 	},
 	{
-		emoji: IconBrandTwitter,
+		icon: BrandTwitter,
 		title: 'X (Twitter)',
 		url: 'https://twitter.com/jewelexx',
 	},
 	{
-		emoji: IconBrandLinktree,
+		icon: BrandLinktree,
 		title: 'Linktree',
 		url: 'https://linktr.ee/jewelexx',
 	},

@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon';
 import Shrunk from './Shrunk/index.svelte';
 import { links } from '../lib/links';
 import HeaderLink from './HeaderLink.svelte';
@@ -26,9 +27,9 @@ const { title } = Astro.props;
 		</Shrunk>
 		<span class="links-container">
 			{
-				links.map(({ emoji: Emoji, url, title }) => (
+				links.map(({ icon, url, title }) => (
 					<a href={url} {title} target="_blank" rel="noopener noreferrer" class="role">
-						<Emoji />
+						<img src={icon.src} />
 					</a>
 				))
 			}
@@ -152,28 +153,30 @@ const { title } = Astro.props;
 
 			transform: scale(1.2);
 
+			img {
+				filter: invert(1);
+			}
+
+			box-shadow: 0px 0px 5px #000 inset;
+
 			&:nth-of-type(1) {
 				$color: $black;
 				background-color: $color;
-				box-shadow: 0px 0px 3px #000 inset;
 			}
 
 			&:nth-of-type(2) {
 				$color: $purple;
 				background-color: $color;
-				box-shadow: 0px 0px 3px #000 inset;
 			}
 
 			&:nth-of-type(3) {
 				$color: $blue;
 				background-color: $color;
-				box-shadow: 0px 0px 3px #000 inset;
 			}
 
 			&:nth-of-type(4) {
 				$color: $green;
 				background-color: $color;
-				box-shadow: 0px 0px 3px #000 inset;
 			}
 		}
 	}
