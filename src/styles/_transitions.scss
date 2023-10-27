@@ -1,5 +1,8 @@
 @mixin springy-transform($duration) {
 	@media (prefers-reduced-motion: no-preference) {
+		// Currently I have a weird issue, that I believe stems from some postcss config I have set up
+		// that will remove the percent sign on the first 0 in this linear transition
+		// Adding the .01 fixes it for now
 		transition: transform $duration
 			linear(
 				0 0.01%,
