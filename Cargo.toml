@@ -10,3 +10,4 @@ opt-level = "s"
 lto = true
 panic = "abort"
 strip = true
+codegen-units = 1
