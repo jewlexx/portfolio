@@ -34,16 +34,16 @@
 
 <style lang="scss">
 	@use '../styles/transitions';
-	@import '../styles/_palette.scss';
+	@use '../styles/palette' as *;
 
 	.title-image {
 		display: flex;
 		align-items: center;
 
-		a {
-			display: flex;
-			align-items: center;
-			justify-content: center;
+		.logolink {
+			display: block;
+			color: $t-fg;
+			text-decoration: none;
 
 			font-size: 2.5rem;
 			/* border: 5px solid black; */
@@ -60,8 +60,17 @@
 			}
 
 			img {
-				width: 3rem;
-				height: 3rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 2em;
+				height: 2em;
+				margin-right: 0.5rem;
+				color: $black;
+				font-weight: 900;
+				letter-spacing: -0.125rem;
+				border: 3px solid currentColor;
+				border-radius: 50%;
 			}
 		}
 	}
@@ -75,26 +84,6 @@
 		padding-right: 2rem;
 		padding-bottom: 1rem;
 		padding-left: 2rem;
-	}
-
-	.logolink {
-		display: block;
-		color: $t-fg;
-		text-decoration: none;
-
-		img {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 2em;
-			height: 2em;
-			margin-right: 0.5rem;
-			color: $black;
-			font-weight: 900;
-			letter-spacing: -0.125rem;
-			border: 3px solid currentColor;
-			border-radius: 50%;
-		}
 	}
 
 	/* .link {
