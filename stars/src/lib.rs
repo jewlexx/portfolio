@@ -5,13 +5,15 @@ extern crate log;
 
 mod logger;
 mod stars;
+mod stopper;
 mod utils;
 
-use std::{rc::Rc, sync::mpsc};
+use std::rc::Rc;
 
 use logger::WebLogging;
 use stars::*;
 
+use stopper::StopNotify;
 use wasm_bindgen::prelude::*;
 use web_sys::{CanvasRenderingContext2d, HtmlCanvasElement};
 
@@ -32,7 +34,7 @@ pub fn start() {
 pub struct Stars {
     canvas: HtmlCanvasElement,
     stars: Vec<Star>,
-    channel: (mpsc::Sender<()>, mpsc::Receiver<()>),
+    channel: StopNotify,
 }
 
 #[wasm_bindgen]
@@ -48,7 +50,7 @@ impl Stars {
         Self {
             canvas,
             stars,
-            channel: mpsc::channel(),
+            channel: StopNotify::new(),
         }
     }
 
@@ -68,15 +70,15 @@ impl Stars {
         let ctx = Rc::new(ctx);
 
         let stopper = {
-            let tx = self.channel.0.clone();
+            let tx = self.channel.clone();
             Closure::once_into_js(move || {
                 info!("Stopping painting stars");
-                tx.send(()).unwrap();
+                tx.stop();
             })
         };
 
         *g.borrow_mut() = Some(Closure::new(move || {
-            if let Ok(()) = self.channel.1.try_recv() {
+            if self.channel.should_stop() {
                 info!("Received stop signal. Stopping painting...");
                 // Drop our handle to this closure so that it will get cleaned
                 // up once we return.
