@@ -1,3 +1,7 @@
+/target
+/public
+/stars
+
 .DS_Store
 node_modules
 /build
@@ -11,3 +15,6 @@ node_modules
 pnpm-lock.yaml
 package-lock.json
 yarn.lock
+
+# Fragment shaders
+**/*.frag

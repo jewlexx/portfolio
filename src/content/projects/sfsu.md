@@ -3,26 +3,27 @@ featured: true
 title: 'Stupid Fast Scoop Utils'
 description: 'Super fast replacements and additions to scoop commands written in Rust'
 # Can be a single repo name, a GitHub path (i.e jewlexx/sfsu), or a full url
+pubDate: 'Oct 25 2023'
 repo: 'sfsu'
 homepage: 'https://jewlexx.github.io/sfsu/'
 shields:
   - {
       alt: 'Github Workflow Status',
-      src: 'https://img.shields.io/github/actions/workflow/status/jewlexx/sfsu/build.yml'
+      src: 'https://img.shields.io/github/actions/workflow/status/jewlexx/sfsu/build.yml',
     }
   - {
       alt: 'dependency status',
       href: 'https://deps.rs/repo/github/jewlexx/sfsu',
-      src: 'https://deps.rs/repo/github/jewlexx/sfsu/status.svg'
+      src: 'https://deps.rs/repo/github/jewlexx/sfsu/status.svg',
     }
   - {
       alt: 'GitHub all releases',
-      src: 'https://img.shields.io/github/downloads/jewlexx/sfsu/total'
+      src: 'https://img.shields.io/github/downloads/jewlexx/sfsu/total',
     }
   - { alt: 'GitHub', src: 'https://img.shields.io/github/license/jewlexx/sfsu' }
   - {
       alt: 'Scoop version (extras bucket)',
-      src: 'https://img.shields.io/scoop/v/sfsu?bucket=extras'
+      src: 'https://img.shields.io/scoop/v/sfsu?bucket=extras',
     }
 ---
 

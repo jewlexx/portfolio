@@ -1,4 +1,4 @@
-@import '../../styles/palette.scss';
+@use '../styles/palette' as *;
 
 .questions {
 	display: flex;

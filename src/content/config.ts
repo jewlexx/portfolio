@@ -30,7 +30,7 @@ const httpOnly: [(arg: string | undefined) => boolean, message: string] = [
 			return true;
 		}
 	},
-	'HTTP is not secure, and thus not supported'
+	'HTTP is not secure, and thus not supported',
 ];
 
 const projects = defineCollection({
@@ -42,6 +42,8 @@ const projects = defineCollection({
 		title: z.string(),
 		description: z.string(),
 		heroImage: z.string().optional(),
+		// Transform string to Date object
+		pubDate: z.coerce.date().optional(),
 		repo: z
 			.string()
 			.optional()
@@ -59,11 +61,11 @@ const projects = defineCollection({
 					href: z
 						.string()
 						.optional()
-						.refine(...httpOnly)
-				})
+						.refine(...httpOnly),
+				}),
 			)
-			.optional()
-	})
+			.optional(),
+	}),
 });
 
 export const collections = { projects };
