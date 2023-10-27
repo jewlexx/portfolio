@@ -70,7 +70,7 @@ export default defineConfig({
 			},
 		}),
 		robotsTxt(),
-		Compress(),
+		// Compress(),
 	],
 	vite: {
 		plugins: [wasm()],
