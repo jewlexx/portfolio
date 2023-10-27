@@ -66,7 +66,7 @@ const ExamProgress = () => {
 			</form>
 
 			{marksPerMinute() !== 0 && (
-				<div class={styles.output}>
+				<div class={styles.output} id="marks-output">
 					{marksPerMinute() < 1 ? (
 						<p>
 							You have <span>{1 / marksPerMinute()}</span> minutes per mark
