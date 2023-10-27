@@ -1,43 +1,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import Shrunk from './Shrunk/index.svelte';
 	import { links } from '../lib/links';
 	import HeaderLink from './HeaderLink.svelte';
 	// import ProfilePicture from '../assets/images/pfp.jpg';
 
 	export let title: string;
-	export let shortTitle: string = title.split(' ')[0];
-
-	let titleDisplay: string | undefined = title;
-	let smallSize = false;
-	let superSmallWidth = false;
-
-	onMount(() => {
-		function updateTitle() {
-			if (window.innerWidth < window.innerHeight) {
-				if (!smallSize) {
-					// Disable short title
-					// titleDisplay = undefined;
-					smallSize = true;
-				}
-			} else if (smallSize) {
-				// titleDisplay = title;
-				smallSize = false;
-			}
-
-			if (window.innerWidth < 500) {
-				superSmallWidth = true;
-			} else {
-				superSmallWidth = false;
-			}
-		}
-
-		updateTitle();
-
-		window.addEventListener('resize', updateTitle);
-		return () => {
-			window.removeEventListener('resize', updateTitle);
-		};
-	});
 </script>
 
 <header>
@@ -47,15 +15,13 @@
 				🌏
 				<!-- <img alt="Profile" class="monogram" src={ProfilePicture.src} /> -->
 			</a>
-			{#if !smallSize}
-				<h2>{titleDisplay}</h2>
-			{/if}
+			<h2><Shrunk long={title} /></h2>
 		</span>
 		<!-- TODO: Add headerlinks on mobile screens -->
-		{#if !superSmallWidth}
+		<Shrunk hide="portrait">
 			<HeaderLink class="link" href="/about"><h3>About</h3></HeaderLink>
 			<HeaderLink class="link" href="/projects"><h3>Projects</h3></HeaderLink>
-		{/if}
+		</Shrunk>
 		<span class="links-container">
 			{#each links as { emoji: Emoji, url, title }}
 				<a href={url} {title} target="_blank" rel="noopener noreferrer" class="role">
@@ -67,16 +33,17 @@
 </header>
 
 <style lang="scss">
-	@import '../styles/palette.scss';
+	@use '../styles/transitions';
+	@use '../styles/palette' as *;
 
 	.title-image {
 		display: flex;
 		align-items: center;
 
-		a {
-			display: flex;
-			align-items: center;
-			justify-content: center;
+		.logolink {
+			display: block;
+			color: $t-fg;
+			text-decoration: none;
 
 			font-size: 2.5rem;
 			/* border: 5px solid black; */
@@ -86,51 +53,24 @@
 			margin-right: 1rem;
 
 			// Only enable motion if the user has no preference
-			@media (prefers-reduced-motion: no-preference) {
-				transition: transform 500ms
-					linear(
-						0 0%,
-						0.22 2.1%,
-						0.86 6.5%,
-						1.11 8.6%,
-						1.3 10.7%,
-						1.35 11.8%,
-						1.37 12.9%,
-						1.37 13.7%,
-						1.36 14.5%,
-						1.32 16.2%,
-						1.03 21.8%,
-						0.94 24%,
-						0.89 25.9%,
-						0.88 26.85%,
-						0.87 27.8%,
-						0.87 29.25%,
-						0.88 30.7%,
-						0.91 32.4%,
-						0.98 36.4%,
-						1.01 38.3%,
-						1.04 40.5%,
-						1.05 42.7%,
-						1.05 44.1%,
-						1.04 45.7%,
-						1 53.3%,
-						0.99 55.4%,
-						0.98 57.5%,
-						0.99 60.7%,
-						1 68.1%,
-						1.01 72.2%,
-						1 86.7%,
-						1 100%
-					);
-			}
+			@include transitions.springy-transform(500ms);
 
 			&:hover {
 				transform: scale(1.2);
 			}
 
 			img {
-				width: 3rem;
-				height: 3rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 2em;
+				height: 2em;
+				margin-right: 0.5rem;
+				color: $black;
+				font-weight: 900;
+				letter-spacing: -0.125rem;
+				border: 3px solid currentColor;
+				border-radius: 50%;
 			}
 		}
 	}
@@ -144,26 +84,6 @@
 		padding-right: 2rem;
 		padding-bottom: 1rem;
 		padding-left: 2rem;
-	}
-
-	.logolink {
-		display: block;
-		color: $t-fg;
-		text-decoration: none;
-
-		img {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 2em;
-			height: 2em;
-			margin-right: 0.5rem;
-			color: $black;
-			font-weight: 900;
-			letter-spacing: -0.125rem;
-			border: 3px solid currentColor;
-			border-radius: 50%;
-		}
 	}
 
 	/* .link {
@@ -221,44 +141,7 @@
 			margin-left: 0.5em;
 		}
 
-		// Only enable motion if the user has no preference
-		@media (prefers-reduced-motion: no-preference) {
-			transition: transform 500ms
-				linear(
-					0 0%,
-					0.22 2.1%,
-					0.86 6.5%,
-					1.11 8.6%,
-					1.3 10.7%,
-					1.35 11.8%,
-					1.37 12.9%,
-					1.37 13.7%,
-					1.36 14.5%,
-					1.32 16.2%,
-					1.03 21.8%,
-					0.94 24%,
-					0.89 25.9%,
-					0.88 26.85%,
-					0.87 27.8%,
-					0.87 29.25%,
-					0.88 30.7%,
-					0.91 32.4%,
-					0.98 36.4%,
-					1.01 38.3%,
-					1.04 40.5%,
-					1.05 42.7%,
-					1.05 44.1%,
-					1.04 45.7%,
-					1 53.3%,
-					0.99 55.4%,
-					0.98 57.5%,
-					0.99 60.7%,
-					1 68.1%,
-					1.01 72.2%,
-					1 86.7%,
-					1 100%
-				);
-		}
+		@include transitions.springy-transform(500ms);
 
 		&:hover {
 			color: $t-fg;

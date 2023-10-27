@@ -7,10 +7,6 @@ const about = await getEntry('info', 'about');
 const { Content } = await about!.render();
 ---
 
-<Layout
-	title={about.data.title}
-	description="Lorem ipsum dolor sit amet"
-	slug={about.data.title}
->
+<Layout title={about.data.title} description="Lorem ipsum dolor sit amet" slug={about.data.title}>
 	<Content />
 </Layout>

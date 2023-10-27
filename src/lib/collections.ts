@@ -8,7 +8,7 @@ export async function getProjects() {
 		const data = project.data;
 		if (data.repo) {
 			const result = await ogs({
-				url: data.repo
+				url: data.repo,
 			});
 			if (result.error) {
 				console.error('Error fetching og data', project.slug, project.data.repo);
