@@ -16,12 +16,12 @@ export default defineConfig({
 	output: 'hybrid',
 	adapter: vercel({
 		webAnalytics: {
-			enabled: true
+			enabled: true,
 		},
 		speedInsights: {
-			enabled: true
+			enabled: true,
 		},
-		imageService: true
+		imageService: true,
 	}),
 	integrations: [
 		mdx(),
@@ -37,47 +37,47 @@ export default defineConfig({
 				icons: [
 					{
 						src: '/favicon.ico',
-						sizes: '48x48'
+						sizes: '48x48',
 					},
 					{
 						src: '/favicon-32x32.png',
 						sizes: '32x32',
-						type: 'image/png'
+						type: 'image/png',
 					},
 					{
 						src: '/favicon-16x16.png',
 						sizes: '16x16',
-						type: 'image/png'
+						type: 'image/png',
 					},
 					{
 						src: '/favicon-16x16.png',
 						sizes: '16x16',
-						type: 'image/png'
+						type: 'image/png',
 					},
 					{
 						src: '/apple-touch-icon.png',
-						sizes: '180x180'
+						sizes: '180x180',
 					},
 					{
 						src: '/android-chrome-192x192.png',
-						sizes: '192x192'
+						sizes: '192x192',
 					},
 					{
 						src: '/android-chrome-512x512.png',
-						sizes: '512x512'
-					}
-				]
-			}
+						sizes: '512x512',
+					},
+				],
+			},
 		}),
-		robotsTxt()
-		// Compress()
+		robotsTxt(),
+		Compress(),
 	],
 	vite: {
 		plugins: [wasm()],
 		server: {
 			watch: {
-				ignored: ['**/target/**/*'] // HERE
-			}
-		}
-	}
+				ignored: ['**/target/**/*'], // HERE
+			},
+		},
+	},
 });
