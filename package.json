@@ -20,7 +20,7 @@
     "@astrojs/solid-js": "^3.0.2",
     "@astrojs/svelte": "^4.0.3",
     "@tabler/icons": "^2.39.0",
-    "@tabler/icons-svelte": "2.39.0",
+    "@tabler/icons-svelte": "2.40.0",
     "astro": "^3.3.3",
     "astro-icon": "^0.8.1",
     "nanostores": "^0.9.4",
