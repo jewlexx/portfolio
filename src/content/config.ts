@@ -30,7 +30,7 @@ const httpOnly: [(arg: string | undefined) => boolean, message: string] = [
 			return true;
 		}
 	},
-	'HTTP is not secure, and thus not supported'
+	'HTTP is not secure, and thus not supported',
 ];
 
 const projects = defineCollection({
@@ -61,11 +61,11 @@ const projects = defineCollection({
 					href: z
 						.string()
 						.optional()
-						.refine(...httpOnly)
-				})
+						.refine(...httpOnly),
+				}),
 			)
-			.optional()
-	})
+			.optional(),
+	}),
 });
 
 export const collections = { projects };

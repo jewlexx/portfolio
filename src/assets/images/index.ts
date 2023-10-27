@@ -22,38 +22,38 @@ export const graphics: Graphic[] = [
 		data: anybrowser4b,
 		author: {
 			name: 'Jim Spath',
-			url: 'http://www.bcpl.lib.md.us/~jspath/homeslice.html'
-		}
+			url: 'http://www.bcpl.lib.md.us/~jspath/homeslice.html',
+		},
 	},
 	{
 		data: gveye_anim,
 		author: {
-			name: 'APz'
-		}
+			name: 'APz',
+		},
 	},
 	{
 		data: girlanim,
 		author: {
-			name: 'Samantha Alyssa'
-		}
+			name: 'Samantha Alyssa',
+		},
 	},
 	{
 		data: green,
 		author: {
 			name: 'Carmen Principe',
-			url: 'http://www.geocities.com/new_in_psp/'
-		}
+			url: 'http://www.geocities.com/new_in_psp/',
+		},
 	},
 	{
 		data: ne_browser,
 		author: {
-			name: 'Matt Grimshaw'
-		}
+			name: 'Matt Grimshaw',
+		},
 	},
 	{
 		data: oeyes_anim,
 		author: {
-			name: 'Darren S. Gonzales'
-		}
-	}
+			name: 'Darren S. Gonzales',
+		},
+	},
 ];

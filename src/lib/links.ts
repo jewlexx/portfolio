@@ -3,7 +3,7 @@ import {
 	IconBrandGithub,
 	IconBrandTwitch,
 	IconBrandX as IconBrandTwitter,
-	IconBrandLinktree
+	IconBrandLinktree,
 } from '@tabler/icons-svelte';
 
 export interface Link {
@@ -16,21 +16,21 @@ export const links: Link[] = [
 	{
 		emoji: IconBrandGithub,
 		title: 'GitHub',
-		url: 'https://github.com/jewlexx'
+		url: 'https://github.com/jewlexx',
 	},
 	{
 		emoji: IconBrandTwitch,
 		title: 'Twitch',
-		url: 'https://twitch.tv/possiblyjuliette'
+		url: 'https://twitch.tv/possiblyjuliette',
 	},
 	{
 		emoji: IconBrandTwitter,
 		title: 'X (Twitter)',
-		url: 'https://twitter.com/jewelexx'
+		url: 'https://twitter.com/jewelexx',
 	},
 	{
 		emoji: IconBrandLinktree,
 		title: 'Linktree',
-		url: 'https://linktr.ee/jewelexx'
-	}
+		url: 'https://linktr.ee/jewelexx',
+	},
 ];

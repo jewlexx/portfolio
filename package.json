@@ -9,6 +9,7 @@
     "build:ci": "ci.sh",
     "build:wasm": "cd stars && pnpm build",
     "dev": "astro dev",
+    "format": "prettier --write src/**/*",
     "preview": "astro preview",
     "start": "astro dev",
     "sync": "astro sync"
