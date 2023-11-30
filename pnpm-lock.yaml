@@ -27,6 +27,9 @@ importers:
       '@astrojs/svelte':
         specifier: ^4.0.3
         version: 4.0.4(astro@3.6.0)(svelte@4.2.7)(typescript@5.3.2)(vite@4.5.0)
+      '@fontsource/ibm-plex-mono':
+        specifier: ^5.0.8
+        version: 5.0.8
       '@tabler/icons':
         specifier: ^2.40.0
         version: 2.42.0
@@ -2533,6 +2536,10 @@ packages:
   /@fastify/busboy@2.1.0:
     resolution: {integrity: sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==}
     engines: {node: '>=14'}
+    dev: false
+
+  /@fontsource/ibm-plex-mono@5.0.8:
+    resolution: {integrity: sha512-AoR7K2YtlGKy3LApyLYjqjyz0o8XtkRvbB/juMsGSGNayBBAly140ykZls+VxcXjZSLQpp2RyxKo6lYOuHPmUw==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.13:
