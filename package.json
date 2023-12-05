@@ -31,7 +31,7 @@
     "svelte": "^4.2.2"
   },
   "devDependencies": {
-    "@astrojs/node": "^6.1.0",
+    "@astrojs/node": "^7.0.0",
     "@astrojs/vercel": "^5.1.0",
     "@playwright/test": "1.40.1",
     "@typescript-eslint/eslint-plugin": "6.13.2",
