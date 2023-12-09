@@ -34,8 +34,8 @@ importers:
         specifier: ^2.40.0
         version: 2.42.0
       '@tabler/icons-svelte':
-        specifier: 2.42.0
-        version: 2.42.0(svelte@4.2.8)
+        specifier: 2.43.0
+        version: 2.43.0(svelte@4.2.8)
       astro:
         specifier: ^3.6.3
         version: 3.6.4(sass@1.69.5)(typescript@5.3.3)
@@ -2965,17 +2965,21 @@ packages:
       - supports-color
     dev: false
 
-  /@tabler/icons-svelte@2.42.0(svelte@4.2.8):
-    resolution: {integrity: sha512-w+Yo6R7xLBOgyFApAk5SctfFA7TQ+pRvVh+nTHUFJTjn4NZ0PA04lZyldSn1SMww5NT1jqRGdhsVpnn37of3FQ==}
+  /@tabler/icons-svelte@2.43.0(svelte@4.2.8):
+    resolution: {integrity: sha512-oUhVT2HGWwLmpy+Gqyb7kwELPN1MzKnms3Rtx4IFK8LoNN6jr3Q1wOFVcZVGKCilAD0oU2f0bUmXNKVT7/brew==}
     peerDependencies:
       svelte: '>=3 <5'
     dependencies:
-      '@tabler/icons': 2.42.0
+      '@tabler/icons': 2.43.0
       svelte: 4.2.8
     dev: false
 
   /@tabler/icons@2.42.0:
     resolution: {integrity: sha512-ynV4iaC1c1mUhuAr9HRaoq8KrWYmZ0bJEpOh7qTBE+OfdDsdvQUe+0S7FW+DHkJ4RuxQMdO8djrZK7HrUw9YMA==}
+    dev: false
+
+  /@tabler/icons@2.43.0:
+    resolution: {integrity: sha512-afToJMJj31Q9Put1/saemluLBvWhgzsF59QM/mJZZ7LLHW12ViumyQIwA31SRCH/HsYBEoRp2qHFt0QwIFWDFw==}
     dev: false
 
   /@trysound/sax@0.2.0:
