@@ -71,8 +71,8 @@ importers:
         specifier: 6.19.0
         version: 6.19.0(eslint@8.56.0)(typescript@5.3.3)
       '@vite-pwa/assets-generator':
-        specifier: ^0.0.11
-        version: 0.0.11
+        specifier: ^0.2.0
+        version: 0.2.3
       '@vite-pwa/astro':
         specifier: ^0.1.6
         version: 0.1.6(astro@3.6.4)(vite-plugin-pwa@0.17.2)
@@ -3315,8 +3315,8 @@ packages:
       - supports-color
     dev: true
 
-  /@vite-pwa/assets-generator@0.0.11:
-    resolution: {integrity: sha512-fm2aRHYM3O8wmsOPq04g/xcmlkyvvcI+SaKbAHyrIS+gP4fEESa8/UadxMqV531QW6Xe1ECQNSxFKffmNS7yQg==}
+  /@vite-pwa/assets-generator@0.2.3:
+    resolution: {integrity: sha512-tfCQamgaIv13bPUQ/tLkzXz2PqxgjYbJdQ/yTPEw9SF/pYGEvSy6pR0ABIsAIeRaOlhoiHnX77CtGcfEeGKIiw==}
     engines: {node: '>=16.14.0'}
     hasBin: true
     dependencies:
