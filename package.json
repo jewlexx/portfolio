@@ -51,7 +51,7 @@
     "prettier-plugin-astro": "^0.12.1",
     "prettier-plugin-svelte": "^3.0.3",
     "sass": "1.70.0",
-    "sharp": "0.33.0",
+    "sharp": "0.33.2",
     "tslib": "2.6.2",
     "typescript": "5.3.3",
     "vite-plugin-wasm": "^3.2.2"
