@@ -6,13 +6,14 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Shield from '../components/Shield.astro';
+import PubDate from '../components/PubDate.astro';
 
 interface ExtraProps {
 	slug: string;
 }
 type Props = CollectionEntry<'projects'>['data'] & ExtraProps;
 
-const { title, description, heroImage, repo, homepage, slug, shields, toy, hideHero } = Astro.props;
+const { title, description, heroImage, repo, homepage, slug, shields, toy, hideHero, pubDate } = Astro.props;
 
 let pageTitle = title;
 
@@ -45,9 +46,11 @@ if (Astro.url.pathname.includes('/projects')) {
 				</div>
 				<div class="prose">
 					<div class="title">
+						<h1>{title}</h1>
+						<i>{description}</i>
 						<div class="date">
-							<!-- <FormattedDate date={pubDate} />
-							{
+							<PubDate {pubDate} />
+							<!-- {
 								updatedDate && (
 									<div class="last-updated-on">
 										Last updated on <FormattedDate date={updatedDate} />
@@ -55,8 +58,6 @@ if (Astro.url.pathname.includes('/projects')) {
 								)
 							} -->
 						</div>
-						<h1>{title}</h1>
-						<i>{description}</i>
 						{
 							toy && (
 								<p>🤏 This is a mini project, meaning it's all here. There's nothing else to it.</p>
@@ -156,6 +157,10 @@ if (Astro.url.pathname.includes('/projects')) {
 						transform: scale(1.2);
 					}
 				}
+			}
+
+			.pub-date {
+				color: rgb(235, 235, 235);
 			}
 		</style>
 	</body>
