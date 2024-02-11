@@ -5,6 +5,7 @@ import LinkIcon from '@tabler/icons/link.svg';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Shield from '../components/Shield.astro';
 
 interface ExtraProps {
 	slug: string;
@@ -65,29 +66,15 @@ if (Astro.url.pathname.includes('/projects')) {
 							shields && (
 								<p class="shields">
 									{shields?.map((shield) => (
-										<a href={shield.href}>
-											<img src={shield.src} alt={shield.alt} />
-										</a>
+										<Shield {...shield} />
 									))}
 								</p>
 							)
 						}
 
-						<span class="links">
-							{
-								repo && (
-									<a href={repo} target="_blank" rel="noopener noreferrer">
-										<img src={BrandGit.src} />
-									</a>
-								)
-							}
-							{
-								homepage && (
-									<a href={homepage} target="_blank" rel="noopener noreferrer">
-										<img src={LinkIcon.src} />
-									</a>
-								)
-							}
+						<span>
+							<Shield enabled={repo  !== undefined} href={repo!} src={BrandGit.src} alt="Git Source link" class="link" />
+							<Shield enabled={homepage  !== undefined} href={homepage!} src={LinkIcon.src} alt="Homepage link" class="link" />
 						</span>
 						<hr />
 					</div>
@@ -138,6 +125,11 @@ if (Astro.url.pathname.includes('/projects')) {
 			.last-updated-on {
 				font-style: italic;
 			}
+		</style>
+
+		<!-- As these styles apply to components within this page, they must be global -->
+		<style lang="scss" is:global>
+			@use '../styles/transitions';
 
 			.shields {
 				a {
@@ -145,24 +137,23 @@ if (Astro.url.pathname.includes('/projects')) {
 				}
 			}
 
-			.links {
-				a {
-					margin: 0.5rem;
 
-					img {
-						width: 2.5rem;
-						height: 2.5rem;
-						// Original #282a2c
-						background-color: #d7d5d3;
-						border-radius: 5px;
-						box-shadow: inset 0px 0px 2px lighten(#d7d5d3, 10%);
-						padding: 0.2rem;
-						filter: invert(1);
-						@include transitions.springy-transform(500ms);
+			.link {
+				margin: 0.5rem;
 
-						&:hover {
-							transform: scale(1.2);
-						}
+				img {
+					width: 2.5rem;
+					height: 2.5rem;
+					// Original #282a2c
+					background-color: #d7d5d3;
+					border-radius: 5px;
+					box-shadow: inset 0px 0px 2px lighten(#d7d5d3, 10%);
+					padding: 0.2rem;
+					filter: invert(1);
+					@include transitions.springy-transform(500ms);
+
+					&:hover {
+						transform: scale(1.2);
 					}
 				}
 			}
