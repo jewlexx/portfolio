@@ -33,5 +33,11 @@ const { pathname } = Astro.url;
 			font-weight: bolder;
 			text-decoration: underline;
 		}
+
+		@media (max-width: 500px) {
+			@media (orientation: portrait) {
+				font-size: 3vw;
+			}
+		}
 	}
 </style>
