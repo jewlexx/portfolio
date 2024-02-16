@@ -38,7 +38,7 @@ importers:
         version: 2.47.0(svelte@4.2.10)
       astro:
         specifier: ^4.3.5
-        version: 4.3.5(sass@1.70.0)(typescript@5.3.3)
+        version: 4.3.5(sass@1.71.0)(typescript@5.3.3)
       nanostores:
         specifier: ^0.9.4
         version: 0.9.5
@@ -113,8 +113,8 @@ importers:
         specifier: ^3.0.3
         version: 3.1.2(prettier@3.2.5)(svelte@4.2.10)
       sass:
-        specifier: 1.70.0
-        version: 1.70.0
+        specifier: 1.71.0
+        version: 1.71.0
       sharp:
         specifier: 0.33.2
         version: 0.33.2
@@ -203,7 +203,7 @@ packages:
       '@astrojs/markdown-remark': 4.2.1
       '@mdx-js/mdx': 3.0.0
       acorn: 8.11.3
-      astro: 4.3.5(sass@1.70.0)(typescript@5.3.3)
+      astro: 4.3.5(sass@1.71.0)(typescript@5.3.3)
       es-module-lexer: 1.4.1
       estree-util-visit: 2.0.0
       github-slugger: 2.0.0
@@ -225,7 +225,7 @@ packages:
     peerDependencies:
       astro: ^4.2.0
     dependencies:
-      astro: 4.3.5(sass@1.70.0)(typescript@5.3.3)
+      astro: 4.3.5(sass@1.71.0)(typescript@5.3.3)
       send: 0.18.0
       server-destroy: 1.0.1
     transitivePeerDependencies:
@@ -274,7 +274,7 @@ packages:
       svelte: ^4.0.0 || ^5.0.0-next.1
     dependencies:
       '@sveltejs/vite-plugin-svelte': 3.0.2(svelte@4.2.10)(vite@5.1.1)
-      astro: 4.3.5(sass@1.70.0)(typescript@5.3.3)
+      astro: 4.3.5(sass@1.71.0)(typescript@5.3.3)
       svelte: 4.2.10
       svelte2tsx: 0.6.27(svelte@4.2.10)(typescript@5.3.3)
     transitivePeerDependencies:
@@ -305,7 +305,7 @@ packages:
       '@astrojs/internal-helpers': 0.2.1
       '@vercel/analytics': 1.1.3
       '@vercel/nft': 0.24.4
-      astro: 4.3.5(sass@1.70.0)(typescript@5.3.3)
+      astro: 4.3.5(sass@1.71.0)(typescript@5.3.3)
       esbuild: 0.19.12
       fast-glob: 3.3.2
       set-cookie-parser: 2.6.0
@@ -2638,7 +2638,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 3.0.2(svelte@4.2.10)(vite@5.1.1)
       debug: 4.3.4(supports-color@8.1.1)
       svelte: 4.2.10
-      vite: 5.1.1(sass@1.70.0)
+      vite: 5.1.1(sass@1.71.0)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -2657,7 +2657,7 @@ packages:
       magic-string: 0.30.7
       svelte: 4.2.10
       svelte-hmr: 0.15.3(svelte@4.2.10)
-      vite: 5.1.1(sass@1.70.0)
+      vite: 5.1.1(sass@1.71.0)
       vitefu: 0.2.5(vite@5.1.1)
     transitivePeerDependencies:
       - supports-color
@@ -3003,7 +3003,7 @@ packages:
       astro: ^1.6.0 || ^2.0.0 || ^3.0.0 || ^4.0.0
       vite-plugin-pwa: '>=0.17.3 <1'
     dependencies:
-      astro: 4.3.5(sass@1.70.0)(typescript@5.3.3)
+      astro: 4.3.5(sass@1.71.0)(typescript@5.3.3)
       vite-plugin-pwa: 0.18.1(vite@5.1.1)(workbox-build@7.0.0)(workbox-window@7.0.0)
     dev: true
 
@@ -3213,7 +3213,7 @@ packages:
       zod: 3.22.4
     dev: true
 
-  /astro@4.3.5(sass@1.70.0)(typescript@5.3.3):
+  /astro@4.3.5(sass@1.71.0)(typescript@5.3.3):
     resolution: {integrity: sha512-7jPffNlcmDO94NlkWe/hUWta/pIjlx1LVD/DZb/fyjT1Jv+7mGhKZBIjkDfeVpequW70mep8cAS5RM7Pxa0Gdg==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
@@ -3277,7 +3277,7 @@ packages:
       tsconfck: 3.0.2(typescript@5.3.3)
       unist-util-visit: 5.0.0
       vfile: 6.0.1
-      vite: 5.1.1(sass@1.70.0)
+      vite: 5.1.1(sass@1.71.0)
       vitefu: 0.2.5(vite@5.1.1)
       which-pm: 2.1.1
       yargs-parser: 21.1.1
@@ -8230,8 +8230,8 @@ packages:
       suf-log: 2.5.3
     dev: true
 
-  /sass@1.70.0:
-    resolution: {integrity: sha512-uUxNQ3zAHeAx5nRFskBnrWzDUJrrvpCPD5FNAoRvTi0WwremlheES3tg+56PaVtCs5QDRX5CBLxxKMDJMEa1WQ==}
+  /sass@1.71.0:
+    resolution: {integrity: sha512-HKKIKf49Vkxlrav3F/w6qRuPcmImGVbIXJ2I3Kg0VMA+3Bav+8yE9G5XmP5lMj6nl4OlqbPftGAscNaNu28b8w==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -9344,7 +9344,7 @@ packages:
       debug: 4.3.4(supports-color@8.1.1)
       fast-glob: 3.3.2
       pretty-bytes: 6.1.1
-      vite: 5.1.1(sass@1.70.0)
+      vite: 5.1.1(sass@1.71.0)
       workbox-build: 7.0.0
       workbox-window: 7.0.0
     transitivePeerDependencies:
@@ -9367,7 +9367,7 @@ packages:
       merge-anything: 5.1.7
       solid-js: 1.8.14
       solid-refresh: 0.6.3(solid-js@1.8.14)
-      vite: 5.1.1(sass@1.70.0)
+      vite: 5.1.1(sass@1.71.0)
       vitefu: 0.2.5(vite@5.1.1)
     transitivePeerDependencies:
       - supports-color
@@ -9378,10 +9378,10 @@ packages:
     peerDependencies:
       vite: ^2 || ^3 || ^4 || ^5
     dependencies:
-      vite: 5.1.1(sass@1.70.0)
+      vite: 5.1.1(sass@1.71.0)
     dev: true
 
-  /vite@5.1.1(sass@1.70.0):
+  /vite@5.1.1(sass@1.71.0):
     resolution: {integrity: sha512-wclpAgY3F1tR7t9LL5CcHC41YPkQIpKUGeIuT8MdNwNZr6OqOTLs7JX5vIHAtzqLWXts0T+GDrh9pN2arneKqg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -9412,7 +9412,7 @@ packages:
       esbuild: 0.19.12
       postcss: 8.4.35
       rollup: 4.10.0
-      sass: 1.70.0
+      sass: 1.71.0
     optionalDependencies:
       fsevents: 2.3.3
 
@@ -9424,7 +9424,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.1.1(sass@1.70.0)
+      vite: 5.1.1(sass@1.71.0)
 
   /wasm-pack@0.12.1:
     resolution: {integrity: sha512-dIyKWUumPFsGohdndZjDXRFaokUT/kQS+SavbbiXVAvA/eN4riX5QNdB6AhXQx37zNxluxQkuixZUgJ8adKjOg==}
