@@ -31,7 +31,7 @@ getrandom = { version = "0.2.12", features = ["js"] }
 # code size when deploying.
 console_error_panic_hook = { version = "0.1.7", optional = true }
 cfg-if = "1.0.0"
-lol_alloc = { version = "0.4.0", optional = true }
+lol_alloc = { version = "0.4.1", optional = true }
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3.41"
