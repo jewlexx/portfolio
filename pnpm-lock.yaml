@@ -60,7 +60,7 @@ importers:
         version: 8.2.1(astro@4.4.4)
       '@astrojs/vercel':
         specifier: ^7.3.0
-        version: 7.3.3(astro@4.4.4)
+        version: 7.3.4(astro@4.4.4)
       '@playwright/test':
         specifier: 1.41.2
         version: 1.41.2
@@ -297,8 +297,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@astrojs/vercel@7.3.3(astro@4.4.4):
-    resolution: {integrity: sha512-C7F05yvRJHEh/nPm9MBcRX1ANpIHOU23X/MO8+LFXOjC/Teju6ZjIXz/xmXJqOhItqsHcJihfQaH0+AJ9bOYKg==}
+  /@astrojs/vercel@7.3.4(astro@4.4.4):
+    resolution: {integrity: sha512-EiuTe51/5ERiA1UbZCn8G2NmfDgb3x2SdfyVpVszpttS43k7wpPxbMqYNi5DgEsisFPGCcsu818exRi3m52CXA==}
     peerDependencies:
       astro: ^4.2.0
     dependencies:
