@@ -26,7 +26,7 @@ importers:
         version: 4.0.1(solid-js@1.8.15)(vite@5.1.4)
       '@astrojs/svelte':
         specifier: ^5.0.3
-        version: 5.1.0(astro@4.4.6)(svelte@4.2.12)(typescript@5.3.3)(vite@5.1.4)
+        version: 5.2.0(astro@4.4.6)(svelte@4.2.12)(typescript@5.3.3)(vite@5.1.4)
       '@fontsource/ibm-plex-mono':
         specifier: ^5.0.8
         version: 5.0.8
@@ -266,20 +266,21 @@ packages:
       - vite
     dev: false
 
-  /@astrojs/svelte@5.1.0(astro@4.4.6)(svelte@4.2.12)(typescript@5.3.3)(vite@5.1.4):
-    resolution: {integrity: sha512-1f0wkFkHs+1vcCliaEB1j9SYEU/n5ZYTAASv5Rkq6nvjNFRrnPuXLQCYIYFqdGGqFm6UPdgKpJBFbFFeQlr4yA==}
+  /@astrojs/svelte@5.2.0(astro@4.4.6)(svelte@4.2.12)(typescript@5.3.3)(vite@5.1.4):
+    resolution: {integrity: sha512-GmwbXks2WMkmAfl0rlPM/2gA1RtmZzjGV2mOceV3g7QNyjIsSYBPKrlEnSFnuR+YMvlAtWdbMFBsb3gtGxnTTg==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       astro: ^4.0.0
       svelte: ^4.0.0 || ^5.0.0-next.56
+      typescript: ^5.3.3
     dependencies:
       '@sveltejs/vite-plugin-svelte': 3.0.2(svelte@4.2.12)(vite@5.1.4)
       astro: 4.4.6(sass@1.71.1)(typescript@5.3.3)
       svelte: 4.2.12
       svelte2tsx: 0.6.27(svelte@4.2.12)(typescript@5.3.3)
+      typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
-      - typescript
       - vite
     dev: false
 
@@ -2929,8 +2930,8 @@ packages:
     dev: true
     optional: true
 
-  /@types/node@20.11.21:
-    resolution: {integrity: sha512-/ySDLGscFPNasfqStUuWWPfL78jompfIoVzLJPVVAHBh6rpG68+pI2Gk+fNLeI8/f1yPYL4s46EleVIc20F1Ow==}
+  /@types/node@20.11.22:
+    resolution: {integrity: sha512-/G+IxWxma6V3E+pqK1tSl2Fo1kl41pK1yeCyDsgkF9WlVAme4j5ISYM2zR11bgLFJGLN5sVK40T4RJNuiZbEjA==}
     dependencies:
       undici-types: 5.26.5
     dev: true
@@ -2938,7 +2939,7 @@ packages:
   /@types/resolve@1.17.1:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
     dependencies:
-      '@types/node': 20.11.21
+      '@types/node': 20.11.22
     dev: true
 
   /@types/sax@1.2.7:
@@ -5893,7 +5894,7 @@ packages:
     resolution: {integrity: sha512-KWYVV1c4i+jbMpaBC+U++4Va0cp8OisU185o73T1vo99hqi7w8tSJfUXYswwqqrjzwxa6KpRK54WhPvwf5w6PQ==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 20.11.21
+      '@types/node': 20.11.22
       merge-stream: 2.0.0
       supports-color: 7.2.0
     dev: true
