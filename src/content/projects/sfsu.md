@@ -2,8 +2,8 @@
 featured: true
 title: 'Stupid Fast Scoop Utils'
 description: 'Super fast replacements and additions to scoop commands written in Rust'
-# Can be a single repo name, a GitHub path (i.e jewlexx/sfsu), or a full url
 pubDate: 'Oct 28 2022'
+# Can be a single repo name, a GitHub path (i.e jewlexx/sfsu), or a full url
 repo: 'sfsu'
 homepage: 'https://jewlexx.github.io/sfsu/'
 shields:
