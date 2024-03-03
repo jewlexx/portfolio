@@ -1,0 +1,44 @@
+.form {
+	padding: 1rem;
+
+	background-color: #fdfdfd;
+	border-radius: 0.25rem;
+
+	display: flex;
+	justify-content: space-between;
+
+	label {
+		display: flex;
+		flex-direction: column;
+
+		width: 100%;
+
+		font-size: 1.1rem;
+
+		margin: 1rem;
+		padding: 1rem;
+
+		border-radius: 0.25rem;
+		background-color: #cacaca;
+		color: black;
+
+		input {
+			// margin-left: 1rem;
+			border: none;
+			// padding: 0.25rem;
+			font-size: 1.1rem;
+			width: 5rem;
+		}
+	}
+}
+
+.fileDisplay {
+	background-color: #2e3135;
+	padding: 0.25rem;
+	border-radius: 0.25rem;
+	border: none;
+
+	color: #fff;
+
+	cursor: pointer;
+}

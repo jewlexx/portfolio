@@ -4,9 +4,10 @@ module.exports = {
 	parser: '@typescript-eslint/parser',
 	extends: [
 		'eslint:recommended',
+		'plugin:react/recommended',
 		'plugin:svelte/recommended',
 		'plugin:@typescript-eslint/recommended',
-		'prettier'
+		'prettier',
 	],
 	// plugins: ['svelte', '@typescript-eslint'],
 	ignorePatterns: ['*.cjs'],
@@ -16,11 +17,11 @@ module.exports = {
 	// },
 	parserOptions: {
 		sourceType: 'module',
-		ecmaVersion: 2020
+		ecmaVersion: 2020,
 	},
 	env: {
 		browser: true,
 		es2017: true,
-		node: true
-	}
+		node: true,
+	},
 };

@@ -8,7 +8,7 @@ import AstroPWA from '@vite-pwa/astro';
 import Compress from 'astro-compress';
 import wasm from 'vite-plugin-wasm';
 
-import solidJs from '@astrojs/solid-js';
+import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
@@ -27,7 +27,6 @@ export default defineConfig({
 		mdx(),
 		sitemap(),
 		svelte(),
-		solidJs(),
 		AstroPWA({
 			manifest: {
 				name: "Juliette Cordor's Portfolio",
@@ -71,6 +70,7 @@ export default defineConfig({
 		}),
 		robotsTxt(),
 		// Compress(),
+		react(),
 	],
 	vite: {
 		plugins: [wasm()],

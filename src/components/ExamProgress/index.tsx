@@ -1,31 +1,28 @@
-import { createSignal, createMemo } from 'solid-js';
+import { useState, type FunctionComponent, useMemo } from 'react';
 import styles from './index.module.scss';
 
-// We need total questions, total marks to work out marks per minute
-// Then how long they've done so far
-
-const ExamProgress = () => {
-	const [marks, setMarks] = createSignal<number>(0);
-	const [time, setTime] = createSignal<number>(0);
-	const [spentTime, setSpentTime] = createSignal<number>(0);
+const ExamProgress: FunctionComponent = () => {
+	const [marks, setMarks] = useState<number>(0);
+	const [time, setTime] = useState<number>(0);
+	const [spentTime, setSpentTime] = useState<number>(0);
 	// const [questions, setQuestions] = createSignal<number>(0);
 
-	const marksPerMinute = createMemo(() => {
-		const mpm = marks() / time();
+	const marksPerMinute = useMemo(() => {
+		const mpm = marks / time;
 
 		return isNaN(mpm) ? 0 : mpm;
-	});
+	}, [marks, time]);
 
 	return (
 		<div>
-			<form class={styles.form}>
-				<span class={styles.questions}>
+			<form className={styles.form}>
+				<span className={styles.questions}>
 					<label>
 						Total Time (minutes):{' '}
 						<input
 							id="time"
 							type="number"
-							value={time()}
+							value={time}
 							onChange={(e) => setTime(parseInt(e.target.value, 10))}
 							required
 						/>
@@ -36,19 +33,19 @@ const ExamProgress = () => {
 						<input
 							id="time-spent"
 							type="number"
-							value={spentTime()}
+							value={spentTime}
 							onChange={(e) => setSpentTime(parseInt(e.target.value, 10))}
 							required
 						/>
 					</label>
 				</span>
-				<span class={styles.questions}>
+				<span className={styles.questions}>
 					<label>
 						Total Marks:{' '}
 						<input
 							id="marks"
 							type="number"
-							value={marks()}
+							value={marks}
 							onChange={(e) => setMarks(parseInt(e.target.value, 10))}
 							required
 						/>
@@ -65,19 +62,19 @@ const ExamProgress = () => {
 				</span>
 			</form>
 
-			{marksPerMinute() !== 0 && (
-				<div class={styles.output} id="marks-output">
-					{marksPerMinute() < 1 ? (
+			{marksPerMinute !== 0 && (
+				<div className={styles.output} id="marks-output">
+					{marksPerMinute < 1 ? (
 						<p>
-							You have <span>{1 / marksPerMinute()}</span> minutes per mark
+							You have <span>{1 / marksPerMinute}</span> minutes per mark
 						</p>
 					) : (
 						<p>
-							You should be doing <span>{marksPerMinute()}</span> marks per minute
+							You should be doing <span>{marksPerMinute}</span> marks per minute
 						</p>
 					)}
 					<p>
-						You should have <span>{marksPerMinute() * spentTime()}</span> marks completed so far
+						You should have <span>{marksPerMinute * spentTime}</span> marks completed so far
 					</p>
 				</div>
 			)}
