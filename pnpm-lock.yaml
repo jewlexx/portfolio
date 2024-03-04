@@ -14,7 +14,7 @@ importers:
     dependencies:
       '@astrojs/mdx':
         specifier: ^2.1.1
-        version: 2.1.1(astro@4.4.9)
+        version: 2.1.1(astro@4.4.10)
       '@astrojs/rss':
         specifier: ^4.0.5
         version: 4.0.5
@@ -26,7 +26,7 @@ importers:
         version: 4.0.1(solid-js@1.8.15)(vite@5.1.4)
       '@astrojs/svelte':
         specifier: ^5.0.3
-        version: 5.2.0(astro@4.4.9)(svelte@4.2.12)(typescript@5.3.3)(vite@5.1.4)
+        version: 5.2.0(astro@4.4.10)(svelte@4.2.12)(typescript@5.3.3)(vite@5.1.4)
       '@fontsource/ibm-plex-mono':
         specifier: ^5.0.8
         version: 5.0.12
@@ -38,7 +38,7 @@ importers:
         version: 2.47.0(svelte@4.2.12)
       astro:
         specifier: ^4.3.5
-        version: 4.4.9(sass@1.71.1)(typescript@5.3.3)
+        version: 4.4.10(sass@1.71.1)(typescript@5.3.3)
       nanostores:
         specifier: ^0.9.4
         version: 0.9.5
@@ -57,10 +57,10 @@ importers:
     devDependencies:
       '@astrojs/node':
         specifier: ^8.2.0
-        version: 8.2.2(astro@4.4.9)
+        version: 8.2.2(astro@4.4.10)
       '@astrojs/vercel':
         specifier: ^7.3.0
-        version: 7.3.4(astro@4.4.9)
+        version: 7.3.4(astro@4.4.10)
       '@playwright/test':
         specifier: 1.42.1
         version: 1.42.1
@@ -75,7 +75,7 @@ importers:
         version: 0.2.4
       '@vite-pwa/astro':
         specifier: ^0.2.0
-        version: 0.2.0(astro@4.4.9)(vite-plugin-pwa@0.19.2)
+        version: 0.2.0(astro@4.4.10)(vite-plugin-pwa@0.19.2)
       astro-compress:
         specifier: ^2.2.10
         version: 2.2.11
@@ -201,7 +201,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@astrojs/mdx@2.1.1(astro@4.4.9):
+  /@astrojs/mdx@2.1.1(astro@4.4.10):
     resolution: {integrity: sha512-AgGFdE7HOGmoFooGvMSatkA9FiSKwyVW7ImHot/bXJ6uAbFfu6iG2ht18Cf1pT22Hda/6iSCGWusFvBv0/EnKQ==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
@@ -210,7 +210,7 @@ packages:
       '@astrojs/markdown-remark': 4.2.1
       '@mdx-js/mdx': 3.0.1
       acorn: 8.11.3
-      astro: 4.4.9(sass@1.71.1)(typescript@5.3.3)
+      astro: 4.4.10(sass@1.71.1)(typescript@5.3.3)
       es-module-lexer: 1.4.1
       estree-util-visit: 2.0.0
       github-slugger: 2.0.0
@@ -227,12 +227,12 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/node@8.2.2(astro@4.4.9):
+  /@astrojs/node@8.2.2(astro@4.4.10):
     resolution: {integrity: sha512-hgYXvsKsebeg9hl2aLnsyABLH/zpSIpeptVTqb73equbnvUse0TNl3DLjodYrkoI3z4/lu+P7glWfljWXeqamA==}
     peerDependencies:
       astro: ^4.2.0
     dependencies:
-      astro: 4.4.9(sass@1.71.1)(typescript@5.3.3)
+      astro: 4.4.10(sass@1.71.1)(typescript@5.3.3)
       send: 0.18.0
       server-destroy: 1.0.1
     transitivePeerDependencies:
@@ -273,7 +273,7 @@ packages:
       - vite
     dev: false
 
-  /@astrojs/svelte@5.2.0(astro@4.4.9)(svelte@4.2.12)(typescript@5.3.3)(vite@5.1.4):
+  /@astrojs/svelte@5.2.0(astro@4.4.10)(svelte@4.2.12)(typescript@5.3.3)(vite@5.1.4):
     resolution: {integrity: sha512-GmwbXks2WMkmAfl0rlPM/2gA1RtmZzjGV2mOceV3g7QNyjIsSYBPKrlEnSFnuR+YMvlAtWdbMFBsb3gtGxnTTg==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
@@ -282,7 +282,7 @@ packages:
       typescript: ^5.3.3
     dependencies:
       '@sveltejs/vite-plugin-svelte': 3.0.2(svelte@4.2.12)(vite@5.1.4)
-      astro: 4.4.9(sass@1.71.1)(typescript@5.3.3)
+      astro: 4.4.10(sass@1.71.1)(typescript@5.3.3)
       svelte: 4.2.12
       svelte2tsx: 0.6.27(svelte@4.2.12)(typescript@5.3.3)
       typescript: 5.3.3
@@ -305,7 +305,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@astrojs/vercel@7.3.4(astro@4.4.9):
+  /@astrojs/vercel@7.3.4(astro@4.4.10):
     resolution: {integrity: sha512-EiuTe51/5ERiA1UbZCn8G2NmfDgb3x2SdfyVpVszpttS43k7wpPxbMqYNi5DgEsisFPGCcsu818exRi3m52CXA==}
     peerDependencies:
       astro: ^4.2.0
@@ -313,7 +313,7 @@ packages:
       '@astrojs/internal-helpers': 0.2.1
       '@vercel/analytics': 1.2.2
       '@vercel/nft': 0.24.4
-      astro: 4.4.9(sass@1.71.1)(typescript@5.3.3)
+      astro: 4.4.10(sass@1.71.1)(typescript@5.3.3)
       esbuild: 0.19.12
       fast-glob: 3.3.2
       set-cookie-parser: 2.6.0
@@ -3077,13 +3077,13 @@ packages:
       unconfig: 0.3.11
     dev: true
 
-  /@vite-pwa/astro@0.2.0(astro@4.4.9)(vite-plugin-pwa@0.19.2):
+  /@vite-pwa/astro@0.2.0(astro@4.4.10)(vite-plugin-pwa@0.19.2):
     resolution: {integrity: sha512-1MBNbRo9I9fp9sUSoaQfI/xHVDRKRoUsWETDJMVoKoctZYfm4fZgb7EN76WJdejW/vup+3+uoFlDMCnca+vZzA==}
     peerDependencies:
       astro: ^1.6.0 || ^2.0.0 || ^3.0.0 || ^4.0.0
       vite-plugin-pwa: '>=0.17.3 <1'
     dependencies:
-      astro: 4.4.9(sass@1.71.1)(typescript@5.3.3)
+      astro: 4.4.10(sass@1.71.1)(typescript@5.3.3)
       vite-plugin-pwa: 0.19.2(@vite-pwa/assets-generator@0.2.4)(vite@5.1.4)(workbox-build@7.0.0)(workbox-window@7.0.0)
     dev: true
 
@@ -3293,8 +3293,8 @@ packages:
       zod: 3.22.4
     dev: true
 
-  /astro@4.4.9(sass@1.71.1)(typescript@5.3.3):
-    resolution: {integrity: sha512-FTWhzKjao7rHHiF/CqPqPS18AFad+fmUcYUFhWWIsYETHcc9g0IIIiv6cHXUE7g6mEZf7ycAa+WdboeEHUhraQ==}
+  /astro@4.4.10(sass@1.71.1)(typescript@5.3.3):
+    resolution: {integrity: sha512-8ASYlHPNKJg7F+1mlQts7nU1jZPQGE2xluB4fcdAUvH33BYLEBz/bCxJwLOmfC8Ai2gzs/wTwofwDzqbwjx6Ug==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -3338,7 +3338,7 @@ packages:
       http-cache-semantics: 4.1.1
       js-yaml: 4.1.0
       kleur: 4.1.5
-      magic-string: 0.30.7
+      magic-string: 0.30.8
       mdast-util-to-hast: 13.0.2
       mime: 3.0.0
       ora: 7.0.1
@@ -6171,6 +6171,12 @@ packages:
 
   /magic-string@0.30.7:
     resolution: {integrity: sha512-8vBuFF/I/+OSLRmdf2wwFCJCz+nSn0m6DPvGH1fS/KiQoSaR+sETbov0eIk9KhEKy8CYqIkIAnbohxT/4H0kuA==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.15
+
+  /magic-string@0.30.8:
+    resolution: {integrity: sha512-ISQTe55T2ao7XtlAStud6qwYPZjE4GK1S/BeVPus4jrq6JuOnQ00YKQC581RWhR122W7msZV263KzVeLoqidyQ==}
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
