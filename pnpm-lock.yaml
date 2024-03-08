@@ -57,7 +57,7 @@ importers:
     devDependencies:
       '@astrojs/node':
         specifier: ^8.2.0
-        version: 8.2.2(astro@4.4.15)
+        version: 8.2.3(astro@4.4.15)
       '@astrojs/vercel':
         specifier: ^7.3.0
         version: 7.3.5(astro@4.4.15)
@@ -227,8 +227,8 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/node@8.2.2(astro@4.4.15):
-    resolution: {integrity: sha512-hgYXvsKsebeg9hl2aLnsyABLH/zpSIpeptVTqb73equbnvUse0TNl3DLjodYrkoI3z4/lu+P7glWfljWXeqamA==}
+  /@astrojs/node@8.2.3(astro@4.4.15):
+    resolution: {integrity: sha512-VQQy7QIv4X+5dlKCEchYIxMFryS+BwDOFGNzeRmHe1/P819TlNup9/M8XqnWW4aZPxV7P6CoDeFxX6HuT/kOmQ==}
     peerDependencies:
       astro: ^4.2.0
     dependencies:
