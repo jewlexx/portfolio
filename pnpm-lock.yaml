@@ -78,7 +78,7 @@ importers:
         version: 0.2.0(astro@4.4.15)(vite-plugin-pwa@0.19.2)
       astro-compress:
         specifier: ^2.2.10
-        version: 2.2.13
+        version: 2.2.14
       astro-robots-txt:
         specifier: ^1.0.0
         version: 1.0.0
@@ -3266,13 +3266,13 @@ packages:
     hasBin: true
     dev: false
 
-  /astro-compress@2.2.13:
-    resolution: {integrity: sha512-U50h2yo9fBXAyWhlZ1pG62aUuUeB9vMa/9kScnHOE7iXfBXN8p4PgM2zbkGv2CpS0Rnsl20248JGdhWZD/hVzQ==}
+  /astro-compress@2.2.14:
+    resolution: {integrity: sha512-zQvzsDHm3/Hco/uoIs32ZCykH2OdxijeQ306oKc6yJp17CRZClVMjBBc6pdWTua7FJuWNfV7TKt+dZyvOOMbBg==}
     dependencies:
       '@types/csso': 5.0.4
       '@types/html-minifier-terser': 7.0.2
       csso: 5.0.5
-      files-pipe: 2.1.10
+      files-pipe: 2.1.12
       html-minifier-terser: 7.2.0
       kleur: 4.1.5
       lightningcss: 1.24.0
@@ -4505,7 +4505,7 @@ packages:
       typed-array-byte-offset: 1.0.2
       typed-array-length: 1.0.5
       unbox-primitive: 1.0.2
-      which-typed-array: 1.1.14
+      which-typed-array: 1.1.15
     dev: true
 
   /es-define-property@1.0.0:
@@ -4898,8 +4898,8 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dev: true
 
-  /files-pipe@2.1.10:
-    resolution: {integrity: sha512-0ZKo0hd7D4g+hdsMPv3bxvlagJ42lMsj170AMXwCS8PN3rL3GlsPBVyE2lgQsY0zUOAKtcQmEF3QV91CfHS9Yw==}
+  /files-pipe@2.1.12:
+    resolution: {integrity: sha512-5yuP6+OfZ3EsarYxp64X6TofDjxUTJQFMzVOsX7HXClNoRD4+6uJr98alzs9VJg4ISgEXPU7HlWufdKnd26JsQ==}
     dependencies:
       '@types/node': 20.11.25
       deepmerge-ts: 5.1.0
@@ -5736,7 +5736,7 @@ packages:
     resolution: {integrity: sha512-uZ25/bUAlUY5fR4OKT4rZQEBrzQWYV9ZJYGGsUmEJ6thodVJ1HX64ePQ6Z0qPWP+m+Uq6e9UugrE38jeYsDSMw==}
     engines: {node: '>= 0.4'}
     dependencies:
-      which-typed-array: 1.1.14
+      which-typed-array: 1.1.15
     dev: true
 
   /is-typedarray@1.0.0:
@@ -9585,8 +9585,8 @@ packages:
       load-yaml-file: 0.2.0
       path-exists: 4.0.0
 
-  /which-typed-array@1.1.14:
-    resolution: {integrity: sha512-VnXFiIW8yNn9kIHN88xvZ4yOWchftKDsRJ8fEPacX/wl1lOvBrhsJ/OeJCXq7B0AaijRuqgzSKalJoPk+D8MPg==}
+  /which-typed-array@1.1.15:
+    resolution: {integrity: sha512-oV0jmFtUky6CXfkqehVvBP/LSWJ2sy4vWMioiENyJLePrBO/yKyV9OyJySfAKosh+RYkIl5zJCNZ8/4JncrpdA==}
     engines: {node: '>= 0.4'}
     dependencies:
       available-typed-arrays: 1.0.7
