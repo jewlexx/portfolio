@@ -14,7 +14,7 @@ importers:
     dependencies:
       '@astrojs/mdx':
         specifier: ^2.1.1
-        version: 2.2.0(astro@4.5.2)
+        version: 2.2.0(astro@4.5.3)
       '@astrojs/rss':
         specifier: ^4.0.5
         version: 4.0.5
@@ -26,7 +26,7 @@ importers:
         version: 4.0.1(solid-js@1.8.15)(vite@5.1.6)
       '@astrojs/svelte':
         specifier: ^5.0.3
-        version: 5.2.0(astro@4.5.2)(svelte@4.2.12)(typescript@5.4.2)(vite@5.1.6)
+        version: 5.2.0(astro@4.5.3)(svelte@4.2.12)(typescript@5.4.2)(vite@5.1.6)
       '@fontsource/ibm-plex-mono':
         specifier: ^5.0.8
         version: 5.0.12
@@ -38,7 +38,7 @@ importers:
         version: 2.47.0(svelte@4.2.12)
       astro:
         specifier: ^4.3.5
-        version: 4.5.2(sass@1.72.0)(typescript@5.4.2)
+        version: 4.5.3(sass@1.72.0)(typescript@5.4.2)
       nanostores:
         specifier: ^0.9.4
         version: 0.9.5
@@ -57,10 +57,10 @@ importers:
     devDependencies:
       '@astrojs/node':
         specifier: ^8.2.0
-        version: 8.2.3(astro@4.5.2)
+        version: 8.2.3(astro@4.5.3)
       '@astrojs/vercel':
         specifier: ^7.3.0
-        version: 7.3.6(astro@4.5.2)
+        version: 7.3.6(astro@4.5.3)
       '@playwright/test':
         specifier: 1.42.1
         version: 1.42.1
@@ -75,7 +75,7 @@ importers:
         version: 0.2.4
       '@vite-pwa/astro':
         specifier: ^0.2.0
-        version: 0.2.0(astro@4.5.2)(vite-plugin-pwa@0.19.2)
+        version: 0.2.0(astro@4.5.3)(vite-plugin-pwa@0.19.2)
       astro-compress:
         specifier: ^2.2.10
         version: 2.2.14
@@ -198,7 +198,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@astrojs/mdx@2.2.0(astro@4.5.2):
+  /@astrojs/mdx@2.2.0(astro@4.5.3):
     resolution: {integrity: sha512-EkcCniYdGwsh9k5LknqRrz/UyOnMNXdRk7fgDAw/zUDKnm7zgQAG8hIx0FxG1L2IINxLfu7IcjgZb3f5TFpxKw==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
@@ -207,7 +207,7 @@ packages:
       '@astrojs/markdown-remark': 4.3.0
       '@mdx-js/mdx': 3.0.1
       acorn: 8.11.3
-      astro: 4.5.2(sass@1.72.0)(typescript@5.4.2)
+      astro: 4.5.3(sass@1.72.0)(typescript@5.4.2)
       es-module-lexer: 1.4.1
       estree-util-visit: 2.0.0
       github-slugger: 2.0.0
@@ -224,12 +224,12 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/node@8.2.3(astro@4.5.2):
+  /@astrojs/node@8.2.3(astro@4.5.3):
     resolution: {integrity: sha512-VQQy7QIv4X+5dlKCEchYIxMFryS+BwDOFGNzeRmHe1/P819TlNup9/M8XqnWW4aZPxV7P6CoDeFxX6HuT/kOmQ==}
     peerDependencies:
       astro: ^4.2.0
     dependencies:
-      astro: 4.5.2(sass@1.72.0)(typescript@5.4.2)
+      astro: 4.5.3(sass@1.72.0)(typescript@5.4.2)
       send: 0.18.0
       server-destroy: 1.0.1
     transitivePeerDependencies:
@@ -270,7 +270,7 @@ packages:
       - vite
     dev: false
 
-  /@astrojs/svelte@5.2.0(astro@4.5.2)(svelte@4.2.12)(typescript@5.4.2)(vite@5.1.6):
+  /@astrojs/svelte@5.2.0(astro@4.5.3)(svelte@4.2.12)(typescript@5.4.2)(vite@5.1.6):
     resolution: {integrity: sha512-GmwbXks2WMkmAfl0rlPM/2gA1RtmZzjGV2mOceV3g7QNyjIsSYBPKrlEnSFnuR+YMvlAtWdbMFBsb3gtGxnTTg==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
@@ -279,7 +279,7 @@ packages:
       typescript: ^5.3.3
     dependencies:
       '@sveltejs/vite-plugin-svelte': 3.0.2(svelte@4.2.12)(vite@5.1.6)
-      astro: 4.5.2(sass@1.72.0)(typescript@5.4.2)
+      astro: 4.5.3(sass@1.72.0)(typescript@5.4.2)
       svelte: 4.2.12
       svelte2tsx: 0.6.27(svelte@4.2.12)(typescript@5.4.2)
       typescript: 5.4.2
@@ -302,7 +302,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@astrojs/vercel@7.3.6(astro@4.5.2):
+  /@astrojs/vercel@7.3.6(astro@4.5.3):
     resolution: {integrity: sha512-dQj3cvTOsgOj/V8EVya16X1L3PCJ9aw0rWCggsFcERI72qEDXctd7l+K/iZC1dOvsM3k6VhwiacwsETowsctAA==}
     peerDependencies:
       astro: ^4.2.0
@@ -310,7 +310,7 @@ packages:
       '@astrojs/internal-helpers': 0.3.0
       '@vercel/analytics': 1.2.2
       '@vercel/nft': 0.26.4
-      astro: 4.5.2(sass@1.72.0)(typescript@5.4.2)
+      astro: 4.5.3(sass@1.72.0)(typescript@5.4.2)
       esbuild: 0.19.12
       fast-glob: 3.3.2
       set-cookie-parser: 2.6.0
@@ -3074,13 +3074,13 @@ packages:
       unconfig: 0.3.11
     dev: true
 
-  /@vite-pwa/astro@0.2.0(astro@4.5.2)(vite-plugin-pwa@0.19.2):
+  /@vite-pwa/astro@0.2.0(astro@4.5.3)(vite-plugin-pwa@0.19.2):
     resolution: {integrity: sha512-1MBNbRo9I9fp9sUSoaQfI/xHVDRKRoUsWETDJMVoKoctZYfm4fZgb7EN76WJdejW/vup+3+uoFlDMCnca+vZzA==}
     peerDependencies:
       astro: ^1.6.0 || ^2.0.0 || ^3.0.0 || ^4.0.0
       vite-plugin-pwa: '>=0.17.3 <1'
     dependencies:
-      astro: 4.5.2(sass@1.72.0)(typescript@5.4.2)
+      astro: 4.5.3(sass@1.72.0)(typescript@5.4.2)
       vite-plugin-pwa: 0.19.2(@vite-pwa/assets-generator@0.2.4)(vite@5.1.6)(workbox-build@7.0.0)(workbox-window@7.0.0)
     dev: true
 
@@ -3298,8 +3298,8 @@ packages:
       zod: 3.22.4
     dev: true
 
-  /astro@4.5.2(sass@1.72.0)(typescript@5.4.2):
-    resolution: {integrity: sha512-Nq3GojlwXJ3XD047khraCWu/6aqGFfcyq7Q0blpTBSZnCz2s4Zri04PHvUkbKF7TK2UljkFuTXKP0CE4ZuJi9Q==}
+  /astro@4.5.3(sass@1.72.0)(typescript@5.4.2):
+    resolution: {integrity: sha512-MEiLeAr3+THeadTZCQ4U+DI9VTTUZdYrPEPedSKmQwqnkiPkLjpLgx4yOcyH7Yp4t57+SWiC6W0rt7lPGM36Fg==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -3313,7 +3313,6 @@ packages:
       '@babel/plugin-transform-react-jsx': 7.23.4(@babel/core@7.24.0)
       '@babel/traverse': 7.24.0
       '@babel/types': 7.24.0
-      '@shikijs/core': 1.1.7
       '@types/babel__core': 7.20.5
       acorn: 8.11.3
       aria-query: 5.3.0
@@ -3344,7 +3343,6 @@ packages:
       js-yaml: 4.1.0
       kleur: 4.1.5
       magic-string: 0.30.8
-      mdast-util-to-hast: 13.0.2
       mime: 3.0.0
       ora: 7.0.1
       p-limit: 5.0.0
@@ -3519,13 +3517,13 @@ packages:
     requiresBuild: true
     dependencies:
       bare-events: 2.2.1
-      bare-os: 2.2.0
+      bare-os: 2.2.1
       bare-path: 2.1.0
       streamx: 2.16.1
     optional: true
 
-  /bare-os@2.2.0:
-    resolution: {integrity: sha512-hD0rOPfYWOMpVirTACt4/nK8mC55La12K5fY1ij8HAdfQakD62M+H4o4tpfKzVGLgRDTuk3vjA4GqGXXCeFbag==}
+  /bare-os@2.2.1:
+    resolution: {integrity: sha512-OwPyHgBBMkhC29Hl3O4/YfxW9n7mdTr2+SsO29XBWKKJsbgj3mnorDB80r5TiCQgQstgE5ga1qNYrpes6NvX2w==}
     requiresBuild: true
     optional: true
 
@@ -3533,7 +3531,7 @@ packages:
     resolution: {integrity: sha512-DIIg7ts8bdRKwJRJrUMy/PICEaQZaPGZ26lsSx9MJSwIhSrcdHn7/C8W+XmnG/rKi6BaRcz+JO00CjZteybDtw==}
     requiresBuild: true
     dependencies:
-      bare-os: 2.2.0
+      bare-os: 2.2.1
     optional: true
 
   /base-64@1.0.0:
@@ -6368,18 +6366,6 @@ packages:
     dependencies:
       '@types/mdast': 4.0.3
       unist-util-is: 6.0.0
-
-  /mdast-util-to-hast@13.0.2:
-    resolution: {integrity: sha512-U5I+500EOOw9e3ZrclN3Is3fRpw8c19SMyNZlZ2IS+7vLsNzb2Om11VpIVOR+/0137GhZsFEF6YiKD5+0Hr2Og==}
-    dependencies:
-      '@types/hast': 3.0.4
-      '@types/mdast': 4.0.3
-      '@ungap/structured-clone': 1.2.0
-      devlop: 1.1.0
-      micromark-util-sanitize-uri: 2.0.0
-      trim-lines: 3.0.1
-      unist-util-position: 5.0.0
-      unist-util-visit: 5.0.0
 
   /mdast-util-to-hast@13.1.0:
     resolution: {integrity: sha512-/e2l/6+OdGp/FB+ctrJ9Avz71AN/GRH3oi/3KAx/kMnoUsD6q0woXlDT8lLEeViVKE7oZxE7RXzvO3T8kF2/sA==}
