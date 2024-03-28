@@ -78,7 +78,7 @@ importers:
         version: 0.2.0(astro@4.5.10)(vite-plugin-pwa@0.19.7)
       astro-compress:
         specifier: ^2.2.10
-        version: 2.2.19
+        version: 2.2.20
       astro-robots-txt:
         specifier: ^1.0.0
         version: 1.0.0
@@ -3640,8 +3640,8 @@ packages:
     hasBin: true
     dev: false
 
-  /astro-compress@2.2.19:
-    resolution: {integrity: sha512-3b73u7e/OKrUCfngPoyBWB9xTY3WrznnkSFpjbePKW/W8/fhaNh/RlF1UlAS+hhHI+2C2yC64tmB6gtSvfpcxA==}
+  /astro-compress@2.2.20:
+    resolution: {integrity: sha512-OXBQJ0GwGKNWDtebTrVfA5x/jNCfbIftQ8iq6iqH2Qgc+IDbl+h0hz0RKa5H8yrxNINDWWUN8dtcehtf7Ez3Pw==}
     dependencies:
       '@types/csso': 5.0.4
       '@types/html-minifier-terser': 7.0.2
@@ -3652,7 +3652,7 @@ packages:
       lightningcss: 1.24.1
       sharp: 0.33.3
       svgo: 3.2.0
-      terser: 5.29.2
+      terser: 5.30.0
     dev: true
 
   /astro-robots-txt@1.0.0:
@@ -5856,7 +5856,7 @@ packages:
       entities: 4.5.0
       param-case: 3.0.4
       relateurl: 0.2.7
-      terser: 5.29.2
+      terser: 5.30.0
     dev: true
 
   /html-void-elements@3.0.0:
@@ -8706,7 +8706,7 @@ packages:
       jest-worker: 26.6.2
       rollup: 2.79.1
       serialize-javascript: 4.0.0
-      terser: 5.29.2
+      terser: 5.30.0
     dev: true
 
   /rollup@2.79.1:
@@ -9476,8 +9476,8 @@ packages:
       unique-string: 2.0.0
     dev: true
 
-  /terser@5.29.2:
-    resolution: {integrity: sha512-ZiGkhUBIM+7LwkNjXYJq8svgkd+QK3UUr0wJqY4MieaezBSAIPgbSPZyIx0idM6XWK5CMzSWa8MJIzmRcB8Caw==}
+  /terser@5.30.0:
+    resolution: {integrity: sha512-Y/SblUl5kEyEFzhMAQdsxVHh+utAxd4IuRNJzKywY/4uzSogh3G219jqbDDxYu4MXO9CzY3tSEqmZvW6AoEDJw==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
