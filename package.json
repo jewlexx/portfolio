@@ -29,6 +29,7 @@
     "astro": "^4.3.5",
     "nanostores": "^0.9.4",
     "open-graph-scraper": "^6.3.4",
+    "simple-get": "^4.0.1",
     "solid-js": "^1.8.14",
     "stars": "workspace:*",
     "svelte": "^4.2.10"
@@ -54,7 +55,7 @@
     "prettier-plugin-astro": "^0.13.0",
     "prettier-plugin-svelte": "^3.0.3",
     "sass": "1.71.1",
-    "sharp": "0.33.2",
+    "sharp": "^0.33.3",
     "tslib": "2.6.2",
     "typescript": "5.3.3",
     "vite-plugin-wasm": "^3.3.0",
