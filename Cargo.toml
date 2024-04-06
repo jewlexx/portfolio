@@ -1,5 +1,5 @@
 [workspace]
-members = ["node_modules/stars"]
+members = ["stars"]
 resolver = "2"
 
 [profile.dev]
