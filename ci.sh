@@ -13,7 +13,7 @@ case $1 in
     curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh -s -- -y
 
     echo "Installing dependencies..."
-    pnpm i
+    bun install
     ;;
 
 "build")
@@ -21,9 +21,9 @@ case $1 in
     source "$HOME/.cargo/env"
 
     echo "Building WebAssembly module..."
-    pnpm build:wasm
+    bun build:wasm
 
     echo "Building web app..."
-    pnpm build
+    bun build
     ;;
 esac
