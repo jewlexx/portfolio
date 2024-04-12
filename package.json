@@ -66,12 +66,5 @@
       "file-type@^9": "^10",
       "typescript-esbuild": "^0.3"
     }
-  },
-  "trustedDependencies": [
-    "cypress",
-    "esbuild",
-    "sharp",
-    "stars",
-    "wasm-pack"
-  ]
+  }
 }
