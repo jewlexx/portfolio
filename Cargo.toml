@@ -6,8 +6,8 @@ resolver = "2"
 panic = "abort"
 
 [profile.release]
-opt-level = "s"
+codegen-units = 1
 lto = true
+opt-level = "s"
 panic = "abort"
 strip = true
-codegen-units = 1
