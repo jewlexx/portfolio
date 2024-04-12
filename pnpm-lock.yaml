@@ -43,8 +43,8 @@ importers:
         specifier: ^4.3.5
         version: 4.6.0(sass@1.74.1)(typescript@5.3.3)
       nanostores:
-        specifier: ^0.9.4
-        version: 0.9.5
+        specifier: ^0.10.0
+        version: 0.10.3
       open-graph-scraper:
         specifier: ^6.3.4
         version: 6.5.1
@@ -7477,9 +7477,9 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  /nanostores@0.9.5:
-    resolution: {integrity: sha512-Z+p+g8E7yzaWwOe5gEUB2Ox0rCEeXWYIZWmYvw/ajNYX8DlXdMvMDj8DWfM/subqPAcsf8l8Td4iAwO1DeIIRQ==}
-    engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
+  /nanostores@0.10.3:
+    resolution: {integrity: sha512-Nii8O1XqmawqSCf9o2aWqVxhKRN01+iue9/VEd1TiJCr9VT5XxgPFbF1Edl1XN6pwJcZRsl8Ki+z01yb/T/C2g==}
+    engines: {node: ^18.0.0 || >=20.0.0}
     dev: false
 
   /napi-build-utils@1.0.2:
@@ -10487,6 +10487,7 @@ packages:
 
   /workbox-google-analytics@7.0.0:
     resolution: {integrity: sha512-MEYM1JTn/qiC3DbpvP2BVhyIH+dV/5BjHk756u9VbwuAhu0QHyKscTnisQuz21lfRpOwiS9z4XdqeVAKol0bzg==}
+    deprecated: It is not compatible with newer versions of GA starting with v4, as long as you are using GAv3 it should be ok, but the package is not longer being maintained
     dependencies:
       workbox-background-sync: 7.0.0
       workbox-core: 7.0.0
