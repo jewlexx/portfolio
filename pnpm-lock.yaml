@@ -37,8 +37,8 @@ importers:
         specifier: ^2.47.0
         version: 2.47.0
       '@tabler/icons-svelte':
-        specifier: 2.47.0
-        version: 2.47.0(svelte@4.2.13)
+        specifier: 3.5.0
+        version: 3.5.0(svelte@4.2.13)
       astro:
         specifier: ^4.3.5
         version: 4.6.0(sass@1.74.1)(typescript@5.3.3)
@@ -3231,17 +3231,21 @@ packages:
       - supports-color
     dev: false
 
-  /@tabler/icons-svelte@2.47.0(svelte@4.2.13):
-    resolution: {integrity: sha512-xL2NyCUUhBQv0lXylgNCpfHtMW4Ihu0hCacaYXeX+NiS1LO0geqXk/0lkrBH+u/ZLX6vyqUYNFjawjzmxthFjw==}
+  /@tabler/icons-svelte@3.5.0(svelte@4.2.13):
+    resolution: {integrity: sha512-mc5ardGEM7cnUA4/q6Mz5bmW9B6t28vAAOf4Wl6+KXiTwG00EjImfnIr3pS3Ihi9sFIiXvJPYRl4H5IHlgvJvQ==}
     peerDependencies:
       svelte: '>=3 <5'
     dependencies:
-      '@tabler/icons': 2.47.0
+      '@tabler/icons': 3.5.0
       svelte: 4.2.13
     dev: false
 
   /@tabler/icons@2.47.0:
     resolution: {integrity: sha512-4w5evLh+7FUUiA1GucvGj2ReX2TvOjEr4ejXdwL/bsjoSkof6r1gQmzqI+VHrE2CpJpB3al7bCTulOkFa/RcyA==}
+    dev: false
+
+  /@tabler/icons@3.5.0:
+    resolution: {integrity: sha512-I53dC3ZSHQ2MZFGvDYJelfXm91L2bTTixS4w5jTAulLhHbCZso5Bih4Rk/NYZxlngLQMKHvEYwZQ+6w/WluKiA==}
     dev: false
 
   /@trysound/sax@0.2.0:
@@ -10487,6 +10491,7 @@ packages:
 
   /workbox-google-analytics@7.0.0:
     resolution: {integrity: sha512-MEYM1JTn/qiC3DbpvP2BVhyIH+dV/5BjHk756u9VbwuAhu0QHyKscTnisQuz21lfRpOwiS9z4XdqeVAKol0bzg==}
+    deprecated: It is not compatible with newer versions of GA starting with v4, as long as you are using GAv3 it should be ok, but the package is not longer being maintained
     dependencies:
       workbox-background-sync: 7.0.0
       workbox-core: 7.0.0
