@@ -8,11 +8,12 @@
 	],
 	"scripts": {
 		"astro": "astro",
-		"build": "astro build",
+		"build": "bun run build:wasm && astro build",
 		"build:ci": "ci.sh",
-		"build:wasm": "cd stars && bun run build",
+		"build:wasm": "wasm-pack build ./stars --no-pack -Z build-std-features=panic_immediate_abort",
 		"dev": "astro dev",
 		"format": "prettier --write src/**/*",
+		"postinstall": "bun run build:wasm",
 		"preview": "astro build --config astro.preview.config.mjs && astro preview --config astro.preview.config.mjs",
 		"start": "astro dev",
 		"sync": "astro sync"
