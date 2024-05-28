@@ -12,12 +12,5 @@
     "pkg/stars.js",
     "pkg/stars_bg.js",
     "pkg/stars.d.ts"
-  ],
-  "scripts": {
-    "build": "wasm-pack build . --no-pack -Z build-std-features=panic_immediate_abort",
-    "postinstall": "bun run build"
-  },
-  "dependencies": {
-    "wasm-pack": "0.12.1"
-  }
+  ]
 }

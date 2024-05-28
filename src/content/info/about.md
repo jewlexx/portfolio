@@ -2,6 +2,24 @@
 title: 'About Me'
 ---
 
-I'll add something here at some point...
+I am an independent software developer, who works mostly on the backend, but I also dabble in frontends, for [desktop](https://github.com/jewlexx/fauxchat), [web](/), mobile, and [CLI](https://github.com/winpax/sfsu).
 
-But like wtf do I say fr...
+I also have a couple of open-source Rust libraries, including [discord-presence](https://github.com/jewlexx/discord-presence), [sprinkles](https://github.com/winpax/sprinkles) and [quork](https://github.com/jewlexx/quork).
+
+I have a range of abilities, including:
+
+- Web development
+- Rust
+- C++
+- C#
+- Java
+- Python
+- TypeScript
+- Astro
+- Svelte
+- SolidJS
+- Scoop
+
+I am also a big fan of [open source](https://github.com/jewlexx), and I love to help people out with their projects.
+
+If you want to get in touch, you can find me on [Twitter](https://twitter.com/jewelexx), [GitHub](https://github.com/jewlexx), or shoot me an email at [hello@maybejules.com](mailto:hello@maybejules.com).

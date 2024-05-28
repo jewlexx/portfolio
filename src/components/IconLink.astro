@@ -1,0 +1,117 @@
+---
+interface Props {
+	title: string;
+	url: string;
+	icon: ImageMetadata;
+	disabled?: boolean;
+	alt?: string;
+}
+
+const {
+	title,
+	url,
+	icon: { src },
+	disabled = false,
+	alt,
+} = Astro.props;
+
+let adjustedUrl = url;
+
+if (!url.startsWith('http')) {
+	adjustedUrl = `https://${url}`;
+}
+---
+
+<a
+	href={adjustedUrl}
+	{title}
+	target="_blank"
+	rel="noopener noreferrer"
+	class={disabled ? 'disabled' : ''}
+>
+	<img {src} alt={alt ?? title} />
+</a>
+
+<style lang="scss">
+	@use '../styles/transitions';
+	@use '../styles/palette' as *;
+
+	@mixin button_colours($color) {
+		background-color: $color;
+
+		&:not(.disabled):hover {
+			$from-color: lighten($color, 20%);
+			$to-color: $color;
+			background: $to-color;
+			background: linear-gradient(180deg, $from-color 0%, $to-color 93%);
+			// background: linear-gradient(180deg, $from-color 0%, $to-color 50%, $from-color 100%);
+			// background: radial-gradient(circle, $to-color 0%, $from-color 100%);
+		}
+	}
+
+	a {
+		text-decoration: none;
+		position: relative;
+		font-weight: 900;
+		color: $t-bg;
+		background-color: $t-fg;
+		padding: 0.25em;
+		z-index: 2;
+		border-radius: 0.25rem;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@media (min-width: $w-s) {
+			font-size: $f-u3;
+		}
+
+		+ a {
+			margin-left: 0.5em;
+		}
+
+		@media (prefers-reduced-motion: no-preference) {
+			$duration: 100ms;
+			$easing: ease-in-out;
+
+			transition:
+				box-shadow $duration $easing,
+				background-color $duration $easing,
+				transform $duration $easing;
+		}
+
+		&:not(.disabled):hover {
+			transform: scale(1.2);
+		}
+
+		color: $t-fg;
+
+		img {
+			filter: invert(1);
+		}
+
+		box-shadow: 0px 0px 5px #000;
+
+		&:nth-of-type(1) {
+			@include button_colours($black);
+		}
+
+		&:nth-of-type(2) {
+			@include button_colours($purple);
+		}
+
+		&:nth-of-type(3) {
+			@include button_colours($blue);
+		}
+
+		&:nth-of-type(4) {
+			@include button_colours($green);
+		}
+
+		&.disabled {
+			box-shadow: 0px 0px 5px #000 inset;
+			background-color: darken($gray, 40%);
+		}
+	}
+</style>

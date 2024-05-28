@@ -20,10 +20,7 @@ case $1 in
     echo "Adding Rust binaries to path"
     source "$HOME/.cargo/env"
 
-    echo "Building WebAssembly module..."
-    bun build:wasm
-
     echo "Building web app..."
-    bun build
+    bun run build
     ;;
 esac
