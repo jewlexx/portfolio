@@ -9,6 +9,7 @@ mod utils;
 use std::rc::Rc;
 
 use logger::WebLogging;
+use rand::Rng;
 use stars::*;
 
 use stopper::StopNotify;
@@ -41,9 +42,12 @@ impl Stars {
     pub fn new(canvas: HtmlCanvasElement) -> Self {
         info!("Initialized");
 
-        const STARS: usize = 500;
+        let mut rng = rand::thread_rng();
+        let star_count = rng.gen_range(300..756);
 
-        let stars = (0..STARS).map(|_| Star::new()).collect::<Vec<_>>();
+        let stars = (0..star_count).map(|_| Star::new()).collect::<Vec<_>>();
+
+        info!("Drawing {star_count} stars");
 
         Self {
             canvas,
