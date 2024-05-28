@@ -7,6 +7,7 @@ import sitemap from '@astrojs/sitemap';
 import AstroPWA from '@vite-pwa/astro';
 import Compress from 'astro-compress';
 import wasm from 'vite-plugin-wasm';
+import astroMetaTags from 'astro-meta-tags';
 
 import solidJs from '@astrojs/solid-js';
 
@@ -24,6 +25,7 @@ export default defineConfig({
 		imageService: true,
 	}),
 	integrations: [
+		astroMetaTags(),
 		mdx(),
 		sitemap(),
 		svelte(),
