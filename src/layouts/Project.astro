@@ -76,18 +76,26 @@ if (Astro.url.pathname.includes('/projects')) {
 						}
 
 						<span class="links-container">
-							<IconLink
-								disabled={repo === undefined}
-								url={repo!}
-								icon={BrandGit}
-								title="Git Source link"
-							/>
-							<IconLink
-								disabled={homepage == undefined}
-								url={homepage!}
-								icon={LinkIcon}
-								title="Homepage link"
-							/>
+							{
+								repo && (
+									<IconLink
+										disabled={repo === undefined}
+										url={repo}
+										icon={BrandGit}
+										title="Git Source link"
+									/>
+								)
+							}
+							{
+								homepage && (
+									<IconLink
+										disabled={homepage == undefined}
+										url={homepage}
+										icon={LinkIcon}
+										title="Homepage link"
+									/>
+								)
+							}
 						</span>
 						<hr />
 					</div>
