@@ -40,7 +40,11 @@ if (!url.startsWith('http')) {
 		background-color: $color;
 
 		&:not(.disabled):hover {
-			background-color: lighten($color, 10%);
+			$from-color: lighten($color, 20%);
+			$to-color: $color;
+			background: $to-color;
+			background: linear-gradient(135deg, $from-color 0%, $to-color 93%);
+			// background: radial-gradient(circle, $from-color 0%, $to-color 93%);
 		}
 	}
 
