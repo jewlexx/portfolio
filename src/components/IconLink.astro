@@ -1,0 +1,87 @@
+---
+interface Props {
+	title: string;
+	url: string;
+	icon: ImageMetadata;
+}
+
+const { title, url, icon } = Astro.props;
+
+let adjustedUrl = url;
+
+if (!url.startsWith('http')) {
+	adjustedUrl = `https://${url}`;
+}
+---
+
+<a href={adjustedUrl} {title} target="_blank" rel="noopener noreferrer">
+	<img src={icon.src} />
+</a>
+
+<style lang="scss">
+	@use '../styles/transitions';
+	@use '../styles/palette' as *;
+
+	a {
+		text-decoration: none;
+		position: relative;
+		font-weight: 900;
+		color: $t-bg;
+		background-color: $t-fg;
+		padding: 0.25em;
+		z-index: 2;
+		border-radius: 0.25rem;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@media (min-width: $w-s) {
+			font-size: $f-u3;
+		}
+
+		+ a {
+			margin-left: 0.5em;
+		}
+
+		// @include transitions.springy-transform(500ms);
+
+		@media (prefers-reduced-motion: no-preference) {
+			transition:
+				box-shadow 0.3s ease-in-out,
+				background-color 0.3s ease-in-out;
+		}
+
+		&:hover {
+			color: $t-fg;
+
+			// transform: scale(1.2);
+
+			img {
+				filter: invert(1);
+			}
+
+			box-shadow: 0px 0px 5px #000 inset;
+
+			&:nth-of-type(1) {
+				$color: $black;
+				background-color: $color;
+			}
+
+			&:nth-of-type(2) {
+				$color: $purple;
+				background-color: $color;
+			}
+
+			&:nth-of-type(3) {
+				$color: $blue;
+				background-color: $color;
+			}
+
+			&:nth-of-type(4) {
+				$color: $green;
+				background-color: $color;
+			}
+		}
+	}
+</style>

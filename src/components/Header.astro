@@ -1,7 +1,12 @@
 ---
+import BrandGithub from '@tabler/icons/outline/brand-github.svg';
+import BrandTwitch from '@tabler/icons/outline/brand-twitch.svg';
+import BrandTwitter from '@tabler/icons/outline/brand-twitter.svg';
+import BrandLinktree from '@tabler/icons/outline/brand-linktree.svg';
+
 import Shrunk from './Shrunk/index.svelte';
-import { links } from '../lib/links';
 import HeaderLink from './HeaderLink.svelte';
+import IconLink from './IconLink.astro';
 
 interface Props {
 	title: string;
@@ -25,13 +30,10 @@ const { title } = Astro.props;
 			<HeaderLink class="link" href="/projects"><h3>Projects</h3></HeaderLink>
 		</Shrunk>
 		<span class="links-container">
-			{
-				links.map(({ icon, url, title }) => (
-					<a href={url} {title} target="_blank" rel="noopener noreferrer" class="role">
-						<img src={icon.src} />
-					</a>
-				))
-			}
+			<IconLink title="GitHub" url="github.com/jewlexx" icon={BrandGithub} />
+			<IconLink title="Twitch" url="twitch.tv/digifem" icon={BrandTwitch} />
+			<IconLink title="Twitter" url="twitter.com/jewelexx" icon={BrandTwitter} />
+			<IconLink title="Linktree" url="linktr.ee/jewelexx" icon={BrandLinktree} />
 		</span>
 	</nav>
 </header>
@@ -121,68 +123,5 @@ const { title } = Astro.props;
 
 	.links-container {
 		display: flex;
-	}
-
-	.role {
-		text-decoration: none;
-		position: relative;
-		font-weight: 900;
-		color: $t-bg;
-		background-color: $t-fg;
-		padding: 0.25em;
-		z-index: 2;
-		border-radius: 0.25rem;
-
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		@media (min-width: $w-s) {
-			font-size: $f-u3;
-		}
-
-		+ .role {
-			margin-left: 0.5em;
-		}
-
-		// @include transitions.springy-transform(500ms);
-
-		@media (prefers-reduced-motion: no-preference) {
-			transition:
-				box-shadow 0.3s ease-in-out,
-				background-color 0.3s ease-in-out;
-		}
-
-		&:hover {
-			color: $t-fg;
-
-			// transform: scale(1.2);
-
-			img {
-				filter: invert(1);
-			}
-
-			box-shadow: 0px 0px 5px #000 inset;
-
-			&:nth-of-type(1) {
-				$color: $black;
-				background-color: $color;
-			}
-
-			&:nth-of-type(2) {
-				$color: $purple;
-				background-color: $color;
-			}
-
-			&:nth-of-type(3) {
-				$color: $blue;
-				background-color: $color;
-			}
-
-			&:nth-of-type(4) {
-				$color: $green;
-				background-color: $color;
-			}
-		}
 	}
 </style>

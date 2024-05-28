@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import BrandGit from '@tabler/icons/brand-git.svg';
-import LinkIcon from '@tabler/icons/link.svg';
+import BrandGit from '@tabler/icons/outline/brand-git.svg';
+import LinkIcon from '@tabler/icons/outline/link.svg';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -13,7 +13,8 @@ interface ExtraProps {
 }
 type Props = CollectionEntry<'projects'>['data'] & ExtraProps;
 
-const { title, description, heroImage, repo, homepage, slug, shields, toy, hideHero, pubDate } = Astro.props;
+const { title, description, heroImage, repo, homepage, slug, shields, toy, hideHero, pubDate } =
+	Astro.props;
 
 let pageTitle = title;
 
@@ -74,8 +75,20 @@ if (Astro.url.pathname.includes('/projects')) {
 						}
 
 						<span>
-							<Shield enabled={repo  !== undefined} href={repo!} src={BrandGit.src} alt="Git Source link" class="link" />
-							<Shield enabled={homepage  !== undefined} href={homepage!} src={LinkIcon.src} alt="Homepage link" class="link" />
+							<Shield
+								enabled={repo !== undefined}
+								href={repo!}
+								src={BrandGit.src}
+								alt="Git Source link"
+								class="link"
+							/>
+							<Shield
+								enabled={homepage !== undefined}
+								href={homepage!}
+								src={LinkIcon.src}
+								alt="Homepage link"
+								class="link"
+							/>
 						</span>
 						<hr />
 					</div>
@@ -137,7 +150,6 @@ if (Astro.url.pathname.includes('/projects')) {
 					margin-right: 0.5rem;
 				}
 			}
-
 
 			.link {
 				margin: 0.5rem;
