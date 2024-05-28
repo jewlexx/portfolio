@@ -3,9 +3,17 @@ interface Props {
 	title: string;
 	url: string;
 	icon: ImageMetadata;
+	disabled?: boolean;
+	alt?: string;
 }
 
-const { title, url, icon } = Astro.props;
+const {
+	title,
+	url,
+	icon: { src },
+	disabled = false,
+	alt,
+} = Astro.props;
 
 let adjustedUrl = url;
 
@@ -14,13 +22,27 @@ if (!url.startsWith('http')) {
 }
 ---
 
-<a href={adjustedUrl} {title} target="_blank" rel="noopener noreferrer">
-	<img src={icon.src} />
+<a
+	href={adjustedUrl}
+	{title}
+	target="_blank"
+	rel="noopener noreferrer"
+	class={disabled ? 'disabled' : ''}
+>
+	<img {src} {alt} />
 </a>
 
 <style lang="scss">
 	@use '../styles/transitions';
 	@use '../styles/palette' as *;
+
+	@mixin button_colours($color) {
+		background-color: $color;
+
+		&:not(.disabled):hover {
+			background-color: lighten($color, 10%);
+		}
+	}
 
 	a {
 		text-decoration: none;
@@ -44,44 +66,47 @@ if (!url.startsWith('http')) {
 			margin-left: 0.5em;
 		}
 
-		// @include transitions.springy-transform(500ms);
-
 		@media (prefers-reduced-motion: no-preference) {
+			$duration: 100ms;
+			$easing: ease-in-out;
+
 			transition:
-				box-shadow 0.3s ease-in-out,
-				background-color 0.3s ease-in-out;
+				box-shadow $duration $easing,
+				background-color $duration $easing,
+				transform $duration $easing;
 		}
 
-		&:hover {
-			color: $t-fg;
+		&:not(.disabled):hover {
+			transform: scale(1.2);
+		}
 
-			// transform: scale(1.2);
+		color: $t-fg;
 
-			img {
-				filter: invert(1);
-			}
+		img {
+			filter: invert(1);
+		}
 
+		box-shadow: 0px 0px 5px #000;
+
+		&:nth-of-type(1) {
+			@include button_colours($black);
+		}
+
+		&:nth-of-type(2) {
+			@include button_colours($purple);
+		}
+
+		&:nth-of-type(3) {
+			@include button_colours($blue);
+		}
+
+		&:nth-of-type(4) {
+			@include button_colours($green);
+		}
+
+		&.disabled {
 			box-shadow: 0px 0px 5px #000 inset;
-
-			&:nth-of-type(1) {
-				$color: $black;
-				background-color: $color;
-			}
-
-			&:nth-of-type(2) {
-				$color: $purple;
-				background-color: $color;
-			}
-
-			&:nth-of-type(3) {
-				$color: $blue;
-				background-color: $color;
-			}
-
-			&:nth-of-type(4) {
-				$color: $green;
-				background-color: $color;
-			}
+			background-color: darken($gray, 40%);
 		}
 	}
 </style>

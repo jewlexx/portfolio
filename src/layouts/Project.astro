@@ -7,6 +7,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Shield from '../components/Shield.astro';
 import PubDate from '../components/PubDate.astro';
+import IconLink from '../components/IconLink.astro';
 
 interface ExtraProps {
 	slug: string;
@@ -74,20 +75,18 @@ if (Astro.url.pathname.includes('/projects')) {
 							)
 						}
 
-						<span>
-							<Shield
-								enabled={repo !== undefined}
-								href={repo!}
-								src={BrandGit.src}
-								alt="Git Source link"
-								class="link"
+						<span class="links-container">
+							<IconLink
+								disabled={repo === undefined}
+								url={repo!}
+								icon={BrandGit}
+								title="Git Source link"
 							/>
-							<Shield
-								enabled={homepage !== undefined}
-								href={homepage!}
-								src={LinkIcon.src}
-								alt="Homepage link"
-								class="link"
+							<IconLink
+								disabled={homepage == undefined}
+								url={homepage!}
+								icon={LinkIcon}
+								title="Homepage link"
 							/>
 						</span>
 						<hr />
@@ -123,10 +122,10 @@ if (Astro.url.pathname.includes('/projects')) {
 				color: rgb(var(--gray-dark));
 			}
 			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
+				// margin-bottom: 1em;
+				// padding: 1em 0;
+				// text-align: center;
+				// line-height: 1;
 
 				h1 {
 					margin: 0 0 0.5em 0;
@@ -144,12 +143,6 @@ if (Astro.url.pathname.includes('/projects')) {
 		<!-- As these styles apply to components within this page, they must be global -->
 		<style lang="scss" is:global>
 			@use '../styles/transitions';
-
-			.shields {
-				a {
-					margin-right: 0.5rem;
-				}
-			}
 
 			.link {
 				margin: 0.5rem;
@@ -173,6 +166,10 @@ if (Astro.url.pathname.includes('/projects')) {
 
 			.pub-date {
 				color: rgb(235, 235, 235);
+			}
+
+			.links-container {
+				display: flex;
 			}
 		</style>
 	</body>
