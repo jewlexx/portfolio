@@ -17,35 +17,33 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			const pathname = new URL(window.location.href).pathname;
 			document.getElementById('pathname')!.innerHTML = `${pathname} could not be found. <br /> It probably doesn't exist...`;
 		</script> -->
-		<div id="page">
-			<div id="container">
-				<p class="terminal-output">$ curl {Astro.url}</p>
-				<p class="terminal-output">404 Not Found</p>
-				<p id="pathname" class="terminal-output">
-					{Astro.url.pathname} could not be found. <br /> It probably doesn't exist...
-				</p>
-				<p class="terminal-output">
-					To return to a page that does exist, go to
-					<br />{Astro.site}
-				</p>
-				<p class="terminal-output">
-					If you call a support person, give them this info:
-					<br />Stop Code: 404 PAGE NOT FOUND
-				</p>
-			</div>
-		</div>
+		<main class="terminal">
+			<p class="terminal-output">$ curl {Astro.url}</p>
+			<p class="terminal-output">404 Not Found</p>
+			<p id="pathname" class="terminal-output">
+				{Astro.url.pathname} could not be found. <br /> It probably doesn't exist...
+			</p>
+			<p class="terminal-output">
+				To return to a page that does exist, go to
+				<br />{Astro.site}
+			</p>
+			<p class="terminal-output">
+				If you call a support person, give them this info:
+				<br />Stop Code: 404 PAGE NOT FOUND
+			</p>
+		</main>
 		<style lang="scss">
 			@use '../styles/transitions';
 
 			body {
-				font-family: 'IBM Plex Mono', monospace;
-				background: #000000;
-				color: #fefeff;
-				height: 100vh;
-				margin: 0;
+				font-family: 'IBM Plex Mono', monospace !important;
+				background: #000000 !important;
+				color: #fefeff !important;
+				height: 100vh !important;
+				margin: 1em !important;
 			}
 
-			.terminal-output {
+			.terminal p {
 				color: #00ff00;
 				text-shadow:
 					0 0 10px #00ff00,
