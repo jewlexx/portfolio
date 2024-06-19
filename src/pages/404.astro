@@ -1,5 +1,6 @@
 ---
 export const prerender = false;
+import { Image } from 'astro:assets';
 import '@fontsource/ibm-plex-mono';
 
 import BaseHead from '../components/BaseHead.astro';
@@ -32,7 +33,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				<br />Stop Code: 404 PAGE NOT FOUND
 			</p>
 			<p>$ catsay 404</p>
-			<img src="https://http.cat/404.jpg" alt="404 cat" />
+			<Image src="https://http.cat/404" alt="404 cat" width={750} height={600} />
 		</main>
 		<style lang="scss">
 			@use '../styles/transitions';
