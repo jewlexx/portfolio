@@ -24,6 +24,9 @@ export default defineConfig({
 		},
 		imageService: true,
 	}),
+	image: {
+		domains: ['http.cat'],
+	},
 	integrations: [
 		astroMetaTags(),
 		mdx(),
