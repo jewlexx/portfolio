@@ -71,5 +71,8 @@
       "file-type@^9": "^10",
       "typescript-esbuild": "^0.3"
     }
-  }
+  },
+  "trustedDependencies": [
+    "@vercel/speed-insights"
+  ]
 }
