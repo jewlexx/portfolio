@@ -4,6 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { SITE_DESCRIPTION } from '../../consts';
 import { getProjects } from '../../lib/collections';
+import SpeedWrapper from '../../components/SpeedWrapper.astro';
 
 const posts = await getProjects();
 
@@ -26,6 +27,7 @@ const title = "Juliette's Projects";
 		<BaseHead title={title} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
+		<SpeedWrapper />
 		<Header title={title} />
 		<main>
 			<section>

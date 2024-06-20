@@ -2,6 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Stars from '../components/Stars.svelte';
+import SpeedWrapper from '../components/SpeedWrapper.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 // TODO: A better solution than this
 ---
@@ -13,6 +14,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body>
 		<!-- <img src={Stars.src} class="stars" /> -->
+		<SpeedWrapper />
 		<Stars client:load />
 		<Header title={SITE_TITLE} />
 		<main class="hero">
