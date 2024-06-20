@@ -1,16 +1,16 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { Stars } from 'stars';
+	import { Stars } from '../stars/index';
 
 	let canvas: HTMLCanvasElement;
 
 	onMount(() => {
 		const stars = new Stars(canvas);
 
-		const stopper = stars.begin_drawing();
+		stars.beginDrawing();
 
 		return () => {
-			stopper();
+			stars.stop();
 			// I believe that we don't need to call this, as the object is dropped after `begin_drawing` is called
 			// When calling this an error is logged saying that a null pointer was passed
 			// stars.free();
