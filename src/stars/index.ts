@@ -13,10 +13,7 @@ export class Stars {
 		const starMin = 300;
 		const starCount = Math.floor(Math.random() * (starMax - starMin + 1)) + starMin;
 
-		this.stars = Array.from(Array(starCount)).map(() => {
-			console.log('Creating star');
-			return new Star();
-		});
+		this.stars = Array.from(Array(starCount)).map(() => new Star());
 
 		this.beginDrawing.bind(this);
 		this.draw.bind(this);
