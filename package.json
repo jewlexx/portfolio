@@ -34,7 +34,7 @@
 		"@astrojs/node": "^8.3.1",
 		"@astrojs/vercel": "^7.7.1",
 		"@playform/document": "^0.0.11",
-		"@playwright/test": "1.45.0",
+		"@playwright/test": "1.45.1",
 		"@typescript-eslint/eslint-plugin": "7.14.1",
 		"@typescript-eslint/parser": "7.14.1",
 		"@vite-pwa/assets-generator": "^0.2.4",
