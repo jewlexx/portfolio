@@ -21,7 +21,7 @@
 		"@fontsource/ibm-plex-mono": "^5.0.13",
 		"@playform/compress": "^0.0.13",
 		"@tabler/icons": "^3.6.0",
-		"@tabler/icons-svelte": "3.10.0",
+		"@tabler/icons-svelte": "3.11.0",
 		"@vercel/speed-insights": "^1.0.12",
 		"astro": "^4.10.3",
 		"nanostores": "^0.10.3",
