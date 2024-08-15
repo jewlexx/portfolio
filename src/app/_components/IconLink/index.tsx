@@ -1,5 +1,8 @@
-import { Icon } from "@tabler/icons-react";
 import { useMemo } from "react";
+
+import { Icon } from "@tabler/icons-react";
+
+import styles from "./index.module.scss";
 
 interface Props {
   title: string;
@@ -30,7 +33,7 @@ export default function IconLink({
       title={title}
       target="_blank"
       rel="noopener noreferrer"
-      className={disabled ? "disabled" : ""}
+      className={`${styles.link} ${disabled ? styles.disabled : ""}`}
     >
       <Icon title={alt ?? title} />
     </a>
