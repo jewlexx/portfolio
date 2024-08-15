@@ -1,6 +1,6 @@
 import Footer from "$/components/Footer";
 
-import "./layout.styles.scss";
+import "$/styles/project.layout.scss";
 
 export default function ProjectLayout({
   children, // will be a page or nested layout

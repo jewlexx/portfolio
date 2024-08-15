@@ -1,7 +1,22 @@
-import Content from "$/content/info/about.mdx";
+import Content, { metadata } from "$/content/info/about.mdx";
 
-import styles from "./page.module.scss";
+import ProjectPage from "$/app/projects/[slug]/page";
+
+import "$/styles/project.scss";
 
 export default function About() {
-  return <Content />;
+  const { title, description } = metadata;
+
+  return (
+    <article>
+      <div className="prose">
+        <div className="title">
+          <h1>{title}</h1>
+          <i>{description}</i>
+          <hr />
+        </div>
+        <Content />
+      </div>
+    </article>
+  );
 }

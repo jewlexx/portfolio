@@ -7,7 +7,7 @@ import PubDate from "$/components/PubDate";
 import Shield from "$/components/Shield";
 import IconLink from "$/components/IconLink";
 
-import "./page.styles.scss";
+import "$/styles/project.scss";
 
 export async function generateMetadata({
   params,
