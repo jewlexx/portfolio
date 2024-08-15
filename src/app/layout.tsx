@@ -5,7 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Header from "$/components/Header";
 
 import "./globals.scss";
-import "$/app/styles/global.scss";
+import "$/styles/global.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
