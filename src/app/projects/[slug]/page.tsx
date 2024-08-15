@@ -5,10 +5,9 @@ import { IconBrandGit, IconLink as LinkIcon } from "@tabler/icons-react";
 
 import PubDate from "$/components/PubDate";
 import Shield from "$/components/Shield";
+import IconLink from "$/components/IconLink";
 
 import "./page.styles.scss";
-import IconLink from "$/components/IconLink";
-import Footer from "$/components/Footer";
 
 export async function generateMetadata({
   params,
