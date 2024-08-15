@@ -4,6 +4,13 @@ import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        hostname: "repository-images.githubusercontent.com",
+      },
+    ],
+  },
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
 };
 
