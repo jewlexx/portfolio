@@ -1,27 +1,26 @@
 ---
 featured: true
-title: Stupid Fast Scoop Utils
-description: Super fast replacements and additions to scoop commands written in Rust
-pubDate: Oct 28 2022
-repo: sfsu
-homepage: https://jewlexx.github.io/sfsu/
+title: Sprinkles
+description: A Rust based abstraction layer for Scoop.
+pubDate: May 20 2024
+repo: winpax/sprinkles
 heroImage: https://cordor.dev/api/og?title=Sprinkles&image=http%3A%2F%2Flocalhost%3A3000%2Femojis%2Fsparkles.svg
 shields:
   - alt: Github Workflow Status
-    src: https://img.shields.io/github/actions/workflow/status/jewlexx/sfsu/build.yml
+    src: https://img.shields.io/github/actions/workflow/status/winpax/sprinkles/build.yml
   - alt: dependency status
-    href: https://deps.rs/repo/github/jewlexx/sfsu
-    src: https://deps.rs/repo/github/jewlexx/sfsu/status.svg
-  - alt: GitHub all releases
-    src: https://img.shields.io/github/downloads/jewlexx/sfsu/total
-  - alt: GitHub
-    src: https://img.shields.io/github/license/jewlexx/sfsu
-  - alt: Scoop version (extras bucket)
-    src: https://img.shields.io/scoop/v/sfsu?bucket=extras
+    href: https://deps.rs/repo/github/winpax/sprinkles
+    src: https://deps.rs/crate/sprinkles-rs/latest/status.svg
+  - alt: Crates.io Total Downloads
+    src: https://img.shields.io/crates/d/sprinkles-rs
+    href: https://crates.io/crates/sprinkles-rs
+  - alt: License
+    src: https://img.shields.io/crates/l/sprinkles-rs
+  - alt: Crates.io MSRV
+    src: https://img.shields.io/crates/msrv/sprinkles-rs
+    href: https://crates.io/crates/sprinkles-rs
 ---
 
-Super **⚡ fast ⚡** replacements and additions to [Scoop](https://scoop.sh) commands written in the [Rust programming language](https://www.rust-lang.org/).
+Sprinkles is a library for interacting with [Scoop](https://scoop.sh), the Windows package manager, from [Rust](https://www.rust-lang.org/) code.
 
-It can override the existing [Scoop](https://scoop.sh) install for all commands that it has, using the [hooks](https://github.com/jewlexx/sfsu#hook).
-
-More in depth benchmarking information can be found in the [benchmarking section of the README](https://github.com/jewlexx/sfsu#benchmarks-1), but to summarize, it is multiple [orders of magnitude](https://g.co/kgs/KqoK2G) faster than default [Scoop](https://scoop.sh).
+It provides a high-level API for interacting with [Scoop](https://scoop.sh), such as installing, updating, and removing packages.
