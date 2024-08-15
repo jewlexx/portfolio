@@ -10,7 +10,6 @@ export default function ProjectLayout({
   return (
     <section>
       <main>{children}</main>
-      <Footer />
     </section>
   );
 }

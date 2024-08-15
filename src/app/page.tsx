@@ -1,12 +1,8 @@
-import Footer from "$/components/Footer";
-import Stars from "../components/Stars";
-
 import styles from "./page.module.scss";
 
 export default function Home() {
   return (
     <main className={styles.hero}>
-      <Stars />
       <div className={styles.overlay}>
         <h1 className={styles.title}>🧑‍🚀Hello, Traveller!</h1>
         <p>
