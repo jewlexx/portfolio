@@ -1,9 +1,9 @@
 import Image from "next/image";
-import fs from "fs";
 
-import styles from "./page.module.scss";
 import { ProgressBarLink } from "$/components/ProgressBar";
 import { getAllPosts, sortPost } from "$/content/posts";
+
+import styles from "./page.module.scss";
 
 export default async function Projects() {
   const posts = getAllPosts().sort(sortPost);
@@ -20,8 +20,8 @@ export default async function Projects() {
               >
                 {post.heroImage && (
                   <Image
-                    width={1020}
-                    height={510}
+                    width={1200}
+                    height={630}
                     src={post.heroImage}
                     alt=""
                   />

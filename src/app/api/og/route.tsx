@@ -5,11 +5,11 @@ export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
 
-    // ?title=<title>
-    const hasTitle = searchParams.has("title");
-    const title = hasTitle
-      ? searchParams.get("title")?.slice(0, 100)
-      : "Juliette Cordor's Portfolio";
+    const imageUrl =
+      searchParams.get("image") ?? `https://cordor.dev${WomanTechnologist.src}`;
+    const title = (
+      searchParams.get("title") ?? "Juliette Cordor's Portfolio"
+    ).slice(0, 100);
 
     return new ImageResponse(
       (
@@ -39,8 +39,8 @@ export async function GET(request: Request) {
               alt="Profile Picture"
               height={200}
               width={200}
-              src={`https://cordor.dev${WomanTechnologist.src}`}
-              style={{ margin: "0 30px", borderRadius: "100%" }}
+              src={imageUrl}
+              style={{ margin: "0 30px" }}
             />
           </div>
           <div
