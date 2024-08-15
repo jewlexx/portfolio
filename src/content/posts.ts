@@ -34,8 +34,8 @@ export function getPostSlugs() {
 }
 
 export function getPostBySlug(slug: string): PostInfo {
-  const realSlug = slug.replace(/\.mdx?$/, "");
-  const fullPath = join(postsDirectory, slug);
+  const realSlug = slug.replace(/\.md$/, "");
+  const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
@@ -48,25 +48,25 @@ export function getPostBySlug(slug: string): PostInfo {
 
 export function getAllPosts() {
   const slugs = getPostSlugs();
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug))
-    .sort((a, b) => {
-      if (a.featured) {
-        return -1;
-      }
-      if (b.featured) {
-        return 1;
-      }
-
-      if (a.pubDate === undefined || b.pubDate === undefined) {
-        return 0;
-      }
-
-      if (new Date(a.pubDate) > new Date(b.pubDate)) {
-        return -1;
-      } else {
-        return 1;
-      }
-    });
+  const posts = slugs.map((slug) => getPostBySlug(slug)).sort(sortPost);
   return posts;
+}
+
+export function sortPost(a: PostInfo, b: PostInfo) {
+  if (a.featured) {
+    return -1;
+  }
+  if (b.featured) {
+    return 1;
+  }
+
+  if (a.pubDate === undefined || b.pubDate === undefined) {
+    return 0;
+  }
+
+  if (new Date(a.pubDate) > new Date(b.pubDate)) {
+    return -1;
+  } else {
+    return 1;
+  }
 }
