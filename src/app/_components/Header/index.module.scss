@@ -1,7 +1,7 @@
 @use "$/app/styles/transitions";
 @use "$/app/styles/palette" as *;
 
-.title-image {
+.titleImage {
   display: flex;
   align-items: center;
 
@@ -88,6 +88,6 @@
   border-radius: 50%;
 }
 
-.links-container {
+.linksContainer {
   display: flex;
 }
