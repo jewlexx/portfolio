@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import WomanTechnologist from "$/assets/images/emojis/woman-technologist.svg";
 
 export async function GET(request: Request) {
   try {
@@ -38,7 +39,7 @@ export async function GET(request: Request) {
               alt="Profile Picture"
               height={200}
               width={200}
-              src="https://avatars.githubusercontent.com/u/61040004"
+              src={`https://cordor.dev${WomanTechnologist.src}`}
               style={{ margin: "0 30px", borderRadius: "100%" }}
             />
           </div>
