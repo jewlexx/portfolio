@@ -1,7 +1,18 @@
+import { notFound } from "next/navigation";
 import styles from "./page.module.scss";
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  const Content = await import(`$/content/projects/${params.slug}.mdx`);
+  try {
+    const { default: Content } = await import(
+      `$/content/projects/${params.slug}.mdx`
+    );
 
-  return <Content />;
+    return <Content />;
+  } catch (e: any) {
+    if (e.code === "MODULE_NOT_FOUND") {
+      return notFound();
+    } else {
+      return <div>Error</div>;
+    }
+  }
 }
