@@ -19,6 +19,7 @@ export default function Shrunk({
 }: Props) {
   const [shrunk, setShrunk] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const [initialized, setInitialized] = useState(false);
 
   useEffect(() => {
     function updateTitle() {
@@ -32,6 +33,8 @@ export default function Shrunk({
 
       setShrunk(shouldShrink);
       setHidden(shouldHide);
+
+      setInitialized(true);
     }
 
     updateTitle();
@@ -41,6 +44,10 @@ export default function Shrunk({
       window.removeEventListener("resize", updateTitle);
     };
   }, [hide, shrink]);
+
+  if (!initialized) {
+    return children;
+  }
 
   if (long === undefined) {
     return children;
