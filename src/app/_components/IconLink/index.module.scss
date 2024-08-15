@@ -1,5 +1,5 @@
-@use "../styles/transitions";
-@use "../styles/palette" as *;
+@use "$/app/styles/transitions";
+@use "$/app/styles/palette" as *;
 
 @mixin button-colours($color) {
   background-color: $color;
