@@ -9,6 +9,9 @@ const nextConfig = {
       {
         hostname: "repository-images.githubusercontent.com",
       },
+      {
+        hostname: "http.cat",
+      },
     ],
   },
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],

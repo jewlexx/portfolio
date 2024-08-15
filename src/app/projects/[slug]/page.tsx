@@ -15,7 +15,11 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const { metadata } = await import(`$/content/projects/${params.slug}.mdx`);
+  try {
+    var { metadata } = await import(`$/content/projects/${params.slug}.mdx`);
+  } catch (e: any) {
+    return {};
+  }
 
   const { title: projectTitle, description, pubDate, heroImage } = metadata;
 
