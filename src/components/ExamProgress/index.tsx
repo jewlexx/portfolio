@@ -1,4 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
+"use client";
+
+import { useMemo, useState } from "react";
 import styles from "./index.module.scss";
 
 // We need total questions, total marks to work out marks per minute
