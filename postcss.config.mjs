@@ -1,8 +1,5 @@
-import presetEnv from "postcss-preset-env";
-import cssnano from "cssnano";
-
 const config = {
-  plugins: [presetEnv(), cssnano()],
+  plugins: ["postcss-preset-env", "cssnano"],
 };
 
 export default config;
