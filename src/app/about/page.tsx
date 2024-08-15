@@ -1,11 +1,11 @@
-import Content, { metadata as postMetadata } from "$/content/info/about.mdx";
+import * as post from "$/content/info/about.mdx";
 
 import "$/styles/project.scss";
 
-export const metadata = postMetadata;
+export const metadata = (post as any).metadata;
 
 export default function About() {
-  const { title, description } = postMetadata;
+  const { title, description } = (post as any).metadata;
 
   return (
     <article>
@@ -15,7 +15,7 @@ export default function About() {
           <i>{description}</i>
           <hr />
         </div>
-        <Content />
+        <post.default />
       </div>
     </article>
   );
