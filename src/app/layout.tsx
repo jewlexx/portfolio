@@ -6,6 +6,7 @@ import Header from "$/components/Header";
 import { twitterConfiguration } from "$/consts";
 
 import "$/styles/global.scss";
+import Footer from "$/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -42,6 +43,7 @@ export default function RootLayout({
         <Header title="Juliette Cordor" />
         {children}
         <SpeedInsights />
+        <Footer />
       </body>
     </html>
   );

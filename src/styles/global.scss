@@ -2,15 +2,27 @@
 
 // Base
 
-body {
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
   color: $t-fg;
   background-color: $dark-gray;
   font-family: "Inter", "system-ui", sans-serif;
-}
-
-* {
-  box-sizing: content-box;
+  height: 100vh;
+  // min-height: 100vh;
+  // max-height: 100vh;
 }
 
 img {
@@ -127,18 +139,6 @@ h1 {
     --card-rgb: 100, 100, 100;
     --card-border-rgb: 200, 200, 200;
   }
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
 }
 
 body {

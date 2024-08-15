@@ -1,3 +1,4 @@
+import Footer from "$/components/Footer";
 import Stars from "../components/Stars";
 
 import styles from "./page.module.scss";
