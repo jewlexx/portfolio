@@ -10,12 +10,13 @@ export async function GET(request: Request) {
     const title = (
       searchParams.get("title") ?? "Juliette Cordor's Portfolio"
     ).slice(0, 100);
+    const backgroundColor = searchParams.get("backgroundColor") ?? "black";
 
     return new ImageResponse(
       (
         <div
           style={{
-            backgroundColor: "black",
+            backgroundColor,
             backgroundSize: "150px 150px",
             height: "100%",
             width: "100%",
