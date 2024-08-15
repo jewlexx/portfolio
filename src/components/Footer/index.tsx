@@ -11,8 +11,22 @@ export default function Footer() {
         </span>
         <span>
           Emojis used from{" "}
-          <a href="https://github.com/twitter/twemoji">Twemoji</a> under the{" "}
-          <a href="https://opensource.org/license/mit">MIT</a> license
+          <a
+            href="https://github.com/twitter/twemoji"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Twemoji
+          </a>{" "}
+          under the{" "}
+          <a
+            href="https://opensource.org/license/mit"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            MIT
+          </a>{" "}
+          license
         </span>
       </footer>
     </div>
