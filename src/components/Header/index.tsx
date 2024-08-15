@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   IconBrandTwitter,
   IconBrandTwitch,
@@ -8,6 +9,7 @@ import {
 import Shrunk from "$/components/Shrunk";
 import HeaderLink from "$/components/HeaderLink";
 import IconLink from "$/components/IconLink";
+import WomanTechnologist from "$/assets/images/emojis/woman-technologist.svg";
 
 import styles from "./index.module.scss";
 
@@ -21,8 +23,7 @@ export default function Header({ title }: Props) {
       <nav className={styles.nav}>
         <span className={styles.titleImage}>
           <a className={styles.logolink} href="/" rel="prefetch">
-            🌏
-            {/* {ProfilePicture.src} */}
+            <Image src={WomanTechnologist} alt="Juliette Cordor" />
           </a>
           <h2>
             <Shrunk long={title} />

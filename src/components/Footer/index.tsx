@@ -10,8 +10,9 @@ export default function Footer() {
           &copy; {today.getFullYear()} Juliette Cordor. All rights reserved.
         </span>
         <span>
-          Emojis from <a href="https://github.com/twitter/twemoji">Twemoji</a>{" "}
-          under the <a href="https://opensource.org/license/mit">MIT</a>
+          Emojis used from{" "}
+          <a href="https://github.com/twitter/twemoji">Twemoji</a> under the{" "}
+          <a href="https://opensource.org/license/mit">MIT</a> license
         </span>
       </footer>
     </div>
