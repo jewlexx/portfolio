@@ -19,6 +19,7 @@ const description =
   "Juliette Cordor's section of the internet. Juliette is a developer, among other things, but mostly that.";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://cordor.dev"),
   title,
   description,
   openGraph: {
