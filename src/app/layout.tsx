@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: "https://cordor.dev/api/og?title=Juliette Cordor's Portfolio",
+        url: "https://cordor.dev/api/og",
       },
     ],
     siteName: "Juliette Cordor's Portfolio",
