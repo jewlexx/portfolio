@@ -1,4 +1,5 @@
 import { type Metadata } from "next";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { IconBrandGit, IconLink as LinkIcon } from "@tabler/icons-react";
@@ -50,6 +51,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
     const { default: Content, metadata } = await import(
       `$/content/projects/${params.slug}.mdx`
     );
+
+    console.log("Content", Content);
+    console.log("metadata", metadata);
 
     const {
       title,
