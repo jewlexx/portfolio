@@ -48,12 +48,15 @@ export async function generateMetadata({
 
 export default async function Page({ params }: { params: { slug: string } }) {
   try {
-    const { default: Content, metadata } = await import(
-      `$/content/projects/${params.slug}.mdx`
-    );
+    const {
+      default: Content,
+      metadata,
+      ...restOfImport
+    } = await import(`$/content/projects/${params.slug}.mdx`);
 
     console.log("Content", Content);
     console.log("metadata", metadata);
+    console.log("Rest Of Import", restOfImport);
 
     const {
       title,
