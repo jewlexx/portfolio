@@ -18,7 +18,26 @@ body {
 
 body {
   color: $t-fg;
-  background-color: $dark-gray;
+
+  $gradient-start: #1f0a41;
+  $gradient-end: #4b1436;
+
+  background: $gradient-start;
+  background: linear-gradient(173deg, $gradient-start 0%, $gradient-end 100%);
+
+  // background-color: $dark-gray;
+  // background: rgb(38, 27, 96);
+  // background: linear-gradient(
+  //   180deg,
+  //   rgba(38, 27, 96, 1) 0%,
+  //   rgba(93, 31, 144, 1) 27%,
+  //   rgba(154, 22, 132, 1) 47%,
+  //   rgba(227, 42, 89, 1) 63%,
+  //   rgba(228, 46, 87, 1) 64%,
+  //   rgba(242, 100, 61, 1) 76%,
+  //   rgba(238, 193, 59, 1) 91%
+  // );
+
   font-family: "Inter", "system-ui", sans-serif;
   height: 100vh;
   // min-height: 100vh;
