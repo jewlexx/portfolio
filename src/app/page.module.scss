@@ -43,6 +43,8 @@ $w-s: 750px;
 }
 
 .overlay {
+  margin-top: 5rem;
+
   @media (min-width: $w-s) {
     padding-left: 4rem;
   }
