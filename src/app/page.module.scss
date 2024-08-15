@@ -43,22 +43,13 @@ $w-s: 750px;
 }
 
 .overlay {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
   @media (min-width: $w-s) {
     padding-left: 4rem;
   }
 
   p {
     line-height: 2rem;
-    word-wrap: break-word;
+    word-wrap: normal;
   }
 }
 
