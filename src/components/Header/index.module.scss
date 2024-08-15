@@ -1,0 +1,88 @@
+@use "$/styles/transitions";
+@use "$/styles/palette" as *;
+@use "$/styles/mixins";
+
+.titleImage {
+  display: flex;
+  align-items: center;
+
+  .logolink {
+    display: block;
+    color: $t-fg;
+    text-decoration: none;
+
+    font-size: 2.5rem;
+    /* border: 5px solid black; */
+    /* background-color: white; */
+    border-radius: 100%;
+    /* padding: 0.25rem; */
+    margin-right: 1rem;
+
+    // Only enable motion if the user has no preference
+    @include transitions.springy-transform(500ms);
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2em;
+      height: 2em;
+      margin-right: 0.5rem;
+      color: $black;
+      font-weight: 900;
+      letter-spacing: -0.125rem;
+      border: 3px solid currentColor;
+      border-radius: 50%;
+    }
+  }
+}
+
+.nav {
+  @include mixins.glassmorphism();
+
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+/* .link {
+		color: $t-subdue;
+		display: block;
+		margin-left: 1rem;
+		text-decoration: none;
+		font-size: $f-d1;
+		text-transform: uppercase;
+		padding-top: 0.75em;
+		padding-bottom: 0.75em;
+		&:focus,
+		&:hover {
+			color: $t-active;
+		}
+	} */
+
+.monogram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2em;
+  height: 2em;
+  margin-right: 0.5rem;
+  color: $black;
+  font-weight: 900;
+  letter-spacing: -0.125rem;
+  border: 3px solid currentColor;
+  border-radius: 50%;
+}
+
+.linksContainer {
+  display: flex;
+}

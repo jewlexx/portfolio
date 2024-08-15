@@ -1,0 +1,45 @@
+@use "$/styles/transitions";
+
+main {
+  width: calc(100% - 2em);
+  max-width: 100%;
+  margin: 0;
+}
+
+p {
+  font-size: large;
+  line-height: 1.5;
+  margin-top: 1rem;
+}
+
+ul {
+  margin: 0.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+.link {
+  margin: 0.5rem;
+
+  img {
+    width: 2.5rem;
+    height: 2.5rem;
+    // Original #282a2c
+    background-color: #d7d5d3;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 2px lighten(#d7d5d3, 10%);
+    padding: 0.2rem;
+    filter: invert(1);
+    @include transitions.springy-transform(500ms);
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.linksContainer {
+  display: flex;
+}

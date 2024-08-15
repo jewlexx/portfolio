@@ -1,12 +1,13 @@
----
-toy: true
-hideHero: true
-title: 'Exam Progress'
-description: "Measure how far into your exam you should be, given how long you've spent"
-heroImage: '/hero-images/exam-progress.png'
-pubDate: 'Oct 26 2023'
----
+export const metadata = {
+  toy: true,
+  hideHero: true,
+  title: "Exam Progress",
+  description:
+    "Measure how far into your exam you should be, given how long you've spent",
+  heroImage: "/hero-images/exam-progress.png", // TODO: Fix this
+  pubDate: "Oct 26 2023",
+};
 
-import ExamProgress from '../../components/ExamProgress';
+import ExamProgress from "$/components/ExamProgress";
 
-<ExamProgress client:load />
+<ExamProgress />
