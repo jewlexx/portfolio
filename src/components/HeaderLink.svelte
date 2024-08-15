@@ -28,6 +28,7 @@ const { pathname } = Astro.url;
 	a {
 		display: inline-block;
 		text-decoration: none;
+		padding: 0.5rem;
 
 		&.active {
 			font-weight: bolder;
