@@ -71,4 +71,9 @@ $w-s: 750px;
   @media (min-width: 1024px) {
     font-size: $f-u12;
   }
+
+  img {
+    width: 1em;
+    height: 1em;
+  }
 }
