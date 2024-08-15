@@ -16,16 +16,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { metadata } = await import(`$/content/projects/${params.slug}.mdx`);
 
-  console.log(metadata);
-  const {
-    title: projectTitle,
-    description,
-    pubDate,
-    shields,
-    toy,
-    hideHero,
-    heroImage,
-  } = metadata;
+  const { title: projectTitle, description, pubDate, heroImage } = metadata;
 
   const title = `${projectTitle} | Juliette's Projects`;
 
@@ -33,6 +24,7 @@ export async function generateMetadata({
     title,
     description,
     openGraph: {
+      releaseDate: pubDate,
       title,
       description,
       images: [
