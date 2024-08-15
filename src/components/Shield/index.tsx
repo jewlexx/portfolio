@@ -29,7 +29,7 @@ export default function Shield({
       rel="noopener noreferrer"
       className={`${styles.shield} ${className}`}
     >
-      <Image src={src} alt={alt} />
+      <img src={src} alt={alt} />
     </a>
   );
 }
