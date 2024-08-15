@@ -1,4 +1,5 @@
 import { type Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { IconBrandGit, IconLink as LinkIcon } from "@tabler/icons-react";
 
@@ -79,7 +80,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
       <article>
         <div className="heroImage">
           {heroImage && !hideHero && (
-            <img width={1020} height={510} src={heroImage} alt="" />
+            <Image width={1020} height={510} src={heroImage} alt="" />
           )}
         </div>
         <div className="prose">

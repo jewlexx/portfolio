@@ -29,6 +29,7 @@ export default function Shield({
       rel="noopener noreferrer"
       className={`${styles.shield} ${className}`}
     >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={src} alt={alt} />
     </a>
   );
