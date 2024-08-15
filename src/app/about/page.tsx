@@ -1,11 +1,13 @@
-import Content, { metadata } from "$/content/info/about.mdx";
+import Content, { metadata as postMetadata } from "$/content/info/about.mdx";
 
 import ProjectPage from "$/app/projects/[slug]/page";
 
 import "$/styles/project.scss";
 
+export const metadata = postMetadata;
+
 export default function About() {
-  const { title, description } = metadata;
+  const { title, description } = postMetadata;
 
   return (
     <article>
