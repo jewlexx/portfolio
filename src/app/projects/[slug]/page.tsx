@@ -1,6 +1,7 @@
 import { type Metadata } from "next";
 import { notFound } from "next/navigation";
-import styles from "./page.module.scss";
+
+import "./page.styles.scss";
 
 export async function generateMetadata({
   params,
@@ -9,7 +10,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { metadata } = await import(`$/content/projects/${params.slug}.mdx`);
 
-  const { title, description, pubDate, shields, toy, hideHero } = metadata;
+  const { title, description, pubDate, shields, toy, hideHero, heroImage } =
+    metadata;
 
   return {
     title,
@@ -18,10 +20,10 @@ export async function generateMetadata({
       title,
       description,
       images: [
-        // {
-        //   url: heroImage,
-        //   alt: title,
-        // },
+        {
+          url: heroImage,
+          alt: title,
+        },
       ],
     },
     twitter: {
@@ -31,10 +33,10 @@ export async function generateMetadata({
       title,
       description,
       images: [
-        // {
-        //   url: heroImage,
-        //   alt: title,
-        // },
+        {
+          url: heroImage,
+          alt: title,
+        },
       ],
     },
   };
