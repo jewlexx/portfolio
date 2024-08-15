@@ -1,7 +1,5 @@
 import Content, { metadata as postMetadata } from "$/content/info/about.mdx";
 
-import ProjectPage from "$/app/projects/[slug]/page";
-
 import "$/styles/project.scss";
 
 export const metadata = postMetadata;
