@@ -1,10 +1,11 @@
-import Image from "next/image";
+import Stars from "./_components/Stars";
+
 import styles from "./page.module.scss";
-import Header from "./_components/Header";
 
 export default function Home() {
   return (
     <main className={styles.hero}>
+      <Stars />
       <div className={styles.overlay}>
         <h1 className={styles.title}>🧑‍🚀Hello, Traveller!</h1>
         <p>
