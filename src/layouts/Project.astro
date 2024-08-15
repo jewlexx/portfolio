@@ -8,6 +8,7 @@ import Footer from '../components/Footer.astro';
 import Shield from '../components/Shield.astro';
 import PubDate from '../components/PubDate.astro';
 import IconLink from '../components/IconLink.astro';
+import SpeedWrapper from '../components/SpeedWrapper.astro';
 
 interface ExtraProps {
 	slug: string;
@@ -30,6 +31,7 @@ if (Astro.url.pathname.includes('/projects')) {
 	</head>
 
 	<body>
+		<SpeedWrapper />
 		<Header title={pageTitle} />
 		<main>
 			<article>
