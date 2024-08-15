@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import Header from "$/components/Header";
+import { twitterConfiguration } from "$/consts";
 
 import "$/styles/global.scss";
 
@@ -20,14 +21,14 @@ export const metadata: Metadata = {
     url: "https://cordor.dev",
     title,
     description,
+    images: [
+      {
+        url: "https://cordor.dev/api/og?title=Juliette Cordor's Portfolio",
+      },
+    ],
+    siteName: "Juliette Cordor's Portfolio",
   },
-  twitter: {
-    card: "summary_large_image",
-    creator: "@jewelexx",
-    site: "https://cordor.dev",
-    title,
-    description,
-  },
+  twitter: twitterConfiguration,
 };
 
 export default function RootLayout({

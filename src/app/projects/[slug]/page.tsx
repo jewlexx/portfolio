@@ -6,6 +6,7 @@ import { IconBrandGit, IconLink as LinkIcon } from "@tabler/icons-react";
 import PubDate from "$/components/PubDate";
 import Shield from "$/components/Shield";
 import IconLink from "$/components/IconLink";
+import { twitterConfiguration } from "$/consts";
 
 import "$/styles/project.scss";
 
@@ -33,20 +34,9 @@ export async function generateMetadata({
           alt: title,
         },
       ],
+      siteName: "Juliette Cordor's Portfolio",
     },
-    twitter: {
-      card: "summary_large_image",
-      creator: "@jewelexx",
-      site: "https://cordor.dev",
-      title,
-      description,
-      images: [
-        {
-          url: heroImage,
-          alt: title,
-        },
-      ],
-    },
+    twitter: twitterConfiguration,
   };
 }
 
