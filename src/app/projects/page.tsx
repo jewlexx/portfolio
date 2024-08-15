@@ -16,13 +16,34 @@ export default async function Projects() {
     })
   );
 
+  posts.sort((a, b) => {
+    if (a.metadata.featured) {
+      return -1;
+    }
+    if (b.metadata.featured) {
+      return 1;
+    }
+
+    const aPubDate = new Date(a.metadata.pubDate);
+    const bPubDate = new Date(b.metadata.pubDate);
+
+    if (aPubDate > bPubDate) {
+      return -1;
+    }
+    if (aPubDate < bPubDate) {
+      return 1;
+    }
+
+    return 0;
+  });
+
   return (
     <main>
       <section>
         <ul className={styles.list}>
           {posts.map((post) => (
             <li className={styles.entry} key={post.slug}>
-              <a href={`/projects/${post.slug}/`}>
+              <a href={`/projects/${post.slug}/`} className={styles.link}>
                 {post.metadata.heroImage && (
                   <Image
                     width={1020}
