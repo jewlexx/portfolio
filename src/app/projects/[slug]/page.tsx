@@ -9,6 +9,7 @@ import IconLink from "$/components/IconLink";
 import { twitterConfiguration } from "$/consts";
 
 import "$/styles/project.scss";
+import ClientWrapper from "$/components/ClientWrapper";
 
 export async function generateMetadata({
   params,
@@ -115,7 +116,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
             </span>
             <hr />
           </div>
-          <Content />
+          <ClientWrapper>
+            <Content />
+          </ClientWrapper>
         </div>
       </article>
     );
