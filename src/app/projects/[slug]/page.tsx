@@ -8,6 +8,7 @@ import Shield from "$/components/Shield";
 
 import "./page.styles.scss";
 import IconLink from "$/components/IconLink";
+import Footer from "$/components/Footer";
 
 export async function generateMetadata({
   params,
