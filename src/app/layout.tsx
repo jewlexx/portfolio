@@ -4,10 +4,13 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import Header from "$/components/Header";
 import { twitterConfiguration } from "$/consts";
-
-import "$/styles/global.scss";
 import Footer from "$/components/Footer";
 import Stars from "$/components/Stars";
+import { ProgressBar } from "$/components/ProgressBar";
+
+import styles from "./layout.module.scss";
+
+import "$/styles/global.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -41,11 +44,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header title="Juliette Cordor" />
-        {children}
-        <Stars />
-        <SpeedInsights />
-        <Footer />
+        <ProgressBar className={styles.progress}>
+          <Header title="Juliette Cordor" />
+          {children}
+          <Stars />
+          <SpeedInsights />
+          <Footer />
+        </ProgressBar>
       </body>
     </html>
   );

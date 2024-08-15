@@ -12,6 +12,7 @@ import IconLink from "$/components/IconLink";
 import WomanTechnologist from "$/assets/images/emojis/woman-technologist.svg";
 
 import styles from "./index.module.scss";
+import { ProgressBarLink } from "../ProgressBar";
 
 interface Props {
   title: string;
@@ -22,9 +23,9 @@ export default function Header({ title }: Props) {
     <header>
       <nav className={styles.nav}>
         <span className={styles.titleImage}>
-          <a className={styles.logolink} href="/" rel="prefetch">
+          <ProgressBarLink className={styles.logolink} href="/" rel="prefetch">
             <Image src={WomanTechnologist} alt="Juliette Cordor" />
-          </a>
+          </ProgressBarLink>
           <h2>
             <Shrunk long={title} />
           </h2>

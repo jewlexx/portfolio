@@ -3,6 +3,7 @@ import Image from "next/image";
 import Astronaut from "$/assets/images/emojis/astronaut.svg";
 
 import styles from "./page.module.scss";
+import { ProgressBarLink } from "$/components/ProgressBar";
 
 export default function Home() {
   return (
@@ -18,7 +19,10 @@ export default function Home() {
         </p>
         <p>
           Feel free to check out{" "}
-          <a href="/projects">some of my best projects</a>, or return to the{" "}
+          <ProgressBarLink href="/projects">
+            some of my best projects
+          </ProgressBarLink>
+          , or return to the{" "}
           <a href="https://www.google.com">ever-expansive web</a>.
         </p>
       </div>

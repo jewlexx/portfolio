@@ -2,6 +2,7 @@ import Image from "next/image";
 import fs from "fs";
 
 import styles from "./page.module.scss";
+import { ProgressBarLink } from "$/components/ProgressBar";
 
 export default async function Projects() {
   const posts = await Promise.all(
@@ -43,7 +44,10 @@ export default async function Projects() {
         <ul className={styles.list}>
           {posts.map((post) => (
             <li className={styles.entry} key={post.slug}>
-              <a href={`/projects/${post.slug}/`} className={styles.link}>
+              <ProgressBarLink
+                href={`/projects/${post.slug}/`}
+                className={styles.link}
+              >
                 {post.metadata.heroImage && (
                   <Image
                     width={1020}
@@ -58,7 +62,7 @@ export default async function Projects() {
                   </span>
                 )}
                 <h4 className={styles.title}>{post.metadata.title}</h4>
-              </a>
+              </ProgressBarLink>
             </li>
           ))}
         </ul>

@@ -3,6 +3,8 @@
 import { AnchorHTMLAttributes, useMemo } from "react";
 import { usePathname } from "next/navigation";
 
+import { ProgressBarLink } from "$/components/ProgressBar";
+
 import styles from "./index.module.scss";
 
 export default function HeaderLink({
@@ -17,7 +19,7 @@ export default function HeaderLink({
   );
 
   return (
-    <a
+    <ProgressBarLink
       href={href}
       className={`${props.className || ""} ${styles.link} ${
         isActive && styles.active
@@ -25,6 +27,6 @@ export default function HeaderLink({
       {...props}
     >
       {children}
-    </a>
+    </ProgressBarLink>
   );
 }
