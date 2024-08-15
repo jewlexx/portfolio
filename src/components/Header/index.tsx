@@ -5,9 +5,9 @@ import {
   IconBrandLinktree,
 } from "@tabler/icons-react";
 
-import Shrunk from "$/app/_components/Shrunk";
-import HeaderLink from "$/app/_components/HeaderLink";
-import IconLink from "$/app/_components/IconLink";
+import Shrunk from "$/components/Shrunk";
+import HeaderLink from "$/components/HeaderLink";
+import IconLink from "$/components/IconLink";
 
 import styles from "./index.module.scss";
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import Header from "$/app/_components/Header";
+import Header from "$/components/Header";
 
 import "./globals.scss";
 import "$/app/styles/global.scss";

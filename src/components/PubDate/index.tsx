@@ -1,4 +1,4 @@
-import FormattedDate from "$/app/_components/FormattedDate";
+import FormattedDate from "$/components/FormattedDate";
 
 import styles from "./index.module.scss";
 

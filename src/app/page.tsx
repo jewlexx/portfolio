@@ -1,4 +1,4 @@
-import Stars from "./_components/Stars";
+import Stars from "../components/Stars";
 
 import styles from "./page.module.scss";
 
