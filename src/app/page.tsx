@@ -1,9 +1,9 @@
 import Image from "next/image";
 
 import Astronaut from "$/assets/images/emojis/astronaut.svg";
+import { ProgressBarLink } from "$/components/ProgressBar";
 
 import styles from "./page.module.scss";
-import { ProgressBarLink } from "$/components/ProgressBar";
 
 export default function Home() {
   return (
