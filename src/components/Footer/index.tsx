@@ -10,12 +10,8 @@ export default function Footer() {
           &copy; {today.getFullYear()} Juliette Cordor. All rights reserved.
         </span>
         <span>
-          &quot;Woman Technologist&quot; emoji from{" "}
-          <a href="https://github.com/notofonts/noto-fonts">Noto Fonts</a> under
-          the{" "}
-          <a href="https://openfontlicense.org/documents/OFL.txt">
-            SIL Open Font License 1.1
-          </a>
+          Emojis from <a href="https://github.com/twitter/twemoji">Twemoji</a>{" "}
+          under the <a href="https://opensource.org/license/mit">MIT</a>
         </span>
       </footer>
     </div>
