@@ -1,7 +1,6 @@
-import Image from "next/image";
-
-import { ProgressBarLink } from "$/components/ProgressBar";
 import { getAllPosts, sortPost } from "$/content/posts";
+
+import PostDisplay from "$/components/PostLink";
 
 import styles from "./page.module.scss";
 
@@ -13,26 +12,11 @@ export default async function Projects() {
       <section>
         <ul className={styles.list}>
           {posts.map((post) => (
-            <li className={styles.entry} key={post.slug}>
-              <ProgressBarLink
-                href={`/projects/${post.slug}/`}
-                className={styles.link}
-              >
-                {post.heroImage && (
-                  <Image
-                    width={1200}
-                    height={630}
-                    src={post.heroImage}
-                    alt=""
-                  />
-                )}
-                {post.toy && (
-                  <span className={styles.toy}>
-                    🤏<span className={styles.tooltip}>Toy Project</span>
-                  </span>
-                )}
-                <h4 className={styles.title}>{post.title}</h4>
-              </ProgressBarLink>
+            <li
+              className={`${styles.entry} ${post.featured && styles.featured}`}
+              key={post.slug}
+            >
+              <PostDisplay post={post} />
             </li>
           ))}
         </ul>
