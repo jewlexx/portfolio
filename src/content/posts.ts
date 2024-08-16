@@ -13,6 +13,7 @@ export interface Metadata {
   repo?: string;
   homepage?: string;
   heroImage?: string;
+  profileImage?: string;
   shields?: Shield[];
   toy?: boolean;
   hideHero?: boolean;

@@ -5,6 +5,7 @@ description: A Rust based abstraction layer for Scoop.
 pubDate: May 20 2024
 repo: winpax/sprinkles
 heroImage: https://cordor.dev/api/og?title=Sprinkles&image=https%3A%2F%2Fcordor.dev%2Femojis%2Fsparkles.svg
+profileImage: https://cordor.dev/emojis/sparkles.svg
 shields:
   - alt: Github Workflow Status
     src: https://img.shields.io/github/actions/workflow/status/winpax/sprinkles/build.yml
