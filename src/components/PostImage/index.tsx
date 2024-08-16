@@ -20,10 +20,10 @@ export default function PostImage({ post }: { post: PostInfo }) {
 
   if (post.profileImage) {
     return (
-      <div className={styles.card}>
+      <span className={`${styles.card} ${styles.nonFeatured}`}>
         <Image width={256} height={256} src={post.profileImage} alt="" />
         <h4 className={styles.title}>{post.title}</h4>
-      </div>
+      </span>
     );
   }
 }
