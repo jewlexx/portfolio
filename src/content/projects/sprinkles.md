@@ -1,5 +1,4 @@
 ---
-featured: true
 title: Sprinkles
 description: A Rust based abstraction layer for Scoop.
 pubDate: May 20 2024

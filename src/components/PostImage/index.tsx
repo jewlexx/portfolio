@@ -1,0 +1,29 @@
+import Image from "next/image";
+
+import { PostInfo } from "$/content/posts";
+
+import styles from "./index.module.scss";
+
+export default function PostImage({ post }: { post: PostInfo }) {
+  if (!post.heroImage && !post.profileImage) {
+    return null;
+  }
+
+  if (post.featured && post.heroImage) {
+    return (
+      <span>
+        <Image width={1200} height={630} src={post.heroImage} alt="" />
+        <h4 className={styles.title}>{post.title}</h4>
+      </span>
+    );
+  }
+
+  if (post.profileImage) {
+    return (
+      <div className={styles.card}>
+        <Image width={256} height={256} src={post.profileImage} alt="" />
+        <h4 className={styles.title}>{post.title}</h4>
+      </div>
+    );
+  }
+}
