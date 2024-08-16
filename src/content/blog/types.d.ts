@@ -42,7 +42,7 @@ export interface IBlogPostFields {
   date: string;
 
   /** Author */
-  author: Entry<{ [fieldId: string]: unknown }>;
+  author: Entry<IAuthorFields>;
 
   /** Excerpt */
   excerpt?: string | undefined;

@@ -1,4 +1,5 @@
 import { getAllPosts } from "$/content/blog/api";
+import { IBlogPostFields } from "$/content/blog/types";
 
 import styles from "./page.module.scss";
 
@@ -11,7 +12,7 @@ export default async function Blog() {
       {articles.map((article) => (
         <div key={article.slug}>
           <h2>{article.title}</h2>
-          <p>{JSON.stringify(article.content.json)}</p>
+          <p>{JSON.stringify(article.content)}</p>
         </div>
       ))}
     </main>

@@ -1,3 +1,5 @@
+import { IBlogPost, IBlogPostFields } from "./types";
+
 const POST_GRAPHQL_FIELDS = `
   slug
   title
@@ -6,10 +8,12 @@ const POST_GRAPHQL_FIELDS = `
   }
   date
   author {
-    name
-    picture {
-      url
-    }
+    ... on Author {
+      name
+      picture {
+        url
+      }
+  }
   }
   excerpt
   content {
@@ -69,7 +73,9 @@ export async function getPreviewPostBySlug(slug: string | null): Promise<any> {
   return extractPost(entry);
 }
 
-export async function getAllPosts(isDraftMode: boolean): Promise<any[]> {
+export async function getAllPosts(
+  isDraftMode: boolean
+): Promise<IBlogPostFields[]> {
   const entries = await fetchGraphQL(
     `query {
       blogPostCollection(where: { slug_exists: true }, order: date_DESC, preview: ${
@@ -82,6 +88,7 @@ export async function getAllPosts(isDraftMode: boolean): Promise<any[]> {
     }`,
     isDraftMode
   );
+
   return extractPostEntries(entries);
 }
 
@@ -92,8 +99,8 @@ export async function getPostAndMorePosts(
   const entry = await fetchGraphQL(
     `query {
       blogPostCollection(where: { slug: "${slug}" }, preview: ${
-      preview ? "true" : "false"
-    }, limit: 1) {
+        preview ? "true" : "false"
+      }, limit: 1) {
         items {
           ${POST_GRAPHQL_FIELDS}
         }
@@ -104,8 +111,8 @@ export async function getPostAndMorePosts(
   const entries = await fetchGraphQL(
     `query {
       blogPostCollection(where: { slug_not_in: "${slug}" }, order: date_DESC, preview: ${
-      preview ? "true" : "false"
-    }, limit: 2) {
+        preview ? "true" : "false"
+      }, limit: 2) {
         items {
           ${POST_GRAPHQL_FIELDS}
         }
