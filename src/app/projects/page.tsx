@@ -1,7 +1,8 @@
 import { getAllPosts, sortPost } from "$/content/posts";
 
-import styles from "./page.module.scss";
 import PostDisplay from "$/components/PostLink";
+
+import styles from "./page.module.scss";
 
 export default async function Projects() {
   const posts = getAllPosts().sort(sortPost);
@@ -11,7 +12,10 @@ export default async function Projects() {
       <section>
         <ul className={styles.list}>
           {posts.map((post) => (
-            <li className={styles.entry} key={post.slug}>
+            <li
+              className={`${styles.entry} ${post.featured && styles.featured}`}
+              key={post.slug}
+            >
               <PostDisplay post={post} />
             </li>
           ))}

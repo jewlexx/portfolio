@@ -6,6 +6,8 @@
   // margin: 0;
   padding: 0;
 
+  width: 100vw;
+
   // display: grid;
 
   // gap: 50px;
@@ -14,7 +16,7 @@
 }
 
 .entry {
-  width: calc(50% - 1rem);
+  // width: calc(50% - 1rem);
 
   // .link .image {
   // 	width: calc(50% - 1rem);
@@ -24,6 +26,15 @@
     text-decoration: none;
     transition: 0.2s ease;
   }
+}
+
+.featured {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 720px) {
