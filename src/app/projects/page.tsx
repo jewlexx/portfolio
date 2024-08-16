@@ -1,6 +1,3 @@
-import Image from "next/image";
-
-import { ProgressBarLink } from "$/components/ProgressBar";
 import { getAllPosts, sortPost } from "$/content/posts";
 
 import styles from "./page.module.scss";
