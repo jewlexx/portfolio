@@ -11,6 +11,7 @@ export async function GET(request: Request) {
       searchParams.get("title") ?? "Juliette Cordor's Portfolio"
     ).slice(0, 100);
     const backgroundColor = searchParams.get("backgroundColor") ?? "black";
+    const fontColor = searchParams.get("fontColor") ?? "white";
 
     return new ImageResponse(
       (
@@ -49,7 +50,7 @@ export async function GET(request: Request) {
               fontSize: 60,
               fontStyle: "normal",
               letterSpacing: "-0.025em",
-              color: "white",
+              color: fontColor,
               marginTop: 30,
               padding: "0 120px",
               lineHeight: 1.4,
