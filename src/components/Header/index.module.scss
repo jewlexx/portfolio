@@ -2,8 +2,26 @@
 @use "$/styles/palette" as *;
 @use "$/styles/mixins";
 
-.header {
+.nav {
   flex: 0 1 auto;
+
+  @include mixins.glassmorphism();
+
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 
 .titleImage {
@@ -46,16 +64,6 @@
 }
 
 .nav {
-  @include mixins.glassmorphism();
-
-  margin: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 1rem;
-  padding-right: 2rem;
-  padding-bottom: 1rem;
-  padding-left: 2rem;
 }
 
 /* .link {
