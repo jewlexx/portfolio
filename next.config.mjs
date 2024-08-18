@@ -24,7 +24,7 @@ const withMDX = createMDX({
   },
   experimental: {
     outputFileTracingIncludes: {
-      "/api/anybrowser": ["./src/assets/images/anybrowser/**/*"],
+      "/api/anybrowser": ["./src/assets/images/anybrowser/*"],
     },
   },
 });
