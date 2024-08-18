@@ -37,7 +37,7 @@ export default function Projects({ posts }: { posts: PostInfo[] }) {
     <section className={styles.projects}>
       {!isPortrait && (
         <a
-          href={`/projects/${hoveredPost?.slug}`}
+          href={hoveredPost?.slug ? `/projects/${hoveredPost.slug}` : undefined}
           className={styles.projectImage}
           onMouseEnter={() => hoveredPost && onImageHover(hoveredPost)}
           onMouseLeave={onImageLeave}
