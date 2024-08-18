@@ -1,4 +1,4 @@
-@mixin glassmorphism($color: rgba(255, 255, 255, 0), $border-radius: 16px) {
+@mixin glassmorphism($color: rgba(255, 255, 255, 0.03), $border-radius: 16px) {
   $blur: 6px;
 
   /* From https://css.glass */
