@@ -25,6 +25,11 @@ const withMDX = createMDX({
   options: {
     remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
   },
+  experimental: {
+    outputFileTracingIncludes: {
+      "/api/anybrowser": ["./src/assets/images/anybrowser/*"],
+    },
+  },
 });
 
 export default withMDX(nextConfig);

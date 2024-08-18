@@ -15,6 +15,7 @@
     "@tabler/icons-react": "^3.12.0",
     "@types/mdx": "^2.0.13",
     "@vercel/speed-insights": "^1.0.12",
+    "fast-glob": "^3.3.2",
     "framer-motion": "^11.3.28",
     "gray-matter": "^4.0.3",
     "next": "14.2.5",
