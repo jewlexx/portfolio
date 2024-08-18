@@ -1,9 +1,9 @@
-@mixin glassmorphism($color: rgb(255, 255, 255)) {
+@mixin glassmorphism($color: rgba(255, 255, 255, 0), $border-radius: 16px) {
   $blur: 6px;
 
   /* From https://css.glass */
-  background: rgba($color, 0);
-  border-radius: 16px;
+  background: $color;
+  border-radius: $border-radius;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur($blur);
   -webkit-backdrop-filter: blur($blur);
