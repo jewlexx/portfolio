@@ -11,16 +11,20 @@ import HorizontalHero from "../HorizontalHero";
 export default function Projects({ posts }: { posts: PostInfo[] }) {
   const [hovered, setHovered] = useState<string | null>(null);
 
-  const hoveredHero = useMemo(() => {
-    return posts.find((post) => post.slug === hovered)?.heroImage;
+  const hoveredPost = useMemo(() => {
+    return posts.find((post) => post.slug === hovered);
   }, [hovered, posts]);
 
   return (
     <section className={styles.projects}>
       <div className={styles.projectImage}>
-        {hoveredHero && (
-          <HorizontalHero width={1200} height={630} src={hoveredHero} alt="" />
-        )}
+        <HorizontalHero
+          enabled={hoveredPost?.heroImage !== null}
+          width={1200}
+          height={630}
+          src={hoveredPost?.heroImage}
+          alt={`${hoveredPost?.title} Hero Image`}
+        />
       </div>
       <ul className={styles.list}>
         {posts.map((post) => (
