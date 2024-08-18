@@ -8,19 +8,18 @@ export default async function Projects() {
   const posts = getAllPosts().sort(sortPost);
 
   return (
-    <main>
-      <section>
-        <ul className={styles.list}>
-          {posts.map((post) => (
-            <li
-              className={`${styles.entry} ${post.featured && styles.featured}`}
-              key={post.slug}
-            >
-              <PostDisplay post={post} />
-            </li>
-          ))}
-        </ul>
-      </section>
-    </main>
+    <section className={styles.projects}>
+      <div className={styles.projectImage}>Image</div>
+      <ul className={styles.list}>
+        {posts.map((post) => (
+          <li
+            className={`${styles.entry} ${post.featured && styles.featured}`}
+            key={post.slug}
+          >
+            <p>{post.title}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }

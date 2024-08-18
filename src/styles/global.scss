@@ -17,6 +17,10 @@ body {
 }
 
 body {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+
   color: $t-fg;
 
   $gradient-start: #1f0a41;

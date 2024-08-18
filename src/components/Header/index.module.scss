@@ -2,6 +2,10 @@
 @use "$/styles/palette" as *;
 @use "$/styles/mixins";
 
+.header {
+  flex: 0 1 auto;
+}
+
 .titleImage {
   display: flex;
   align-items: center;

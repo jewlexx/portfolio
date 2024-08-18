@@ -20,7 +20,7 @@ interface Props {
 
 export default function Header({ title }: Props) {
   return (
-    <header>
+    <header className={styles.header}>
       <nav className={styles.nav}>
         <span className={styles.titleImage}>
           <ProgressBarLink className={styles.logolink} href="/" rel="prefetch">
