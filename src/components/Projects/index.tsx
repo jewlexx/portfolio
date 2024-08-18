@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import Image from "next/image";
 
 import { PostInfo } from "$/content/posts";
@@ -10,6 +10,7 @@ import HorizontalHero from "../HorizontalHero";
 
 export default function Projects({ posts }: { posts: PostInfo[] }) {
   const [hovered, setHovered] = useState<string | null>(null);
+  const hoveredTimeout = useRef<Timer | null>(null);
 
   const hoveredPost = useMemo(() => {
     return posts.find((post) => post.slug === hovered);
@@ -28,13 +29,26 @@ export default function Projects({ posts }: { posts: PostInfo[] }) {
       </div>
       <ul className={styles.list}>
         {posts.map((post) => (
-          <li
-            className={`${styles.entry}`}
-            key={post.slug}
-            onMouseEnter={() => setHovered(post.slug)}
-            onMouseLeave={() => setHovered(null)}
-          >
-            <button>
+          <li className={`${styles.entry}`} key={post.slug}>
+            <button
+              onMouseEnter={() => {
+                if (hoveredTimeout.current) {
+                  clearTimeout(hoveredTimeout.current);
+                }
+
+                setHovered(post.slug);
+              }}
+              onMouseLeave={() => {
+                if (hoveredTimeout.current) {
+                  clearTimeout(hoveredTimeout.current);
+                }
+
+                hoveredTimeout.current = setTimeout(
+                  () => setHovered(null),
+                  1000
+                );
+              }}
+            >
               <p>
                 {post.emoji} {post.title}
               </p>
