@@ -1,7 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
-import Image from "next/image";
+import { useCallback, useMemo, useRef, useState } from "react";
 
 import { PostInfo } from "$/content/posts";
 import HorizontalHero from "$/components/HorizontalHero";
@@ -18,10 +17,31 @@ export default function Projects({ posts }: { posts: PostInfo[] }) {
     return posts.find((post) => post.slug === hovered);
   }, [hovered, posts]);
 
+  const onImageHover = useCallback((post: PostInfo) => {
+    if (hoveredTimeout.current) {
+      clearTimeout(hoveredTimeout.current);
+    }
+
+    setHovered(post.slug);
+  }, []);
+
+  const onImageLeave = useCallback(() => {
+    if (hoveredTimeout.current) {
+      clearTimeout(hoveredTimeout.current);
+    }
+
+    hoveredTimeout.current = setTimeout(() => setHovered(null), 1000);
+  }, []);
+
   return (
     <section className={styles.projects}>
       {!isPortrait && (
-        <div className={styles.projectImage}>
+        <a
+          href={`/projects/${hoveredPost?.slug}`}
+          className={styles.projectImage}
+          onMouseEnter={() => hoveredPost && onImageHover(hoveredPost)}
+          onMouseLeave={onImageLeave}
+        >
           <HorizontalHero
             enabled={hoveredPost?.heroImage !== null}
             width={1200}
@@ -30,29 +50,15 @@ export default function Projects({ posts }: { posts: PostInfo[] }) {
             alt={`${hoveredPost?.title} Hero Image`}
             slug={hoveredPost?.slug}
           />
-        </div>
+        </a>
       )}
       <ul className={styles.list}>
         {posts.map((post) => (
-          <li className={`${styles.entry}`} key={post.slug}>
+          <li className={styles.entry} key={post.slug}>
             <a
-              onMouseEnter={() => {
-                if (hoveredTimeout.current) {
-                  clearTimeout(hoveredTimeout.current);
-                }
-
-                setHovered(post.slug);
-              }}
-              onMouseLeave={() => {
-                if (hoveredTimeout.current) {
-                  clearTimeout(hoveredTimeout.current);
-                }
-
-                hoveredTimeout.current = setTimeout(
-                  () => setHovered(null),
-                  1000
-                );
-              }}
+              href={`/projects/${post.slug}`}
+              onMouseEnter={() => onImageHover(post)}
+              onMouseLeave={onImageLeave}
             >
               <span>
                 {post.emoji} {post.title}
