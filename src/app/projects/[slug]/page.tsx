@@ -72,7 +72,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
     <article>
       <div className="heroImage">
         {heroImage && !hideHero && (
-          <Image width={1020} height={510} src={heroImage} alt="" />
+          <Image width={500} height={200} src={heroImage} alt="" />
         )}
       </div>
       <div className="prose">
