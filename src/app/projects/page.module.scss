@@ -1,3 +1,5 @@
+@use "$/styles/palette";
+
 .projects {
   display: inline-grid;
   gap: 1rem;
@@ -5,20 +7,21 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 100%;
 
+  height: 100%;
   width: 100%;
 }
 
 .projectImage {
-  background-color: red;
+  // background-color: red;
 }
 
 .list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
+  // display: flex;
+  // flex-wrap: wrap;
+  // gap: 2rem;
   list-style-type: none;
   // margin: 0;
-  padding: 0;
+  // padding: 0;
 
   // display: grid;
 
@@ -33,20 +36,43 @@
   // .link .image {
   // 	width: calc(50% - 1rem);
   // }
+  button {
+    border: none;
+    background: none;
+    color: white;
+    padding: 0.5rem;
+    padding-right: 1rem;
+    border-radius: 12px;
 
-  * {
-    text-decoration: none;
+    p {
+      margin: 0px;
+      padding: 0px;
+      font-size: xx-large;
+    }
+
     transition: 0.2s ease;
+
+    &:hover {
+      margin-left: 0.5rem;
+      transform: scale(1.02);
+      cursor: pointer;
+      background-color: palette.$dark-gray;
+    }
+
+    * {
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
   }
 }
 
 .featured {
-  width: 100%;
+  // width: 100%;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
 }
 
 @media (max-width: 720px) {
@@ -55,8 +81,8 @@
   }
 
   .entry {
-    width: 100%;
-    text-align: center;
+    // width: 100%;
+    // text-align: center;
 
     &:first-child {
       margin-bottom: 0;

@@ -4,7 +4,7 @@ import PostDisplay from "$/components/PostLink";
 
 import styles from "./page.module.scss";
 
-export default async function Projects() {
+export default function Projects() {
   const posts = getAllPosts().sort(sortPost);
 
   return (
@@ -12,11 +12,12 @@ export default async function Projects() {
       <div className={styles.projectImage}>Image</div>
       <ul className={styles.list}>
         {posts.map((post) => (
-          <li
-            className={`${styles.entry} ${post.featured && styles.featured}`}
-            key={post.slug}
-          >
-            <p>{post.title}</p>
+          <li className={`${styles.entry}`} key={post.slug}>
+            <button>
+              <p>
+                {post.emoji} {post.title}
+              </p>
+            </button>
           </li>
         ))}
       </ul>
