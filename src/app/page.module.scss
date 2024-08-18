@@ -61,3 +61,10 @@ $w-s: 750px;
     height: 1em;
   }
 }
+
+.aboutProse {
+  margin-top: 1rem;
+  ul {
+    transform: translateX(1.5em);
+  }
+}

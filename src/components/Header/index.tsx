@@ -32,9 +32,6 @@ export default function Header({ title }: Props) {
         </span>
         {/* TODO: Add headerlinks on mobile screens */}
         <Shrunk hide="portrait">
-          <HeaderLink className={styles.link} href="/about">
-            <h3>About</h3>
-          </HeaderLink>
           <HeaderLink className={styles.link} href="/projects">
             <h3>Projects</h3>
           </HeaderLink>

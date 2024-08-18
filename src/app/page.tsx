@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import Astronaut from "$/assets/images/emojis/astronaut.svg";
 import { ProgressBarLink } from "$/components/ProgressBar";
+import * as post from "$/content/info/about.mdx";
 
 import styles from "./page.module.scss";
 
@@ -24,6 +25,9 @@ export default function Home() {
         , or return to the{" "}
         <a href="https://www.google.com">ever-expansive web</a>.
       </p>
+      <section className={styles.aboutProse}>
+        <post.default />
+      </section>
     </section>
   );
 }
