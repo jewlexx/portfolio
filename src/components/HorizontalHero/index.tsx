@@ -17,9 +17,9 @@ export default function HorizontalHero({ enabled, key, src, ...rest }: Props) {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          exit={{ opacity: 0 }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          exit={{ opacity: 0, scale: 0.99 }}
+          initial={{ opacity: 0, scale: 0.99 }}
+          animate={{ opacity: 1, scale: 1 }}
           className={styles.container}
           key={key}
         >
