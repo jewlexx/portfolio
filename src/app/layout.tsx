@@ -50,7 +50,7 @@ export default function RootLayout({
           <main className={styles.main}>{children}</main>
           <Stars />
           <SpeedInsights />
-          <Footer />
+          {/* <Footer /> */}
         </ProgressBar>
       </body>
     </html>
