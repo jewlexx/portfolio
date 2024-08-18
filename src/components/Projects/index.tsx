@@ -25,6 +25,7 @@ export default function Projects({ posts }: { posts: PostInfo[] }) {
           height={630}
           src={hoveredPost?.heroImage}
           alt={`${hoveredPost?.title} Hero Image`}
+          slug={hoveredPost?.slug}
         />
       </div>
       <ul className={styles.list}>

@@ -1,8 +1,11 @@
 @use "$/styles/palette";
+@use "$/styles/mixins";
 
 .container {
-  background-color: palette.$dark-gray;
+  // background-color: palette.$dark-gray;
   border-radius: 12px;
 
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  @include mixins.glassmorphism();
 }
