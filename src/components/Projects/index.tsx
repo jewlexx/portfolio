@@ -5,12 +5,14 @@ import Image from "next/image";
 
 import { PostInfo } from "$/content/posts";
 import HorizontalHero from "$/components/HorizontalHero";
+import { usePortrait } from "$/hooks/portrait";
 
 import styles from "./index.module.scss";
 
 export default function Projects({ posts }: { posts: PostInfo[] }) {
   const [hovered, setHovered] = useState<string | null>(null);
   const hoveredTimeout = useRef<Timer | null>(null);
+  const { isPortrait, loading } = usePortrait();
 
   const hoveredPost = useMemo(() => {
     return posts.find((post) => post.slug === hovered);
@@ -18,16 +20,18 @@ export default function Projects({ posts }: { posts: PostInfo[] }) {
 
   return (
     <section className={styles.projects}>
-      <div className={styles.projectImage}>
-        <HorizontalHero
-          enabled={hoveredPost?.heroImage !== null}
-          width={1200}
-          height={630}
-          src={hoveredPost?.heroImage}
-          alt={`${hoveredPost?.title} Hero Image`}
-          slug={hoveredPost?.slug}
-        />
-      </div>
+      {!isPortrait && (
+        <div className={styles.projectImage}>
+          <HorizontalHero
+            enabled={hoveredPost?.heroImage !== null}
+            width={1200}
+            height={630}
+            src={hoveredPost?.heroImage}
+            alt={`${hoveredPost?.title} Hero Image`}
+            slug={hoveredPost?.slug}
+          />
+        </div>
+      )}
       <ul className={styles.list}>
         {posts.map((post) => (
           <li className={`${styles.entry}`} key={post.slug}>
