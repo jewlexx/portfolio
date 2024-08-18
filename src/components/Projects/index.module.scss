@@ -37,15 +37,22 @@
   // .link .image {
   // 	width: calc(50% - 1rem);
   // }
-  button {
-    border: none;
-    background: none;
-    padding: 0.5rem;
+  a {
+    // border: none;
+    // background: none;
     color: white;
     // padding-right: 1rem;
     // border-radius: 12px;
 
-    p {
+    border: 1px solid rgba(255, 255, 255, 0.29);
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem;
+    span {
       margin: 0px;
       padding: 0px;
       font-size: xx-large;
@@ -58,7 +65,7 @@
     &:hover {
       @include mixins.glassmorphism();
       margin-left: 0.5rem;
-      transform: scale(1.02);
+      transform: scale(1.05);
       cursor: pointer;
       // background-color: palette.$dark-gray;
       // box-shadow: 0px 0px 5px #000;

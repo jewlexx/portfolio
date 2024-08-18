@@ -9,6 +9,8 @@
 
   &:not(.disabled):hover {
     @include mixins.glassmorphism(rgba($color, 0.2), 0.25rem);
+    transform: scale(1.2);
+
     // transform: scale(1.2);
 
     /* From https://css.glass */

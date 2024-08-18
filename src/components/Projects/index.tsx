@@ -4,9 +4,9 @@ import { useMemo, useRef, useState } from "react";
 import Image from "next/image";
 
 import { PostInfo } from "$/content/posts";
+import HorizontalHero from "$/components/HorizontalHero";
 
 import styles from "./index.module.scss";
-import HorizontalHero from "../HorizontalHero";
 
 export default function Projects({ posts }: { posts: PostInfo[] }) {
   const [hovered, setHovered] = useState<string | null>(null);
@@ -31,7 +31,7 @@ export default function Projects({ posts }: { posts: PostInfo[] }) {
       <ul className={styles.list}>
         {posts.map((post) => (
           <li className={`${styles.entry}`} key={post.slug}>
-            <button
+            <a
               onMouseEnter={() => {
                 if (hoveredTimeout.current) {
                   clearTimeout(hoveredTimeout.current);
@@ -50,10 +50,10 @@ export default function Projects({ posts }: { posts: PostInfo[] }) {
                 );
               }}
             >
-              <p>
+              <span>
                 {post.emoji} {post.title}
-              </p>
-            </button>
+              </span>
+            </a>
           </li>
         ))}
       </ul>
