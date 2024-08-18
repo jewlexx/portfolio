@@ -1,10 +1,18 @@
 @use "$/styles/transitions";
 @use "$/styles/palette" as *;
+@use "$/styles/mixins";
 
 @mixin button-colours($color) {
   background-color: $color;
 
+  border: 1px solid rgba(255, 255, 255, 0.29);
+
   &:not(.disabled):hover {
+    @include mixins.glassmorphism(rgba($color, 0.2), 0.25rem);
+    transform: scale(1.2);
+
+    // transform: scale(1.2);
+
     /* From https://css.glass */
     // background: rgba($color, 0.7);
     // border-color: transparent;
@@ -13,8 +21,8 @@
     // -webkit-backdrop-filter: blur(5.8px);
     // border: 1px solid rgba(255, 255, 255, 0.29);
 
-    transform: rotate(-10deg);
-    background-color: lighten($color, 10%);
+    // transform: rotate(-10deg);
+    // background-color: lighten($color, 10%);
 
     // $from-color: lighten($color, 20%);
     // $to-color: $color;
@@ -52,12 +60,10 @@
     $duration: 100ms;
     $easing: ease-in-out;
 
-    transition: box-shadow $duration $easing, background-color $duration $easing,
+    transition:
+      box-shadow $duration $easing,
+      background-color $duration $easing,
       transform $duration $easing;
-  }
-
-  &:not(.disabled):hover {
-    transform: scale(1.2);
   }
 
   color: $t-fg;

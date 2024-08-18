@@ -9,6 +9,7 @@ export interface Metadata {
   featured?: boolean;
   title?: string;
   description?: string;
+  emoji?: string;
   pubDate?: string;
   repo?: string;
   homepage?: string;

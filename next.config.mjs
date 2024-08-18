@@ -12,6 +12,9 @@ const nextConfig = {
       {
         hostname: "http.cat",
       },
+      {
+        hostname: "cordor.dev",
+      },
     ],
   },
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
