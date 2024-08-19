@@ -13,7 +13,7 @@ export function middleware(request: NextRequest): NextResponse {
     object-src 'none';
     base-uri 'self';
     form-action 'self';
-    frame-ancestors 'none';
+    frame-ancestors 'self' https://app.contentful.com;
     upgrade-insecure-requests;
 `;
   // Replace newline characters and spaces
