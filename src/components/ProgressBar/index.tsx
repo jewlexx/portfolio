@@ -19,6 +19,8 @@ import {
   useState,
 } from "react";
 
+import styles from "./index.module.scss";
+
 const ProgressBarContext = createContext<ReturnType<typeof useProgress> | null>(
   null
 );
@@ -48,7 +50,7 @@ export function ProgressBar({
       <AnimatePresence onExitComplete={progress.reset}>
         {progress.state !== "complete" && (
           <motion.div
-            style={{ width }}
+            style={{ width: width }}
             exit={{ opacity: 0 }}
             className={className}
           />
