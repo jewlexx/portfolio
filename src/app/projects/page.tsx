@@ -1,26 +1,12 @@
-import { getAllPosts, sortPost } from "$/content/posts";
+import { getAllProjects, sortProject } from "$/content/projects";
 
 import PostDisplay from "$/components/PostLink";
+import ProjectsComponent from "$/components/Projects";
 
 import styles from "./page.module.scss";
 
-export default async function Projects() {
-  const posts = getAllPosts().sort(sortPost);
+export default function Projects() {
+  const posts = getAllProjects().sort(sortProject);
 
-  return (
-    <main>
-      <section>
-        <ul className={styles.list}>
-          {posts.map((post) => (
-            <li
-              className={`${styles.entry} ${post.featured && styles.featured}`}
-              key={post.slug}
-            >
-              <PostDisplay post={post} />
-            </li>
-          ))}
-        </ul>
-      </section>
-    </main>
-  );
+  return <ProjectsComponent posts={posts} />;
 }

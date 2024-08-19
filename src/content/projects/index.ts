@@ -3,13 +3,14 @@ import { join } from "path";
 
 import matter from "gray-matter";
 
-const postsDirectory = join(process.cwd(), "src/content/projects");
+const projectsDirectory = join(process.cwd(), "src/content/projects");
 
 export interface Metadata {
   featured?: boolean;
-  title?: string;
-  description?: string;
-  pubDate?: string;
+  title: string;
+  description: string;
+  emoji?: string;
+  pubDate: string;
   repo?: string;
   homepage?: string;
   heroImage?: string;
@@ -25,35 +26,39 @@ export interface Shield {
   href?: string;
 }
 
-export interface PostInfo extends Metadata {
+export interface ProjectInfo extends Metadata {
   slug: string;
   content: string;
 }
 
-export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory).filter((file) => file.endsWith(".md"));
+export function getProjectSlugs() {
+  return fs
+    .readdirSync(projectsDirectory)
+    .filter((file) => file.endsWith(".md"));
 }
 
-export function getPostBySlug(slug: string): PostInfo {
+export function getProjectBySlug(slug: string): ProjectInfo {
   const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(postsDirectory, `${realSlug}.md`);
+  const fullPath = join(projectsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
   return {
-    ...data,
+    ...(data as Metadata),
     slug: realSlug,
     content,
   };
 }
 
-export function getAllPosts() {
-  const slugs = getPostSlugs();
-  const posts = slugs.map((slug) => getPostBySlug(slug)).sort(sortPost);
-  return posts;
+export function getAllProjects() {
+  const slugs = getProjectSlugs();
+  const projects = slugs
+    .map((slug) => getProjectBySlug(slug))
+    .sort(sortProject);
+  return projects;
 }
 
-export function sortPost(a: PostInfo, b: PostInfo) {
+export function sortProject(a: ProjectInfo, b: ProjectInfo) {
   if (a.featured) {
     return -1;
   }

@@ -20,6 +20,7 @@
     "@vercel/speed-insights": "^1.0.12",
     "contentful": "^10.14.0",
     "contentful-import": "^9.4.58",
+    "fast-glob": "^3.3.2",
     "framer-motion": "^11.3.28",
     "gray-matter": "^4.0.3",
     "next": "14.2.5",
@@ -29,6 +30,7 @@
     "remark-frontmatter": "^5.0.0",
     "remark-html": "^16.0.1",
     "remark-mdx-frontmatter": "^5.0.0",
+    "rss": "^1.2.2",
     "vfile": "^6.0.2"
   },
   "devDependencies": {
@@ -36,6 +38,7 @@
     "@types/node": "^22.3.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@types/rss": "^0.0.32",
     "@types/twemoji-parser": "^13.1.4",
     "contentful-management": "^11.31.4",
     "contentful-typescript-codegen": "^3.4.0",

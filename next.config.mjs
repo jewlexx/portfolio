@@ -12,9 +12,17 @@ const nextConfig = {
       {
         hostname: "http.cat",
       },
+      {
+        hostname: "cordor.dev",
+      },
     ],
   },
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+  experimental: {
+    outputFileTracingIncludes: {
+      "/api/anybrowser": ["./src/assets/images/anybrowser/*"],
+    },
+  },
 };
 
 const withMDX = createMDX({

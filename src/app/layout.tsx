@@ -47,10 +47,12 @@ export default function RootLayout({
       <body className={inter.className}>
         <ProgressBar className={styles.progress}>
           <Header title="Juliette Cordor" />
-          {children}
+          <main className={styles.main} role="main">
+            {children}
+          </main>
           <Stars />
           <SpeedInsights />
-          <Footer />
+          {/* <Footer /> */}
         </ProgressBar>
       </body>
     </html>
