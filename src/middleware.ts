@@ -9,6 +9,8 @@ export function middleware(request: NextRequest): NextResponse {
 
   const cspHeader = `
     default-src 'self';
+    script-src: 'self' https: http: 'unsafe-inline' 'unsafe-eval';
+    style-src: 'self' 'unsafe-inline';
     img-src 'self' blob: data:;
     font-src 'self';
     object-src 'none';
