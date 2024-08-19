@@ -11,7 +11,9 @@ export function middleware(request: {
   const response = NextResponse.next();
 
   if (!referrer || !referrer.startsWith("https://app.contentful.com/")) {
-    response.headers.set("X-Frame-Options", "SAMEORIGIN");
+    response.headers.set("X-Frame-Options", "DENY");
+  } else {
+    response.headers.delete("X-Frame-Options");
   }
 
   return response;
