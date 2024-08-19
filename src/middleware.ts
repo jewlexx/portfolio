@@ -11,9 +11,8 @@ export function middleware(request: NextRequest) {
     object-src 'none';
     base-uri 'self';
     form-action 'self';
-    frame-ancestors 'none';
     upgrade-insecure-requests;
-    frame-ancestors https://app.contentful.com;
+    frame-ancestors 'self' https://app.contentful.com;
 `;
   // Replace newline characters and spaces
   const contentSecurityPolicyHeaderValue = cspHeader
