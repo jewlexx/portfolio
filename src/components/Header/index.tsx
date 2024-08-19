@@ -34,6 +34,9 @@ export default function Header({ title }: Props) {
         <HeaderLink className={styles.link} href="/projects">
           <h3>Projects</h3>
         </HeaderLink>
+        <HeaderLink className={styles.link} href="/blog">
+          <h3>Blog</h3>
+        </HeaderLink>
       </Shrunk>
       <span className={styles.linksContainer}>
         <IconLink

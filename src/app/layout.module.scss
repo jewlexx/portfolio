@@ -1,3 +1,5 @@
+@use "$/styles/mixins";
+
 .progress {
   position: fixed;
   top: 0;
@@ -6,10 +8,4 @@
   height: 5px;
   z-index: 100;
   background-color: skyblue;
-}
-
-.main {
-  flex: 1 1 auto;
-
-  margin: 1rem;
 }
