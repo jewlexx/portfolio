@@ -16,7 +16,11 @@ export default function Articles({
   return (
     <ul className={styles.list}>
       {newArticles.map((article) => (
-        <li key={article.slug} className={styles.article}>
+        <a
+          key={article.slug}
+          className={styles.article}
+          href={`/blog/${article.slug}`}
+        >
           <ContentfulImage
             src={article.coverImage.url}
             width={512}
@@ -27,7 +31,7 @@ export default function Articles({
             <h2>{article.title}</h2>
             {article.excerpt && <small>{article.excerpt}</small>}
           </span>
-        </li>
+        </a>
       ))}
     </ul>
   );
