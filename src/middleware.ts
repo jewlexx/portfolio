@@ -37,9 +37,6 @@ export function middleware(request: NextRequest) {
     "Content-Security-Policy",
     contentSecurityPolicyHeaderValue
   );
-  response.headers.set("x-hello-from-middleware", "hello");
-
-  console.log("middleware has run thank fucking god");
 
   return response;
 }
