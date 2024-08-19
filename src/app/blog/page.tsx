@@ -1,12 +1,10 @@
 import { getAllPosts } from "$/content/blog/api";
 import Articles from "$/components/Articles";
-import { draftMode } from "next/headers";
 
 import styles from "./page.module.scss";
 
 export default async function Blog() {
-  const { isEnabled: isDraft } = draftMode();
-  const articles = await getAllPosts(isDraft);
+  const articles = await getAllPosts();
 
   return (
     <main className={styles.main}>

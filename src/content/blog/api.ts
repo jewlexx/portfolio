@@ -1,3 +1,4 @@
+import { draftMode } from "next/headers";
 import { IBlogPost, IBlogPostFields } from "./types";
 
 const POST_GRAPHQL_FIELDS = `
@@ -73,20 +74,18 @@ export async function getPreviewPostBySlug(slug: string | null): Promise<any> {
   return extractPost(entry);
 }
 
-export async function getAllPosts(
-  isDraftMode: boolean
-): Promise<IBlogPostFields[]> {
+export async function getAllPosts(): Promise<IBlogPostFields[]> {
   const entries = await fetchGraphQL(
     `query {
       blogPostCollection(where: { slug_exists: true }, order: date_DESC, preview: ${
-        isDraftMode ? "true" : "false"
+        draftMode().isEnabled ? "true" : "false"
       }) {
         items {
           ${POST_GRAPHQL_FIELDS}
         }
       }
     }`,
-    isDraftMode
+    draftMode().isEnabled
   );
 
   return extractPostEntries(entries);
@@ -95,21 +94,19 @@ export async function getAllPosts(
 export async function getPostBySlug(slug: string): Promise<IBlogPostFields> {
   const entry = await fetchGraphQL(
     `query {
-      blogPostCollection(where: { slug: "${slug}" }, preview: true, limit: 1) {
+      blogPostCollection(where: { slug: "${slug}" }, preview: ${draftMode().isEnabled}, limit: 1) {
         items {
           ${POST_GRAPHQL_FIELDS}
         }
       }
     }`,
-    true
+    draftMode().isEnabled
   );
   return extractPost(entry);
 }
 
-export async function getPostAndMorePosts(
-  slug: string,
-  preview: boolean
-): Promise<any> {
+export async function getPostAndMorePosts(slug: string): Promise<any> {
+  const preview = draftMode().isEnabled;
   const post = await getPostBySlug(slug);
   const entries = await fetchGraphQL(
     `query {
