@@ -92,22 +92,25 @@ export async function getAllPosts(
   return extractPostEntries(entries);
 }
 
-export async function getPostAndMorePosts(
-  slug: string,
-  preview: boolean
-): Promise<any> {
+export async function getPostBySlug(slug: string): Promise<IBlogPostFields> {
   const entry = await fetchGraphQL(
     `query {
-      blogPostCollection(where: { slug: "${slug}" }, preview: ${
-        preview ? "true" : "false"
-      }, limit: 1) {
+      blogPostCollection(where: { slug: "${slug}" }, preview: true, limit: 1) {
         items {
           ${POST_GRAPHQL_FIELDS}
         }
       }
     }`,
-    preview
+    true
   );
+  return extractPost(entry);
+}
+
+export async function getPostAndMorePosts(
+  slug: string,
+  preview: boolean
+): Promise<any> {
+  const post = await getPostBySlug(slug);
   const entries = await fetchGraphQL(
     `query {
       blogPostCollection(where: { slug_not_in: "${slug}" }, order: date_DESC, preview: ${
@@ -121,7 +124,7 @@ export async function getPostAndMorePosts(
     preview
   );
   return {
-    post: extractPost(entry),
+    post,
     morePosts: extractPostEntries(entries),
   };
 }

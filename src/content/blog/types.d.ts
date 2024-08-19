@@ -48,7 +48,9 @@ export interface IBlogPostFields {
   excerpt?: string | undefined;
 
   /** Content */
-  content: Document;
+  content: {
+    json: Document;
+  };
 }
 
 export interface IBlogPost extends Entry<IBlogPostFields> {
