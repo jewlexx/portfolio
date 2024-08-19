@@ -8,7 +8,7 @@ import styles from "./page.module.scss";
 
 export default function Home() {
   return (
-    <section className={styles.overlay}>
+    <>
       <h1 className={styles.title}>
         <Image src={Astronaut} alt="Astronaut Emoji" /> Hello, Traveller!
       </h1>
@@ -28,6 +28,6 @@ export default function Home() {
       <section className={styles.aboutProse}>
         <post.default />
       </section>
-    </section>
+    </>
   );
 }

@@ -1,3 +1,5 @@
+@use "$/styles/mixins";
+
 .progress {
   position: fixed;
   top: 0;
@@ -12,4 +14,13 @@
   flex: 1 1 auto;
 
   margin: 1rem;
+
+  padding: 1rem;
+
+  p {
+    line-height: 2rem;
+    word-wrap: normal;
+  }
+
+  @include mixins.glassmorphism();
 }

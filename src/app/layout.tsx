@@ -52,7 +52,6 @@ export default function RootLayout({
           </main>
           <Stars />
           <SpeedInsights />
-          {/* <Footer /> */}
         </ProgressBar>
       </body>
     </html>
