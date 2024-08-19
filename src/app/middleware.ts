@@ -37,6 +37,11 @@ export function middleware(request: NextRequest) {
     "Content-Security-Policy",
     contentSecurityPolicyHeaderValue
   );
+  response.headers.set("x-hello-from-middleware", "hello");
 
   return response;
 }
+
+export const config = {
+  matcher: "/:path*",
+};
