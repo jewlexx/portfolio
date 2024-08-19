@@ -8,5 +8,9 @@ import styles from "./page.module.scss";
 export default function Projects() {
   const posts = getAllProjects().sort(sortProject);
 
-  return <ProjectsComponent posts={posts} />;
+  return (
+    <main data-glassmorphism="disabled">
+      <ProjectsComponent posts={posts} />
+    </main>
+  );
 }

@@ -1,3 +1,4 @@
+@use "$/styles/mixins";
 @use "$/styles/palette" as *;
 
 // Base
@@ -14,6 +15,23 @@ body {
   overflow-x: hidden;
   margin: 0px;
   padding: 0px;
+}
+
+main {
+  flex: 1 1 auto;
+
+  margin: 1rem !important;
+
+  &:not([data-glassmorphism="disabled"]) {
+    padding: 1rem;
+
+    p {
+      line-height: 2rem;
+      word-wrap: normal;
+    }
+
+    @include mixins.glassmorphism();
+  }
 }
 
 body {
