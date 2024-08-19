@@ -2,13 +2,13 @@
 
 import { useCallback, useMemo, useRef, useState } from "react";
 
-import { PostInfo } from "$/content/posts";
+import { type ProjectInfo } from "$/content/projects";
 import HorizontalHero from "$/components/HorizontalHero";
 import { usePortrait } from "$/hooks/portrait";
 
 import styles from "./index.module.scss";
 
-export default function Projects({ posts }: { posts: PostInfo[] }) {
+export default function Projects({ posts }: { posts: ProjectInfo[] }) {
   const [hovered, setHovered] = useState<string | null>(null);
   const hoveredTimeout = useRef<Timer | null>(null);
   const { isPortrait, loading } = usePortrait();
@@ -17,7 +17,7 @@ export default function Projects({ posts }: { posts: PostInfo[] }) {
     return posts.find((post) => post.slug === hovered);
   }, [hovered, posts]);
 
-  const onImageHover = useCallback((post: PostInfo) => {
+  const onImageHover = useCallback((post: ProjectInfo) => {
     if (hoveredTimeout.current) {
       clearTimeout(hoveredTimeout.current);
     }

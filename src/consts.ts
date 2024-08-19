@@ -12,3 +12,8 @@ export const twitterConfiguration: Metadata["twitter"] = {
   creator: "@jewlexx",
   site: "https://cordor.dev",
 };
+
+export const siteUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://cordor.dev"
+    : "http://localhost:3000";

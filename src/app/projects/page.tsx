@@ -1,4 +1,4 @@
-import { getAllPosts, sortPost } from "$/content/posts";
+import { getAllProjects, sortProject } from "$/content/projects";
 
 import PostDisplay from "$/components/PostLink";
 import ProjectsComponent from "$/components/Projects";
@@ -6,7 +6,7 @@ import ProjectsComponent from "$/components/Projects";
 import styles from "./page.module.scss";
 
 export default function Projects() {
-  const posts = getAllPosts().sort(sortPost);
+  const posts = getAllProjects().sort(sortProject);
 
   return <ProjectsComponent posts={posts} />;
 }

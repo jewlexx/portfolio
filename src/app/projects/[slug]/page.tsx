@@ -8,7 +8,7 @@ import PubDate from "$/components/PubDate";
 import Shield from "$/components/Shield";
 import IconLink from "$/components/IconLink";
 import { twitterConfiguration } from "$/consts";
-import { getPostBySlug } from "$/content/posts";
+import { getProjectBySlug } from "$/content/projects";
 import markdownToHtml from "$/content/markdown";
 
 import "$/styles/project.scss";
@@ -18,7 +18,7 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const post = getPostBySlug(params.slug);
+  const post = getProjectBySlug(params.slug);
 
   if (!post) {
     return {};
@@ -48,7 +48,7 @@ export async function generateMetadata({
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug);
+  const post = getProjectBySlug(params.slug);
 
   if (!post) {
     return notFound();
