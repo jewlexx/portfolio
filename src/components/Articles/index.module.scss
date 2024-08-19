@@ -1,0 +1,43 @@
+@use "$/styles/mixins";
+
+.list {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 1rem;
+
+  list-style-type: none;
+}
+
+.article {
+  padding: 1rem;
+  gap: 0.5rem;
+
+  @include mixins.glassmorphism();
+
+  transition: 0.2s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  img {
+    border-radius: 12px;
+  }
+}
+
+.articleInfo {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  time {
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+  }
+}
