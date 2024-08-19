@@ -18,17 +18,17 @@ const nextConfig = {
     ],
   },
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+  experimental: {
+    outputFileTracingIncludes: {
+      "/api/anybrowser": ["./src/assets/images/anybrowser/*"],
+    },
+  },
 };
 
 const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
-  },
-  experimental: {
-    outputFileTracingIncludes: {
-      "/api/anybrowser": ["./src/assets/images/anybrowser/*"],
-    },
   },
 });
 
