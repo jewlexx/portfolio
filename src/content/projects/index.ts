@@ -37,9 +37,22 @@ export function getProjectSlugs() {
     .filter((file) => file.endsWith(".md"));
 }
 
-export function getProjectBySlug(slug: string): ProjectInfo {
+export function getProjectBySlug(slug: string): ProjectInfo | null {
+  try {
+    return getProjectBySlugInner(slug);
+  } catch (e) {
+    return null;
+  }
+}
+
+function getProjectBySlugInner(slug: string): ProjectInfo | null {
   const realSlug = slug.replace(/\.md$/, "");
   const fullPath = join(projectsDirectory, `${realSlug}.md`);
+
+  if (!fs.existsSync(fullPath)) {
+    return null;
+  }
+
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
@@ -52,10 +65,11 @@ export function getProjectBySlug(slug: string): ProjectInfo {
 
 export function getAllProjects() {
   const slugs = getProjectSlugs();
-  const projects = slugs
+
+  return slugs
     .map((slug) => getProjectBySlug(slug))
+    .filter((project) => project !== null)
     .sort(sortProject);
-  return projects;
 }
 
 export function sortProject(a: ProjectInfo, b: ProjectInfo) {
