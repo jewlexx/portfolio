@@ -13,7 +13,7 @@ export const twitterConfiguration: Metadata["twitter"] = {
   site: "https://cordor.dev",
 };
 
-export const siteUrl =
+export const BASE_URL =
   process.env.NODE_ENV === "production"
     ? "https://cordor.dev"
     : "http://localhost:3000";
