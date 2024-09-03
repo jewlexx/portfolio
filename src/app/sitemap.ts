@@ -25,13 +25,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly",
       priority: 0.5,
     },
-    ...generateProjectsSitemap(),
+    ...generateProjectsSitemap(projects),
   ];
 }
 
-function generateProjectsSitemap(): MetadataRoute.Sitemap {
-  const projects = getAllProjects();
-
+function generateProjectsSitemap(
+  projects: ProjectInfo[]
+): MetadataRoute.Sitemap {
   return projects.map((project) => ({
     url: `${BASE_URL}/projects/${project.slug}`,
     lastModified: new Date(project.pubDate),
