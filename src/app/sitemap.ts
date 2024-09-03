@@ -1,11 +1,9 @@
 import type { MetadataRoute } from "next";
 
-import { getAllProjects } from "$/content/projects";
+import { getAllProjects, ProjectInfo } from "$/content/projects";
 import { BASE_URL } from "$/consts";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const projects = getAllProjects();
-
   return [
     {
       url: BASE_URL,
@@ -25,7 +23,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly",
       priority: 0.5,
     },
-    ...generateProjectsSitemap(projects),
+    ...generateProjectsSitemap(getAllProjects()),
   ];
 }
 
