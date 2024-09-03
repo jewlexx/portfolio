@@ -3,9 +3,9 @@
 import Image from "next/image";
 import { IBM_Plex_Mono } from "next/font/google";
 
-import "$/styles/error.scss";
 import { ProgressBarLink } from "$/components/ProgressBar";
 import { usePathname } from "next/navigation";
+import "$/styles/error.scss";
 
 const ibmPlexMono = IBM_Plex_Mono({ weight: "400", subsets: ["latin"] });
 
