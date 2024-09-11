@@ -4,13 +4,13 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import Header from "$/components/Header";
 import { twitterConfiguration } from "$/consts";
-import Footer from "$/components/Footer";
 import Stars from "$/components/Stars";
 import { ProgressBar } from "$/components/ProgressBar";
 
 import styles from "./layout.module.scss";
 
 import "$/styles/global.scss";
+import { showStars } from "$/flags";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,18 +37,20 @@ export const metadata: Metadata = {
   twitter: twitterConfiguration,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const shouldShowStars = await showStars();
+
   return (
     <html lang="en">
       <body className={inter.className}>
         <ProgressBar className={styles.progress}>
           <Header title="Juliette Cordor" />
           {children}
-          <Stars />
+          {shouldShowStars && <Stars />}
           <SpeedInsights />
         </ProgressBar>
       </body>
