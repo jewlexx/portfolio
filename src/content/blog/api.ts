@@ -37,6 +37,9 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
   return fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
     {
+      next: {
+        tags: ["posts"],
+      },
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -47,7 +50,6 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
         }`,
       },
       body: JSON.stringify({ query }),
-      next: { tags: ["posts"] },
     }
   ).then((response) => response.json());
 }
