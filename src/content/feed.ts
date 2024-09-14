@@ -56,8 +56,6 @@ export function projectItem(project: ProjectInfo): RSS.ItemOptions {
 }
 
 export function blogItem(post: IBlogPostFields): RSS.ItemOptions {
-  console.log(post.author);
-
   return {
     title: post.title,
     description: post.excerpt ?? "",
