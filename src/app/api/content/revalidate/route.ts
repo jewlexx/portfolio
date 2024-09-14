@@ -6,7 +6,7 @@ export async function POST(request: Request) {
   const headers = request.headers;
   const secret = headers.get("ContentfulWebhookSecret");
 
-  if (secret === process.env.CONTENTFUL_ACCESS_TOKEN) {
+  if (secret === process.env.CONTENTFUL_WEBHOOKS_SECRET) {
     revalidateTag("posts");
     return new Response(null, {
       status: 200,
