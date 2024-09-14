@@ -1,6 +1,9 @@
-import { unstable_flag as flag } from "@vercel/flags/next";
+import { flag } from "./flags/handler";
 
 export const showStars = flag({
+  flagDisabled: {
+    flagDefaultValue: false,
+  },
   key: "show-stars",
   defaultValue: false,
   decide(params) {
