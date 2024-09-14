@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 import Header from "$/components/Header";
 import { twitterConfiguration } from "$/consts";
@@ -53,6 +54,7 @@ export default async function RootLayout({
           {children}
           {shouldShowStars && <Stars />}
           <SpeedInsights />
+          <Analytics />
         </ProgressBar>
       </body>
     </html>
