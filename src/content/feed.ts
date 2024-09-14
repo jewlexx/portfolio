@@ -1,16 +1,21 @@
 import RSS, { type FeedOptions } from "rss";
 import { getAllProjects, type ProjectInfo } from "./projects";
 import { BASE_URL } from "$/consts";
+import { getAllPosts } from "./blog/api";
+import { IBlogPostFields } from "./blog/types";
 
 interface RSSOPtions {
   projects?: boolean;
+  blog?: boolean;
 }
 
-export function generateRssFeed(): RSS;
+export async function generateRssFeed(): Promise<RSS>;
 
-export function generateRssFeed(rssOptions: RSSOPtions): RSS;
+export async function generateRssFeed(rssOptions: RSSOPtions): Promise<RSS>;
 
-export function generateRssFeed(rssOptions: RSSOPtions = { projects: true }) {
+export async function generateRssFeed(
+  rssOptions: RSSOPtions = { projects: true }
+) {
   const feedOptions: FeedOptions = {
     title: "Juliette Cordor's Portfolio | RSS Feed",
     feed_url: `${BASE_URL}/rss.xml`,
@@ -28,6 +33,14 @@ export function generateRssFeed(rssOptions: RSSOPtions = { projects: true }) {
     });
   }
 
+  if (rssOptions.blog ?? true) {
+    const blogPosts = await getAllPosts();
+
+    blogPosts.forEach((post) => {
+      feed.item(blogItem(post));
+    });
+  }
+
   return feed;
 }
 
@@ -39,5 +52,16 @@ export function projectItem(project: ProjectInfo): RSS.ItemOptions {
     date: new Date(project.pubDate!),
     guid: project.slug,
     author: "Juliette Cordor",
+  };
+}
+
+export function blogItem(post: IBlogPostFields): RSS.ItemOptions {
+  return {
+    title: post.title,
+    description: post.excerpt ?? "",
+    url: `${BASE_URL}/blog/${post.slug}`,
+    date: new Date(post.date),
+    guid: post.slug,
+    author: (post.author.fields as any).name,
   };
 }
