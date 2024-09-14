@@ -1,7 +1,8 @@
+import { type NextRequest } from "next/server";
 import { ImageResponse } from "next/og";
 import WomanTechnologist from "$/assets/images/emojis/woman-technologist.svg";
 
-export async function GET(request: Request) {
+export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
 
