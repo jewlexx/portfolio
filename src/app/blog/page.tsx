@@ -3,6 +3,8 @@ import Articles from "$/components/Articles";
 
 import styles from "./page.module.scss";
 
+export const revalidate = 60;
+
 export default async function Blog() {
   const articles = await getAllPosts();
 

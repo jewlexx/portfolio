@@ -1,5 +1,7 @@
 import { generateRssFeed } from "$/content/feed";
 
+export const revalidate = 60;
+
 export async function GET() {
   const feed = await generateRssFeed();
 

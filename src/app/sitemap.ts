@@ -5,6 +5,8 @@ import { BASE_URL } from "$/consts";
 import { IBlogPostFields } from "$/content/blog/types";
 import { getAllPosts } from "$/content/blog/api";
 
+export const revalidate = 60;
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     {
