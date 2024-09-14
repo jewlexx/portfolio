@@ -13,7 +13,6 @@ import markdownToHtml from "$/content/markdown";
 import "$/styles/project.scss";
 
 export function generateStaticParams() {
-  console.log(getProjectSlugs());
   return getProjectSlugs().map((slug) => ({ slug }));
 }
 
