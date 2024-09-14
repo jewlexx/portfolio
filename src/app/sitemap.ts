@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 
 import { getAllProjects, ProjectInfo } from "$/content/projects";
 import { BASE_URL } from "$/consts";
+import { IBlogPostFields } from "$/content/blog/types";
+import { getAllPosts } from "$/content/blog/api";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
@@ -24,6 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.5,
     },
     ...generateProjectsSitemap(getAllProjects()),
+    ...generateBlogSitemap(await getAllPosts()),
   ];
 }
 
@@ -33,6 +36,17 @@ function generateProjectsSitemap(
   return projects.map((project) => ({
     url: `${BASE_URL}/projects/${project.slug}`,
     lastModified: new Date(project.pubDate),
+    changeFrequency: "yearly",
+    priority: 0.3,
+  }));
+}
+
+function generateBlogSitemap(
+  blogPosts: IBlogPostFields[]
+): MetadataRoute.Sitemap {
+  return blogPosts.map((post) => ({
+    url: `${BASE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
     changeFrequency: "yearly",
     priority: 0.3,
   }));

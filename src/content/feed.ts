@@ -14,7 +14,7 @@ export async function generateRssFeed(): Promise<RSS>;
 export async function generateRssFeed(rssOptions: RSSOPtions): Promise<RSS>;
 
 export async function generateRssFeed(
-  rssOptions: RSSOPtions = { projects: true }
+  rssOptions: RSSOPtions = { projects: true, blog: true }
 ) {
   const feedOptions: FeedOptions = {
     title: "Juliette Cordor's Portfolio | RSS Feed",
