@@ -48,12 +48,6 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Script
-          defer
-          data-domain="cordor.dev"
-          src="https://plausible.io/js/script.file-downloads.hash.outbound-links.js"
-        />
-
         <ProgressBar className={styles.progress}>
           <Header title="Juliette Cordor" />
           {children}
