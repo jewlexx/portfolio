@@ -14,18 +14,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
-      url: `${BASE_URL}/blog`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    {
       url: `${BASE_URL}/projects`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.5,
     },
     ...generateProjectsSitemap(getAllProjects()),
+    {
+      url: `${BASE_URL}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
     ...generateBlogSitemap(await getAllPosts()),
   ];
 }
