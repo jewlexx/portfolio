@@ -8,7 +8,11 @@ export interface IAuthorFields {
   name: string;
 
   /** Picture */
-  picture: Asset;
+  picture: Picture;
+}
+
+export interface Picture {
+  url: string;
 }
 
 export interface IAuthor extends Entry<IAuthorFields> {
@@ -42,7 +46,7 @@ export interface IBlogPostFields {
   date: string;
 
   /** Author */
-  author: Entry<IAuthorFields>;
+  author: IAuthorFields;
 
   /** Excerpt */
   excerpt?: string | undefined;

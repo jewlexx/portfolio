@@ -56,12 +56,14 @@ export function projectItem(project: ProjectInfo): RSS.ItemOptions {
 }
 
 export function blogItem(post: IBlogPostFields): RSS.ItemOptions {
+  console.log(post.author);
+
   return {
     title: post.title,
     description: post.excerpt ?? "",
     url: `${BASE_URL}/blog/${post.slug}`,
     date: new Date(post.date),
     guid: post.slug,
-    author: (post.author.fields as any).name,
+    author: post.author.name,
   };
 }
