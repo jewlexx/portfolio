@@ -1,5 +1,4 @@
 import { type Metadata } from "next";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { IconBrandGit, IconLink as LinkIcon } from "@tabler/icons-react";
