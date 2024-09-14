@@ -1,7 +1,7 @@
 import { generateRssFeed } from "$/content/feed";
 
-export function GET(request: Request) {
-  const feed = generateRssFeed();
+export async function GET() {
+  const feed = await generateRssFeed();
 
   return new Response(feed.xml({ indent: true }), {
     headers: {
