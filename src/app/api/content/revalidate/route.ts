@@ -8,5 +8,12 @@ export async function POST(request: Request) {
 
   if (secret === process.env.CONTENTFUL_ACCESS_TOKEN) {
     revalidateTag("posts");
+    return new Response(null, {
+      status: 200,
+    });
+  } else {
+    return new Response(null, {
+      status: 401,
+    });
   }
 }
