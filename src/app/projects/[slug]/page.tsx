@@ -7,10 +7,15 @@ import PubDate from "$/components/PubDate";
 import Shield from "$/components/Shield";
 import IconLink from "$/components/IconLink";
 import { twitterConfiguration } from "$/consts";
-import { getProjectBySlug } from "$/content/projects";
+import { getProjectBySlug, getProjectSlugs } from "$/content/projects";
 import markdownToHtml from "$/content/markdown";
 
 import "$/styles/project.scss";
+
+export function generateStaticParams() {
+  console.log(getProjectSlugs());
+  return getProjectSlugs().map((slug) => ({ slug }));
+}
 
 export async function generateMetadata({
   params,

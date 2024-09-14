@@ -34,7 +34,8 @@ export interface ProjectInfo extends Metadata {
 export function getProjectSlugs() {
   return fs
     .readdirSync(projectsDirectory)
-    .filter((file) => file.endsWith(".md"));
+    .filter((file) => file.endsWith(".md"))
+    .map((file) => file.replace(".md", ""));
 }
 
 export function getProjectBySlug(slug: string): ProjectInfo | null {
@@ -46,8 +47,7 @@ export function getProjectBySlug(slug: string): ProjectInfo | null {
 }
 
 function getProjectBySlugInner(slug: string): ProjectInfo | null {
-  const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(projectsDirectory, `${realSlug}.md`);
+  const fullPath = join(projectsDirectory, `${slug}.md`);
 
   if (!fs.existsSync(fullPath)) {
     return null;
@@ -58,7 +58,7 @@ function getProjectBySlugInner(slug: string): ProjectInfo | null {
 
   return {
     ...(data as Metadata),
-    slug: realSlug,
+    slug,
     content,
   };
 }
