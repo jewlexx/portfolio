@@ -13,10 +13,11 @@ interface FlagHandlerParams<T> extends FlagDeclaration<T> {
 
 export function flag<T extends JsonValue>(
   declaration: FlagHandlerParams<T>
-): Flag<T> | Promise<T> {
+): Flag<T> | (() => Promise<T>) {
   if (!declaration.flagDisabled) {
     return unstable_flag<T>(declaration);
   } else {
-    return Promise.resolve(declaration.flagDisabled.flagDefaultValue);
+    const defaultValue = declaration.flagDisabled.flagDefaultValue;
+    return () => Promise.resolve(defaultValue);
   }
 }
