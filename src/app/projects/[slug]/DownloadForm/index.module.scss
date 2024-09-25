@@ -7,12 +7,12 @@
   text-align: center;
   gap: 0.5rem;
 
-  color: black;
+  color: white;
 
   padding: 0.5rem;
 
-  background-color: #aa44e6;
-  border: 1px solid rgba(255, 255, 255, 0.29);
+  // background-color: #aa44e6;
+  // border: 1px solid rgba(255, 255, 255, 0.29);
 
   margin: 0 1rem;
 
@@ -30,8 +30,9 @@
 
   select {
     border: none;
-    background-color: transparent;
+    background-color: white;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
     font-weight: bold;
-    padding: 0px;
   }
 }
