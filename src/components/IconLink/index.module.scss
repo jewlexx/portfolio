@@ -90,6 +90,10 @@
     @include button-colours($green);
   }
 
+  &:nth-of-type(5) {
+    @include button-colours(darken($orange, 10%));
+  }
+
   &.disabled {
     box-shadow: 0px 0px 5px #000 inset;
     background-color: darken($gray, 40%);
