@@ -18,6 +18,12 @@ export interface Metadata {
   shields?: Shield[];
   toy?: boolean;
   hideHero?: boolean;
+  download?: Download;
+}
+
+export interface Download {
+  src: "github";
+  infoExtractor: RegExp;
 }
 
 export interface Shield {
