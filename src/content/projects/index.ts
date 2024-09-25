@@ -1,6 +1,7 @@
 import fs from "fs";
 import { join } from "path";
 
+import { match } from "ts-pattern";
 import matter from "gray-matter";
 
 const projectsDirectory = join(process.cwd(), "src/content/projects");
@@ -61,6 +62,37 @@ function getProjectBySlugInner(slug: string): ProjectInfo | null {
 
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
+
+  if (data.repo) {
+    const repo: string = data.repo;
+
+    const repoUrl = match(repo)
+      .when(
+        (repo) => repo.startsWith("http://"),
+        () => repo.replace("http://", "https://")
+      )
+      .when(
+        (repo) => repo.startsWith("https://"),
+        () => repo
+      )
+      .when(
+        (repo) => /^[a-zA-Z0-9\-_\.]+\/[a-zA-Z0-9\-_\.]+$/.test(repo),
+        () => `https://github.com/${repo}`
+      )
+      .when(
+        (repo) => /^[a-zA-Z0-9\-_\.]+$/.test(repo),
+        () => `https://github.com/jewlexx/${repo}`
+      )
+      .otherwise(() => null);
+
+    if (repoUrl) {
+      data.repo = repoUrl;
+    } else {
+      throw new Error(`Invalid repo url for ${slug}`);
+    }
+
+    data.repo = repoUrl;
+  }
 
   return {
     ...(data as Metadata),
