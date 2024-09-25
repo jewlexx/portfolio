@@ -1,30 +1,13 @@
-import { getProjectBySlug } from "$/content/projects";
 import { NextRequest } from "next/server";
-import { match } from "ts-pattern";
-
-enum Arch {
-  x64 = "x86_64",
-  x86 = "i686",
-  arm64 = "aarch64",
-}
-
-function getArch(arch: string): Arch | null {
-  return match(arch)
-    .with("x64", () => Arch.x64)
-    .with("x86_64", () => Arch.x64)
-    .with("x86", () => Arch.x86)
-    .with("i686", () => Arch.x86)
-    .with("arm64", () => Arch.arm64)
-    .with("aarch64", () => Arch.arm64)
-    .otherwise(() => null);
-}
+import { getProjectBySlug } from "$/content/projects";
+import { parseArch } from "$/arch";
 
 export function GET(
   request: NextRequest,
   { params }: { params: { slug: string } }
 ) {
   const searchParams = request.nextUrl.searchParams;
-  const arch = getArch(searchParams.get("arch") ?? "");
+  const arch = parseArch(searchParams.get("arch") ?? "");
 
   if (!arch) {
     return Response.json(
