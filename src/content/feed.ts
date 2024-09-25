@@ -28,13 +28,15 @@ export async function generateRssFeed(
   const feed = new RSS(feedOptions);
 
   if (rssOptions.projects ?? true) {
-    getAllProjects().forEach((post) => {
+    const projects = getAllProjects() ?? [];
+
+    projects.forEach((post) => {
       feed.item(projectItem(post));
     });
   }
 
   if (rssOptions.blog ?? true) {
-    const blogPosts = await getAllPosts();
+    const blogPosts = (await getAllPosts()) ?? [];
 
     blogPosts.forEach((post) => {
       feed.item(blogItem(post));
