@@ -3,7 +3,9 @@ import { getProjectBySlug, getProjectSlugs } from "$/content/projects";
 import { parseArch } from "$/arch";
 
 export function generateStaticParams() {
-  return getProjectSlugs().map((slug) => ({ slug }));
+  return getProjectSlugs()
+    .filter((slug) => getProjectBySlug(slug)?.download)
+    .map((slug) => ({ slug }));
 }
 
 export function GET(
