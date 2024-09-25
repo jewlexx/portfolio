@@ -40,7 +40,14 @@ export function GET(
   if (download.src === "github") {
   }
 
-  return new Response(null, {
-    status: 200,
-  });
+  return Response.json(
+    {
+      error: "Project had invalid or missing download reference",
+      project: slug,
+    },
+    {
+      status: 400,
+      statusText: "Bad Request",
+    }
+  );
 }
