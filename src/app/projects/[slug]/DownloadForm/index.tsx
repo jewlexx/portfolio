@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { IconDownload } from "@tabler/icons-react";
-import { Arch } from "$/arch";
+import { Arch, getArchName, getOsName } from "$/arch";
 import { ProjectInfo } from "$/content/projects";
 import IconLink from "$/components/IconLink";
 
@@ -20,12 +20,16 @@ export default function DownloadForm({ post }: { post: ProjectInfo }) {
     <div className={styles.container}>
       <p>Download</p>
       <select name="os">
-        <option>Windows</option>
+        {download.os.map((os) => (
+          <option key={os} value={os}>
+            {getOsName(os)}
+          </option>
+        ))}
       </select>
       <select name="arch" onChange={(e) => setArch(e.target.value as Arch)}>
-        {Object.values(Arch).map((arch) => (
+        {download.arch.map((arch) => (
           <option key={arch} value={arch}>
-            {arch}
+            {getArchName(arch)}
           </option>
         ))}
       </select>

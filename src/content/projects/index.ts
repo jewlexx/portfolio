@@ -3,6 +3,7 @@ import { join } from "path";
 
 import { match } from "ts-pattern";
 import matter from "gray-matter";
+import { Arch, Os, parseArch, parseOs } from "$/arch";
 
 const projectsDirectory = join(process.cwd(), "src/content/projects");
 
@@ -25,6 +26,8 @@ export interface Metadata {
 export interface Download {
   src: "github";
   infoExtractor: RegExp;
+  arch: Arch[];
+  os: Os[];
 }
 
 export interface Shield {
@@ -92,6 +95,19 @@ function getProjectBySlugInner(slug: string): ProjectInfo | null {
     }
 
     data.repo = repoUrl;
+  }
+
+  if (data.download) {
+    const download = data.download;
+
+    if (download.arch) {
+      download.arch = download.arch.map((arch: string) => parseArch(arch));
+    }
+    if (download.os) {
+      download.os = download.os.map((os: string) => parseOs(os));
+    }
+
+    data.download = download;
   }
 
   return {

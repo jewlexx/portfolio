@@ -17,6 +17,14 @@ export function parseArch(arch: string): Arch | null {
     .otherwise(() => null);
 }
 
+export function getArchName(arch: Arch): string {
+  return match(arch)
+    .with(Arch.x64, () => "x64")
+    .with(Arch.x86, () => "x86")
+    .with(Arch.arm64, () => "arm64")
+    .exhaustive();
+}
+
 export enum Os {
   Windows = "windows",
   Linux = "linux",
@@ -29,4 +37,12 @@ export function parseOs(os: string): Os | null {
     .with("linux", () => Os.Linux)
     .with("macos", () => Os.MacOS)
     .otherwise(() => null);
+}
+
+export function getOsName(os: Os): string {
+  return match(os)
+    .with(Os.Windows, () => "Windows")
+    .with(Os.Linux, () => "Linux")
+    .with(Os.MacOS, () => "MacOS")
+    .exhaustive();
 }
