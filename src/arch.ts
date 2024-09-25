@@ -16,3 +16,17 @@ export function parseArch(arch: string): Arch | null {
     .with("aarch64", () => Arch.arm64)
     .otherwise(() => null);
 }
+
+export enum Os {
+  Windows = "windows",
+  Linux = "linux",
+  MacOS = "macos",
+}
+
+export function parseOs(os: string): Os | null {
+  return match(os)
+    .with("windows", () => Os.Windows)
+    .with("linux", () => Os.Linux)
+    .with("macos", () => Os.MacOS)
+    .otherwise(() => null);
+}

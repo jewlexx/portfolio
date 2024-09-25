@@ -11,6 +11,7 @@ import { getProjectBySlug, getProjectSlugs } from "$/content/projects";
 import markdownToHtml from "$/content/markdown";
 
 import "$/styles/project.scss";
+import DownloadForm from "./DownloadForm";
 
 export function generateStaticParams() {
   return getProjectSlugs().map((slug) => ({ slug }));
@@ -117,6 +118,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             {homepage && (
               <IconLink url={homepage} icon={LinkIcon} title="Homepage link" />
             )}
+            <DownloadForm post={post} />
           </span>
           <hr />
         </div>
