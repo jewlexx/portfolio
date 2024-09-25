@@ -24,7 +24,7 @@
     "@vercel/speed-insights": "^1.0.12",
     "contentful": "^11.0.0",
     "contentful-import": "^9.4.58",
-    "date-fns": "^3.6.0",
+    "date-fns": "^4.0.0",
     "fast-glob": "^3.3.2",
     "framer-motion": "^11.3.28",
     "gray-matter": "^4.0.3",
