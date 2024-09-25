@@ -1,10 +1,14 @@
 import { NextRequest } from "next/server";
-import { getProjectBySlug } from "$/content/projects";
+import { getProjectBySlug, getProjectSlugs } from "$/content/projects";
 import { parseArch } from "$/arch";
+
+export function generateStaticParams() {
+  return getProjectSlugs().map((slug) => ({ slug }));
+}
 
 export function GET(
   request: NextRequest,
-  { params }: { params: { slug: string } }
+  { params: { slug } }: { params: { slug: string } }
 ) {
   const searchParams = request.nextUrl.searchParams;
   const arch = parseArch(searchParams.get("arch") ?? "");
@@ -21,9 +25,7 @@ export function GET(
     );
   }
 
-  const { slug } = params;
-
-  const post = getProjectBySlug(params.slug);
+  const post = getProjectBySlug(slug);
 
   if (!post) {
     return Response.json(
