@@ -18,6 +18,15 @@ shields:
     src: https://img.shields.io/github/license/winpax/sfsu
   - alt: Scoop version (extras bucket)
     src: https://img.shields.io/scoop/v/sfsu?bucket=extras
+download:
+  src: github
+  infoExtractor: /sfsu-(?<arch>.+).exe/
+  os:
+    - windows
+  arch:
+    - x64
+    - x86
+    - arm64
 ---
 
 Super **⚡ fast ⚡** replacements and additions to [Scoop](https://scoop.sh) commands written in the [Rust programming language](https://www.rust-lang.org/).

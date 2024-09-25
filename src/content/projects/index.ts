@@ -1,7 +1,9 @@
 import fs from "fs";
 import { join } from "path";
 
+import { match } from "ts-pattern";
 import matter from "gray-matter";
+import { Arch, Os, parseArch, parseOs } from "$/arch";
 
 const projectsDirectory = join(process.cwd(), "src/content/projects");
 
@@ -18,6 +20,14 @@ export interface Metadata {
   shields?: Shield[];
   toy?: boolean;
   hideHero?: boolean;
+  download?: Download;
+}
+
+export interface Download {
+  src: "github";
+  infoExtractor: RegExp;
+  arch: Arch[];
+  os: Os[];
 }
 
 export interface Shield {
@@ -55,6 +65,50 @@ function getProjectBySlugInner(slug: string): ProjectInfo | null {
 
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
+
+  if (data.repo) {
+    const repo: string = data.repo;
+
+    const repoUrl = match(repo)
+      .when(
+        (repo) => repo.startsWith("http://"),
+        () => repo.replace("http://", "https://")
+      )
+      .when(
+        (repo) => repo.startsWith("https://"),
+        () => repo
+      )
+      .when(
+        (repo) => /^[a-zA-Z0-9\-_\.]+\/[a-zA-Z0-9\-_\.]+$/.test(repo),
+        () => `https://github.com/${repo}`
+      )
+      .when(
+        (repo) => /^[a-zA-Z0-9\-_\.]+$/.test(repo),
+        () => `https://github.com/jewlexx/${repo}`
+      )
+      .otherwise(() => null);
+
+    if (repoUrl) {
+      data.repo = repoUrl;
+    } else {
+      throw new Error(`Invalid repo url for ${slug}`);
+    }
+
+    data.repo = repoUrl;
+  }
+
+  if (data.download) {
+    const download = data.download;
+
+    if (download.arch) {
+      download.arch = download.arch.map((arch: string) => parseArch(arch));
+    }
+    if (download.os) {
+      download.os = download.os.map((os: string) => parseOs(os));
+    }
+
+    data.download = download;
+  }
 
   return {
     ...(data as Metadata),
