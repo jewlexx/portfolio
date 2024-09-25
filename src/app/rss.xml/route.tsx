@@ -7,7 +7,7 @@ export async function GET() {
 
   return new Response(feed.xml({ indent: true }), {
     headers: {
-      "Content-Type": "application/rss+xml",
+      "Content-Type": "application/xml",
       "Cache-Control": "public, max-age=3600",
     },
   });

@@ -4,6 +4,8 @@ import {
   IconBrandTwitch,
   IconBrandGithub,
   IconBrandLinktree,
+  IconRss,
+  IconFileRss,
 } from "@tabler/icons-react";
 
 import Shrunk from "$/components/Shrunk";
@@ -41,7 +43,7 @@ export default function Header({ title }: Props) {
       <span className={styles.linksContainer}>
         <IconLink
           title="GitHub"
-          url="github.com/jewelexx"
+          url="github.com/jewlexx"
           icon={IconBrandGithub}
         />
         <IconLink
@@ -59,6 +61,7 @@ export default function Header({ title }: Props) {
           url="linktr.ee/jewelexx"
           icon={IconBrandLinktree}
         />
+        <IconLink title="RSS Feed" url="/rss.xml" icon={IconRss} />
       </span>
     </nav>
   );
