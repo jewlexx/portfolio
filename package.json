@@ -28,7 +28,7 @@
     "fast-glob": "^3.3.2",
     "framer-motion": "^11.3.28",
     "gray-matter": "^4.0.3",
-    "next": "14.2.14",
+    "next": "14.2.15",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "remark": "^15.0.1",
@@ -51,7 +51,7 @@
     "cssnano": "^7.0.5",
     "dotenv": "^16.4.5",
     "eslint": "^9.0.0",
-    "eslint-config-next": "14.2.14",
+    "eslint-config-next": "14.2.15",
     "postcss-preset-env": "^10.0.1",
     "sass": "^1.77.8",
     "typescript": "^5.5.4"
