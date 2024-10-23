@@ -1,7 +1,7 @@
 @use "../styles/mixins";
 @use "../styles/palette" as *;
 
-null.$w-s: 750px;
+$w-s: 750px;
 
 .stars {
   position: fixed;
