@@ -18,18 +18,18 @@ const nextConfig = {
     ],
   },
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
-  experimental: {
-    outputFileTracingIncludes: {
-      "/api/anybrowser": ["./src/assets/images/anybrowser/*"],
-    },
+  outputFileTracingIncludes: {
+    "/api/anybrowser": ["./src/assets/images/anybrowser/*"],
   },
 };
 
 const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
+    // remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
   },
 });
 
 export default withMDX(nextConfig);
+
+// export default nextConfig;
