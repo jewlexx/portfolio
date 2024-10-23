@@ -25,7 +25,7 @@ export default function HorizontalHero({ enabled, slug, src, ...rest }: Props) {
           }}
           initial={{ opacity: 0, scale: 0.99, x: -150 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
-          className={styles.container}
+          {...{ className: styles.container }}
         >
           {/* eslint-disable-next-line jsx-a11y/alt-text */}
           <Image src={src} {...rest} />
