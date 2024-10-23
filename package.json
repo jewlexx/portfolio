@@ -42,8 +42,8 @@
   "devDependencies": {
     "@types/bun": "^1.1.12",
     "@types/node": "^22.7.9",
-    "@types/react": "npm:types-react@19.0.0-alpha.3",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-alpha.3",
+    "@types/react": "19.0.0-alpha.3",
+    "@types/react-dom": "19.0.0-alpha.3",
     "@types/rss": "^0.0.32",
     "@types/twemoji-parser": "^13.1.4",
     "contentful-management": "^11.35.1",
