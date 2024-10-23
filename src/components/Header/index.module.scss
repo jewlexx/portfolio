@@ -1,6 +1,6 @@
-@use "$/styles/transitions";
-@use "$/styles/palette" as *;
-@use "$/styles/mixins";
+@use "../../styles/transitions";
+@use "../../styles/palette" as *;
+@use "../../styles/mixins";
 
 .nav {
   flex: 0 1 auto;
