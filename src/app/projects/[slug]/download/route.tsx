@@ -8,10 +8,13 @@ export function generateStaticParams() {
     .map((slug) => ({ slug }));
 }
 
-export function GET(
-  request: NextRequest,
-  { params: { slug } }: { params: { slug: string } }
-) {
+export async function GET(request: NextRequest, props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
+
+  const {
+    slug
+  } = params;
+
   const searchParams = request.nextUrl.searchParams;
   const arch = parseArch(searchParams.get("arch") ?? "");
 

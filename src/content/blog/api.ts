@@ -80,14 +80,14 @@ export async function getAllPosts(): Promise<IBlogPostFields[]> {
   const entries = await fetchGraphQL(
     `query {
       blogPostCollection(where: { slug_exists: true }, order: date_DESC, preview: ${
-        draftMode().isEnabled ? "true" : "false"
+        (await draftMode()).isEnabled ? "true" : "false"
       }) {
         items {
           ${POST_GRAPHQL_FIELDS}
         }
       }
     }`,
-    draftMode().isEnabled
+    (await draftMode()).isEnabled
   );
 
   return extractPostEntries(entries);
@@ -96,19 +96,19 @@ export async function getAllPosts(): Promise<IBlogPostFields[]> {
 export async function getPostBySlug(slug: string): Promise<IBlogPostFields> {
   const entry = await fetchGraphQL(
     `query {
-      blogPostCollection(where: { slug: "${slug}" }, preview: ${draftMode().isEnabled}, limit: 1) {
+      blogPostCollection(where: { slug: "${slug}" }, preview: ${(await draftMode()).isEnabled}, limit: 1) {
         items {
           ${POST_GRAPHQL_FIELDS}
         }
       }
     }`,
-    draftMode().isEnabled
+    (await draftMode()).isEnabled
   );
   return extractPost(entry);
 }
 
 export async function getPostAndMorePosts(slug: string): Promise<any> {
-  const preview = draftMode().isEnabled;
+  const preview = (await draftMode()).isEnabled;
   const post = await getPostBySlug(slug);
   const entries = await fetchGraphQL(
     `query {
