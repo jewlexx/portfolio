@@ -10,9 +10,9 @@
     "start": "next start"
   },
   "dependencies": {
-    "@contentful/node-apps-toolkit": "^3.9.0",
-    "@contentful/rich-text-react-renderer": "^15.22.11",
-    "@contentful/rich-text-types": "^16.8.5",
+    "@contentful/node-apps-toolkit": "^3.8.0",
+    "@contentful/rich-text-react-renderer": "^16.0.0",
+    "@contentful/rich-text-types": "^17.0.0",
     "@contentful/vercel-nextjs-toolkit": "^1.3.2",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
