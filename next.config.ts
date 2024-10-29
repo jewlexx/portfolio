@@ -1,9 +1,9 @@
 import createMDX from "@next/mdx";
-import remarkFrontmatter from "remark-frontmatter";
-import remarkMdxFrontmatter from "remark-mdx-frontmatter";
+import { type NextConfig } from "next";
+// import remarkFrontmatter from "remark-frontmatter";
+// import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
@@ -31,5 +31,3 @@ const withMDX = createMDX({
 });
 
 export default withMDX(nextConfig);
-
-// export default nextConfig;
