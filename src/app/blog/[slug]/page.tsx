@@ -5,7 +5,8 @@ import Date from "$/components/Date";
 
 // import styles from "./page.module.scss";
 
-export default async function Blog({ params }: { params: { slug: string } }) {
+export default async function Blog(props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const post = await getPostBySlug(params.slug);
   const content = documentToReactComponents(post.content.json);
 

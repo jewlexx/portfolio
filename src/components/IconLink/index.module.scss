@@ -1,6 +1,7 @@
-@use "$/styles/transitions";
-@use "$/styles/palette" as *;
-@use "$/styles/mixins";
+@use "sass:color";
+@use "../../styles/transitions";
+@use "../../styles/palette" as *;
+@use "../../styles/mixins";
 
 .link {
   text-decoration: none;
@@ -59,11 +60,11 @@
   }
 
   &:nth-of-type(5) {
-    @include mixins.button-colours(darken($orange, 10%));
+    @include mixins.button-colours(color.adjust($orange, $lightness: -10%));
   }
 
   &.disabled {
     box-shadow: 0px 0px 5px #000 inset;
-    background-color: darken($gray, 40%);
+    background-color: color.adjust($gray, $lightness: -40%);
   }
 }

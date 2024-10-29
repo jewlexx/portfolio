@@ -1,5 +1,6 @@
-@use "$/styles/mixins";
-@use "$/styles/palette" as *;
+@use "sass:color";
+@use "mixins";
+@use "palette" as *;
 
 // Base
 
@@ -84,7 +85,7 @@ img {
 a {
   color: $t-active;
   &:hover {
-    color: lighten($t-active, 10%);
+    color: color.adjust($t-active, $lightness: 10%);
   }
 }
 

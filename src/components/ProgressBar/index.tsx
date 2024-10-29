@@ -52,7 +52,7 @@ export function ProgressBar({
           <motion.div
             style={{ width: width }}
             exit={{ opacity: 0 }}
-            className={className}
+            {...{ className }}
           />
         )}
       </AnimatePresence>

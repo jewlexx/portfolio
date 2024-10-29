@@ -1,5 +1,6 @@
-@use "$/styles/transitions";
-@use "$/styles/mixins";
+@use "sass:color";
+@use "transitions";
+@use "mixins";
 
 main {
   width: calc(100% - 2em);
@@ -30,7 +31,7 @@ li {
     // Original #282a2c
     background-color: #d7d5d3;
     border-radius: 5px;
-    box-shadow: inset 0px 0px 2px lighten(#d7d5d3, 10%);
+    box-shadow: inset 0px 0px 2px color.adjust(#d7d5d3, $lightness: 10%);
     padding: 0.2rem;
     filter: invert(1);
     @include transitions.springy-transform(500ms);
