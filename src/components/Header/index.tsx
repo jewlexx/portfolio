@@ -3,9 +3,9 @@ import Image from "next/image";
 import Shrunk from "$/components/Shrunk";
 import HeaderLink from "$/components/HeaderLink";
 import IconLink from "$/components/IconLink";
+import { ProgressBarLink } from "$/components/ProgressBar";
 import WomanTechnologist from "$/assets/images/emojis/woman-technologist.svg";
 import { links } from "$/links";
-import { ProgressBarLink } from "$/components/ProgressBar";
 
 import styles from "./index.module.scss";
 
