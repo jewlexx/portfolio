@@ -4,6 +4,7 @@ import {
   IconBrandLinktree,
   IconBrandTwitch,
   IconBrandTwitter,
+  IconBrandBluesky,
   IconRss,
 } from "@tabler/icons-react";
 
@@ -16,15 +17,21 @@ export const links: React.ComponentProps<typeof IconLink>[] = [
     icon: IconBrandGithub,
   },
   {
-    title: "Twitch",
-    url: "twitch.tv/digifem",
-    icon: IconBrandTwitch,
+    title: "Bluesky",
+    url: "bsky.app/profile/cordor.dev",
+    icon: IconBrandBluesky,
   },
   {
     title: "Twitter",
     url: "twitter.com/jewelexx",
     icon: IconBrandTwitter,
   },
+  {
+    title: "Twitch",
+    url: "twitch.tv/digifem",
+    icon: IconBrandTwitch,
+  },
+
   {
     title: "Linktree",
     url: "linktr.ee/jewelexx",
