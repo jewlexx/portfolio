@@ -35,7 +35,11 @@ export default function Header({ title }: Props) {
       </Shrunk>
       <span className={styles.linksContainer}>
         {links.map((linkProps) => (
-          <IconLink key={linkProps.title} {...linkProps} />
+          <IconLink
+            key={linkProps.title}
+            {...linkProps}
+            style={{ "--button-color": linkProps.color } as any}
+          />
         ))}
       </span>
     </nav>
