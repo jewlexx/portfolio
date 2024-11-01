@@ -5,7 +5,7 @@ import HeaderLink from "$/components/HeaderLink";
 import IconLink from "$/components/IconLink";
 import { ProgressBarLink } from "$/components/ProgressBar";
 import WomanTechnologist from "$/assets/images/emojis/woman-technologist.svg";
-import { links, linksAbridged } from "$/links";
+import { linksAbridged } from "$/links";
 
 import styles from "./index.module.scss";
 
