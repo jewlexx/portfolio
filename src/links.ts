@@ -13,8 +13,7 @@ import {
   purple,
   blue,
   green,
-  orange_lighter,
-  orange,
+  orange_lighter as rss_orange,
   bluesky_blue,
 } from "$/styles/_palette";
 
@@ -58,6 +57,6 @@ export const links: (React.ComponentProps<typeof IconLink> & {
     title: "RSS Feed",
     url: "/rss.xml",
     icon: IconRss,
-    color: orange,
+    color: rss_orange,
   },
 ];
