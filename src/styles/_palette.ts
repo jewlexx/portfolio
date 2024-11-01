@@ -2,6 +2,8 @@
 export const black = "#000000";
 export const dark_gray = "#0d0e0f";
 export const blue = "#46b4ff";
+// this one's free
+export const twitter_blue = "#1DA1F2";
 export const bluesky_blue = "rgb(16, 131, 254)";
 export const gray = "#90aab7";
 export const green = "#537e49";

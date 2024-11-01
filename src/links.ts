@@ -11,10 +11,10 @@ import {
 import {
   black,
   purple,
-  blue,
   green,
   orange_lighter as rss_orange,
   bluesky_blue,
+  twitter_blue,
 } from "$/styles/_palette";
 
 import type IconLink from "./components/IconLink";
@@ -38,7 +38,7 @@ export const links: (React.ComponentProps<typeof IconLink> & {
     title: "Twitter",
     url: "twitter.com/jewelexx",
     icon: IconBrandTwitter,
-    color: blue,
+    color: twitter_blue,
   },
   {
     title: "Twitch",
@@ -59,4 +59,11 @@ export const links: (React.ComponentProps<typeof IconLink> & {
     icon: IconRss,
     color: rss_orange,
   },
+];
+
+export const linksAbridged: typeof links = [
+  links[0],
+  links[1],
+  links[4],
+  links[5],
 ];

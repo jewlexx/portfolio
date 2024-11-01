@@ -5,7 +5,7 @@ import HeaderLink from "$/components/HeaderLink";
 import IconLink from "$/components/IconLink";
 import { ProgressBarLink } from "$/components/ProgressBar";
 import WomanTechnologist from "$/assets/images/emojis/woman-technologist.svg";
-import { links } from "$/links";
+import { links, linksAbridged } from "$/links";
 
 import styles from "./index.module.scss";
 
@@ -34,7 +34,7 @@ export default function Header({ title }: Props) {
         </HeaderLink>
       </Shrunk>
       <span className={styles.linksContainer}>
-        {links.map((linkProps) => (
+        {linksAbridged.map((linkProps) => (
           <IconLink
             key={linkProps.title}
             {...linkProps}
