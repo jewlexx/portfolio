@@ -22,6 +22,7 @@
     "@vercel/analytics": "^1.3.2",
     "@vercel/flags": "^2.6.2",
     "@vercel/speed-insights": "^1.0.14",
+    "babel-plugin-react-compiler": "^19.0.0-beta-6fc168f-20241025",
     "contentful": "^11.2.0",
     "contentful-import": "^9.4.63",
     "date-fns": "^4.1.0",
@@ -29,8 +30,8 @@
     "framer-motion": "^11.11.10",
     "gray-matter": "^4.0.3",
     "next": "15.0.2",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
+    "react": "19.0.0-rc-603e6108-20241029",
+    "react-dom": "19.0.0-rc-603e6108-20241029",
     "remark": "^15.0.1",
     "remark-frontmatter": "^5.0.0",
     "remark-html": "^16.0.1",
@@ -40,6 +41,7 @@
     "vfile": "^6.0.3"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.2.2",
     "@types/bun": "^1.1.12",
     "@types/node": "^22.8.4",
     "@types/react": "18.3.12",
@@ -52,13 +54,16 @@
     "dotenv": "^16.4.5",
     "eslint": "^9.13.0",
     "eslint-config-next": "15.0.2",
+    "eslint-plugin-react-compiler": "^19.0.0-beta-6fc168f-20241025",
     "postcss-preset-env": "^10.0.8",
     "sass": "^1.80.5",
     "typescript": "^5.6.3"
   },
   "overrides": {
     "wrap-ansi-cjs": "npm:wrap-ansi",
-    "string-width-cjs": "npm:string-width"
+    "string-width-cjs": "npm:string-width",
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc"
   },
   "trustedDependencies": [
     "@vercel/speed-insights"
