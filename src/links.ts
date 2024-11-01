@@ -61,9 +61,10 @@ export const links: (React.ComponentProps<typeof IconLink> & {
   },
 ];
 
+// Subset of links to be displayed in the header
 export const linksAbridged: typeof links = [
-  links[0],
-  links[1],
-  links[4],
-  links[5],
+  links.find((link) => link.title === "GitHub")!,
+  links.find((link) => link.title === "Bluesky")!,
+  links.find((link) => link.title === "Linktree")!,
+  links.find((link) => link.title === "RSS Feed")!,
 ];
