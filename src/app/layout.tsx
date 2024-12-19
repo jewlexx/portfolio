@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: "https://cordor.dev/api/og",
+        url: "https://cordor.dev/api/og?title=" + encodeURIComponent(title),
       },
     ],
     siteName: "Juliette Cordor's Portfolio",
