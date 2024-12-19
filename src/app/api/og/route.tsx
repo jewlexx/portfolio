@@ -8,9 +8,7 @@ export async function GET(request: NextRequest) {
 
     const imageUrl =
       searchParams.get("image") ?? `https://cordor.dev${WomanTechnologist.src}`;
-    const title = (
-      searchParams.get("title") ?? "Juliette Cordor's Portfolio"
-    ).slice(0, 100);
+    const title = searchParams.get("title")?.slice(0, 100);
     const backgroundColor = searchParams.get("backgroundColor") ?? "black";
     const backgroundEnabled =
       searchParams.get("backgroundEnabled") ?? "true" === "true";
@@ -48,20 +46,22 @@ export async function GET(request: NextRequest) {
               style={{ margin: "0 30px" }}
             />
           </div>
-          <div
-            style={{
-              fontSize: 60,
-              fontStyle: "normal",
-              letterSpacing: "-0.025em",
-              color: fontColor,
-              marginTop: 30,
-              padding: "0 120px",
-              lineHeight: 1.4,
-              whiteSpace: "pre-wrap",
-            }}
-          >
-            {title}
-          </div>
+          {title && (
+            <div
+              style={{
+                fontSize: 60,
+                fontStyle: "normal",
+                letterSpacing: "-0.025em",
+                color: fontColor,
+                marginTop: 30,
+                padding: "0 120px",
+                lineHeight: 1.4,
+                whiteSpace: "pre-wrap",
+              }}
+            >
+              {title}
+            </div>
+          )}
         </div>
       ),
       {
