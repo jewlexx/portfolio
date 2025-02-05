@@ -1,21 +1,17 @@
-import { type JsonValue } from "@vercel/flags";
-import {
-  type Flag,
-  type FlagDeclaration,
-  unstable_flag,
-} from "@vercel/flags/next";
+import { type FlagDeclaration, type JsonValue } from "@vercel/flags";
+import { type Flag, flag as vercelFlag } from "@vercel/flags/next";
 
-interface FlagHandlerParams<T> extends FlagDeclaration<T> {
+type FlagHandlerParams<T> = {
   flagDisabled?: {
     flagDefaultValue: T;
   };
-}
+} & FlagDeclaration<T, any>;
 
 export function flag<T extends JsonValue>(
   declaration: FlagHandlerParams<T>
 ): Flag<T> | (() => Promise<T>) {
   if (!declaration.flagDisabled) {
-    return unstable_flag<T>(declaration);
+    return vercelFlag<T>(declaration);
   } else {
     const defaultValue = declaration.flagDisabled.flagDefaultValue;
     return () => Promise.resolve(defaultValue);
