@@ -15,38 +15,38 @@ export const links: React.ComponentProps<typeof IconLink>[] = [
     title: "GitHub",
     url: "github.com/jewlexx",
     icon: IconBrandGithub,
-    colorKey: "black",
+    className: "bg-black",
   },
   {
     title: "Bluesky",
     url: "bsky.app/profile/cordor.dev",
     icon: IconBrandBluesky,
-    colorKey: "bluesky",
+    className: "bg-bluesky",
   },
   {
     title: "Twitter",
     url: "twitter.com/jewelexx",
     icon: IconBrandTwitter,
-    colorKey: "twitter",
+    className: "bg-twitter",
   },
   {
     title: "Twitch",
     url: "twitch.tv/digifem",
     icon: IconBrandTwitch,
-    colorKey: "twitch",
+    className: "bg-twitch",
   },
 
   {
     title: "Linktree",
     url: "linktr.ee/jewelexx",
     icon: IconBrandLinktree,
-    colorKey: "linktree",
+    className: "bg-linktree",
   },
   {
     title: "RSS Feed",
     url: "/rss.xml",
     icon: IconRss,
-    colorKey: "rss",
+    className: "bg-rss",
   },
 ];
 

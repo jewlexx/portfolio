@@ -11,7 +11,6 @@ interface Props {
   newTab?: boolean;
   disabled?: boolean;
   alt?: string;
-  colorKey: string;
   [key: string]: any;
 }
 
@@ -21,8 +20,8 @@ export default function IconLink({
   icon: Icon,
   newTab = true,
   disabled = false,
-  colorKey,
   alt,
+  className,
   ...rest
 }: Props & React.HTMLAttributes<HTMLAnchorElement>) {
   const adjustedUrl = useMemo(() => {
@@ -47,7 +46,7 @@ export default function IconLink({
       title={title}
       target={newTab ? "_blank" : undefined}
       rel="noopener noreferrer"
-      className={`${styles.link} ${disabled ? styles.disabled : ""} bg-${colorKey}`}
+      className={`${styles.link} ${disabled ? styles.disabled : ""} ${className}`}
       {...linkProps}
     >
       <Icon title={alt ?? title} />
