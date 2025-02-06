@@ -110,7 +110,7 @@ export default async function Page(props: {
           )}
 
           <span className="linksContainer">
-            {repo && (
+            {/* {repo && (
               <IconLink
                 url={repo}
                 icon={IconBrandGit}
@@ -119,7 +119,7 @@ export default async function Page(props: {
             )}
             {homepage && (
               <IconLink url={homepage} icon={LinkIcon} title="Homepage link" />
-            )}
+            )} */}
             <DownloadForm post={post} />
           </span>
           <hr />
