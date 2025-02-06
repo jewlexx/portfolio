@@ -10,7 +10,7 @@ interface Props extends Omit<ComponentProps<typeof Image>, "src"> {
   slug?: string;
 }
 
-export default function HorizontalHero({ enabled, slug, src, ...rest }: Props) {
+export default function HorizontalHero({ enabled, src, ...rest }: Props) {
   const isVisible = enabled && src !== undefined;
 
   return (

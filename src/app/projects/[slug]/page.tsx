@@ -9,9 +9,9 @@ import IconLink from "$/components/IconLink";
 import { twitterConfiguration } from "$/consts";
 import { getProjectBySlug, getProjectSlugs } from "$/content/projects";
 import markdownToHtml from "$/content/markdown";
+import DownloadForm from "./DownloadForm";
 
 import "$/styles/project.scss";
-import DownloadForm from "./DownloadForm";
 
 export function generateStaticParams() {
   return getProjectSlugs().map((slug) => ({ slug }));
@@ -102,7 +102,7 @@ export default async function Page(props: {
             </p>
           )}
           {shields && (
-            <p className="shields">
+            <p className="flex flex-wrap justify-center gap-2">
               {shields?.map((shield: any) => (
                 <Shield {...shield} key={shield.src} />
               ))}
