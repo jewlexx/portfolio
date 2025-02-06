@@ -110,16 +110,22 @@ export default async function Page(props: {
           )}
 
           <span className="linksContainer">
-            {/* {repo && (
+            {repo && (
               <IconLink
                 url={repo}
                 icon={IconBrandGit}
                 title="Git Source link"
+                className="btn-secondary"
               />
             )}
             {homepage && (
-              <IconLink url={homepage} icon={LinkIcon} title="Homepage link" />
-            )} */}
+              <IconLink
+                url={homepage}
+                icon={LinkIcon}
+                title="Homepage link"
+                className="btn-secondary"
+              />
+            )}
             <DownloadForm post={post} />
           </span>
           <hr />

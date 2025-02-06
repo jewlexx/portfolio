@@ -2,8 +2,6 @@ import React, { useMemo } from "react";
 import Link from "next/link";
 import { Icon } from "@tabler/icons-react";
 
-import styles from "./index.module.scss";
-
 interface Props {
   title: string;
   url: string;
@@ -42,11 +40,12 @@ export default function IconLink({
 
   return (
     <Link
+      role="button"
       href={adjustedUrl}
       title={title}
       target={newTab ? "_blank" : undefined}
       rel="noopener noreferrer"
-      className={`${styles.link} ${disabled ? styles.disabled : ""} ${className}`}
+      className={`btn btn-circle ${className} lg:btn-lg m-1 text-white ${className}`}
       {...linkProps}
     >
       <Icon title={alt ?? title} />
