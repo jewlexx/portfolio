@@ -34,27 +34,27 @@ export default function Projects({ posts }: { posts: ProjectInfo[] }) {
   }, []);
 
   return (
-    <section className="min-w-full min-h-full">
-      <ul className="flex flex-wrap gap-2 justify-center">
+    <section className="min-h-full min-w-full">
+      <ul className="flex flex-wrap justify-center gap-2">
         {posts.map((post) => (
           <li
-            className="card prose  bg-base-100 card-lg shadow-sm"
+            className="card prose bg-base-100 card-lg shadow-sm transition-transform duration-75 hover:z-50 hover:scale-105"
             key={post.slug}
           >
-            <figure>
-              <Image
-                src={post.heroImage!}
-                alt={`${post.title} Hero Image`}
-                width={1200}
-                height={630}
-              />
-            </figure>
             <a
-              className="link link-hover"
+              className="no-underline"
               href={`/projects/${post.slug}`}
               onMouseEnter={() => onImageHover(post)}
               onMouseLeave={onImageLeave}
             >
+              <figure>
+                <Image
+                  src={post.heroImage!}
+                  alt={`${post.title} Hero Image`}
+                  width={1200}
+                  height={630}
+                />
+              </figure>
               <h1>
                 {post.emoji} {post.title}
               </h1>
