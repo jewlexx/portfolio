@@ -1,5 +1,3 @@
-import reactCompiler from "eslint-plugin-react-compiler";
-
 import { FlatCompat } from "@eslint/eslintrc";
 import { fixupConfigRules } from "@eslint/compat";
 
@@ -12,12 +10,4 @@ export default [
     ignores: ["**/dev/*", "**/dist/*", "**/tests/*", "tsconfig.json"],
   },
   ...fixupConfigRules(compat.extends("next/core-web-vitals")),
-  {
-    plugins: {
-      "react-compiler": reactCompiler,
-    },
-    rules: {
-      "react-compiler/react-compiler": "error",
-    },
-  },
 ];
