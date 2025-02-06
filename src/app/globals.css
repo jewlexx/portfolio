@@ -5,6 +5,7 @@
     cupcake --default,
     forest --prefersdark;
 }
+@plugin "@tailwindcss/typography";
 
 @layer components {
   .progress-bar {
