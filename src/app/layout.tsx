@@ -7,12 +7,9 @@ import Header from "$/components/Header";
 import { twitterConfiguration } from "$/consts";
 import Stars from "$/components/Stars";
 import { ProgressBar } from "$/components/ProgressBar";
-
-import styles from "./layout.module.scss";
-
-import "$/styles/global.scss";
 import { showStars } from "$/flags";
-import Script from "next/script";
+
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -49,8 +46,8 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ProgressBar className={styles.progress}>
-          <Header title="Juliette Cordor" />
+        <ProgressBar className="progress-bar">
+          <Header />
           {children}
           {shouldShowStars && <Stars />}
           <SpeedInsights />

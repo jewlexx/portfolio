@@ -8,56 +8,45 @@ import {
   IconRss,
 } from "@tabler/icons-react";
 
-import {
-  black,
-  purple,
-  green,
-  orange_lighter as rss_orange,
-  bluesky_blue,
-  twitter_blue,
-} from "$/styles/_palette";
-
 import type IconLink from "./components/IconLink";
 
-export const links: (React.ComponentProps<typeof IconLink> & {
-  color: string;
-})[] = [
+export const links: React.ComponentProps<typeof IconLink>[] = [
   {
     title: "GitHub",
     url: "github.com/jewlexx",
     icon: IconBrandGithub,
-    color: black,
+    className: "bg-black",
   },
   {
     title: "Bluesky",
     url: "bsky.app/profile/cordor.dev",
     icon: IconBrandBluesky,
-    color: bluesky_blue,
+    className: "bg-bluesky",
   },
   {
     title: "Twitter",
     url: "twitter.com/jewelexx",
     icon: IconBrandTwitter,
-    color: twitter_blue,
+    className: "bg-twitter",
   },
   {
     title: "Twitch",
     url: "twitch.tv/digifem",
     icon: IconBrandTwitch,
-    color: purple,
+    className: "bg-twitch",
   },
 
   {
     title: "Linktree",
     url: "linktr.ee/jewelexx",
     icon: IconBrandLinktree,
-    color: green,
+    className: "bg-linktree",
   },
   {
     title: "RSS Feed",
     url: "/rss.xml",
     icon: IconRss,
-    color: rss_orange,
+    className: "bg-rss",
   },
 ];
 

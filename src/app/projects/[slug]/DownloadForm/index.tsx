@@ -1,43 +1,115 @@
 "use client";
 
-import { useState } from "react";
-import { IconDownload } from "@tabler/icons-react";
-import { Arch, getArchName, getOsName } from "$/arch";
-import { ProjectInfo } from "$/content/projects";
-import IconLink from "$/components/IconLink";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { TbDownload } from "react-icons/tb";
 
-import styles from "./index.module.scss";
+import { Arch, getArchName, getOsName, Os, parseArch, parseOs } from "$/arch";
+import { ProjectInfo } from "$/content/projects";
+
+interface DownloadFormData {
+  arch: Arch;
+  os: Os;
+}
+
+function validateData(data: {
+  arch: FormDataEntryValue | null;
+  os: FormDataEntryValue | null;
+}): asserts data is DownloadFormData {
+  if (!data.arch) {
+    throw new Error("Arch is required");
+  }
+  if (!data.os) {
+    throw new Error("OS is required");
+  }
+
+  if (typeof data.arch !== "string") {
+    throw new Error("Arch must be a string");
+  }
+  if (typeof data.os !== "string") {
+    throw new Error("OS must be a string");
+  }
+
+  const arch = parseArch(data.arch);
+  if (!arch) {
+    throw new Error("Invalid arch");
+  }
+
+  const os = parseOs(data.os);
+  if (!os) {
+    throw new Error("Invalid os");
+  }
+}
+
+function validatedData(formData: FormData): DownloadFormData {
+  const data = {
+    arch: formData.get("arch"),
+    os: formData.get("os"),
+  };
+
+  validateData(data);
+
+  return data;
+}
+
+function generateDownloadUrl(data: DownloadFormData, slug: string) {
+  const { arch, os } = data;
+
+  return `/projects/${slug}/download?arch=${arch}&os=${os}`;
+}
 
 export default function DownloadForm({ post }: { post: ProjectInfo }) {
+  const { register, handleSubmit } = useForm<DownloadFormData>();
+  const onSubmit: SubmitHandler<DownloadFormData> = (data) => {
+    const url = generateDownloadUrl(data, post.slug);
+    window.location.href = url;
+  };
+
   const { download } = post;
-  const [arch, setArch] = useState<Arch>(Arch.x64);
 
   if (!download) {
     return null;
   }
 
   return (
-    <div className={styles.container}>
-      <p>Download</p>
-      <select name="os">
-        {download.os.map((os) => (
-          <option key={os} value={os}>
-            {getOsName(os)}
-          </option>
-        ))}
-      </select>
-      <select name="arch" onChange={(e) => setArch(e.target.value as Arch)}>
-        {download.arch.map((arch) => (
-          <option key={arch} value={arch}>
-            {getArchName(arch)}
-          </option>
-        ))}
-      </select>
-      <IconLink
-        url={"/projects/" + post.slug + "/download?arch=" + arch}
-        icon={IconDownload}
-        title="Download link"
-      />
-    </div>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <fieldset className="bg-base-200 border-base-300 rounded-box fieldset gap-2 border p-4">
+        <legend className="fieldset-legend">Download</legend>
+
+        <label className="fieldset-label">
+          Select OS
+          <select className="select" {...register("os")}>
+            {download.os.map((os) => (
+              <option key={os} value={os}>
+                {getOsName(os)}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label className="fieldset-label">
+          Select Arch
+          <select
+            className="select"
+            {...register("arch")}
+            // onChange={(e) => setArch(e.target.value as Arch)}
+          >
+            {download.arch.map((arch) => (
+              <option key={arch} value={arch}>
+                {getArchName(arch)}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <button
+          className={`btn btn-primary`}
+          type="submit"
+          title="Download link"
+        >
+          <TbDownload />
+          Download
+        </button>
+      </fieldset>
+    </form>
   );
 }

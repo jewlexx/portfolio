@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes:
+    cupcake --default,
+    forest --prefersdark;
+}
+@plugin "@tailwindcss/typography";
+
+@layer components {
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    z-index: 100;
+    background-color: skyblue;
+  }
+}
+
+@theme {
+  --color-twitch: #9146ff;
+  --color-twitter: #1da1f2;
+  --color-bluesky: #1083fe;
+  --color-linktree: #537e49;
+  --color-rss: #ff8f70;
+
+  --color-green-terminal-50: #e7ffe4;
+  --color-green-terminal-100: #c9ffc4;
+  --color-green-terminal-200: #98ff90;
+  --color-green-terminal-300: #56ff50;
+  --color-green-terminal-400: #00ff00;
+  --color-green-terminal-500: #00e606;
+  --color-green-terminal-600: #00b809;
+  --color-green-terminal-700: #008b07;
+  --color-green-terminal-800: #076d0d;
+  --color-green-terminal-900: #0b5c11;
+  --color-green-terminal-950: #003406;
+}

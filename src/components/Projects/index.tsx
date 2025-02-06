@@ -3,10 +3,10 @@
 import { useCallback, useMemo, useRef, useState } from "react";
 
 import { type ProjectInfo } from "$/content/projects";
-import HorizontalHero from "$/components/HorizontalHero";
 import { usePortrait } from "$/hooks/portrait";
 
 import styles from "./index.module.scss";
+import Image from "next/image";
 
 export default function Projects({ posts }: { posts: ProjectInfo[] }) {
   const [hovered, setHovered] = useState<string | null>(null);
@@ -34,35 +34,30 @@ export default function Projects({ posts }: { posts: ProjectInfo[] }) {
   }, []);
 
   return (
-    <section className={styles.projects}>
-      {!isPortrait && (
-        <a
-          href={hoveredPost?.slug ? `/projects/${hoveredPost.slug}` : undefined}
-          className={styles.projectImage}
-          onMouseEnter={() => hoveredPost && onImageHover(hoveredPost)}
-          onMouseLeave={onImageLeave}
-        >
-          <HorizontalHero
-            enabled={hoveredPost?.heroImage !== null}
-            width={1200}
-            height={630}
-            src={hoveredPost?.heroImage}
-            alt={`${hoveredPost?.title} Hero Image`}
-            slug={hoveredPost?.slug}
-          />
-        </a>
-      )}
-      <ul className={styles.list}>
+    <section className="min-h-full min-w-full">
+      <ul className="flex flex-wrap justify-center gap-2">
         {posts.map((post) => (
-          <li className={styles.entry} key={post.slug}>
+          <li
+            className="card prose bg-base-100 card-lg shadow-sm transition-transform duration-75 hover:z-50 hover:scale-105"
+            key={post.slug}
+          >
             <a
+              className="no-underline"
               href={`/projects/${post.slug}`}
               onMouseEnter={() => onImageHover(post)}
               onMouseLeave={onImageLeave}
             >
-              <span>
+              <figure>
+                <Image
+                  src={post.heroImage!}
+                  alt={`${post.title} Hero Image`}
+                  width={1200}
+                  height={630}
+                />
+              </figure>
+              <h1>
                 {post.emoji} {post.title}
-              </span>
+              </h1>
             </a>
           </li>
         ))}

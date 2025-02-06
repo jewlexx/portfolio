@@ -13,11 +13,8 @@ export default function PubDate({ pubDate, released }: Props) {
   }
 
   return (
-    <p className={styles.pubDate}>
-      <i>
-        {released ? "Released" : "Published"} on{" "}
-        <FormattedDate date={pubDate} />
-      </i>
-    </p>
+    <small className="italic text-gray-800 text-sm">
+      {released ? "Released" : "Published"} on <FormattedDate date={pubDate} />
+    </small>
   );
 }

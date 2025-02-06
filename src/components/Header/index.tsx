@@ -9,24 +9,13 @@ import { linksAbridged } from "$/links";
 
 import styles from "./index.module.scss";
 
-interface Props {
-  title: string;
-}
-
-interface ButtonStyle extends React.CSSProperties {
-  "--button-color": string;
-}
-
-export default function Header({ title }: Props) {
+export default function Header() {
   return (
     <nav className={styles.nav} role="navigation">
       <span className={styles.titleImage}>
         <ProgressBarLink className={styles.logolink} href="/" rel="prefetch">
           <Image src={WomanTechnologist} alt="Juliette Cordor" />
         </ProgressBarLink>
-        <h2>
-          <Shrunk long={title} />
-        </h2>
       </span>
       {/* TODO: Add headerlinks on mobile screens */}
       <Shrunk hide="portrait">
@@ -39,11 +28,7 @@ export default function Header({ title }: Props) {
       </Shrunk>
       <span className={styles.linksContainer}>
         {linksAbridged.map((linkProps) => (
-          <IconLink
-            key={linkProps.title}
-            {...linkProps}
-            style={{ "--button-color": linkProps.color } as ButtonStyle}
-          />
+          <IconLink key={linkProps.title} {...linkProps} />
         ))}
       </span>
     </nav>

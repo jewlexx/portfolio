@@ -2,8 +2,6 @@ import React, { useMemo } from "react";
 import Link from "next/link";
 import { Icon } from "@tabler/icons-react";
 
-import styles from "./index.module.scss";
-
 interface Props {
   title: string;
   url: string;
@@ -21,8 +19,9 @@ export default function IconLink({
   newTab = true,
   disabled = false,
   alt,
+  className,
   ...rest
-}: React.PropsWithRef<Props & React.HTMLAttributes<HTMLAnchorElement>>) {
+}: Props & React.HTMLAttributes<HTMLAnchorElement>) {
   const adjustedUrl = useMemo(() => {
     // Local url
     if (url.startsWith("/")) {
@@ -37,14 +36,17 @@ export default function IconLink({
     }
   }, [url]);
 
+  const linkProps = { ...rest, color: undefined };
+
   return (
     <Link
+      role="button"
       href={adjustedUrl}
       title={title}
       target={newTab ? "_blank" : undefined}
       rel="noopener noreferrer"
-      className={`${styles.link} ${disabled ? styles.disabled : ""}`}
-      {...rest}
+      className={`btn btn-circle ${className} lg:btn-lg m-1 text-white ${className}`}
+      {...linkProps}
     >
       <Icon title={alt ?? title} />
     </Link>
