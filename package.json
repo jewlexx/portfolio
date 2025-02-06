@@ -43,6 +43,7 @@
     "vfile": "^6.0.3"
   },
   "devDependencies": {
+    "daisyui": "beta",
     "@eslint/compat": "^1.2.6",
     "@types/bun": "^1.2.2",
     "@types/node": "^22.13.1",
