@@ -47,7 +47,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ProgressBar className="progress-bar">
-          <Header title="Juliette Cordor" />
+          <Header />
           {children}
           {shouldShowStars && <Stars />}
           <SpeedInsights />
