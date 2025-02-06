@@ -13,10 +13,6 @@ interface Props {
   title: string;
 }
 
-interface ButtonStyle extends React.CSSProperties {
-  "--button-color": string;
-}
-
 export default function Header({ title }: Props) {
   return (
     <nav className={styles.nav} role="navigation">
@@ -39,11 +35,7 @@ export default function Header({ title }: Props) {
       </Shrunk>
       <span className={styles.linksContainer}>
         {linksAbridged.map((linkProps) => (
-          <IconLink
-            key={linkProps.title}
-            {...linkProps}
-            style={{ "--button-color": linkProps.color } as ButtonStyle}
-          />
+          <IconLink key={linkProps.title} {...linkProps} />
         ))}
       </span>
     </nav>
