@@ -4,6 +4,11 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/container-queries';
 @plugin '@tailwindcss/aspect-ratio';
+@plugin "daisyui" {
+	themes:
+		cupcake --default,
+		forest --prefersdark;
+}
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
@@ -14,11 +19,11 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentColor);
+	}
 }

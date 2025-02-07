@@ -11,7 +11,8 @@
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
 		"test:unit": "vitest",
-		"test": "npm run test:unit -- --run"
+		"test": "npm run test:unit -- --run",
+		"postinstall": "bun run scripts/generateProjectNames.ts"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^4.0.0",
@@ -22,8 +23,9 @@
 		"@tailwindcss/forms": "^0.5.10",
 		"@tailwindcss/postcss": "^4.0.4",
 		"@tailwindcss/typography": "^0.5.16",
+		"@types/bun": "^1.2.2",
 		"@types/eslint": "^9.6.1",
-		"daisyui": "^4.12.23",
+		"daisyui": "beta",
 		"eslint": "^9.19.0",
 		"eslint-config-prettier": "^10.0.1",
 		"eslint-plugin-svelte": "^2.46.1",
@@ -41,6 +43,7 @@
 		"vitest": "^3.0.5"
 	},
 	"dependencies": {
-		"@inlang/paraglide-sveltekit": "^0.15.5"
+		"@inlang/paraglide-sveltekit": "^0.15.5",
+		"ts-pattern": "^5.6.2"
 	}
 }
