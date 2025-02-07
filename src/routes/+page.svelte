@@ -7,8 +7,9 @@
 	<p>{m.welcome_text({ name: 'Juliette' })}</p>
 	<p>
 		{m.fresh_bald_bear_boost()}
-		<a href="/projects">{m.top_petty_beetle_dart()}</a>{m.round_weak_dragonfly_quell()}
-		<a href="https://duckduckgo.com">{m.quaint_slow_lobster_hike()}</a>
+		<a href="/projects" class="font-bold">{m.top_petty_beetle_dart()}</a
+		>{m.round_weak_dragonfly_quell()}
+		<a href="https://duckduckgo.com" class="font-bold">{m.quaint_slow_lobster_hike()}</a>
 	</p>
 	<h2 id="who-am-i-">Who am I?</h2>
 	<p>
