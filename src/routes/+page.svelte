@@ -24,21 +24,21 @@
 		, <a href="https://github.com/winpax/sprinkles">sprinkles</a> and
 		<a href="https://github.com/jewlexx/quork">quork</a>.
 	</p>
-	<p>I have a range of experience, working with a variety of technologies, including:</p>
-	<ul class="list">
+	<h3>I have a range of experience, working with a variety of technologies</h3>
+	<ul>
 		<li>Rust</li>
 		<li>C</li>
 		<li>Java</li>
 		<li>Typescript</li>
 
-		<h3>Various web frameworks including</h3>
+		<h4>Various web frameworks including</h4>
 		<li>React</li>
 		<li>Nextdotjs</li>
 		<li>Astro</li>
 		<li>Svelte</li>
 		<li>SolidJS</li>
 
-		<h3>Scripting and automation using</h3>
+		<h4>Scripting and automation using</h4>
 		<li>Bash</li>
 		<li>Python</li>
 	</ul>
