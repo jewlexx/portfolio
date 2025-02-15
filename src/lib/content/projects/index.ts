@@ -1,96 +1,96 @@
-import fs from 'fs';
-import { join } from 'path';
+// import fs from 'fs';
+// import { join } from 'path';
 
 import { parseArch, parseOs } from '$lib/arch';
 import type { Metadata, ProjectInfo } from './types';
 export * from './gen.names';
 
-const projectsDirectory = join(process.cwd(), 'src/content/projects');
+// const projectsDirectory = join(process.cwd(), 'src/content/projects');
 
-export function getProjectSlugs() {
-	return fs
-		.readdirSync(projectsDirectory)
-		.filter((file) => file.endsWith('.md'))
-		.map((file) => file.replace('.md', ''));
-}
+// export function getProjectSlugs() {
+// 	return fs
+// 		.readdirSync(projectsDirectory)
+// 		.filter((file) => file.endsWith('.md'))
+// 		.map((file) => file.replace('.md', ''));
+// }
 
-export function getProjectBySlug(slug: string): ProjectInfo | null {
-	try {
-		return getProjectBySlugInner(slug);
-	} catch (e) {
-		return null;
-	}
-}
+// export function getProjectBySlug(slug: string): ProjectInfo | null {
+// 	try {
+// 		return getProjectBySlugInner(slug);
+// 	} catch (e) {
+// 		return null;
+// 	}
+// }
 
-function getProjectBySlugInner(slug: string): ProjectInfo | null {
-	const fullPath = join(projectsDirectory, `${slug}.md`);
+// function getProjectBySlugInner(slug: string): ProjectInfo | null {
+// 	const fullPath = join(projectsDirectory, `${slug}.md`);
 
-	if (!fs.existsSync(fullPath)) {
-		return null;
-	}
+// 	if (!fs.existsSync(fullPath)) {
+// 		return null;
+// 	}
 
-	const fileContents = fs.readFileSync(fullPath, 'utf8');
-	const { data, content } = matter(fileContents);
+// 	const fileContents = fs.readFileSync(fullPath, 'utf8');
+// 	const { data, content } = matter(fileContents);
 
-	if (data.repo) {
-		const repo: string = data.repo;
+// 	if (data.repo) {
+// 		const repo: string = data.repo;
 
-		const repoUrl = match(repo)
-			.when(
-				(repo) => repo.startsWith('http://'),
-				() => repo.replace('http://', 'https://')
-			)
-			.when(
-				(repo) => repo.startsWith('https://'),
-				() => repo
-			)
-			.when(
-				(repo) => /^[a-zA-Z0-9\-_\.]+\/[a-zA-Z0-9\-_\.]+$/.test(repo),
-				() => `https://github.com/${repo}`
-			)
-			.when(
-				(repo) => /^[a-zA-Z0-9\-_\.]+$/.test(repo),
-				() => `https://github.com/jewlexx/${repo}`
-			)
-			.otherwise(() => null);
+// 		const repoUrl = match(repo)
+// 			.when(
+// 				(repo) => repo.startsWith('http://'),
+// 				() => repo.replace('http://', 'https://')
+// 			)
+// 			.when(
+// 				(repo) => repo.startsWith('https://'),
+// 				() => repo
+// 			)
+// 			.when(
+// 				(repo) => /^[a-zA-Z0-9\-_\.]+\/[a-zA-Z0-9\-_\.]+$/.test(repo),
+// 				() => `https://github.com/${repo}`
+// 			)
+// 			.when(
+// 				(repo) => /^[a-zA-Z0-9\-_\.]+$/.test(repo),
+// 				() => `https://github.com/jewlexx/${repo}`
+// 			)
+// 			.otherwise(() => null);
 
-		if (repoUrl) {
-			data.repo = repoUrl;
-		} else {
-			throw new Error(`Invalid repo url for ${slug}`);
-		}
+// 		if (repoUrl) {
+// 			data.repo = repoUrl;
+// 		} else {
+// 			throw new Error(`Invalid repo url for ${slug}`);
+// 		}
 
-		data.repo = repoUrl;
-	}
+// 		data.repo = repoUrl;
+// 	}
 
-	if (data.download) {
-		const download = data.download;
+// 	if (data.download) {
+// 		const download = data.download;
 
-		if (download.arch) {
-			download.arch = download.arch.map((arch: string) => parseArch(arch));
-		}
-		if (download.os) {
-			download.os = download.os.map((os: string) => parseOs(os));
-		}
+// 		if (download.arch) {
+// 			download.arch = download.arch.map((arch: string) => parseArch(arch));
+// 		}
+// 		if (download.os) {
+// 			download.os = download.os.map((os: string) => parseOs(os));
+// 		}
 
-		data.download = download;
-	}
+// 		data.download = download;
+// 	}
 
-	return {
-		...(data as Metadata),
-		slug,
-		content
-	};
-}
+// 	return {
+// 		...(data as Metadata),
+// 		slug,
+// 		content
+// 	};
+// }
 
-export function getAllProjects() {
-	const slugs = getProjectSlugs();
+// export function getAllProjects() {
+// 	const slugs = getProjectSlugs();
 
-	return slugs
-		.map((slug) => getProjectBySlug(slug))
-		.filter((project) => project !== null)
-		.sort(sortProject);
-}
+// 	return slugs
+// 		.map((slug) => getProjectBySlug(slug))
+// 		.filter((project) => project !== null)
+// 		.sort(sortProject);
+// }
 
 export function sortProject(a: ProjectInfo, b: ProjectInfo) {
 	if (a.featured) {
