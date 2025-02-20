@@ -1,9 +1,9 @@
-import * as pkg from "../package.json";
+import pkg from "../package.json";
 
 const unpinDeps = (deps: Record<string, string>) => {
   const unpinnedDeps = Object.entries(deps).reduce((acc, [name, version]) => {
     if (version.startsWith("^")) {
-      return acc;
+      return { ...acc, [name]: `${version}` };
     }
 
     return { ...acc, [name]: `^${version}` };
