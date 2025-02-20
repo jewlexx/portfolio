@@ -7,6 +7,18 @@
 }
 @plugin "@tailwindcss/typography";
 
+@layer components {
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    z-index: 100;
+    background-color: skyblue;
+  }
+}
+
 @theme {
   --color-twitch: #9146ff;
   --color-twitter: #1da1f2;
