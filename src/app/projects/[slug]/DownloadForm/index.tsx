@@ -41,14 +41,6 @@ function validateData(data: {
   }
 }
 
-function validatedData(formData: FormData): DownloadFormData {
-  const data = { arch: formData.get("arch"), os: formData.get("os") };
-
-  validateData(data);
-
-  return data;
-}
-
 function generateDownloadUrl(data: DownloadFormData, slug: string) {
   const { arch, os } = data;
 
