@@ -15,13 +15,13 @@ const compat = new FlatCompat({
   allConfig: js.configs.all,
 });
 
-export default tseslint.config([
-  { ignores: ["**/dev/*", "**/dist/*", "**/tests/*", "tsconfig.json"] },
+export default tseslint.config(
   tseslint.configs.strict,
   tseslint.configs.stylistic,
-  ...compat.extends("next/core-web-vitals"),
+  compat.extends("next/core-web-vitals"),
   {
+    ignores: ["**/dev/*", "**/dist/*", "**/tests/*", "tsconfig.json"],
     plugins: { "react-compiler": reactCompiler },
     rules: { "react-compiler/react-compiler": "error" },
   },
-]);
+);
