@@ -17,14 +17,50 @@
     z-index: 100;
     background-color: skyblue;
   }
+
+  .btn-github {
+    --btn-color: var(--color-github);
+    --btn-fg: var(--color-github-content);
+  }
+
+  .btn-twitch {
+    --btn-color: var(--color-twitch);
+    --btn-fg: var(--color-twitch-content);
+  }
+
+  .btn-bluesky {
+    --btn-color: var(--color-bluesky);
+    --btn-fg: var(--color-bluesky-content);
+  }
+
+  .btn-linktree {
+    --btn-color: var(--color-linktree);
+    --btn-fg: var(--color-linktree-content);
+  }
+
+  .btn-rss {
+    --btn-color: var(--color-rss);
+    --btn-fg: var(--color-rss-content);
+  }
 }
 
 @theme {
+  --color-github: #000000;
+  --color-github-content: oklch(84.87% 0 0);
+
   --color-twitch: #9146ff;
+  --color-twitch-content: oklch(15.496% 0.023 81.519);
+
   --color-twitter: #1da1f2;
+
   --color-bluesky: #1083fe;
+  --color-bluesky-content: oklch(88.34% 0.019 251.473);
+
   --color-linktree: #537e49;
+  --color-linktree-content: oklch(13.454% 0.033 35.791);
+
   --color-rss: #ff8f70;
+  --color-rss-content: oklch(12.523% 0.028 240.033);
 
   --color-green-terminal-50: #e7ffe4;
   --color-green-terminal-100: #c9ffc4;
