@@ -45,8 +45,8 @@
 }
 
 @theme {
-  --color-github: #000000;
-  --color-github-content: oklch(84.87% 0 0);
+  --color-github: #ff507a;
+  --color-github-content: oklch(88.34% 0.019 251.473);
 
   --color-twitch: #9146ff;
   --color-twitch-content: oklch(15.496% 0.023 81.519);

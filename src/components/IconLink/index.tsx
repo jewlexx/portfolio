@@ -9,7 +9,7 @@ interface Props {
   newTab?: boolean;
   disabled?: boolean;
   alt?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 export default function IconLink({
@@ -17,7 +17,6 @@ export default function IconLink({
   url,
   icon: Icon,
   newTab = true,
-  disabled = false,
   alt,
   className,
   ...rest
@@ -45,7 +44,7 @@ export default function IconLink({
       title={title}
       target={newTab ? "_blank" : undefined}
       rel="noopener noreferrer"
-      className={`btn btn-circle ${className} lg:btn-lg m-1 text-white ${className}`}
+      className={`btn btn-circle lg:btn-lg m-1 [&>svg]:!text-white ${className}`}
       {...linkProps}
     >
       <Icon title={alt ?? title} />
