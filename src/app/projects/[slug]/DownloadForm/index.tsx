@@ -5,6 +5,7 @@ import { TbDownload } from "react-icons/tb";
 
 import { Arch, getArchName, getOsName, Os, parseArch, parseOs } from "$/arch";
 import { ProjectInfo } from "$/content/projects";
+import { useRouter } from "next/navigation";
 
 interface DownloadFormData {
   arch: Arch;
@@ -41,10 +42,7 @@ function validateData(data: {
 }
 
 function validatedData(formData: FormData): DownloadFormData {
-  const data = {
-    arch: formData.get("arch"),
-    os: formData.get("os"),
-  };
+  const data = { arch: formData.get("arch"), os: formData.get("os") };
 
   validateData(data);
 
@@ -59,9 +57,10 @@ function generateDownloadUrl(data: DownloadFormData, slug: string) {
 
 export default function DownloadForm({ post }: { post: ProjectInfo }) {
   const { register, handleSubmit } = useForm<DownloadFormData>();
+  const router = useRouter();
   const onSubmit: SubmitHandler<DownloadFormData> = (data) => {
     const url = generateDownloadUrl(data, post.slug);
-    window.location.href = url;
+    router.push(url);
   };
 
   const { download } = post;
