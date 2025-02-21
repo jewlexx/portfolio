@@ -6,21 +6,16 @@ import { type NextConfig } from "next";
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
-      {
-        hostname: "repository-images.githubusercontent.com",
-      },
-      {
-        hostname: "http.cat",
-      },
-      {
-        hostname: "cordor.dev",
-      },
+      { hostname: "repository-images.githubusercontent.com" },
+      { hostname: "http.cat" },
+      { hostname: "cordor.dev" },
     ],
   },
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   outputFileTracingIncludes: {
     "/api/anybrowser": ["./src/assets/images/anybrowser/*"],
   },
+  experimental: { reactCompiler: true },
 };
 
 const withMDX = createMDX({
