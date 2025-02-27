@@ -3,7 +3,7 @@
 @plugin "daisyui" {
   themes:
     cupcake --default,
-    forest --prefersdark;
+    luxury --prefersdark;
 }
 @plugin "@tailwindcss/typography";
 

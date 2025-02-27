@@ -8,9 +8,8 @@ export default function Home() {
     <main className="prose lg:prose-xl px-5">
       <h1 className="!mt-10 flex items-center gap-2">🧑‍🚀 Hello, Traveller!</h1>
       <p>
-        My name is <span className="text-secondary font-bold">Juliette</span>,
-        and you have landed on my{" "}
-        <span className="text-accent font-bold">silly little site</span>
+        My name is <span className="font-bold">Juliette</span>, and you have
+        landed on my <span className="font-bold">silly little site</span>
         &trade;.
       </p>
       <p>
