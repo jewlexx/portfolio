@@ -4,7 +4,7 @@ import Star from './star';
 export class Stars {
 	canvas: HTMLCanvasElement;
 	stars: Star[];
-	shouldStop: boolean = false;
+	shouldStop = false;
 
 	constructor(canvas: HTMLCanvasElement) {
 		this.canvas = canvas;
