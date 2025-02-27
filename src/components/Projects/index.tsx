@@ -1,38 +1,8 @@
-"use client";
-
-import { useCallback, useMemo, useRef, useState } from "react";
-
 import { type ProjectInfo } from "$/content/projects";
-import { usePortrait } from "$/hooks/portrait";
 
-import styles from "./index.module.scss";
 import Image from "next/image";
 
 export default function Projects({ posts }: { posts: ProjectInfo[] }) {
-  const [hovered, setHovered] = useState<string | null>(null);
-  const hoveredTimeout = useRef<Timer | null>(null);
-  const { isPortrait, loading } = usePortrait();
-
-  const hoveredPost = useMemo(() => {
-    return posts.find((post) => post.slug === hovered);
-  }, [hovered, posts]);
-
-  const onImageHover = useCallback((post: ProjectInfo) => {
-    if (hoveredTimeout.current) {
-      clearTimeout(hoveredTimeout.current);
-    }
-
-    setHovered(post.slug);
-  }, []);
-
-  const onImageLeave = useCallback(() => {
-    if (hoveredTimeout.current) {
-      clearTimeout(hoveredTimeout.current);
-    }
-
-    hoveredTimeout.current = setTimeout(() => setHovered(null), 1000);
-  }, []);
-
   return (
     <section className="min-h-full min-w-full">
       <ul className="flex flex-wrap justify-center gap-2">
@@ -41,12 +11,7 @@ export default function Projects({ posts }: { posts: ProjectInfo[] }) {
             className="card prose bg-base-100 card-lg shadow-sm transition-transform duration-75 hover:z-50 hover:scale-105"
             key={post.slug}
           >
-            <a
-              className="no-underline"
-              href={`/projects/${post.slug}`}
-              onMouseEnter={() => onImageHover(post)}
-              onMouseLeave={onImageLeave}
-            >
+            <a className="no-underline" href={`/projects/${post.slug}`}>
               <figure>
                 <Image
                   src={post.heroImage!}

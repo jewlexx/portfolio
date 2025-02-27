@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { draftMode } from "next/headers";
-import { IBlogPost, IBlogPostFields } from "./types";
+import { IBlogPostFields } from "./types";
 
 const POST_GRAPHQL_FIELDS = `
   slug
@@ -50,7 +52,7 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
         }`,
       },
       body: JSON.stringify({ query }),
-    }
+    },
   ).then((response) => response.json());
 }
 
@@ -71,7 +73,7 @@ export async function getPreviewPostBySlug(slug: string | null): Promise<any> {
         }
       }
     }`,
-    true
+    true,
   );
   return extractPost(entry);
 }
@@ -87,7 +89,7 @@ export async function getAllPosts(): Promise<IBlogPostFields[]> {
         }
       }
     }`,
-    (await draftMode()).isEnabled
+    (await draftMode()).isEnabled,
   );
 
   return extractPostEntries(entries);
@@ -102,7 +104,7 @@ export async function getPostBySlug(slug: string): Promise<IBlogPostFields> {
         }
       }
     }`,
-    (await draftMode()).isEnabled
+    (await draftMode()).isEnabled,
   );
   return extractPost(entry);
 }
@@ -120,7 +122,7 @@ export async function getPostAndMorePosts(slug: string): Promise<any> {
         }
       }
     }`,
-    preview
+    preview,
   );
   return {
     post,

@@ -5,10 +5,10 @@ type FlagHandlerParams<T> = {
   flagDisabled?: {
     flagDefaultValue: T;
   };
-} & FlagDeclaration<T, any>;
+} & FlagDeclaration<T, unknown>;
 
 export function flag<T extends JsonValue>(
-  declaration: FlagHandlerParams<T>
+  declaration: FlagHandlerParams<T>,
 ): Flag<T> | (() => Promise<T>) {
   if (!declaration.flagDisabled) {
     return vercelFlag<T>(declaration);

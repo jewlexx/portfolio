@@ -51,6 +51,7 @@ export function getProjectSlugs() {
 export function getProjectBySlug(slug: string): ProjectInfo | null {
   try {
     return getProjectBySlugInner(slug);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (e) {
     return null;
   }
@@ -72,19 +73,19 @@ function getProjectBySlugInner(slug: string): ProjectInfo | null {
     const repoUrl = match(repo)
       .when(
         (repo) => repo.startsWith("http://"),
-        () => repo.replace("http://", "https://")
+        () => repo.replace("http://", "https://"),
       )
       .when(
         (repo) => repo.startsWith("https://"),
-        () => repo
+        () => repo,
       )
       .when(
         (repo) => /^[a-zA-Z0-9\-_\.]+\/[a-zA-Z0-9\-_\.]+$/.test(repo),
-        () => `https://github.com/${repo}`
+        () => `https://github.com/${repo}`,
       )
       .when(
         (repo) => /^[a-zA-Z0-9\-_\.]+$/.test(repo),
-        () => `https://github.com/jewlexx/${repo}`
+        () => `https://github.com/jewlexx/${repo}`,
       )
       .otherwise(() => null);
 

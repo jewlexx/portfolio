@@ -1,7 +1,5 @@
 import FormattedDate from "$/components/FormattedDate";
 
-import styles from "./index.module.scss";
-
 interface Props {
   released?: boolean;
   pubDate: Date | undefined;
@@ -13,7 +11,7 @@ export default function PubDate({ pubDate, released }: Props) {
   }
 
   return (
-    <small className="italic text-gray-800 text-sm">
+    <small className="text-sm text-gray-800 italic">
       {released ? "Released" : "Published"} on <FormattedDate date={pubDate} />
     </small>
   );
