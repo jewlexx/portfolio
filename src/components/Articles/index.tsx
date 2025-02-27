@@ -1,10 +1,7 @@
 import Link from "next/link";
-import { MdOpenInNew } from "react-icons/md";
 
 import { IBlogPostFields } from "$/content/blog/types";
 import ShortDate from "$/components/ShortDate";
-
-import styles from "./index.module.scss";
 
 export default function Articles({
   articles,
@@ -20,15 +17,12 @@ export default function Articles({
             key={article.slug}
             className="hover:[&>li]:underline"
           >
-            <li
-              // className="prose prose-sm link link-hover flex gap-5"
-              className="list-row"
-            >
+            <li className="list-row">
               <div className="align-center flex flex-col justify-center opacity-30">
                 <ShortDate date={article.date} />
               </div>
               <div>
-                <div>{article.title}</div>
+                <div className="text-lg">{article.title}</div>
                 {article.excerpt && (
                   <div className="text-xs opacity-60">{article.excerpt}</div>
                 )}
