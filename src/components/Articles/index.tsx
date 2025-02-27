@@ -1,36 +1,31 @@
-import Link from "next/link";
-
 import { IBlogPostFields } from "$/content/blog/types";
-import ShortDate from "$/components/ShortDate";
+import ArticleGroup from "../ArticleGroup";
 
 export default function Articles({
   articles,
 }: {
   articles: IBlogPostFields[];
 }) {
+  const groupedArticles = articles.reduce(
+    (acc, article) => {
+      const date = new Date(article.date);
+      const year = date.getFullYear();
+      if (!acc[year]) {
+        acc[year] = [];
+      }
+      acc[year].push(article);
+      return acc;
+    },
+    {} as Record<number, IBlogPostFields[]>,
+  );
+
   return (
-    <ul className="list bg-base-100 rounded-box shadow-md lg:mx-[12.5vw]">
-      {articles.map((article) => {
-        return (
-          <Link
-            href={`/blog/${article.slug}`}
-            key={article.slug}
-            className="hover:[&>li]:underline"
-          >
-            <li className="list-row">
-              <div className="align-center flex flex-col justify-center opacity-30">
-                <ShortDate date={article.date} />
-              </div>
-              <div>
-                <div className="text-lg">{article.title}</div>
-                {article.excerpt && (
-                  <div className="text-xs opacity-60">{article.excerpt}</div>
-                )}
-              </div>
-            </li>
-          </Link>
-        );
-      })}
-    </ul>
+    <>
+      {Object.entries(groupedArticles)
+        .sort((a, b) => parseInt(b[0]) - parseInt(a[0]))
+        .map(([year, group]) => (
+          <ArticleGroup key={year} year={+year} articles={group} />
+        ))}
+    </>
   );
 }
