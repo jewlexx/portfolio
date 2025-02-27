@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa6";
+import useSound from "use-sound";
 
 import { knownTheme } from "$/theme";
 import { setThemePersist } from "./actions";
@@ -12,12 +13,20 @@ export default function ThemeToggle({
   defaultTheme: string;
 }) {
   const [theme, setTheme] = useState(defaultTheme);
+  const [playOn] = useSound("/audio/switch-on.compressed.mp3");
+  const [playOff] = useSound("/audio/switch-off.compressed.mp3");
 
   return (
     <button
       title={"Toggle theme"}
       className={`btn btn-secondary btn-circle lg:btn-lg m-1 [&>svg]:!text-white`}
       onClick={() => {
+        if (theme === knownTheme.light) {
+          playOff();
+        } else {
+          playOn();
+        }
+
         setThemePersist(
           theme === knownTheme.light ? knownTheme.dark : knownTheme.light,
         );
