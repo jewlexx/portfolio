@@ -1,16 +1,14 @@
 import { getAllPosts } from "$/content/blog/api";
 import Articles from "$/components/Articles";
 
-import styles from "./page.module.scss";
-
 export const revalidate = 60;
 
 export default async function Blog() {
   const articles = await getAllPosts();
 
   return (
-    <main className={styles.main}>
-      <div>
+    <main className="grid">
+      <div className="prose sm:prose-sm lg:prose-lg mt-15 flex min-w-screen flex-col items-center [&>p]:text-center">
         <h1>Juliette&apos;s Blog</h1>
         {articles.length === 0 ? (
           <p>
