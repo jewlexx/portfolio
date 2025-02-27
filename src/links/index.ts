@@ -8,7 +8,7 @@ import {
   IconRss,
 } from "@tabler/icons-react";
 
-import type IconLink from "./components/IconLink";
+import type IconLink from "$/components/IconLink";
 
 export const links: React.ComponentProps<typeof IconLink>[] = [
   {

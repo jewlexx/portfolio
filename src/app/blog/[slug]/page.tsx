@@ -1,9 +1,13 @@
+import { notFound } from "next/navigation";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { FaTwitter, FaBluesky } from "react-icons/fa6";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 import { getPostBySlug } from "$/content/blog/api";
 import Date from "$/components/Date";
 import ContentfulImage from "$/components/ContentfulImage";
-import { notFound } from "next/navigation";
+import Link from "next/link";
+import { generate } from "$/links/generate";
 
 export default async function Blog(props: {
   params: Promise<{ slug: string }>;
@@ -22,8 +26,8 @@ export default async function Blog(props: {
   )?.url;
 
   return (
-    <main>
-      <article className="prose sm:prose-sm lg:prose-lg mt-15 flex min-w-screen flex-col items-center [&>p]:text-center">
+    <main className="flex min-w-screen justify-center pb-15">
+      <article className="prose sm:prose-sm lg:prose-lg mt-15 flex max-w-[50vw] flex-col items-center [&>p]:text-center">
         {coverImageUrl && (
           <ContentfulImage
             className="rounded-lg lg:w-[75vw]"
@@ -34,9 +38,28 @@ export default async function Blog(props: {
           />
         )}
         <h1>{article.title}</h1>
-        {article.excerpt && <small>{article.excerpt}</small>}
         <Date date={article.date} />
+        {article.excerpt && (
+          <p className="font-bold opacity-75">{article.excerpt}</p>
+        )}
         {content}
+
+        <span className="mt-10 flex gap-10 *:opacity-75 **:size-6">
+          <Link href="/blog">
+            <IoMdArrowRoundBack />
+          </Link>
+          <a
+            title="Tweet about it"
+            href={generate.twitter(params.slug)}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaTwitter />
+          </a>
+          <a title="Bluesky about it?" href={generate.bluesky(params.slug)}>
+            <FaBluesky />
+          </a>
+        </span>
       </article>
     </main>
   );

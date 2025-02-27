@@ -9,7 +9,7 @@ export default function Articles({
   articles: IBlogPostFields[];
 }) {
   return (
-    <ul className="list bg-base-100 rounded-box mx-[12.5vw] shadow-md">
+    <ul className="list bg-base-100 rounded-box shadow-md lg:mx-[12.5vw]">
       {articles.map((article) => {
         return (
           <Link
