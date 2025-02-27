@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
+import { VercelToolbar } from "@vercel/toolbar/next";
 
 import Header from "$/components/Header";
 import { twitterConfiguration } from "$/consts";
@@ -42,6 +43,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const shouldShowStars = await showStars();
+  const shouldInjectToolbar = process.env.NODE_ENV === "development";
 
   return (
     <html lang="en">
@@ -52,6 +54,7 @@ export default async function RootLayout({
           {shouldShowStars && <Stars />}
           <SpeedInsights />
           <Analytics />
+          {shouldInjectToolbar && <VercelToolbar />}
         </ProgressBar>
       </body>
     </html>

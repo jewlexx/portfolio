@@ -1,5 +1,6 @@
 import createMDX from "@next/mdx";
 import { type NextConfig } from "next";
+import createVercelToolbar from "@vercel/toolbar/plugins/next";
 // import remarkFrontmatter from "remark-frontmatter";
 // import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 
@@ -24,5 +25,8 @@ const withMDX = createMDX({
     // remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
   },
 });
+const withVercelToolbar = createVercelToolbar({
+  enableInProduction: false,
+});
 
-export default withMDX(nextConfig);
+export default withVercelToolbar(withMDX(nextConfig));

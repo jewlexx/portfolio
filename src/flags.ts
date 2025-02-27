@@ -1,9 +1,6 @@
-import { flag } from "./flags/handler";
+import { flag } from "flags/next";
 
 export const showStars = flag({
-  flagDisabled: {
-    flagDefaultValue: false,
-  },
   key: "show-stars",
   defaultValue: false,
   decide(params) {
