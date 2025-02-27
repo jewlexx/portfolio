@@ -15,6 +15,7 @@ export default async function Blog(props: {
     <main>
       <article className="prose sm:prose-sm lg:prose-lg mt-15 flex min-w-screen flex-col items-center [&>p]:text-center">
         <ContentfulImage
+          className="rounded-lg lg:w-[75vw]"
           src={(article.coverImage as unknown as Record<string, string>).url}
           alt={`Cover Image for ${article.title}`}
           width={512}
