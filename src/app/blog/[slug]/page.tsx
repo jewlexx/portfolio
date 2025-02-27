@@ -1,13 +1,13 @@
-import { notFound } from "next/navigation";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { FaTwitter, FaBluesky } from "react-icons/fa6";
+import { notFound } from "next/navigation";
+import { FaBluesky, FaTwitter } from "react-icons/fa6";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
-import { getPostBySlug } from "$/content/blog/api";
-import Date from "$/components/Date";
 import ContentfulImage from "$/components/ContentfulImage";
-import Link from "next/link";
+import Date from "$/components/Date";
+import { getPostBySlug } from "$/content/blog/api";
 import { generate } from "$/links/generate";
+import Link from "next/link";
 
 export default async function Blog(props: {
   params: Promise<{ slug: string }>;
