@@ -1,15 +1,16 @@
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { VercelToolbar } from "@vercel/toolbar/next";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/next";
-import { VercelToolbar } from "@vercel/toolbar/next";
+import { cookies } from "next/headers";
 
 import Header from "$/components/Header";
-import { twitterConfiguration } from "$/consts";
-import Stars from "$/components/Stars";
 import { ProgressBar } from "$/components/ProgressBar";
+import Stars from "$/components/Stars";
+import { twitterConfiguration } from "$/consts";
 import { showStars } from "$/flags";
-
+import { knownTheme } from "$/theme";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -42,11 +43,15 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
   const shouldShowStars = await showStars();
   const shouldInjectToolbar = process.env.NODE_ENV === "development";
 
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      data-theme={cookieStore.get("theme")?.value ?? knownTheme.light}
+    >
       <body className={inter.className}>
         <ProgressBar className="progress-bar">
           <Header />

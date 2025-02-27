@@ -1,15 +1,20 @@
+import { cookies } from "next/headers";
 import Image from "next/image";
 
-import Shrunk from "$/components/Shrunk";
+import WomanTechnologist from "$/assets/images/emojis/woman-technologist.svg";
 import HeaderLink from "$/components/HeaderLink";
 import IconLink from "$/components/IconLink";
 import { ProgressBarLink } from "$/components/ProgressBar";
-import WomanTechnologist from "$/assets/images/emojis/woman-technologist.svg";
+import Shrunk from "$/components/Shrunk";
 import { linksAbridged } from "$/links";
 
+import ThemeToggle from "$/components/ThemeToggle";
+import { knownTheme } from "$/theme";
 import styles from "./index.module.scss";
 
-export default function Header() {
+export default async function Header() {
+  const cookieStore = await cookies();
+
   return (
     <nav className={styles.nav} role="navigation">
       <span className={styles.titleImage}>
@@ -30,6 +35,9 @@ export default function Header() {
         {linksAbridged.map((linkProps) => (
           <IconLink key={linkProps.title} {...linkProps} />
         ))}
+        <ThemeToggle
+          defaultTheme={cookieStore.get("theme")?.value ?? knownTheme.light}
+        />
       </span>
     </nav>
   );
