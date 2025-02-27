@@ -6,9 +6,8 @@ import HeaderLink from "$/components/HeaderLink";
 import IconLink from "$/components/IconLink";
 import { ProgressBarLink } from "$/components/ProgressBar";
 import Shrunk from "$/components/Shrunk";
-import { linksAbridged } from "$/links";
-
 import ThemeToggle from "$/components/ThemeToggle";
+import { linksAbridged } from "$/links";
 import { knownTheme } from "$/theme";
 import styles from "./index.module.scss";
 
@@ -24,11 +23,11 @@ export default async function Header() {
       </span>
       {/* TODO: Add headerlinks on mobile screens */}
       <Shrunk hide="portrait">
-        <HeaderLink className={styles.link} href="/projects">
-          <h3>Projects</h3>
+        <HeaderLink href="/projects" className="link link-hover">
+          <h3 className="text-xl font-bold">Projects</h3>
         </HeaderLink>
-        <HeaderLink className={styles.link} href="/blog">
-          <h3>Blog</h3>
+        <HeaderLink href="/blog" className="link link-hover">
+          <h3 className="text-xl font-bold">Blog</h3>
         </HeaderLink>
       </Shrunk>
       <span className={styles.linksContainer}>
