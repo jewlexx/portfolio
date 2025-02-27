@@ -1,7 +1,11 @@
+type Keyof<T> = T[keyof T];
+
+export type Theme = Keyof<typeof knownTheme>;
+
 export const knownTheme = {
   dark: "forest",
   light: "cupcake",
-};
+} as const;
 
 export const themeList = [knownTheme.dark, knownTheme.light];
 export const themeToggleList = themeList.join(",");
