@@ -22,3 +22,7 @@ src/assets/audio/switch-off.mp3 filter=lfs diff=lfs merge=lfs -text
 src/assets/audio/switch-on.mp3 filter=lfs diff=lfs merge=lfs -text
 src/assets/audio/switch-off.compressed.mp3 filter=lfs diff=lfs merge=lfs -text
 src/assets/audio/switch-on.compressed.mp3 filter=lfs diff=lfs merge=lfs -text
+public/audio/switch-off.compressed.mp3 filter=lfs diff=lfs merge=lfs -text
+public/audio/switch-off.mp3 filter=lfs diff=lfs merge=lfs -text
+public/audio/switch-on.compressed.mp3 filter=lfs diff=lfs merge=lfs -text
+public/audio/switch-on.mp3 filter=lfs diff=lfs merge=lfs -text
