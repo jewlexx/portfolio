@@ -3,12 +3,18 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { getPostBySlug } from "$/content/blog/api";
 import Date from "$/components/Date";
 import ContentfulImage from "$/components/ContentfulImage";
+import { notFound } from "next/navigation";
 
 export default async function Blog(props: {
   params: Promise<{ slug: string }>;
 }) {
   const params = await props.params;
   const article = await getPostBySlug(params.slug);
+
+  if (article === undefined) {
+    return notFound();
+  }
+
   const content = documentToReactComponents(article.content.json);
 
   return (

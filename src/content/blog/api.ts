@@ -95,7 +95,9 @@ export async function getAllPosts(): Promise<IBlogPostFields[]> {
   return extractPostEntries(entries);
 }
 
-export async function getPostBySlug(slug: string): Promise<IBlogPostFields> {
+export async function getPostBySlug(
+  slug: string,
+): Promise<IBlogPostFields | undefined> {
   const entry = await fetchGraphQL(
     `query {
       blogPostCollection(where: { slug: "${slug}" }, preview: ${(await draftMode()).isEnabled}, limit: 1) {
