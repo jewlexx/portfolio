@@ -8,7 +8,7 @@ export default function Projects({ posts }: { posts: ProjectInfo[] }) {
       <ul className="flex flex-wrap justify-center gap-2">
         {posts.map((post) => (
           <li
-            className="card prose bg-base-100 card-lg shadow-sm transition-transform duration-75 hover:z-50 hover:scale-105"
+            className="card prose bg-base-100 card-lg p-5 shadow-sm transition-transform duration-75 hover:z-50 hover:scale-105"
             key={post.slug}
           >
             <a className="no-underline" href={`/projects/${post.slug}`}>
