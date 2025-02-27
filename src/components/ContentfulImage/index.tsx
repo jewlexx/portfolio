@@ -1,18 +1,15 @@
 "use client";
 
-import Image from "next/image";
+import type { ComponentProps } from "react";
+import Image, { type ImageLoader } from "next/image";
 
-interface ContentfulImageProps {
-  src: string;
-  width?: number;
-  quality?: number;
-  [key: string]: any; // For other props that might be passed
-}
-
-const contentfulLoader = ({ src, width, quality }: ContentfulImageProps) => {
+const contentfulLoader: ImageLoader = ({ src, width, quality }) => {
   return `${src}?w=${width}&q=${quality || 75}`;
 };
 
-export default function ContentfulImage(props: ContentfulImageProps) {
-  return <Image alt={props.alt} loader={contentfulLoader} {...props} />;
+export default function ContentfulImage(
+  props: Omit<ComponentProps<typeof Image>, "loader">,
+) {
+  // eslint-disable-next-line jsx-a11y/alt-text
+  return <Image loader={contentfulLoader} {...props} />;
 }

@@ -7,6 +7,5 @@ export default function Date({
   date: string;
   formatString?: string;
 }) {
-  const parsedDate = parseISO(date);
-  return <time dateTime={date}>{format(parsedDate, "LLLL d, yyyy")}</time>;
+  return <time dateTime={date}>{format(parseISO(date), formatString)}</time>;
 }

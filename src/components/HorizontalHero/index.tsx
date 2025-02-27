@@ -1,4 +1,4 @@
-import type { ComponentProps, Key } from "react";
+import type { ComponentProps } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 
