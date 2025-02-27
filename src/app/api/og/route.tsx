@@ -38,6 +38,7 @@ export async function GET(request: NextRequest) {
               justifyItems: "center",
             }}
           >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               alt="Profile Picture"
               height={200}
@@ -68,10 +69,14 @@ export async function GET(request: NextRequest) {
         width: 1200,
         height: 630,
         emoji: "twemoji",
-      }
+      },
     );
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (e: any) {
-    console.log(`${e.message}`);
+    if ("message" in e && typeof e.message === "string") {
+      console.error(`${e.message}`);
+    }
+
     return new Response(`Failed to generate the image`, {
       status: 500,
     });

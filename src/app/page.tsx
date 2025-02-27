@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="prose lg:prose-xl px-5">
-      <h1 className="flex items-center gap-2 !mt-10">🧑‍🚀 Hello, Traveller!</h1>
+      <h1 className="!mt-10 flex items-center gap-2">🧑‍🚀 Hello, Traveller!</h1>
       <p>
         My name is <span className="text-secondary font-bold">Juliette</span>,
         and you have landed on my{" "}
@@ -84,7 +84,7 @@ async function FaListItem({
 }) {
   const Icon: IconType | undefined = (await import("react-icons/fa"))[
     `Fa${technology}` as string
-  ] as any;
+  ] as IconType;
 
   if (!Icon) {
     return null;
@@ -102,7 +102,7 @@ async function SiListItem({
 }) {
   const Icon: IconType | undefined = (await import("react-icons/si"))[
     `Si${technology}` as string
-  ] as any;
+  ] as IconType;
 
   if (!Icon) {
     return null;

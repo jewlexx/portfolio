@@ -4,7 +4,7 @@ import fs from "fs/promises";
 
 export const dynamic = "force-dynamic";
 
-export async function GET(request: Request) {
+export async function GET() {
   const imagesPath = path.join(process.cwd(), "src/assets/images/anybrowser/*");
   const images = await fg([imagesPath]);
 

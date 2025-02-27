@@ -13,7 +13,7 @@ export default function Articles({
 
   return (
     <ul className={styles.list}>
-      {adjustedArticles.map((article, i) => {
+      {adjustedArticles.map((article) => {
         return (
           <a
             key={article.slug}
@@ -21,7 +21,10 @@ export default function Articles({
             href={`/blog/${article.slug}`}
           >
             <ContentfulImage
-              src={(article.coverImage as any).url}
+              src={
+                (article.coverImage as unknown as Record<string, string>).url
+              }
+              alt={`Cover Image for ${article.title}`}
               width={512}
               height={512}
             />

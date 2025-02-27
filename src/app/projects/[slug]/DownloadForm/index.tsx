@@ -1,44 +1,15 @@
 "use client";
 
-import { useForm, SubmitHandler } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { TbDownload } from "react-icons/tb";
 
-import { Arch, getArchName, getOsName, Os, parseArch, parseOs } from "$/arch";
+import { Arch, getArchName, getOsName, Os } from "$/arch";
 import { ProjectInfo } from "$/content/projects";
 import { useRouter } from "next/navigation";
 
 interface DownloadFormData {
   arch: Arch;
   os: Os;
-}
-
-function validateData(data: {
-  arch: FormDataEntryValue | null;
-  os: FormDataEntryValue | null;
-}): asserts data is DownloadFormData {
-  if (!data.arch) {
-    throw new Error("Arch is required");
-  }
-  if (!data.os) {
-    throw new Error("OS is required");
-  }
-
-  if (typeof data.arch !== "string") {
-    throw new Error("Arch must be a string");
-  }
-  if (typeof data.os !== "string") {
-    throw new Error("OS must be a string");
-  }
-
-  const arch = parseArch(data.arch);
-  if (!arch) {
-    throw new Error("Invalid arch");
-  }
-
-  const os = parseOs(data.os);
-  if (!os) {
-    throw new Error("Invalid os");
-  }
 }
 
 function generateDownloadUrl(data: DownloadFormData, slug: string) {

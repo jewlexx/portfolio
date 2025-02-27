@@ -103,7 +103,7 @@ export default async function Page(props: {
           )}
           {shields && (
             <p className="flex flex-wrap justify-center gap-2">
-              {shields?.map((shield: any) => (
+              {shields?.map((shield) => (
                 <Shield {...shield} key={shield.src} />
               ))}
             </p>

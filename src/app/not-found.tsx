@@ -1,9 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { IBM_Plex_Mono } from "next/font/google";
 
-import { ProgressBarLink } from "$/components/ProgressBar";
 import { usePathname } from "next/navigation";
 import "$/styles/error.scss";
 

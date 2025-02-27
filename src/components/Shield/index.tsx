@@ -4,8 +4,8 @@ interface Props {
   enabled?: boolean;
   href?: string;
   // new_tab: boolean;
-  src: string;
-  alt: string;
+  src?: string;
+  alt?: string;
   class?: string;
 }
 
