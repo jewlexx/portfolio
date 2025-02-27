@@ -1,4 +1,5 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaBluesky, FaTwitter } from "react-icons/fa6";
 import { IoMdArrowRoundBack } from "react-icons/io";
@@ -7,7 +8,6 @@ import ContentfulImage from "$/components/ContentfulImage";
 import Date from "$/components/Date";
 import { getPostBySlug } from "$/content/blog/api";
 import { generate } from "$/links/generate";
-import Link from "next/link";
 
 export default async function Blog(props: {
   params: Promise<{ slug: string }>;
