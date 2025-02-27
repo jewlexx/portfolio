@@ -7,19 +7,14 @@ export default async function Blog() {
   const articles = await getAllPosts();
 
   return (
-    <main className="grid">
+    <main>
       <div className="prose sm:prose-sm lg:prose-lg mt-15 flex min-w-screen flex-col items-center [&>p]:text-center">
         <h1>Juliette&apos;s Blog</h1>
-        {articles.length === 0 ? (
+        {articles.length === 0 && (
           <p>
             Coming soon,
             <br />
             Once I have stuff to say...
-          </p>
-        ) : (
-          <p>
-            Here are some of my thoughts.
-            <br />
           </p>
         )}
       </div>
