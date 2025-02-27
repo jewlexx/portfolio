@@ -11,7 +11,7 @@ export default function ArticleGroup({
   articles: IBlogPostFields[];
 }) {
   return (
-    <div className="prose mt-10 flex min-w-screen flex-col gap-y-2 lg:mx-[12.5vw]">
+    <div className="prose mt-10 flex min-w-screen flex-col items-center gap-y-2 *:not-lg:w-screen *:lg:w-[75vw]">
       <h1 className="!m-0 p-0">{year}</h1>
       <ul className="list bg-base-100 rounded-box shadow-md">
         {articles.map((article) => {
