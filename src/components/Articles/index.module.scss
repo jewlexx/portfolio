@@ -1,19 +1,6 @@
 @use "../../styles/mixins";
 @use "../../styles/palette";
 
-.list {
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 1rem;
-
-  place-content: start;
-  place-items: start;
-
-  list-style-type: none;
-}
-
 .article {
   padding: 1rem;
   gap: 0.5rem;

@@ -1,9 +1,11 @@
 import { NextRequest } from "next/server";
 import { draftMode } from "next/headers";
-import { enableDraftHandler } from "@contentful/vercel-nextjs-toolkit/app-router";
 
 export async function GET(request: NextRequest): Promise<Response | void> {
   if (process.env.NODE_ENV === "production") {
+    const { enableDraftHandler } = await import(
+      "@contentful/vercel-nextjs-toolkit/app-router"
+    );
     return enableDraftHandler(request);
   } else if (process.env.NODE_ENV === "development") {
     const draft = await draftMode();
