@@ -7,5 +7,4 @@ export const knownTheme = {
   light: "cupcake",
 } as const;
 
-export const themeList = [knownTheme.dark, knownTheme.light];
-export const themeToggleList = themeList.join(",");
+export const themeList = [knownTheme.dark, knownTheme.light] as const;

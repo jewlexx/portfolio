@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa6";
 
-import { knownTheme, themeToggleList } from "$/theme";
+import { knownTheme } from "$/theme";
 import { setThemePersist } from "./actions";
 
 export default function ThemeToggle({
@@ -17,7 +17,6 @@ export default function ThemeToggle({
     <button
       title={"Toggle theme"}
       className={`btn btn-secondary btn-circle lg:btn-lg m-1 [&>svg]:!text-white`}
-      data-toggle-theme={themeToggleList}
       onClick={() => {
         setThemePersist(
           theme === knownTheme.light ? knownTheme.dark : knownTheme.light,
