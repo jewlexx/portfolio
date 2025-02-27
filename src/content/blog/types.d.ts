@@ -40,7 +40,7 @@ export interface IBlogPostFields {
   title: string;
 
   /** Cover Image */
-  coverImage: Asset;
+  coverImage?: Asset;
 
   /** Date */
   date: string;

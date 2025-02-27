@@ -17,16 +17,22 @@ export default async function Blog(props: {
 
   const content = documentToReactComponents(article.content.json);
 
+  const coverImageUrl = (
+    article.coverImage as unknown as Record<string, string> | undefined
+  )?.url;
+
   return (
     <main>
       <article className="prose sm:prose-sm lg:prose-lg mt-15 flex min-w-screen flex-col items-center [&>p]:text-center">
-        <ContentfulImage
-          className="rounded-lg lg:w-[75vw]"
-          src={(article.coverImage as unknown as Record<string, string>).url}
-          alt={`Cover Image for ${article.title}`}
-          width={512}
-          height={512}
-        />
+        {coverImageUrl && (
+          <ContentfulImage
+            className="rounded-lg lg:w-[75vw]"
+            src={coverImageUrl}
+            alt={`Cover Image for ${article.title}`}
+            width={512}
+            height={512}
+          />
+        )}
         <h1>{article.title}</h1>
         {article.excerpt && <small>{article.excerpt}</small>}
         <Date date={article.date} />
