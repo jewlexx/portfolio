@@ -1,1 +1,20 @@
-*.lockb binary diff=lockb
+src/assets/images/pfp.jpg filter=lfs diff=lfs merge=lfs -text
+src/assets/audio filter=lfs diff=lfs merge=lfs -text
+src/assets/audio/switch-on.wav filter=lfs diff=lfs merge=lfs -text
+src/assets/images/emojis filter=lfs diff=lfs merge=lfs -text
+src/assets/images/emojis/woman-technologist.svg filter=lfs diff=lfs merge=lfs -text
+src/assets/images/index.ts.disabled filter=lfs diff=lfs merge=lfs -text
+src/assets/audio/click-out.mp3 filter=lfs diff=lfs merge=lfs -text
+src/assets/images/anybrowser/ne_browser.gif filter=lfs diff=lfs merge=lfs -text
+src/assets/images/emojis/astronaut.svg filter=lfs diff=lfs merge=lfs -text
+src/assets/audio/switch-off.wav filter=lfs diff=lfs merge=lfs -text
+src/assets/stars.svg filter=lfs diff=lfs merge=lfs -text
+src/assets/images/anybrowser/girlanim.gif filter=lfs diff=lfs merge=lfs -text
+src/assets/images/anybrowser/green.gif filter=lfs diff=lfs merge=lfs -text
+src/assets/images/anybrowser/oeyes-anim.gif filter=lfs diff=lfs merge=lfs -text
+src/assets/audio/click-in.mp3 filter=lfs diff=lfs merge=lfs -text
+src/assets/images filter=lfs diff=lfs merge=lfs -text
+src/assets/images/anybrowser filter=lfs diff=lfs merge=lfs -text
+src/assets/images/anybrowser/anybrowser4b.png filter=lfs diff=lfs merge=lfs -text
+src/assets/images/anybrowser/bveye-anim.gif filter=lfs diff=lfs merge=lfs -text
+src/assets/images/mirror[[:space:]]selfie.webp filter=lfs diff=lfs merge=lfs -text
