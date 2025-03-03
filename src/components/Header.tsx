@@ -9,16 +9,26 @@ import Shrunk from "$/components/Shrunk";
 import ThemeToggle from "$/components/ThemeToggle";
 import { linksAbridged } from "$/links";
 import { knownTheme } from "$/theme";
-import styles from "./index.module.scss";
 
 export default async function Header() {
   const cookieStore = await cookies();
 
   return (
-    <nav className={styles.nav} role="navigation">
-      <span className={styles.titleImage}>
-        <ProgressBarLink className={styles.logolink} href="/" rel="prefetch">
-          <Image src={WomanTechnologist} alt="Juliette Cordor" />
+    <nav
+      className="bg-base-200 m-4 flex shrink grow-0 items-center justify-between rounded-xl px-8 py-4 shadow-md"
+      role="navigation"
+    >
+      <span className="flex items-center">
+        <ProgressBarLink
+          className="text-base-300 mr-4 block rounded-full text-4xl decoration-0 hover:scale-125"
+          href="/"
+          rel="prefetch"
+        >
+          <Image
+            className="glass mr-2 flex size-16 items-center rounded-full text-black"
+            src={WomanTechnologist}
+            alt="Juliette Cordor"
+          />
         </ProgressBarLink>
       </span>
       {/* TODO: Add headerlinks on mobile screens */}
@@ -30,7 +40,7 @@ export default async function Header() {
           <h3 className="text-xl font-bold">Blog</h3>
         </HeaderLink>
       </Shrunk>
-      <span className={styles.linksContainer}>
+      <span className="flex">
         {linksAbridged.map((linkProps) => (
           <IconLink key={linkProps.title} {...linkProps} />
         ))}

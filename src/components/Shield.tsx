@@ -1,5 +1,3 @@
-import styles from "./index.module.scss";
-
 interface Props {
   enabled?: boolean;
   href?: string;
@@ -25,7 +23,7 @@ export default function Shield({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`${styles.shield} ${className}`}
+      className={`mr-2 inline-block ${className}`}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={src} alt={alt} />
