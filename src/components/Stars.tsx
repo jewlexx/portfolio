@@ -4,8 +4,6 @@ import { useEffect, useRef } from "react";
 
 import { Stars as StarsHandler } from "$/stars/index";
 
-import styles from "./index.module.scss";
-
 export default function Stars() {
   const canvas = useRef<HTMLCanvasElement>(null);
 
@@ -23,5 +21,10 @@ export default function Stars() {
     };
   }, []);
 
-  return <canvas className={styles.stars} ref={canvas} />;
+  return (
+    <canvas
+      className="fixed top-0 left-0 -z-1 h-screen w-screen"
+      ref={canvas}
+    />
+  );
 }

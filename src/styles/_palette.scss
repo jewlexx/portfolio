@@ -60,14 +60,14 @@ $t-active: color.adjust($gray, $lightness: 20%);
 
 /* Coolors Exported Palette - https://coolors.co/dad6d6-92bfb1-f4ac45-694a38-a61c3c */
 
-$light-gray: rgba(218, 214, 214, 1);
+$light-gray: #dad6d6;
 $cambridge-blue: rgba(146, 191, 177, 1);
 $yellow-orange: rgba(244, 172, 69, 1);
 $coffee: rgba(105, 74, 56, 1);
 $vivid-burgundy: rgba(166, 28, 60, 1);
 
-$gradient-colors: $light-gray, $cambridge-blue, $yellow-orange, $coffee,
-  $vivid-burgundy;
+$gradient-colors:
+  $light-gray, $cambridge-blue, $yellow-orange, $coffee, $vivid-burgundy;
 
 $gradient-top: linear-gradient(0deg, $gradient-colors);
 $gradient-right: linear-gradient(90deg, $gradient-colors);

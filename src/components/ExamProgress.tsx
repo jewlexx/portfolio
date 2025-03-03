@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import styles from "./index.module.scss";
 
 // We need total questions, total marks to work out marks per minute
 // Then how long they've done so far
@@ -9,7 +8,7 @@ import styles from "./index.module.scss";
 export default function ExamProgress() {
   const [marks, setMarks] = useState(0);
   const [time, setTime] = useState(0);
-  const [spentTime, setSpentTime] = useState(0);
+  const [timeSpent, setSpentTime] = useState(0);
   // const [questions, setQuestions] = createSignal<number>(0);
 
   const marksPerMinute = useMemo(() => {
@@ -20,9 +19,9 @@ export default function ExamProgress() {
 
   return (
     <div>
-      <form className={styles.form}>
-        <span className={styles.questions}>
-          <label>
+      <form className="flex flex-col items-center justify-center *:w-full">
+        <span className="flex">
+          <label className="m-4 flex flex-col items-center text-lg font-bold">
             Total Time (minutes):{" "}
             <input
               id="time"
@@ -33,21 +32,22 @@ export default function ExamProgress() {
             />
           </label>
 
-          <label>
+          <label className="m-4 ml-8 flex flex-col items-center text-lg font-bold">
             Time Spent So Far (minutes):{" "}
             <input
               id="time-spent"
               type="number"
-              value={spentTime}
+              value={timeSpent}
               onChange={(e) => setSpentTime(parseInt(e.target.value, 10))}
               required
             />
           </label>
         </span>
-        <span className={styles.questions}>
-          <label>
+        <span className="flex">
+          <label className="m-4 flex flex-col items-center text-lg font-bold">
             Total Marks:{" "}
             <input
+              className="rounded-xl bg-gray-300 p-4"
               id="marks"
               type="number"
               value={marks}
@@ -68,7 +68,10 @@ export default function ExamProgress() {
       </form>
 
       {marksPerMinute !== 0 && (
-        <div className={styles.output} id="marks-output">
+        <div
+          className="[&_span]:text-yellow-orange flex w-full flex-col items-center justify-center text-lg font-bold"
+          id="marks-output"
+        >
           {marksPerMinute < 1 ? (
             <p>
               You have <span>{1 / marksPerMinute}</span> minutes per mark
@@ -79,7 +82,7 @@ export default function ExamProgress() {
             </p>
           )}
           <p>
-            You should have <span>{marksPerMinute * spentTime}</span> marks
+            You should have <span>{marksPerMinute * timeSpent}</span> marks
             completed so far
           </p>
         </div>

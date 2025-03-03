@@ -15,7 +15,7 @@ export default function HeaderLink({
   const pathname = usePathname();
   const isActive = useMemo(
     () => href === pathname || href === pathname.replace(/\/$/, ""),
-    [href, pathname]
+    [href, pathname],
   );
 
   return (

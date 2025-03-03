@@ -5,5 +5,5 @@ export default function ClientWrapper({
 }: {
   children: React.ReactNode;
 }) {
-  return <section>{children}</section>;
+  return <>{children}</>;
 }
