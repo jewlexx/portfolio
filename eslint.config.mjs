@@ -16,12 +16,10 @@ const compat = new FlatCompat({
 });
 
 const config = tseslint.config(
-  // tseslint.configs.recommended,
-  // tseslint.configs.stylistic,
+  tseslint.configs.recommended,
+  tseslint.configs.stylistic,
   // @ts-expect-error React Compiler types mismatch tseslint types but are compatible
   reactCompiler.configs.recommended,
-  // reactPlugin.configs.recommended,
-  // reactPlugin.configs["jsx-runtime"],
   compat.extends(
     "next/core-web-vitals",
     "plugin:react/recommended",
