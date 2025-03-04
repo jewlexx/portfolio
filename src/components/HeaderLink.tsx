@@ -5,8 +5,6 @@ import { usePathname } from "next/navigation";
 
 import { ProgressBarLink } from "$/components/ProgressBar";
 
-import styles from "./index.module.scss";
-
 export default function HeaderLink({
   href,
   children,
@@ -21,9 +19,7 @@ export default function HeaderLink({
   return (
     <ProgressBarLink
       href={href}
-      className={`${props.className || ""} ${styles.link} ${
-        isActive && styles.active
-      }`}
+      className={`${props.className || ""} inline-block p-2 decoration-0 active:font-bold active:decoration-1 portrait:text-[3vw]`}
       {...props}
     >
       {children}

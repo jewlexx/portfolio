@@ -1,5 +1,5 @@
 import { IBlogPostFields } from "$/content/blog/types";
-import ArticleGroup from "../ArticleGroup";
+import ArticleGroup from "./ArticleGroup";
 
 export default function Articles({
   articles,
