@@ -15,13 +15,22 @@ const compat = new FlatCompat({
   allConfig: js.configs.all,
 });
 
-export default tseslint.config(
-  tseslint.configs.recommended,
-  tseslint.configs.stylistic,
-  compat.extends("next/core-web-vitals"),
+const config = tseslint.config(
+  // tseslint.configs.recommended,
+  // tseslint.configs.stylistic,
+  // @ts-expect-error React Compiler types mismatch tseslint types but are compatible
+  reactCompiler.configs.recommended,
+  // reactPlugin.configs.recommended,
+  // reactPlugin.configs["jsx-runtime"],
+  compat.extends(
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended-legacy",
+  ),
   {
     ignores: ["**/dev/*", "**/dist/*", "**/tests/*", "tsconfig.json"],
-    plugins: { "react-compiler": reactCompiler },
-    rules: { "react-compiler/react-compiler": "error" },
   },
 );
+
+export default config;
