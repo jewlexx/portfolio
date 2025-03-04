@@ -27,7 +27,13 @@ const config = tseslint.config(
     "plugin:react-hooks/recommended-legacy",
   ),
   {
-    ignores: ["**/dev/*", "**/dist/*", "**/tests/*", "tsconfig.json"],
+    ignores: [
+      "**/dev/*",
+      "**/dist/*",
+      "**/tests/*",
+      "tsconfig.json",
+      "src/lib/paraglide/*",
+    ],
   },
 );
 
