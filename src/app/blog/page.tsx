@@ -10,7 +10,7 @@ export default async function Blog() {
     <main>
       <div className="prose sm:prose-sm lg:prose-lg mt-15 flex min-w-screen flex-col items-center [&>p]:text-center">
         <h1>Juliette&apos;s Blog</h1>
-        {articles.length === 0 && (
+        {(articles === undefined || articles.length === 0) && (
           <p>
             Coming soon,
             <br />
@@ -18,7 +18,9 @@ export default async function Blog() {
           </p>
         )}
       </div>
-      {articles.length !== 0 && <Articles articles={articles} />}
+      {articles !== undefined && articles.length !== 0 && (
+        <Articles articles={articles} />
+      )}
     </main>
   );
 }

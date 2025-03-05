@@ -64,32 +64,19 @@ function extractPostEntries(fetchResponse: any): any[] {
   return fetchResponse?.data?.blogPostCollection?.items;
 }
 
-export async function getPreviewPostBySlug(slug: string | null): Promise<any> {
-  const entry = await fetchGraphQL(
-    `query {
-      blogPostCollection(where: { slug: "${slug}" }, preview: true, limit: 1) {
-        items {
-          ${POST_GRAPHQL_FIELDS}
-        }
-      }
-    }`,
-    true,
-  );
-  return extractPost(entry);
-}
-
-export async function getAllPosts(): Promise<IBlogPostFields[]> {
+export async function getAllPosts(): Promise<IBlogPostFields[] | undefined> {
+  const draftModeEnabled = (await draftMode()).isEnabled;
   const entries = await fetchGraphQL(
     `query {
       blogPostCollection(where: { slug_exists: true }, order: date_DESC, preview: ${
-        (await draftMode()).isEnabled ? "true" : "false"
+        draftModeEnabled ? "true" : "false"
       }) {
         items {
           ${POST_GRAPHQL_FIELDS}
         }
       }
     }`,
-    (await draftMode()).isEnabled,
+    draftModeEnabled,
   );
 
   return extractPostEntries(entries);
