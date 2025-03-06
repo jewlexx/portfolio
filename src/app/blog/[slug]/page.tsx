@@ -1,4 +1,5 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS } from "@contentful/rich-text-types";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaBluesky, FaTwitter } from "react-icons/fa6";
@@ -6,6 +7,7 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 
 import ContentfulImage from "$/components/ContentfulImage";
 import Date from "$/components/Date";
+import { headingRenderer } from "$/components/NodeRenderers/Heading";
 import { getPostBySlug } from "$/content/blog/api";
 import { generate } from "$/links/generate";
 
@@ -19,7 +21,20 @@ export default async function Blog(props: {
     return notFound();
   }
 
-  const content = documentToReactComponents(article.content.json);
+  const headings = article.content.json.content;
+
+  console.log(headings);
+
+  const content = documentToReactComponents(article.content.json, {
+    renderNode: {
+      [BLOCKS.HEADING_1]: headingRenderer,
+      [BLOCKS.HEADING_2]: headingRenderer,
+      [BLOCKS.HEADING_3]: headingRenderer,
+      [BLOCKS.HEADING_4]: headingRenderer,
+      [BLOCKS.HEADING_5]: headingRenderer,
+      [BLOCKS.HEADING_6]: headingRenderer,
+    },
+  });
 
   const coverImageUrl = (
     article.coverImage as unknown as Record<string, string> | undefined

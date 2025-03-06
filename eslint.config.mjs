@@ -24,7 +24,7 @@ const config = tseslint.config(
     "next/core-web-vitals",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
-    "plugin:react-hooks/recommended-legacy",
+    "plugin:react-hooks/recommended",
   ),
   {
     ignores: [
