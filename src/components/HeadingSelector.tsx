@@ -20,7 +20,7 @@ export default function HeadingSelector({ headings }: { headings: Heading[] }) {
   const [currentHeading, setCurrentHeading] = useState<string | undefined>();
 
   useEffect(() => {
-    function replaceState(url: string) {
+    function updateHash(url: string) {
       window.history.replaceState(null, "", url);
       setCurrentHeading(url.slice(1) || undefined);
     }
@@ -40,10 +40,10 @@ export default function HeadingSelector({ headings }: { headings: Heading[] }) {
         if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
           if (section.id) {
             if (currentHeading !== section.id) {
-              replaceState(`#${section.id}`);
+              updateHash(`#${section.id}`);
             }
           } else if (currentHeading) {
-            replaceState("#");
+            updateHash("#");
           }
         }
       });
