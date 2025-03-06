@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export type HeadingType =
@@ -21,7 +20,15 @@ export default function HeadingSelector({ headings }: { headings: Heading[] }) {
   const [currentHeading, setCurrentHeading] = useState<string | undefined>();
 
   useEffect(() => {
+    let stateReplacements = 0;
+    function replaceState(url: string) {
+      window.history.replaceState(null, "", url);
+      stateReplacements++;
+      console.log("Replaced state", stateReplacements, url);
+    }
+
     const handleScroll = () => {
+      const currentHeading = window.location.hash.slice(1);
       const sections = document.querySelectorAll<HTMLHeadingElement>(
         "h1, h2, h3, h4, h5, h6",
       );
@@ -29,18 +36,19 @@ export default function HeadingSelector({ headings }: { headings: Heading[] }) {
 
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        console.log(
-          sectionTop,
-          section.offsetHeight,
-          "",
-          section,
-          scrollPosition,
-        );
+        // console.log(sectionTop, section.offsetHeight, section, scrollPosition);
         const sectionBottom = sectionTop + section.offsetHeight;
 
         if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-          window.history.replaceState(null, "", `#${section.id}`);
-          setCurrentHeading(section.id);
+          if (section.id) {
+            if (currentHeading !== section.id) {
+              replaceState(`#${section.id}`);
+              setCurrentHeading(section.id);
+            }
+          } else if (currentHeading) {
+            replaceState("#");
+            setCurrentHeading(undefined);
+          }
         }
       });
     };
@@ -55,13 +63,13 @@ export default function HeadingSelector({ headings }: { headings: Heading[] }) {
   return (
     <ul className="bg-base-200 fixed top-50 right-5 z-50 flex flex-col gap-2 p-4 shadow-lg">
       {headings.map((heading) => (
-        <Link
+        <a
           key={heading.id}
           href={`#${heading.id}`}
           className={heading.id === currentHeading ? "font-bold" : ""}
         >
           {heading.text}
-        </Link>
+        </a>
       ))}
     </ul>
   );
@@ -69,11 +77,11 @@ export default function HeadingSelector({ headings }: { headings: Heading[] }) {
 
 export function CurrentHeading({ id }: { id?: string }) {
   return (
-    <Link
+    <a
       href={`#${id}`}
       className="link link-hover float-left mr-1 -ml-6 opacity-0 transition-opacity duration-300"
     >
       #
-    </Link>
+    </a>
   );
 }
