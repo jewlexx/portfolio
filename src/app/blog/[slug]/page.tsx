@@ -8,11 +8,8 @@ import Date from "$/components/Date";
 import renderPost from "$/components/NodeRenderers";
 import { getPostBySlug } from "$/content/blog/api";
 import { generate } from "$/links/generate";
-import { parseHeaderId } from "$/components/NodeRenderers/Heading";
-import HeadingSelector, {
-  type Heading,
-  type HeadingType,
-} from "$/components/HeadingSelector";
+// import { parseHeaderId } from "$/components/NodeRenderers/Heading";
+// import HeadingSelector, { type Heading, type HeadingType } from "$/components/HeadingSelector";
 
 export default async function Blog(props: {
   params: Promise<{ slug: string }>;
@@ -24,25 +21,25 @@ export default async function Blog(props: {
     return notFound();
   }
 
-  const headings: Heading[] = article.content.json.content
-    .filter((node) => node.nodeType.startsWith("heading"))
-    .map((node) => {
-      if (node.content.length !== 1) {
-        throw new Error("Heading node should have one child");
-      }
+  // const headings: Heading[] = article.content.json.content
+  //   .filter((node) => node.nodeType.startsWith("heading"))
+  //   .map((node) => {
+  //     if (node.content.length !== 1) {
+  //       throw new Error("Heading node should have one child");
+  //     }
 
-      const header = node.content[0];
+  //     const header = node.content[0];
 
-      if (header.nodeType !== "text") {
-        throw new Error("Heading node should have text content");
-      }
+  //     if (header.nodeType !== "text") {
+  //       throw new Error("Heading node should have text content");
+  //     }
 
-      return {
-        headerType: node.nodeType as HeadingType,
-        text: header.value,
-        id: parseHeaderId(header.value),
-      };
-    });
+  //     return {
+  //       headerType: node.nodeType as HeadingType,
+  //       text: header.value,
+  //       id: parseHeaderId(header.value),
+  //     };
+  //   });
 
   const content = renderPost(article);
 
@@ -85,7 +82,7 @@ export default async function Blog(props: {
             <FaBluesky />
           </a>
         </span>
-        <HeadingSelector headings={headings} />
+        {/* <HeadingSelector headings={headings} /> */}
       </article>
     </main>
   );
