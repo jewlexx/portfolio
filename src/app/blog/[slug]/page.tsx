@@ -7,9 +7,11 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 
 import ContentfulImage from "$/components/ContentfulImage";
 import Date from "$/components/Date";
-import { headingRenderer } from "$/components/NodeRenderers/Heading";
+import renderPost from "$/components/NodeRenderers";
 import { getPostBySlug } from "$/content/blog/api";
 import { generate } from "$/links/generate";
+import { parseHeaderId } from "$/components/NodeRenderers/Heading";
+import HeadingSelector, { Heading } from "$/components/HeadingSelector";
 
 export default async function Blog(props: {
   params: Promise<{ slug: string }>;
@@ -21,20 +23,27 @@ export default async function Blog(props: {
     return notFound();
   }
 
-  const headings = article.content.json.content;
+  const headings: Heading[] = article.content.json.content
+    .filter((node) => node.nodeType.startsWith("heading"))
+    .map((node) => {
+      if (node.content.length !== 1) {
+        throw new Error("Heading node should have one child");
+      }
 
-  console.log(headings);
+      const header = node.content[0];
 
-  const content = documentToReactComponents(article.content.json, {
-    renderNode: {
-      [BLOCKS.HEADING_1]: headingRenderer,
-      [BLOCKS.HEADING_2]: headingRenderer,
-      [BLOCKS.HEADING_3]: headingRenderer,
-      [BLOCKS.HEADING_4]: headingRenderer,
-      [BLOCKS.HEADING_5]: headingRenderer,
-      [BLOCKS.HEADING_6]: headingRenderer,
-    },
-  });
+      if (header.nodeType !== "text") {
+        throw new Error("Heading node should have text content");
+      }
+
+      return {
+        headerType: node.nodeType,
+        text: header.value,
+        id: parseHeaderId(header.value),
+      };
+    });
+
+  const content = renderPost(article);
 
   const coverImageUrl = (
     article.coverImage as unknown as Record<string, string> | undefined
@@ -75,6 +84,7 @@ export default async function Blog(props: {
             <FaBluesky />
           </a>
         </span>
+        <HeadingSelector headings={headings} />
       </article>
     </main>
   );
