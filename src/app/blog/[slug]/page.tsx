@@ -51,7 +51,7 @@ export default async function Blog(props: {
 
   return (
     <main className="flex min-w-screen justify-center pb-15">
-      <article className="prose sm:prose-sm lg:prose-lg mt-15 flex max-w-[50vw] flex-col items-center [&>p]:text-center">
+      <article className="prose sm:prose-sm lg:prose-lg mt-15 flex flex-col lg:max-w-[50vw]">
         {coverImageUrl && (
           <ContentfulImage
             className="rounded-lg lg:w-[75vw]"

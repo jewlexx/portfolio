@@ -32,38 +32,38 @@ export default function Heading({
   const element = match(node.nodeType)
     .with(BLOCKS.HEADING_1, () => (
       <h1 {...props}>
-        <CurrentHeading id={id} />
         {children}
+        <CurrentHeading id={id} />
       </h1>
     ))
     .with(BLOCKS.HEADING_2, () => (
       <h2 {...props}>
-        <CurrentHeading id={id} />
         {children}
+        <CurrentHeading id={id} />
       </h2>
     ))
     .with(BLOCKS.HEADING_3, () => (
       <h3 {...props}>
-        <CurrentHeading id={id} />
         {children}
+        <CurrentHeading id={id} />
       </h3>
     ))
     .with(BLOCKS.HEADING_4, () => (
       <h4 {...props}>
-        <CurrentHeading id={id} />
         {children}
+        <CurrentHeading id={id} />
       </h4>
     ))
     .with(BLOCKS.HEADING_5, () => (
       <h5 {...props}>
-        <CurrentHeading id={id} />
         {children}
+        <CurrentHeading id={id} />
       </h5>
     ))
     .with(BLOCKS.HEADING_6, () => (
       <h6 {...props}>
-        <CurrentHeading id={id} />
         {children}
+        <CurrentHeading id={id} />
       </h6>
     ))
     .otherwise(() => {

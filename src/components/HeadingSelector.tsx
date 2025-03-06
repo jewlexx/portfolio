@@ -32,7 +32,7 @@ export function CurrentHeading({ id }: { id?: string }) {
   return (
     <Link
       href={`#${id}`}
-      className="link link-hover mr-1 opacity-0 transition-opacity duration-300"
+      className="link link-hover float-left mr-1 -ml-6 opacity-0 transition-opacity duration-300"
     >
       #
     </Link>
