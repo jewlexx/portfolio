@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export type HeadingType =
   | "heading-1"
@@ -17,10 +18,48 @@ export interface Heading {
 }
 
 export default function HeadingSelector({ headings }: { headings: Heading[] }) {
+  const [currentHeading, setCurrentHeading] = useState<string | undefined>();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll<HTMLHeadingElement>(
+        "h1, h2, h3, h4, h5, h6",
+      );
+      const scrollPosition = window.scrollY;
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        console.log(
+          sectionTop,
+          section.offsetHeight,
+          "",
+          section,
+          scrollPosition,
+        );
+        const sectionBottom = sectionTop + section.offsetHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          window.history.replaceState(null, "", `#${section.id}`);
+          setCurrentHeading(section.id);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <ul className="bg-base-200 fixed top-50 right-5 z-50 flex flex-col gap-2 p-4 shadow-lg">
       {headings.map((heading) => (
-        <Link key={heading.id} href={`#${heading.id}`}>
+        <Link
+          key={heading.id}
+          href={`#${heading.id}`}
+          className={heading.id === currentHeading ? "font-bold" : ""}
+        >
           {heading.text}
         </Link>
       ))}
