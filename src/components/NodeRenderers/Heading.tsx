@@ -4,8 +4,10 @@ import { match } from "ts-pattern";
 
 import { CurrentHeading } from "$/components/HeadingSelector";
 
+export function parseHeaderId(id: string): string;
+export function parseHeaderId(id: string | false): string | undefined;
 export function parseHeaderId(id: string | false) {
-  if (!id) {
+  if (id === false) {
     return undefined;
   }
   return id.replace(/ /g, "_").toLowerCase();
