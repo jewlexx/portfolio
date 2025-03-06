@@ -1,5 +1,3 @@
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS } from "@contentful/rich-text-types";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaBluesky, FaTwitter } from "react-icons/fa6";
