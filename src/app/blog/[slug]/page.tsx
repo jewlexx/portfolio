@@ -9,7 +9,10 @@ import renderPost from "$/components/NodeRenderers";
 import { getPostBySlug } from "$/content/blog/api";
 import { generate } from "$/links/generate";
 import { parseHeaderId } from "$/components/NodeRenderers/Heading";
-import HeadingSelector, { Heading } from "$/components/HeadingSelector";
+import HeadingSelector, {
+  type Heading,
+  type HeadingType,
+} from "$/components/HeadingSelector";
 
 export default async function Blog(props: {
   params: Promise<{ slug: string }>;
@@ -35,7 +38,7 @@ export default async function Blog(props: {
       }
 
       return {
-        headerType: node.nodeType,
+        headerType: node.nodeType as HeadingType,
         text: header.value,
         id: parseHeaderId(header.value),
       };
