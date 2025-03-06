@@ -20,15 +20,14 @@ export default function HeadingSelector({ headings }: { headings: Heading[] }) {
   const [currentHeading, setCurrentHeading] = useState<string | undefined>();
 
   useEffect(() => {
-    let stateReplacements = 0;
     function replaceState(url: string) {
       window.history.replaceState(null, "", url);
-      stateReplacements++;
-      console.log("Replaced state", stateReplacements, url);
+      setCurrentHeading(url.slice(1) || undefined);
     }
 
-    const handleScroll = () => {
+    function handleScroll() {
       const currentHeading = window.location.hash.slice(1);
+
       const sections = document.querySelectorAll<HTMLHeadingElement>(
         "h1, h2, h3, h4, h5, h6",
       );
@@ -36,25 +35,21 @@ export default function HeadingSelector({ headings }: { headings: Heading[] }) {
 
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        // console.log(sectionTop, section.offsetHeight, section, scrollPosition);
         const sectionBottom = sectionTop + section.offsetHeight;
 
         if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
           if (section.id) {
             if (currentHeading !== section.id) {
               replaceState(`#${section.id}`);
-              setCurrentHeading(section.id);
             }
           } else if (currentHeading) {
             replaceState("#");
-            setCurrentHeading(undefined);
           }
         }
       });
-    };
+    }
 
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
