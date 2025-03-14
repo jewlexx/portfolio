@@ -28,12 +28,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.5,
     },
-    ...generateBlogSitemap(await getAllPosts()),
+    ...generateBlogSitemap((await getAllPosts()) ?? []),
   ];
 }
 
 function generateProjectsSitemap(
-  projects: ProjectInfo[]
+  projects: ProjectInfo[],
 ): MetadataRoute.Sitemap {
   return projects.map((project) => ({
     url: `${BASE_URL}/projects/${project.slug}`,
@@ -44,7 +44,7 @@ function generateProjectsSitemap(
 }
 
 function generateBlogSitemap(
-  blogPosts: IBlogPostFields[]
+  blogPosts: IBlogPostFields[],
 ): MetadataRoute.Sitemap {
   return blogPosts.map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
