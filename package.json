@@ -65,7 +65,7 @@
     "contentful-management": "^11.47.2",
     "contentful-typescript-codegen": "^3.4.0",
     "cssnano": "^7.0.6",
-    "daisyui": "beta",
+    "daisyui": "^5",
     "dotenv": "^16.4.7",
     "eslint": "^9.20.1",
     "eslint-config-next": "^15.1.7",

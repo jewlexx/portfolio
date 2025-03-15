@@ -34,7 +34,7 @@ export default async function Index() {
           Homework
         </desc>
         <span className={styles.start_button}>
-          <Link href="7">Get Started</Link>
+          <Link href="computing/7">Get Started</Link>
         </span>
       </main>
     </div>

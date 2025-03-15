@@ -30,7 +30,9 @@ function GoNext({
       {home ? (
         <Link href="/">Go Home</Link>
       ) : (
-        <Link href={`${chapter + 1}`}>Continue to the next chapter</Link>
+        <Link href={`computing/${chapter + 1}`}>
+          Continue to the next chapter
+        </Link>
       )}
     </span>
   );
@@ -39,10 +41,10 @@ function GoNext({
 export default async function Chapter({
   params,
 }: {
-  params: Promise<{ chapter: number }>;
+  params: Promise<{ chapter: string }>;
 }) {
-  const { chapter } = await params;
-  // const chapter = parseInt(chapter as string, 10);
+  const { chapter: chapterString } = await params;
+  const chapter = parseInt(chapterString, 10);
 
   const { title, content } = await getChapterData(chapter as ChapterRange);
 
@@ -68,6 +70,6 @@ export default async function Chapter({
 
 export function generateStaticParams() {
   return range(7, 17).map((v) => ({
-    chapter: v,
+    chapter: v.toString(),
   }));
 }
