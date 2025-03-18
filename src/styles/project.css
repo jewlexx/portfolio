@@ -1,15 +1,13 @@
-@use "transitions";
-
 .heroImage {
   width: 100%;
-
-  img {
-    display: block;
-    margin: 0 auto;
-    border-radius: 12px;
-    box-shadow: var(--box-shadow);
-  }
 }
+.heroImage img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+}
+
 .prose {
   width: 720px;
   max-width: calc(100% - 2em);
@@ -17,20 +15,16 @@
   padding: 1em;
   color: rgb(var(--gray-dark));
 }
-.title {
-  // margin-bottom: 1em;
-  // padding: 1em 0;
-  // text-align: center;
-  // line-height: 1;
 
-  h1 {
-    margin: 0 0 0.5em 0;
-  }
+.title h1 {
+  margin: 0 0 0.5em 0;
 }
+
 .date {
   margin-bottom: 0.5em;
   color: rgb(var(--gray));
 }
+
 .lastUpdatedOn {
   font-style: italic;
 }
@@ -38,6 +32,5 @@
 .linksContainer {
   display: flex;
   align-items: center;
-
   margin: 1rem 0;
 }

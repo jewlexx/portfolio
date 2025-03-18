@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { type ProjectInfo } from "$/content/projects";
 
-import styles from "./index.module.scss";
+import styles from "./index.module.css";
 
 export default function PostImage({ post }: { post: ProjectInfo }) {
   if (!post.heroImage && !post.profileImage) {

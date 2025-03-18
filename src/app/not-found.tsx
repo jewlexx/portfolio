@@ -3,7 +3,7 @@
 import { IBM_Plex_Mono } from "next/font/google";
 
 import { usePathname } from "next/navigation";
-import "$/styles/error.scss";
+import "$/styles/error.css";
 
 const ibmPlexMono = IBM_Plex_Mono({ weight: "400", subsets: ["latin"] });
 

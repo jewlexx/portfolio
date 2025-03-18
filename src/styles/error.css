@@ -1,14 +1,9 @@
-@use "sass:color";
-@use "../styles/transitions";
-
 body {
   font-family: "IBM Plex Mono", monospace !important;
   background: #000000 !important;
   color: #fefeff !important;
   height: 100vh !important;
-  // margin: 1em !important;
-
-  nav {
-    margin: 0 !important;
-  }
+}
+body nav {
+  margin: 0 !important;
 }
