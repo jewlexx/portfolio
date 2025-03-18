@@ -43,7 +43,7 @@ export default async function Chapter({
 }
 
 export function generateStaticParams() {
-  return range(7, 17).map((v) => ({
+  return range(17, 7).map((v) => ({
     chapter: v.toString(),
   }));
 }

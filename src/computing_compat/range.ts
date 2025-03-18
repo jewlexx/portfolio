@@ -1,10 +1,6 @@
-export const range = (start: number, end: number): number[] => {
-  const result: number[] = [];
-  for (let i = start; i <= end; i++) {
-    result.push(i);
-  }
-  return result;
-};
+export function range(end: number, start = 0): number[] {
+  return Array.from({ length: end - start }, (_, i) => i + start);
+}
 
 export function mapString<T>(arr: T[]): string[] {
   return arr.map((v) => String(v));
