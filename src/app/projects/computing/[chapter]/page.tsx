@@ -1,41 +1,20 @@
-import Head from "next/head";
-import Link from "next/link";
+import type { Metadata } from "next";
 import { type ChapterRange, getChapterData } from "$/computing_compat/chapter";
 import { range } from "$/computing_compat/range";
 import { mdToHtml } from "$/computing_compat/mdtohtml";
-// import styles from "../../styles/Chapter.module.scss";
+import GoNext from "./next";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const styles: any = {};
-
-function GoNext({
-  chapter,
-  home = false,
+export async function generateMetadata({
+  params,
 }: {
-  chapter: number;
-  home?: boolean;
-}) {
-  // useEffect(() => {
-  //   const expiry = new Date();
-  //   expiry.setFullYear(expiry.getFullYear() + 1);
-  //   document.cookie = serialize("return", home.toString(), {
-  //     expires: expiry,
-  //     path: "/",
-  //     sameSite: "strict",
-  //   });
-  // }, [home]);
+  params: Promise<{ chapter: string }>;
+}): Promise<Metadata> {
+  const { chapter: chapterString } = await params;
+  const chapter = parseInt(chapterString, 10);
 
-  return (
-    <span className={styles.next_page}>
-      {home ? (
-        <Link href="/">Go Home</Link>
-      ) : (
-        <Link href={`computing/${chapter + 1}`}>
-          Continue to the next chapter
-        </Link>
-      )}
-    </span>
-  );
+  const { title } = await getChapterData(chapter as ChapterRange);
+
+  return { title: `Juliette - ${title}` };
 }
 
 export default async function Chapter({
@@ -46,18 +25,15 @@ export default async function Chapter({
   const { chapter: chapterString } = await params;
   const chapter = parseInt(chapterString, 10);
 
-  const { title, content } = await getChapterData(chapter as ChapterRange);
+  const { content } = await getChapterData(chapter as ChapterRange);
 
   const contents = await mdToHtml(content.replace(/:warning:/gm, "⚠️"));
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>{title}</title>
-      </Head>
+    <div className="flex w-full flex-col items-center">
       <main
         dangerouslySetInnerHTML={{ __html: contents }}
-        className={styles.mainContent}
+        className="prose"
       ></main>
       {chapter < 17 ? (
         <GoNext chapter={chapter} />

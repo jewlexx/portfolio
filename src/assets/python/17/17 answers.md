@@ -11,13 +11,19 @@
 # Task 3
 
 A: `2`
+
 B: `number_sides` & `side_length`
+
 C: `5` & `3.5`
+
 D: `calc_shape_area`
+
 E: `sides` & `length`
 
 # Task 4
 
 A: A paramater is passed to a function whereas a variable it restricted to being used in its own scope
+
 B: An argument is defined as a variable that must be passed into a function (some languages except this rule, e.g. Javascript, Python)
+
 C: A return value is a variable that is returned from a function
