@@ -79,6 +79,10 @@
 @plugin "@tailwindcss/typography";
 
 @layer components {
+  .computing-code {
+    @apply mockup-code;
+  }
+
   .progress-bar {
     position: fixed;
     top: 0;
