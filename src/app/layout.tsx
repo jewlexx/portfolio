@@ -10,6 +10,7 @@ import { ProgressBar } from "$/components/ProgressBar";
 import { twitterConfiguration } from "$/consts";
 import { knownTheme } from "$/theme";
 import "./globals.css";
+import GirlAnim from "$/components/GirlAnim";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -56,6 +57,7 @@ export default async function RootLayout({
           <SpeedInsights />
           <Analytics />
           {shouldInjectToolbar && <VercelToolbar />}
+          <GirlAnim />
         </ProgressBar>
       </body>
     </html>

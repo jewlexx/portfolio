@@ -6,7 +6,7 @@ interface Props {
   long?: string;
   short?: string;
   shrink?: number | "portrait";
-  hide?: number | "portrait";
+  hide?: number | "portrait" | (() => boolean);
   children?: ReactNode;
 }
 
