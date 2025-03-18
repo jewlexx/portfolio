@@ -48,12 +48,9 @@
   "devDependencies": {
     "@eslint/compat": "^1.2.7",
     "@tailwindcss/typography": "^0.5.16",
-    "@types/bun": "^1.2.5",
-    "@types/node": "^22.13.10",
     "@types/react": "^19.0.11",
     "@types/react-dom": "^19.0.4",
     "@types/rss": "^0.0.32",
-    "@types/twemoji-parser": "^13.1.4",
     "autoprefixer": "^10.4.21",
     "contentful-management": "^11.48.0",
     "contentful-typescript-codegen": "^3.4.0",
