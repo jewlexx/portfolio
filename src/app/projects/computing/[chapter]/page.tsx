@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { type ChapterRange, getChapterData } from "$/computing_compat/chapter";
 import { range } from "$/computing_compat/range";
 import { mdToHtml } from "$/computing_compat/mdtohtml";
-import GoNext from "./next";
+import GoNext from "../next";
 
 export async function generateMetadata({
   params,
@@ -35,11 +35,7 @@ export default async function Chapter({
         dangerouslySetInnerHTML={{ __html: contents }}
         className="prose"
       ></main>
-      {chapter < 17 ? (
-        <GoNext chapter={chapter} />
-      ) : (
-        <GoNext chapter={chapter} home />
-      )}
+      <GoNext chapter={chapter + 1} />
     </div>
   );
 }

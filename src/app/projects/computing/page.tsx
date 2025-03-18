@@ -1,41 +1,24 @@
 import type { Metadata } from "next";
-import { cookies } from "next/headers";
-import Head from "next/head";
-import Link from "next/link";
-// import styles from "../styles/Home.module.scss";
+import GoNext from "./next";
 
 export const metadata: Metadata = {
-  title: "Python Homework",
-  description: "My Python homework... but in a website",
+  title: "Juliette's Python Homework",
+  description: "My Python homework... but in a website!",
 };
 
-export default async function Index() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const styles: any = {};
-
-  const cookieStore = await cookies();
-  const returning = cookieStore.get("return")?.value === "true";
-
+export default function Index() {
   return (
-    <div
-      className={styles.global_container}
-      style={{ opacity: returning === null ? "0%" : "100%" }}
-    >
-      <Head>
-        <title>Python Homework</title>
-      </Head>
-
-      <main className={styles.container}>
-        <h1 className={styles.header}>
-          {returning ? "Welcome Back" : "Hello"}, <span>{"Mr AB"}</span>
-        </h1>
-        <desc>
-          This is a little website I made to walk you through my Holiday
-          Homework
-        </desc>
-        <span className={styles.start_button}>
-          <Link href="computing/7">Get Started</Link>
-        </span>
+    <div className="prose flex min-w-screen flex-col items-center justify-center">
+      <main className="text-center lg:max-w-[50vw]">
+        <h1>Welcome to my Python Homework! 🐍</h1>
+        <p>
+          This is a little website originally made to walk my high school
+          computing teacher through my holiday homework. I&apos;ve adapted it
+          into a website to share it with the world, because I&apos;m proud of
+          the backend work that went into making this website possible, and
+          fast.
+        </p>
+        <GoNext chapter={7} />
       </main>
     </div>
   );
