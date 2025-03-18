@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaBluesky, FaTwitter } from "react-icons/fa6";
 import { IoMdArrowRoundBack } from "react-icons/io";
@@ -8,8 +7,7 @@ import Date from "$/components/Date";
 import renderPost from "$/components/NodeRenderers";
 import { getPostBySlug } from "$/content/blog/api";
 import { generate } from "$/links/generate";
-// import { parseHeaderId } from "$/components/NodeRenderers/Heading";
-// import HeadingSelector, { type Heading, type HeadingType } from "$/components/HeadingSelector";
+import { ProgressBarLink } from "$/components/ProgressBar";
 
 export default async function Blog(props: {
   params: Promise<{ slug: string }>;
@@ -67,9 +65,9 @@ export default async function Blog(props: {
         {content}
 
         <span className="mt-10 flex gap-10 *:opacity-75 **:size-6">
-          <Link href="/blog">
+          <ProgressBarLink href="/blog">
             <IoMdArrowRoundBack />
-          </Link>
+          </ProgressBarLink>
           <a
             title="Tweet about it"
             href={generate.twitter(params.slug)}

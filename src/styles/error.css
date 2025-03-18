@@ -1,0 +1,9 @@
+body {
+  font-family: "IBM Plex Mono", monospace !important;
+  background: #000000 !important;
+  color: #fefeff !important;
+  height: 100vh !important;
+}
+body nav {
+  margin: 0 !important;
+}

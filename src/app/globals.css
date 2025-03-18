@@ -79,6 +79,12 @@
 @plugin "@tailwindcss/typography";
 
 @layer components {
+  .computing-code {
+    font-family: "Fira Code", monospace;
+    padding: 0.25rem 0.5rem;
+    @apply rounded-md;
+  }
+
   .progress-bar {
     position: fixed;
     top: 0;

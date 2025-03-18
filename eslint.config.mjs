@@ -6,6 +6,7 @@ import tseslint from "typescript-eslint";
 import js from "@eslint/js";
 import { FlatCompat } from "@eslint/eslintrc";
 import reactCompiler from "eslint-plugin-react-compiler";
+import pluginReact from "eslint-plugin-react";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -20,12 +21,9 @@ const config = tseslint.config(
   tseslint.configs.stylistic,
   // @ts-expect-error React Compiler types mismatch tseslint types but are compatible
   reactCompiler.configs.recommended,
-  compat.extends(
-    "next/core-web-vitals",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:react-hooks/recommended",
-  ),
+  pluginReact.configs.flat.recommended,
+  pluginReact.configs.flat["jsx-runtime"],
+  compat.extends("next/core-web-vitals", "next/typescript"),
   {
     ignores: [
       "**/dev/*",

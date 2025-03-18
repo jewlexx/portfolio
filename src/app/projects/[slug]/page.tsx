@@ -11,7 +11,7 @@ import { getProjectBySlug, getProjectSlugs } from "$/content/projects";
 import markdownToHtml from "$/content/markdown";
 import DownloadForm from "./DownloadForm";
 
-import "$/styles/project.scss";
+import "$/styles/project.css";
 
 export function generateStaticParams() {
   return getProjectSlugs().map((slug) => ({ slug }));

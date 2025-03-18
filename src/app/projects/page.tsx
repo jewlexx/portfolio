@@ -1,12 +1,13 @@
 import { getAllProjects, sortProject } from "$/content/projects";
 
 import ProjectsComponent from "$/components/Projects";
+import appendProject from "$/computing_compat/appendProject";
 
 export default function Projects() {
-  const posts = getAllProjects().sort(sortProject);
+  const posts = appendProject(getAllProjects().sort(sortProject));
 
   return (
-    <main data-glassmorphism="disabled">
+    <main>
       <ProjectsComponent posts={posts} />
     </main>
   );
