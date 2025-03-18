@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,7 +23,9 @@
       }
     ],
     "paths": {
-      "$/*": ["./src/*"]
+      "$/*": [
+        "./src/*"
+      ]
     }
   },
   "include": [
@@ -28,7 +34,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "scripts/twemoji.ts",
-    "getContentfulEnvironment.js"
+    "getContentfulEnvironment.ts"
   ],
-  "exclude": ["node_modules", "old-astro/src/pages/ab.json.ts"]
+  "exclude": [
+    "node_modules",
+  ]
 }

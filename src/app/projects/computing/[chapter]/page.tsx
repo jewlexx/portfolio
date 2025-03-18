@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { type ChapterRange, getChapterData } from "$/computing_compat/chapter";
-import { range } from "$/computing_compat/range";
-import { mdToHtml } from "$/computing_compat/mdtohtml";
 import GoNext from "../next";
+import Markdown from "$/components/MarkdownWrapper";
 
 export const dynamic = "force-static";
 
@@ -29,21 +28,24 @@ export default async function Chapter({
 
   const { content } = await getChapterData(chapter as ChapterRange);
 
-  const contents = await mdToHtml(content.replace(/:warning:/gm, "⚠️"));
+  const contents = content.replace(/:warning:/gm, "⚠️");
 
   return (
     <div className="flex w-full flex-col items-center">
-      <main
-        dangerouslySetInnerHTML={{ __html: contents }}
-        className="prose"
-      ></main>
+      <main className="prose">
+        <Markdown>{contents}</Markdown>
+      </main>
       <GoNext chapter={chapter + 1} />
     </div>
   );
 }
 
 export function generateStaticParams() {
-  return range(7, 17).map((v) => ({
+  function range(end: number, start = 0): number[] {
+    return Array.from({ length: end - start }, (_, i) => i + start);
+  }
+
+  return range(17, 7).map((v) => ({
     chapter: v.toString(),
   }));
 }

@@ -10,6 +10,7 @@ import { twitterConfiguration } from "$/consts";
 import { getProjectBySlug, getProjectSlugs } from "$/content/projects";
 import markdownToHtml from "$/content/markdown";
 import DownloadForm from "./DownloadForm";
+import Markdown from "$/components/MarkdownWrapper";
 
 import "$/styles/project.css";
 
@@ -130,7 +131,7 @@ export default async function Page(props: {
           </span>
           <hr />
         </div>
-        <section dangerouslySetInnerHTML={{ __html: content }} />
+        <Markdown>{content}</Markdown>
       </div>
     </article>
   );
