@@ -4,6 +4,8 @@ import { range } from "$/computing_compat/range";
 import { mdToHtml } from "$/computing_compat/mdtohtml";
 import GoNext from "../next";
 
+export const dynamic = "force-static";
+
 export async function generateMetadata({
   params,
 }: {
