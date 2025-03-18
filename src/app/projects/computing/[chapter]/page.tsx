@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { type ChapterRange, getChapterData } from "$/computing_compat/chapter";
-import { range } from "$/computing_compat/range";
 import Markdown from "markdown-to-jsx";
 import GoNext from "../next";
 import { markdownOptions } from "$/components/MarkdownWrapper";
@@ -43,6 +42,10 @@ export default async function Chapter({
 }
 
 export function generateStaticParams() {
+  function range(end: number, start = 0): number[] {
+    return Array.from({ length: end - start }, (_, i) => i + start);
+  }
+
   return range(17, 7).map((v) => ({
     chapter: v.toString(),
   }));
