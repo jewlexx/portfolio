@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import ShortDate from "$/components/ShortDate";
 import { IBlogPostFields } from "$/content/blog/types";
 import { ProgressBarLink } from "./ProgressBar";

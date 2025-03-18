@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaBluesky, FaTwitter } from "react-icons/fa6";
 import { IoMdArrowRoundBack } from "react-icons/io";
@@ -9,8 +8,6 @@ import renderPost from "$/components/NodeRenderers";
 import { getPostBySlug } from "$/content/blog/api";
 import { generate } from "$/links/generate";
 import { ProgressBarLink } from "$/components/ProgressBar";
-// import { parseHeaderId } from "$/components/NodeRenderers/Heading";
-// import HeadingSelector, { type Heading, type HeadingType } from "$/components/HeadingSelector";
 
 export default async function Blog(props: {
   params: Promise<{ slug: string }>;

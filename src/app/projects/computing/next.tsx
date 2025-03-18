@@ -1,5 +1,4 @@
 import { ProgressBarLink } from "$/components/ProgressBar";
-import Link from "next/link";
 import { FaHome, FaArrowRight } from "react-icons/fa";
 
 export default function GoNext({ chapter }: { chapter: number }) {
