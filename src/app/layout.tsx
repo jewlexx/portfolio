@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import { cookies } from "next/headers";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -12,7 +12,7 @@ import { knownTheme } from "$/theme";
 import "./globals.css";
 import GirlAnim from "$/components/GirlAnim";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = DM_Sans({ subsets: ["latin"], preload: true });
 
 const title = "Juliette Cordor's Portfolio";
 const description =
