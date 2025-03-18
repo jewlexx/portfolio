@@ -60,7 +60,9 @@ export function ProgressBar({
   );
 }
 
-export function ProgressBarLink({
+export const ProgressBarLink = ProgressBarLinkOld;
+
+export function ProgressBarLinkOld({
   href,
   children,
   ...rest

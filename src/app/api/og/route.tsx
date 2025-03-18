@@ -7,7 +7,7 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
 
     const imageUrl =
-      searchParams.get("image") ?? `https://cordor.dev${WomanTechnologist.src}`;
+      searchParams.get("image") ?? `https://cordor.dev${WomanTechnologist}`;
     const title = searchParams.get("title")?.slice(0, 100);
     const backgroundColor = searchParams.get("backgroundColor") ?? "black";
     const backgroundEnabled =

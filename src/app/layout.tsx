@@ -1,15 +1,13 @@
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { VercelToolbar } from "@vercel/toolbar/next";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { cookies } from "next/headers";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { VercelToolbar } from "@vercel/toolbar/next";
 
 import Header from "$/components/Header";
 import { ProgressBar } from "$/components/ProgressBar";
-import Stars from "$/components/Stars";
 import { twitterConfiguration } from "$/consts";
-import { showStars } from "$/flags";
 import { knownTheme } from "$/theme";
 import "./globals.css";
 
@@ -44,7 +42,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const cookieStore = await cookies();
-  const shouldShowStars = await showStars();
   const shouldInjectToolbar = process.env.NODE_ENV === "development";
 
   return (
@@ -56,7 +53,6 @@ export default async function RootLayout({
         <ProgressBar className="progress-bar">
           <Header />
           {children}
-          {shouldShowStars && <Stars />}
           <SpeedInsights />
           <Analytics />
           {shouldInjectToolbar && <VercelToolbar />}
