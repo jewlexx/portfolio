@@ -65,6 +65,7 @@
     "@types/react-dom": "^19.0.4",
     "@types/rss": "^0.0.32",
     "@types/twemoji-parser": "^13.1.4",
+    "autoprefixer": "^10.4.21",
     "contentful-management": "^11.48.0",
     "contentful-typescript-codegen": "^3.4.0",
     "cssnano": "^7.0.6",
