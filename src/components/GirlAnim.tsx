@@ -8,7 +8,7 @@ export default function GirlAnim() {
       src={girlAnimGif}
       alt="Best viewed by a girl"
       title="Courtesy of Samantha Alyssa"
-      className="fixed right-0 bottom-0 motion-reduce:opacity-0"
+      className="fixed bottom-0 left-0 motion-reduce:opacity-0"
       unoptimized
     />
   );
