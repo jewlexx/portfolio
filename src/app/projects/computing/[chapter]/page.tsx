@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { type ChapterRange, getChapterData } from "$/computing_compat/chapter";
-import Markdown from "markdown-to-jsx";
 import GoNext from "../next";
-import { markdownOptions } from "$/components/MarkdownWrapper";
+import Markdown from "$/components/MarkdownWrapper";
 
 export const dynamic = "force-static";
 
@@ -34,7 +33,7 @@ export default async function Chapter({
   return (
     <div className="flex w-full flex-col items-center">
       <main className="prose">
-        <Markdown options={markdownOptions}>{contents}</Markdown>
+        <Markdown>{contents}</Markdown>
       </main>
       <GoNext chapter={chapter + 1} />
     </div>
