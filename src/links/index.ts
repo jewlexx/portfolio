@@ -1,4 +1,4 @@
-import type React from "react";
+import type { ComponentProps } from "react";
 import {
   IconBrandGithub,
   IconBrandLinktree,
@@ -6,11 +6,16 @@ import {
   IconBrandTwitter,
   IconBrandBluesky,
   IconRss,
+  IconCoffee,
+  IconMusic,
+  IconBrandYoutube,
 } from "@tabler/icons-react";
 
 import type IconLink from "$/components/IconLink";
 
-export const links: React.ComponentProps<typeof IconLink>[] = [
+export type Links = ComponentProps<typeof IconLink>[];
+
+export const links = [
   {
     title: "GitHub",
     url: "github.com/jewlexx",
@@ -43,12 +48,43 @@ export const links: React.ComponentProps<typeof IconLink>[] = [
     className: "btn-linktree",
   },
   { title: "RSS Feed", url: "/rss.xml", icon: IconRss, className: "btn-rss" },
-];
+  {
+    title: "Ko-Fi",
+    prettyTitle: "Buy me a coffee",
+    url: "ko-fi.com/jewelexx",
+    icon: IconCoffee,
+    className: "btn-kofi",
+  },
+  {
+    title: "Epidemic Sound",
+    prettyTitle: "Music I use",
+    url: "share.epidemicsound.com/nm2hwt",
+    icon: IconMusic,
+    className: "btn-epidemic-sound",
+  },
+  {
+    title: "YouTube",
+    prettyTitle: "YouTube Channel",
+    url: "youtube.com/@unfilmic",
+    icon: IconBrandYoutube,
+    className: "btn-youtube",
+  },
+] as const;
 
 // Subset of links to be displayed in the header
-export const linksAbridged: typeof links = [
+export const linksAbridged: Links = [
   links.find((link) => link.title === "GitHub")!,
   links.find((link) => link.title === "Bluesky")!,
   links.find((link) => link.title === "Linktree")!,
   links.find((link) => link.title === "RSS Feed")!,
+];
+
+export const linksPage: Links = [
+  links.find((link) => link.title === "Ko-Fi")!,
+  links.find((link) => link.title === "GitHub")!,
+  links.find((link) => link.title === "Twitter")!,
+  links.find((link) => link.title === "Epidemic Sound")!,
+  links.find((link) => link.title === "Twitch")!,
+  links.find((link) => link.title === "YouTube")!,
+  links.find((link) => link.title === "Bluesky")!,
 ];

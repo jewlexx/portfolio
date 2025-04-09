@@ -4,6 +4,7 @@ import { Icon } from "@tabler/icons-react";
 
 interface Props {
   title: string;
+  prettyTitle?: string;
   url: string;
   icon: Icon;
   newTab?: boolean;
