@@ -36,7 +36,7 @@ export default function IconLink({
     }
   }, [url]);
 
-  const linkProps = { ...rest, color: undefined };
+  const linkProps = { ...rest, color: undefined, prettyTitle: undefined };
 
   return (
     <Link

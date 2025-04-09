@@ -9,11 +9,12 @@ import {
   IconCoffee,
   IconMusic,
   IconBrandYoutube,
+  IconLink,
 } from "@tabler/icons-react";
 
-import type IconLink from "$/components/IconLink";
+import IconLinkComponent from "$/components/IconLink";
 
-export type Links = ComponentProps<typeof IconLink>[];
+export type Links = ComponentProps<typeof IconLinkComponent>[];
 
 export const links = [
   {
@@ -47,7 +48,20 @@ export const links = [
     icon: IconBrandLinktree,
     className: "btn-linktree",
   },
-  { title: "RSS Feed", url: "/rss.xml", icon: IconRss, className: "btn-rss" },
+  {
+    title: "Links",
+    prettyTitle: "My links",
+    url: "/links",
+    icon: IconLink,
+    className: "btn-mylinks",
+  },
+  {
+    title: "RSS Feed",
+    prettyTitle: "Keep up to date",
+    url: "/rss.xml",
+    icon: IconRss,
+    className: "btn-rss",
+  },
   {
     title: "Ko-Fi",
     prettyTitle: "Buy me a coffee",
@@ -74,8 +88,8 @@ export const links = [
 export const linksAbridged: Links = [
   links.find((link) => link.title === "GitHub")!,
   links.find((link) => link.title === "Bluesky")!,
-  links.find((link) => link.title === "Linktree")!,
   links.find((link) => link.title === "RSS Feed")!,
+  links.find((link) => link.title === "Links")!,
 ];
 
 export const linksSupportMe: Links = [

@@ -120,6 +120,11 @@
     --btn-fg: var(--color-linktree-content);
   }
 
+  .btn-mylinks {
+    --btn-color: var(--color-mylinks);
+    --btn-fg: var(--color-mylinks-content);
+  }
+
   .btn-rss {
     --btn-color: var(--color-rss);
     --btn-fg: var(--color-rss-content);
@@ -156,6 +161,9 @@
 
   --color-linktree: #537e49;
   --color-linktree-content: oklch(13.454% 0.033 35.791);
+
+  --color-mylinks: #6ba85d;
+  --color-mylinks-content: oklch(13.454% 0.033 35.791);
 
   --color-rss: #ff8f70;
   --color-rss-content: oklch(12.523% 0.028 240.033);
