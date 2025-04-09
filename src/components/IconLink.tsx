@@ -4,6 +4,7 @@ import { Icon } from "@tabler/icons-react";
 
 interface Props {
   title: string;
+  prettyTitle?: string;
   url: string;
   icon: Icon;
   newTab?: boolean;
@@ -35,7 +36,7 @@ export default function IconLink({
     }
   }, [url]);
 
-  const linkProps = { ...rest, color: undefined };
+  const linkProps = { ...rest, color: undefined, prettyTitle: undefined };
 
   return (
     <Link

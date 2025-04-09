@@ -1,4 +1,4 @@
-import type React from "react";
+import type { ComponentProps } from "react";
 import {
   IconBrandGithub,
   IconBrandLinktree,
@@ -6,11 +6,17 @@ import {
   IconBrandTwitter,
   IconBrandBluesky,
   IconRss,
+  IconCoffee,
+  IconMusic,
+  IconBrandYoutube,
+  IconLink,
 } from "@tabler/icons-react";
 
-import type IconLink from "$/components/IconLink";
+import IconLinkComponent from "$/components/IconLink";
 
-export const links: React.ComponentProps<typeof IconLink>[] = [
+export type Links = ComponentProps<typeof IconLinkComponent>[];
+
+export const links = [
   {
     title: "GitHub",
     url: "github.com/jewlexx",
@@ -42,13 +48,59 @@ export const links: React.ComponentProps<typeof IconLink>[] = [
     icon: IconBrandLinktree,
     className: "btn-linktree",
   },
-  { title: "RSS Feed", url: "/rss.xml", icon: IconRss, className: "btn-rss" },
-];
+  {
+    title: "Links",
+    prettyTitle: "My links",
+    url: "/links",
+    icon: IconLink,
+    className: "btn-mylinks",
+  },
+  {
+    title: "RSS Feed",
+    prettyTitle: "Keep up to date",
+    url: "/rss.xml",
+    icon: IconRss,
+    className: "btn-rss",
+  },
+  {
+    title: "Ko-Fi",
+    prettyTitle: "Buy me a coffee",
+    url: "ko-fi.com/jewelexx",
+    icon: IconCoffee,
+    className: "btn-kofi",
+  },
+  {
+    title: "Epidemic Sound",
+    prettyTitle: "Music I use",
+    url: "share.epidemicsound.com/nm2hwt",
+    icon: IconMusic,
+    className: "btn-epidemic",
+  },
+  {
+    title: "YouTube",
+    url: "youtube.com/@unfilmic",
+    icon: IconBrandYoutube,
+    className: "btn-youtube",
+  },
+] as const;
 
 // Subset of links to be displayed in the header
-export const linksAbridged: typeof links = [
+export const linksAbridged: Links = [
   links.find((link) => link.title === "GitHub")!,
   links.find((link) => link.title === "Bluesky")!,
-  links.find((link) => link.title === "Linktree")!,
   links.find((link) => link.title === "RSS Feed")!,
+  links.find((link) => link.title === "Links")!,
+];
+
+export const linksSupportMe: Links = [
+  links.find((link) => link.title === "Ko-Fi")!,
+  links.find((link) => link.title === "Epidemic Sound")!,
+];
+
+export const linksFindMe: Links = [
+  links.find((link) => link.title === "GitHub")!,
+  links.find((link) => link.title === "Twitter")!,
+  links.find((link) => link.title === "Twitch")!,
+  links.find((link) => link.title === "YouTube")!,
+  links.find((link) => link.title === "Bluesky")!,
 ];
