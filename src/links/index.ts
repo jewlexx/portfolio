@@ -52,6 +52,7 @@ export const links = [
     title: "Links",
     prettyTitle: "My links",
     url: "/links",
+    local: true,
     icon: IconLink,
     className: "btn-mylinks",
   },
