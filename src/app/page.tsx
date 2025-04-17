@@ -3,6 +3,8 @@ import { type IconType } from "react-icons/lib";
 
 import Link from "next/link";
 
+export const dynamic = "force-static";
+
 export default function Home() {
   return (
     <main className="prose lg:prose-xl px-5">

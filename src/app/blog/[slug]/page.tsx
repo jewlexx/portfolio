@@ -5,9 +5,20 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import ContentfulImage from "$/components/ContentfulImage";
 import Date from "$/components/Date";
 import renderPost from "$/components/NodeRenderers";
-import { getPostBySlug } from "$/content/blog/api";
+import { getAllPosts, getPostBySlug } from "$/content/blog/api";
 import { generate } from "$/links/generate";
 import { ProgressBarLink } from "$/components/ProgressBar";
+
+export const revalidate = 3600; // 1 hour
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  const posts = (await getAllPosts(false)) ?? [];
+
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
 
 export default async function Blog(props: {
   params: Promise<{ slug: string }>;

@@ -64,8 +64,10 @@ function extractPostEntries(fetchResponse: any): any[] {
   return fetchResponse?.data?.blogPostCollection?.items;
 }
 
-export async function getAllPosts(): Promise<IBlogPostFields[] | undefined> {
-  const draftModeEnabled = (await draftMode()).isEnabled;
+export async function getAllPosts(
+  preview?: boolean,
+): Promise<IBlogPostFields[] | undefined> {
+  const draftModeEnabled = preview ?? (await draftMode()).isEnabled;
   const entries = await fetchGraphQL(
     `query {
       blogPostCollection(where: { slug_exists: true }, order: date_DESC, preview: ${
