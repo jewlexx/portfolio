@@ -1,7 +1,22 @@
-import { ProgressBarLink } from "$/components/ProgressBar";
+import type { ComponentProps, ReactElement } from "react";
 import { type IconType } from "react-icons/lib";
-
 import Link from "next/link";
+
+import {
+  SiC,
+  SiRust,
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiAstro,
+  SiSvelte,
+  SiSolid,
+  SiGnubash,
+  SiPython,
+} from "react-icons/si";
+import { FaJava } from "react-icons/fa";
+
+import { ProgressBarLink } from "$/components/ProgressBar";
 
 export const dynamic = "force-static";
 
@@ -44,21 +59,53 @@ export default function Home() {
           including:
         </p>
         <ul className="list">
-          <SiListItem technology="Rust" />
-          <SiListItem technology="C" />
-          <FaListItem technology="Java" />
-          <SiListItem technology="Typescript" displayName="TypeScript" />
+          <SubListItem>
+            <SiRust />
+            Rust
+          </SubListItem>
+          <SubListItem>
+            <SiC />C
+          </SubListItem>
+          <SubListItem>
+            <FaJava />
+            Java
+          </SubListItem>
+          <SubListItem>
+            <SiTypescript />
+            TypeScript
+          </SubListItem>
 
           <h3>Various web frameworks including</h3>
-          <SiListItem technology="React" />
-          <SiListItem technology="Nextdotjs" displayName="Next.js" />
-          <SiListItem technology="Astro" />
-          <SiListItem technology="Svelte" />
-          <SiListItem technology="Solid" displayName="SolidJS" />
+          <SubListItem>
+            <SiReact />
+            React
+          </SubListItem>
+          <SubListItem>
+            <SiNextdotjs />
+            Next.js
+          </SubListItem>
+          <SubListItem>
+            <SiAstro />
+            Astro
+          </SubListItem>
+          <SubListItem>
+            <SiSvelte />
+            Svelte
+          </SubListItem>
+          <SubListItem>
+            <SiSolid />
+            SolidJS
+          </SubListItem>
 
           <h3>Scripting and automation using</h3>
-          <SiListItem technology="Gnubash" displayName="Bash" />
-          <SiListItem technology="Python" />
+          <SubListItem>
+            <SiGnubash />
+            Bash
+          </SubListItem>
+          <SubListItem>
+            <SiPython />
+            Python
+          </SubListItem>
         </ul>
         <p>
           I am also a big fan of{" "}
@@ -76,55 +123,15 @@ export default function Home() {
   );
 }
 
-async function FaListItem({
-  technology,
-  displayName = technology,
-}: {
-  technology: string;
-  displayName?: string;
-}) {
-  const Icon: IconType | undefined = (await import("react-icons/fa"))[
-    `Fa${technology}` as string
-  ] as IconType;
+type IconElement = ReactElement<ComponentProps<IconType>>;
 
-  if (!Icon) {
-    return null;
-  }
+function SubListItem({ children }: { children: [IconElement, string] }) {
+  const [Icon, name] = children;
 
-  return <SubListItem icon={Icon} displayName={displayName} />;
-}
-
-async function SiListItem({
-  technology,
-  displayName = technology,
-}: {
-  technology: string;
-  displayName?: string;
-}) {
-  const Icon: IconType | undefined = (await import("react-icons/si"))[
-    `Si${technology}` as string
-  ] as IconType;
-
-  if (!Icon) {
-    return null;
-  }
-
-  return <SubListItem icon={Icon} displayName={displayName} />;
-}
-
-function SubListItem({
-  icon: Icon,
-  displayName,
-}: {
-  icon: IconType;
-  displayName: string;
-}) {
   return (
     <li className="list-row">
-      <div>
-        <Icon className="size-5" />
-      </div>
-      <div>{displayName}</div>
+      <div className="[&>svg]:size-5">{Icon}</div>
+      <div>{name}</div>
     </li>
   );
 }
