@@ -15,6 +15,14 @@ import {
   SiPython,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
+import { FiCpu } from "react-icons/fi";
+import {
+  IoSpeedometerOutline,
+  IoLibraryOutline,
+  IoDesktopOutline,
+  IoGlobeOutline,
+} from "react-icons/io5";
+import { HiOutlineCommandLine } from "react-icons/hi2";
 
 import { ProgressBarLink } from "$/components/ProgressBar";
 import AnybrowserDisplay from "$/components/AnybrowserDisplay";
@@ -41,26 +49,36 @@ export default async function Home() {
       </p>
       <section className="mt-10 space-y-4">
         <h2 id="who-am-i">Who am I?</h2>
-        <p>
-          I am an independent software developer, who works mostly on the
-          backend, but I also dabble in frontends, for{" "}
-          <a href="https://github.com/winpax/sfsu">CLI</a>,{" "}
-          <a href="https://github.com/jewlexx/fauxchat">desktop</a>,{" "}
-          <Link href="/#who-am-i">web</Link>, and mobile.
-        </p>
-        <p>
-          I also have a couple of open-source Rust libraries, including{" "}
-          <a href="https://github.com/jewlexx/discord-presence">
-            discord-presence
-          </a>
-          , <a href="https://github.com/winpax/sprinkles">sprinkles</a> and{" "}
-          <a href="https://github.com/jewlexx/quork">quork</a>.
-        </p>
-        <p>
-          I have a range of experience, working with a variety of technologies,
-          including:
-        </p>
+        <p>I am a developer, working in a variety of areas, including:</p>
         <ul className="list">
+          <SubListItem href="https://github.com/jewlexx/fauxchat">
+            <IoDesktopOutline />
+            Desktop Applications
+          </SubListItem>
+          <SubListItem href="/#who-am-i">
+            <IoGlobeOutline />
+            Web Applications
+          </SubListItem>
+          <SubListItem href="https://github.com/winpax/sfsu">
+            <HiOutlineCommandLine />
+            CLI Applications
+          </SubListItem>
+          <SubListItem href="https://github.com/jewlexx/discord-presence">
+            <IoLibraryOutline />
+            API Libraries
+          </SubListItem>
+
+          <h3>Low level code</h3>
+          <SubListItem href="https://github.com/jewlexx/do-not-enter">
+            <FiCpu />
+            Kernel/OS Implementation
+          </SubListItem>
+          <SubListItem href="https://github.com/winpax/miniature">
+            <IoSpeedometerOutline />
+            Low level optimisations
+          </SubListItem>
+
+          <h3>Languages</h3>
           <SubListItem langCode="rust">
             <SiRust />
             Rust
@@ -77,7 +95,7 @@ export default async function Home() {
             TypeScript
           </SubListItem>
 
-          <h3>Various web frameworks including</h3>
+          <h3>Various web frameworks</h3>
           <SubListItem>
             <SiReact />
             React
@@ -87,26 +105,8 @@ export default async function Home() {
             Next.js
           </SubListItem>
           <SubListItem>
-            <SiAstro />
-            Astro
-          </SubListItem>
-          <SubListItem>
             <SiSvelte />
             Svelte
-          </SubListItem>
-          <SubListItem>
-            <SiSolid />
-            SolidJS
-          </SubListItem>
-
-          <h3>Scripting and automation using</h3>
-          <SubListItem>
-            <SiGnubash />
-            Bash
-          </SubListItem>
-          <SubListItem>
-            <SiPython />
-            Python
           </SubListItem>
         </ul>
         <p>
@@ -134,35 +134,37 @@ type IconElement = ReactElement<ComponentProps<IconType>>;
 
 function SubListItem({
   langCode,
+  href,
   children,
 }: {
   langCode?: string;
-  children: [IconElement, string];
+  href?: string;
+  children: [IconElement, string, ...ReactElement[]];
 }) {
-  const [Icon, name] = children;
+  const [Icon, name, remainingChildren] = children;
 
   function InnerContent() {
     return (
-      <>
+      <li className="list-row">
         <div className="[&>svg]:size-5">{Icon}</div>
         <div>{name}</div>
-      </>
+        {remainingChildren}
+      </li>
     );
   }
 
-  if (!langCode) {
-    return (
-      <li className="list-row">
-        <InnerContent />
-      </li>
-    );
-  } else {
-    const link = `https://github.com/jewlexx?tab=repositories&q=&type=&language=${langCode}&sort=stargazers`;
+  const link =
+    href ??
+    (langCode &&
+      `https://github.com/jewlexx?tab=repositories&q=&type=&language=${langCode}&sort=stargazers`);
 
+  if (link) {
     return (
-      <a className="list-row" href={link} rel="noreferrer" target="_blank">
+      <a href={link} rel="noreferrer" target="_blank">
         <InnerContent />
       </a>
     );
+  } else {
+    return <InnerContent />;
   }
 }
