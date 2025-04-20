@@ -17,7 +17,7 @@ import {
 import { FaJava } from "react-icons/fa";
 
 import { ProgressBarLink } from "$/components/ProgressBar";
-import AnimationDisplay from "$/components/GirlAnim";
+import AnybrowserDisplay from "$/components/AnybrowserDisplay";
 import * as anybrowser from "$/assets/images/anybrowser";
 
 export const dynamic = "force-static";
@@ -122,7 +122,9 @@ export default async function Home() {
         </p>
       </section>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(88px,1fr))]">
-        <AnimationDisplay image={anybrowser.girl} />
+        {Object.values(anybrowser).map((image) => {
+          return <AnybrowserDisplay image={image} key={image.alt} />;
+        })}
       </div>
     </main>
   );

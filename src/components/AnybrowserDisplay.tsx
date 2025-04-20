@@ -1,7 +1,7 @@
 import { AnyBrowserImages } from "$/assets/images/anybrowser";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
-export default function AnimationDisplay({
+export default function AnybrowserDisplay({
   image,
 }: {
   image: AnyBrowserImages;
