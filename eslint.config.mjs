@@ -19,12 +19,16 @@ const compat = new FlatCompat({
 const config = tseslint.config(
   tseslint.configs.recommended,
   tseslint.configs.stylistic,
-  // @ts-expect-error React Compiler types mismatch tseslint types but are compatible
   reactCompiler.configs.recommended,
   pluginReact.configs.flat.recommended,
   pluginReact.configs.flat["jsx-runtime"],
-  compat.extends("next/core-web-vitals", "next/typescript"),
+  compat.extends("plugin:@next/next/recommended"),
   {
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
     ignores: [
       "**/dev/*",
       "**/dist/*",

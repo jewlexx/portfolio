@@ -10,6 +10,5 @@ const contentfulLoader: ImageLoader = ({ src, width, quality }) => {
 export default function ContentfulImage(
   props: Omit<ComponentProps<typeof Image>, "loader">,
 ) {
-  // eslint-disable-next-line jsx-a11y/alt-text
   return <Image loader={contentfulLoader} {...props} />;
 }

@@ -1,6 +1,5 @@
 import { type NextConfig } from "next";
 import createVercelToolbar from "@vercel/toolbar/plugins/next";
-import createBundleAnalyzer from "@next/bundle-analyzer";
 
 function composePlugins(...plugins: ((config: NextConfig) => NextConfig)[]) {
   return (config: NextConfig) => {
@@ -29,10 +28,6 @@ const withVercelToolbar = createVercelToolbar({
   enableInProduction: false,
 });
 
-const withBundleAnalyzer = createBundleAnalyzer({
-  enabled: process.env.ANALYZE === "true",
-});
-
-const withPlugins = composePlugins(withVercelToolbar, withBundleAnalyzer);
+const withPlugins = composePlugins(withVercelToolbar);
 
 export default withPlugins(nextConfig);

@@ -1,6 +1,5 @@
 import type { ComponentProps, ReactElement } from "react";
 import { type IconType } from "react-icons/lib";
-import Link from "next/link";
 
 import {
   SiC,
@@ -8,11 +7,7 @@ import {
   SiTypescript,
   SiReact,
   SiNextdotjs,
-  SiAstro,
   SiSvelte,
-  SiSolid,
-  SiGnubash,
-  SiPython,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 import { FiCpu } from "react-icons/fi";
