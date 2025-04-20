@@ -61,18 +61,18 @@ export default async function Home() {
           including:
         </p>
         <ul className="list">
-          <SubListItem>
+          <SubListItem langCode="rust">
             <SiRust />
             Rust
           </SubListItem>
-          <SubListItem>
+          <SubListItem langCode="c">
             <SiC />C
           </SubListItem>
-          <SubListItem>
+          <SubListItem langCode="java">
             <FaJava />
             Java
           </SubListItem>
-          <SubListItem>
+          <SubListItem langCode="typescript">
             <SiTypescript />
             TypeScript
           </SubListItem>
@@ -132,13 +132,37 @@ export default async function Home() {
 
 type IconElement = ReactElement<ComponentProps<IconType>>;
 
-function SubListItem({ children }: { children: [IconElement, string] }) {
+function SubListItem({
+  langCode,
+  children,
+}: {
+  langCode?: string;
+  children: [IconElement, string];
+}) {
   const [Icon, name] = children;
 
-  return (
-    <li className="list-row">
-      <div className="[&>svg]:size-5">{Icon}</div>
-      <div>{name}</div>
-    </li>
-  );
+  function InnerContent() {
+    return (
+      <>
+        <div className="[&>svg]:size-5">{Icon}</div>
+        <div>{name}</div>
+      </>
+    );
+  }
+
+  if (!langCode) {
+    return (
+      <li className="list-row">
+        <InnerContent />
+      </li>
+    );
+  } else {
+    const link = `https://github.com/jewlexx?tab=repositories&q=&type=&language=${langCode}&sort=stargazers`;
+
+    return (
+      <a className="list-row" href={link} rel="noreferrer" target="_blank">
+        <InnerContent />
+      </a>
+    );
+  }
 }
