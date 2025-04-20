@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
-import { cookies } from "next/headers";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { VercelToolbar } from "@vercel/toolbar/next";
 
-import Header from "$/components/Header";
 import { ProgressBar } from "$/components/ProgressBar";
 import { twitterConfiguration } from "$/consts";
 import { knownTheme } from "$/theme";
+import Header from "$/components/Header";
 import "./globals.css";
-import GirlAnim from "$/components/GirlAnim";
 
 const inter = DM_Sans({ subsets: ["latin"], preload: true });
 
@@ -42,24 +40,24 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const cookieStore = await cookies();
   const shouldInjectToolbar = process.env.NODE_ENV === "development";
 
   return (
-    <html
-      lang="en"
-      data-theme={cookieStore.get("theme")?.value ?? knownTheme.light}
-    >
-      <body className={inter.className}>
+    <html lang="en" data-theme={knownTheme.light}>
+      <body
+        className={
+          inter.className +
+          " min-h-screen grid-cols-[25fr_75fr] gap-4 *:max-h-screen *:overflow-auto lg:grid"
+        }
+      >
         <ProgressBar className="progress-bar">
           <Header />
-          {children}
-          <SpeedInsights />
-          <Analytics />
-          {shouldInjectToolbar && <VercelToolbar />}
-          <GirlAnim />
+          <div className="py-5">{children}</div>
         </ProgressBar>
       </body>
+      {shouldInjectToolbar && <VercelToolbar />}
+      <SpeedInsights />
+      <Analytics />
     </html>
   );
 }

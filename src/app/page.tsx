@@ -20,7 +20,7 @@ import { ProgressBarLink } from "$/components/ProgressBar";
 
 export const dynamic = "force-static";
 
-export default function Home() {
+export default async function Home() {
   return (
     <main className="prose lg:prose-xl px-5">
       <h1 className="!mt-10 flex items-center gap-2">🧑‍🚀 Hello, Traveller!</h1>
