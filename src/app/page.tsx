@@ -1,6 +1,5 @@
 import type { ComponentProps, ReactElement } from "react";
 import { type IconType } from "react-icons/lib";
-import Link from "next/link";
 
 import {
   SiC,
@@ -8,19 +7,25 @@ import {
   SiTypescript,
   SiReact,
   SiNextdotjs,
-  SiAstro,
   SiSvelte,
-  SiSolid,
-  SiGnubash,
-  SiPython,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
+import { FiCpu } from "react-icons/fi";
+import {
+  IoSpeedometerOutline,
+  IoLibraryOutline,
+  IoDesktopOutline,
+  IoGlobeOutline,
+} from "react-icons/io5";
+import { HiOutlineCommandLine } from "react-icons/hi2";
 
 import { ProgressBarLink } from "$/components/ProgressBar";
+import AnybrowserDisplay from "$/components/AnybrowserDisplay";
+import * as anybrowser from "$/assets/images/anybrowser";
 
 export const dynamic = "force-static";
 
-export default function Home() {
+export default async function Home() {
   return (
     <main className="prose lg:prose-xl px-5">
       <h1 className="!mt-10 flex items-center gap-2">🧑‍🚀 Hello, Traveller!</h1>
@@ -39,43 +44,53 @@ export default function Home() {
       </p>
       <section className="mt-10 space-y-4">
         <h2 id="who-am-i">Who am I?</h2>
-        <p>
-          I am an independent software developer, who works mostly on the
-          backend, but I also dabble in frontends, for{" "}
-          <a href="https://github.com/winpax/sfsu">CLI</a>,{" "}
-          <a href="https://github.com/jewlexx/fauxchat">desktop</a>,{" "}
-          <Link href="/#who-am-i">web</Link>, and mobile.
-        </p>
-        <p>
-          I also have a couple of open-source Rust libraries, including{" "}
-          <a href="https://github.com/jewlexx/discord-presence">
-            discord-presence
-          </a>
-          , <a href="https://github.com/winpax/sprinkles">sprinkles</a> and{" "}
-          <a href="https://github.com/jewlexx/quork">quork</a>.
-        </p>
-        <p>
-          I have a range of experience, working with a variety of technologies,
-          including:
-        </p>
+        <p>I am a developer, working in a variety of areas, including:</p>
         <ul className="list">
-          <SubListItem>
+          <SubListItem href="https://github.com/jewlexx/fauxchat">
+            <IoDesktopOutline />
+            Desktop Applications
+          </SubListItem>
+          <SubListItem href="/#who-am-i">
+            <IoGlobeOutline />
+            Web Applications
+          </SubListItem>
+          <SubListItem href="https://github.com/winpax/sfsu">
+            <HiOutlineCommandLine />
+            CLI Applications
+          </SubListItem>
+          <SubListItem href="https://github.com/jewlexx/discord-presence">
+            <IoLibraryOutline />
+            API Libraries
+          </SubListItem>
+
+          <h3>Low level code</h3>
+          <SubListItem href="https://github.com/jewlexx/do-not-enter">
+            <FiCpu />
+            Kernel/OS Implementation
+          </SubListItem>
+          <SubListItem href="https://github.com/winpax/miniature">
+            <IoSpeedometerOutline />
+            Low level optimisations
+          </SubListItem>
+
+          <h3>Languages</h3>
+          <SubListItem langCode="rust">
             <SiRust />
             Rust
           </SubListItem>
-          <SubListItem>
+          <SubListItem langCode="c">
             <SiC />C
           </SubListItem>
-          <SubListItem>
+          <SubListItem langCode="java">
             <FaJava />
             Java
           </SubListItem>
-          <SubListItem>
+          <SubListItem langCode="typescript">
             <SiTypescript />
             TypeScript
           </SubListItem>
 
-          <h3>Various web frameworks including</h3>
+          <h3>Various web frameworks</h3>
           <SubListItem>
             <SiReact />
             React
@@ -85,26 +100,8 @@ export default function Home() {
             Next.js
           </SubListItem>
           <SubListItem>
-            <SiAstro />
-            Astro
-          </SubListItem>
-          <SubListItem>
             <SiSvelte />
             Svelte
-          </SubListItem>
-          <SubListItem>
-            <SiSolid />
-            SolidJS
-          </SubListItem>
-
-          <h3>Scripting and automation using</h3>
-          <SubListItem>
-            <SiGnubash />
-            Bash
-          </SubListItem>
-          <SubListItem>
-            <SiPython />
-            Python
           </SubListItem>
         </ul>
         <p>
@@ -119,19 +116,50 @@ export default function Home() {
           at <a href="mailto:juliette@cordor.dev">juliette@cordor.dev</a>.
         </p>
       </section>
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(88px,1fr))]">
+        {Object.values(anybrowser).map((image) => {
+          return <AnybrowserDisplay image={image} key={image.alt} />;
+        })}
+      </div>
     </main>
   );
 }
 
 type IconElement = ReactElement<ComponentProps<IconType>>;
 
-function SubListItem({ children }: { children: [IconElement, string] }) {
-  const [Icon, name] = children;
+function SubListItem({
+  langCode,
+  href,
+  children,
+}: {
+  langCode?: string;
+  href?: string;
+  children: [IconElement, string, ...ReactElement[]];
+}) {
+  const [Icon, name, remainingChildren] = children;
 
-  return (
-    <li className="list-row">
-      <div className="[&>svg]:size-5">{Icon}</div>
-      <div>{name}</div>
-    </li>
-  );
+  function InnerContent() {
+    return (
+      <li className="list-row">
+        <div className="[&>svg]:size-5">{Icon}</div>
+        <div>{name}</div>
+        {remainingChildren}
+      </li>
+    );
+  }
+
+  const link =
+    href ??
+    (langCode &&
+      `https://github.com/jewlexx?tab=repositories&q=&type=&language=${langCode}&sort=stargazers`);
+
+  if (link) {
+    return (
+      <a href={link} rel="noreferrer" target="_blank">
+        <InnerContent />
+      </a>
+    );
+  } else {
+    return <InnerContent />;
+  }
 }
