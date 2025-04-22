@@ -21,6 +21,7 @@ import { HiOutlineCommandLine } from "react-icons/hi2";
 
 import Collapsible from "$/components/Collapsible";
 import { ProgressBarLink } from "$/components/ProgressBar";
+import { Introduction } from "$/components/Header";
 import AnybrowserDisplay from "$/components/AnybrowserDisplay";
 import * as anybrowser from "$/assets/images/anybrowser";
 import { EMAIL } from "$/consts";
@@ -29,11 +30,7 @@ export default function Home() {
   return (
     <main className="prose lg:prose-xl px-5">
       <h1 className="!mt-10 flex items-center gap-2">🧑‍🚀 Hello, Traveller!</h1>
-      <p>
-        My name is <span className="font-bold">Juliette</span>, and you have
-        landed on my <span className="font-bold">silly little site</span>
-        &trade;.
-      </p>
+      <Introduction />
       <p>
         Feel free to check out{" "}
         <ProgressBarLink href="/projects">
