@@ -6,7 +6,7 @@ import WomanTechnologist from "$/assets/images/emojis/woman-technologist.svg";
 import IconLink from "$/components/IconLink";
 import { linksAbridged } from "$/links";
 import { ProgressBarLink } from "$/components/ProgressBar";
-import { FaBlog } from "react-icons/fa6";
+import { FaBlog, FaGithub } from "react-icons/fa6";
 import { FaProjectDiagram } from "react-icons/fa";
 
 export function Introduction(props: HTMLAttributes<HTMLParagraphElement>) {
@@ -70,11 +70,21 @@ export default function Header() {
           Blog
         </HeaderLink>
       </span>
-      <span className="float-left !m-0 flex self-start !p-0 lg:bottom-5 lg:left-5 lg:flex-col">
+      <span className="float-left !m-0 !mb-8 flex self-start !p-0 lg:bottom-5 lg:left-5 lg:flex-col">
         {linksAbridged.map((linkProps) => (
           <IconLink key={linkProps.title} {...linkProps} />
         ))}
       </span>
+
+      <a
+        className="absolute bottom-4 !m-0 flex items-center justify-center gap-1 !p-0 opacity-75"
+        href="https://github.com/jewlexx/portfolio"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaGithub />
+        This website is open source!
+      </a>
     </nav>
   );
 }
