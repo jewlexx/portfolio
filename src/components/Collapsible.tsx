@@ -16,7 +16,14 @@ export default function Collapsible(props: {
     <>
       <h3 className="flex items-center">
         <motion.button
-          animate={{ rotate: isOpen ? 0 : -90 }}
+          animate={{
+            rotate: isOpen ? 0 : -90,
+            transition: {
+              type: "spring",
+              duration: 0.3,
+              stiffness: 200,
+            },
+          }}
           onClick={() => setIsOpen(!isOpen)}
           className="float-left mr-3 -ml-8"
         >
@@ -31,6 +38,9 @@ export default function Collapsible(props: {
             animate={{ opacity: 1 }}
             exit={{
               opacity: 0,
+              transition: {
+                duration: 0.11,
+              },
             }}
           >
             {props.children}

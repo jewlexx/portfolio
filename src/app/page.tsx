@@ -19,14 +19,13 @@ import {
 } from "react-icons/io5";
 import { HiOutlineCommandLine } from "react-icons/hi2";
 
+import Collapsible from "$/components/Collapsible";
 import { ProgressBarLink } from "$/components/ProgressBar";
 import AnybrowserDisplay from "$/components/AnybrowserDisplay";
 import * as anybrowser from "$/assets/images/anybrowser";
-import Collapsible from "$/components/Collapsible";
+import { EMAIL } from "$/consts";
 
-export const dynamic = "force-static";
-
-export default async function Home() {
+export default function Home() {
   return (
     <main className="prose lg:prose-xl px-5">
       <h1 className="!mt-10 flex items-center gap-2">🧑‍🚀 Hello, Traveller!</h1>
@@ -120,7 +119,7 @@ export default async function Home() {
           If you want to get in touch, you can find me on{" "}
           <a href="https://x.com/jewelexx">Twitter (X)</a>,{" "}
           <a href="https://github.com/jewlexx">GitHub</a>, or shoot me an email
-          at <a href="mailto:juliette@cordor.dev">juliette@cordor.dev</a>.
+          at <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.
         </p>
       </section>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(88px,1fr))]">
