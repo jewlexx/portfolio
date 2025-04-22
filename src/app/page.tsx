@@ -22,6 +22,7 @@ import { HiOutlineCommandLine } from "react-icons/hi2";
 import { ProgressBarLink } from "$/components/ProgressBar";
 import AnybrowserDisplay from "$/components/AnybrowserDisplay";
 import * as anybrowser from "$/assets/images/anybrowser";
+import Collapsible from "$/components/Collapsible";
 
 export const dynamic = "force-static";
 
@@ -62,47 +63,53 @@ export default async function Home() {
             <IoLibraryOutline />
             API Libraries
           </SubListItem>
+        </ul>
 
-          <h3>Low level code</h3>
-          <SubListItem href="https://github.com/jewlexx/do-not-enter">
-            <FiCpu />
-            Kernel/OS Implementation
-          </SubListItem>
-          <SubListItem href="https://github.com/winpax/miniature">
-            <IoSpeedometerOutline />
-            Low level optimisations
-          </SubListItem>
+        <p className="!m-0">As well as:</p>
+        <ul className="list !mt-0">
+          <Collapsible title="Low level code">
+            <SubListItem href="https://github.com/jewlexx/do-not-enter">
+              <FiCpu />
+              Kernel/OS Implementation
+            </SubListItem>
+            <SubListItem href="https://github.com/winpax/miniature">
+              <IoSpeedometerOutline />
+              Low level optimisations
+            </SubListItem>
+          </Collapsible>
 
-          <h3>Languages</h3>
-          <SubListItem langCode="rust">
-            <SiRust />
-            Rust
-          </SubListItem>
-          <SubListItem langCode="c">
-            <SiC />C
-          </SubListItem>
-          <SubListItem langCode="java">
-            <FaJava />
-            Java
-          </SubListItem>
-          <SubListItem langCode="typescript">
-            <SiTypescript />
-            TypeScript
-          </SubListItem>
+          <Collapsible title="Various Languages">
+            <SubListItem langCode="rust">
+              <SiRust />
+              Rust
+            </SubListItem>
+            <SubListItem langCode="c">
+              <SiC />C
+            </SubListItem>
+            <SubListItem langCode="java">
+              <FaJava />
+              Java
+            </SubListItem>
+            <SubListItem langCode="typescript">
+              <SiTypescript />
+              TypeScript
+            </SubListItem>
+          </Collapsible>
 
-          <h3>Various web frameworks</h3>
-          <SubListItem>
-            <SiReact />
-            React
-          </SubListItem>
-          <SubListItem>
-            <SiNextdotjs />
-            Next.js
-          </SubListItem>
-          <SubListItem>
-            <SiSvelte />
-            Svelte
-          </SubListItem>
+          <Collapsible title="Various web frameworks">
+            <SubListItem>
+              <SiReact />
+              React
+            </SubListItem>
+            <SubListItem>
+              <SiNextdotjs />
+              Next.js
+            </SubListItem>
+            <SubListItem>
+              <SiSvelte />
+              Svelte
+            </SubListItem>
+          </Collapsible>
         </ul>
         <p>
           I am also a big fan of{" "}
