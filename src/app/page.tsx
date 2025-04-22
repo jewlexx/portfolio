@@ -19,21 +19,18 @@ import {
 } from "react-icons/io5";
 import { HiOutlineCommandLine } from "react-icons/hi2";
 
+import Collapsible from "$/components/Collapsible";
 import { ProgressBarLink } from "$/components/ProgressBar";
+import { Introduction } from "$/components/Header";
 import AnybrowserDisplay from "$/components/AnybrowserDisplay";
 import * as anybrowser from "$/assets/images/anybrowser";
+import { EMAIL } from "$/consts";
 
-export const dynamic = "force-static";
-
-export default async function Home() {
+export default function Home() {
   return (
     <main className="prose lg:prose-xl px-5">
       <h1 className="!mt-10 flex items-center gap-2">🧑‍🚀 Hello, Traveller!</h1>
-      <p>
-        My name is <span className="font-bold">Juliette</span>, and you have
-        landed on my <span className="font-bold">silly little site</span>
-        &trade;.
-      </p>
+      <Introduction />
       <p>
         Feel free to check out{" "}
         <ProgressBarLink href="/projects">
@@ -62,47 +59,53 @@ export default async function Home() {
             <IoLibraryOutline />
             API Libraries
           </SubListItem>
+        </ul>
 
-          <h3>Low level code</h3>
-          <SubListItem href="https://github.com/jewlexx/do-not-enter">
-            <FiCpu />
-            Kernel/OS Implementation
-          </SubListItem>
-          <SubListItem href="https://github.com/winpax/miniature">
-            <IoSpeedometerOutline />
-            Low level optimisations
-          </SubListItem>
+        <p className="!m-0">As well as:</p>
+        <ul className="list !mt-0">
+          <Collapsible title="Low level code">
+            <SubListItem href="https://github.com/jewlexx/do-not-enter">
+              <FiCpu />
+              Kernel/OS Implementation
+            </SubListItem>
+            <SubListItem href="https://github.com/winpax/miniature">
+              <IoSpeedometerOutline />
+              Low level optimisations
+            </SubListItem>
+          </Collapsible>
 
-          <h3>Languages</h3>
-          <SubListItem langCode="rust">
-            <SiRust />
-            Rust
-          </SubListItem>
-          <SubListItem langCode="c">
-            <SiC />C
-          </SubListItem>
-          <SubListItem langCode="java">
-            <FaJava />
-            Java
-          </SubListItem>
-          <SubListItem langCode="typescript">
-            <SiTypescript />
-            TypeScript
-          </SubListItem>
+          <Collapsible title="Various Languages">
+            <SubListItem langCode="rust">
+              <SiRust />
+              Rust
+            </SubListItem>
+            <SubListItem langCode="c">
+              <SiC />C
+            </SubListItem>
+            <SubListItem langCode="java">
+              <FaJava />
+              Java
+            </SubListItem>
+            <SubListItem langCode="typescript">
+              <SiTypescript />
+              TypeScript
+            </SubListItem>
+          </Collapsible>
 
-          <h3>Various web frameworks</h3>
-          <SubListItem>
-            <SiReact />
-            React
-          </SubListItem>
-          <SubListItem>
-            <SiNextdotjs />
-            Next.js
-          </SubListItem>
-          <SubListItem>
-            <SiSvelte />
-            Svelte
-          </SubListItem>
+          <Collapsible title="Various web frameworks">
+            <SubListItem>
+              <SiReact />
+              React
+            </SubListItem>
+            <SubListItem>
+              <SiNextdotjs />
+              Next.js
+            </SubListItem>
+            <SubListItem>
+              <SiSvelte />
+              Svelte
+            </SubListItem>
+          </Collapsible>
         </ul>
         <p>
           I am also a big fan of{" "}
@@ -113,7 +116,7 @@ export default async function Home() {
           If you want to get in touch, you can find me on{" "}
           <a href="https://x.com/jewelexx">Twitter (X)</a>,{" "}
           <a href="https://github.com/jewlexx">GitHub</a>, or shoot me an email
-          at <a href="mailto:juliette@cordor.dev">juliette@cordor.dev</a>.
+          at <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.
         </p>
       </section>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(88px,1fr))]">

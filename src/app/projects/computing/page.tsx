@@ -6,8 +6,6 @@ export const metadata: Metadata = {
   description: "My Python homework... but in a website!",
 };
 
-export const dynamic = "force-static";
-
 export default function Index() {
   return (
     <div className="prose flex min-w-screen flex-col items-center justify-center">

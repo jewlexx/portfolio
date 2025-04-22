@@ -5,8 +5,6 @@ import { IBM_Plex_Mono } from "next/font/google";
 import { usePathname } from "next/navigation";
 import "$/styles/error.css";
 
-export const dynamic = "force-static";
-
 const ibmPlexMono = IBM_Plex_Mono({ weight: "400", subsets: ["latin"] });
 
 const cowsay404 = `

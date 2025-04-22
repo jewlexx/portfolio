@@ -1,7 +1,5 @@
 import { linksSupportMe, linksFindMe } from "$/links";
 
-export const dynamic = "force-static";
-
 export default function LinksPage() {
   return (
     <div className="flex flex-col gap-4 md:grid md:grid-cols-2">

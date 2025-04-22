@@ -3,8 +3,6 @@ import { type ChapterRange, getChapterData } from "$/computing_compat/chapter";
 import GoNext from "../next";
 import Markdown from "$/components/MarkdownWrapper";
 
-export const dynamic = "force-static";
-
 export async function generateMetadata({
   params,
 }: {

@@ -1,4 +1,4 @@
-import type { AnchorHTMLAttributes } from "react";
+import type { AnchorHTMLAttributes, HTMLAttributes } from "react";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 
@@ -6,6 +6,18 @@ import WomanTechnologist from "$/assets/images/emojis/woman-technologist.svg";
 import IconLink from "$/components/IconLink";
 import { linksAbridged } from "$/links";
 import { ProgressBarLink } from "$/components/ProgressBar";
+import { FaBlog } from "react-icons/fa6";
+import { FaProjectDiagram } from "react-icons/fa";
+
+export function Introduction(props: HTMLAttributes<HTMLParagraphElement>) {
+  return (
+    <p {...props}>
+      My name is <span className="font-bold">Juliette</span>, and you have
+      landed on my <span className="font-bold">silly little site</span>
+      &trade;.
+    </p>
+  );
+}
 
 function HeaderLink({
   href,
@@ -14,12 +26,12 @@ function HeaderLink({
 }: AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) {
   return (
     <ProgressBarLink
-      href={href}
-      className={twMerge(
-        props.className,
-        "btn btn-ghost btn-block text-xl hover:font-bold xl:text-3xl",
-      )}
       {...props}
+      className={twMerge(
+        "btn btn-ghost lg:btn-block text-xl hover:font-bold xl:text-3xl",
+        props.className,
+      )}
+      href={href}
     >
       {children}
     </ProgressBarLink>
@@ -29,7 +41,7 @@ function HeaderLink({
 export default function Header() {
   return (
     <nav
-      className="bg-base-200 m-4 flex max-h-screen shrink grow-0 items-center justify-between rounded-xl px-8 py-4 shadow-md lg:flex-col"
+      className="bg-base-200 m-4 flex max-h-screen shrink grow-0 items-center justify-between rounded-xl px-4 py-4 shadow-md lg:m-0 lg:flex-col"
       role="navigation"
     >
       <ProgressBarLink
@@ -43,15 +55,22 @@ export default function Header() {
           alt="Juliette Cordor"
         />
       </ProgressBarLink>
-      <span className="flex w-full grow flex-col items-center justify-center gap-4">
+
+      <h3 className="px-4 not-lg:hidden">
+        <Introduction />
+      </h3>
+
+      <span className="flex w-full items-center justify-center gap-4 lg:flex-col">
         <HeaderLink href="/projects">
-          <p>Projects</p>
+          <FaProjectDiagram />
+          Projects
         </HeaderLink>
-        <HeaderLink href="/blog">
-          <p>Blog</p>
+        <HeaderLink href="/blog" className="gap-4">
+          <FaBlog />
+          Blog
         </HeaderLink>
       </span>
-      <span className="flex lg:absolute lg:bottom-5 lg:left-5 lg:flex-col">
+      <span className="float-left !m-0 flex self-start !p-0 lg:bottom-5 lg:left-5 lg:flex-col">
         {linksAbridged.map((linkProps) => (
           <IconLink key={linkProps.title} {...linkProps} />
         ))}

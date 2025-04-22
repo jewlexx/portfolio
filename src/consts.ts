@@ -17,3 +17,5 @@ export const BASE_URL =
   process.env.NODE_ENV === "production"
     ? "https://cordor.dev"
     : "http://localhost:3000";
+
+export const EMAIL = "juliette@cordor.dev";
