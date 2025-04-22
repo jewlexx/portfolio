@@ -16,6 +16,7 @@ export default function Collapsible(props: {
     <>
       <h3 className="flex items-center">
         <motion.button
+          aria-label={`Toggle ${props.title}`}
           animate={{
             rotate: isOpen ? 0 : -90,
             transition: {
