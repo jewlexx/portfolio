@@ -1,24 +1,25 @@
-import { ProgressBarLink } from "$/components/ProgressBar";
 import { FaHome, FaArrowRight } from "react-icons/fa";
+import { match } from "ts-pattern";
+
+import { ProgressBarLink } from "$/components/ProgressBar";
 
 export default function GoNext({ chapter }: { chapter: number }) {
-  let href;
-  let text;
-  let icon;
-
-  if (chapter === 7) {
-    href = `computing/${chapter}`;
-    text = "Get Started";
-    icon = <FaArrowRight />;
-  } else if (chapter === 18) {
-    href = "/projects/computing";
-    text = "Home";
-    icon = <FaHome />;
-  } else {
-    href = `/projects/computing/${chapter}`;
-    text = "Next";
-    icon = <FaArrowRight />;
-  }
+  const { href, text, icon } = match(chapter)
+    .with(7, () => ({
+      href: `computing/${chapter}`,
+      text: "Get Started",
+      icon: <FaArrowRight />,
+    }))
+    .with(18, () => ({
+      href: "/projects/computing",
+      text: "Home",
+      icon: <FaHome />,
+    }))
+    .otherwise(() => ({
+      href: `/projects/computing/${chapter}`,
+      text: "Next",
+      icon: <FaArrowRight />,
+    }));
 
   return (
     <ProgressBarLink

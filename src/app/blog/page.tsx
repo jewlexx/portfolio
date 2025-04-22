@@ -1,7 +1,7 @@
 import { getAllPosts } from "$/content/blog/api";
 import Articles from "$/components/Articles";
 
-export const revalidate = 60;
+export const revalidate = 3600;
 
 export default async function Blog() {
   const articles = await getAllPosts();
