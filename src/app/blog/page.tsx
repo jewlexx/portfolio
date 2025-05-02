@@ -8,7 +8,7 @@ export default async function Blog() {
 
   return (
     <main>
-      <div className="prose sm:prose-sm lg:prose-lg mt-15 flex min-w-screen flex-col items-center [&>p]:text-center">
+      <div className="prose sm:prose-sm lg:prose-lg mt-15 flex flex-col items-center [&>p]:text-center">
         <h1>Juliette&apos;s Blog</h1>
         {(articles === undefined || articles.length === 0) && (
           <p>

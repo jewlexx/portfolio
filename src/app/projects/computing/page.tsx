@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Index() {
   return (
-    <div className="prose flex min-w-screen flex-col items-center justify-center">
+    <div className="prose flex flex-col items-center justify-center">
       <main className="text-center lg:max-w-[50vw]">
         <h1>Welcome to my Python Homework! 🐍</h1>
         <p>

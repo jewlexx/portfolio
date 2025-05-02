@@ -31,6 +31,7 @@ export default async function Chapter({
   return (
     <div className="flex w-full flex-col items-center">
       <main className="prose">
+        <h1>Chapter {chapter}</h1>
         <Markdown>{contents}</Markdown>
       </main>
       <GoNext chapter={chapter + 1} />
