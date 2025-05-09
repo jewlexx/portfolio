@@ -27,7 +27,7 @@
     "contentful-import": "^9.4.99",
     "date-fns": "^4.1.0",
     "fast-glob": "^3.3.3",
-    "flags": "^3.2.0",
+    "flags": "^4.0.0",
     "framer-motion": "^12.7.4",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.11.1",
