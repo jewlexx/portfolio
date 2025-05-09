@@ -41,7 +41,7 @@ function HeaderLink({
 export default function Header() {
   return (
     <nav
-      className="bg-base-200 m-4 flex max-h-screen shrink grow-0 items-center justify-between rounded-xl px-4 py-4 shadow-md lg:m-0 lg:flex-col"
+      className="bg-base-200 not:lg:rounded-xl m-4 flex max-h-screen shrink grow-0 items-center justify-between rounded-tr-xl rounded-br-xl px-4 py-4 shadow-md lg:m-0 lg:flex-col"
       role="navigation"
     >
       <ProgressBarLink
