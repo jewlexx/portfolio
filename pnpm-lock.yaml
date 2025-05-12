@@ -49,7 +49,7 @@ importers:
         version: 1.0.30001717
       contentful:
         specifier: ^11.5.14
-        version: 11.5.20
+        version: 11.5.21
       contentful-import:
         specifier: ^9.4.99
         version: 9.4.101(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.32.0(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.26.0(jiti@2.4.2)))(eslint-plugin-n@16.6.2(eslint@9.26.0(jiti@2.4.2)))(eslint-plugin-promise@6.6.0(eslint@9.26.0(jiti@2.4.2)))
@@ -106,7 +106,7 @@ importers:
         version: 1.2.2
       tailwind-merge:
         specifier: ^3.2.0
-        version: 3.2.0
+        version: 3.3.0
       tailwindcss:
         specifier: ^4.1.4
         version: 4.1.6
@@ -313,8 +313,8 @@ packages:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
     engines: {node: '>=0.1.90'}
 
-  '@contentful/content-source-maps@0.11.14':
-    resolution: {integrity: sha512-Ztad5mne0r0IgpYarYXX0X6i72ccNbfUp7byn2mf3jGe67JbK0GD3+yhnPWH/A1Jl/XKroE5XoYeA9WT5vW9wQ==}
+  '@contentful/content-source-maps@0.11.15':
+    resolution: {integrity: sha512-3ljhXYRTiZG3pYGFTs8dZbua7Lo/pyU3fhTIgnCJOQSNKuFrYW4cfROzFXz6sg6z+hwSTzoxobvD37bSeNRqCw==}
 
   '@contentful/node-apps-toolkit@3.13.0':
     resolution: {integrity: sha512-3o8BkpQu5AWwS1vrvHf2WjM9RGEPS6wSXmNoFlm7POn9uTJJnLMDDoU9rON2wj0FXg3wlpxeyv19U+BU6wEVZg==}
@@ -1681,8 +1681,8 @@ packages:
     resolution: {integrity: sha512-d/7ydc4HOVKNqT789T9hL0fu4i1U1AthjQV+PfJevwZo4JyzNvh2I5wpaJUqV859bJHSNsTfV6gdtLHg9bx0bA==}
     engines: {node: '>=18'}
 
-  contentful-resolve-response@1.9.2:
-    resolution: {integrity: sha512-VTY1hZGh29yspBeveJ62cuDf+cw9Iq/NcKWBdNHjTq8hvgxz+E19+Pej3LW/02o98+D0XcKfcPYXIpm4lHY+eg==}
+  contentful-resolve-response@1.9.3:
+    resolution: {integrity: sha512-1mPTz7bJLZsLdWAOEyjoVKys/eTXa7o3aV3EYLH7sqqF8V1fnRHlJqlDoxGZFsPxQPBYag+V89B1E/HYE0ENnQ==}
     engines: {node: '>=4.7.2'}
 
   contentful-sdk-core@9.2.0:
@@ -1700,8 +1700,8 @@ packages:
       ts-node:
         optional: true
 
-  contentful@11.5.20:
-    resolution: {integrity: sha512-p8OOArQxXYZVqOZtLeZ557ktjD9dPL8Cn7+oQqboOzwKc+0jRZHb9+Y/O1+2SLnACoygJrTLBXO6UzQcAQQNFg==}
+  contentful@11.5.21:
+    resolution: {integrity: sha512-WPj26kCTHNOka35A/Thon1RXG+SFhkJSsuPXgua0dF9Iks8SDqQKCA5YXQDfhYeikmefiiukqzLw3W2Ai7NFRA==}
     engines: {node: '>=18'}
 
   convert-source-map@2.0.0:
@@ -4243,8 +4243,8 @@ packages:
     resolution: {integrity: sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==}
     engines: {node: '>=0.10.0'}
 
-  tailwind-merge@3.2.0:
-    resolution: {integrity: sha512-FQT/OVqCD+7edmmJpsgCsY820RTD5AkBryuG5IUqR5YQZSdj5xlH5nLgH7YPths7WsLPSpSBNneJdM8aS8aeFA==}
+  tailwind-merge@3.3.0:
+    resolution: {integrity: sha512-fyW/pEfcQSiigd5SNn0nApUOxx0zB/dm6UDU/rEwc2c3sX2smWUNbapHv+QRqLGVp9GWX3THIa7MUGPo+YkDzQ==}
 
   tailwindcss@4.1.6:
     resolution: {integrity: sha512-j0cGLTreM6u4OWzBeLBpycK0WIh8w7kSwcUsQZoGLHZ7xDTdM69lN64AgoIEEwFi0tnhs4wSykUa5YWxAzgFYg==}
@@ -4677,7 +4677,7 @@ snapshots:
   '@colors/colors@1.5.0':
     optional: true
 
-  '@contentful/content-source-maps@0.11.14':
+  '@contentful/content-source-maps@0.11.15':
     dependencies:
       '@vercel/stega': 0.1.2
       json-pointer: 0.6.2
@@ -6045,7 +6045,7 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  contentful-resolve-response@1.9.2:
+  contentful-resolve-response@1.9.3:
     dependencies:
       fast-copy: 2.1.7
 
@@ -6066,12 +6066,12 @@ snapshots:
       meow: 9.0.0
       prettier: 3.5.3
 
-  contentful@11.5.20:
+  contentful@11.5.21:
     dependencies:
-      '@contentful/content-source-maps': 0.11.14
+      '@contentful/content-source-maps': 0.11.15
       '@contentful/rich-text-types': 16.8.5
       axios: 1.9.0(debug@4.4.0)
-      contentful-resolve-response: 1.9.2
+      contentful-resolve-response: 1.9.3
       contentful-sdk-core: 9.2.0
       json-stringify-safe: 5.0.1
       type-fest: 4.41.0
@@ -8963,7 +8963,7 @@ snapshots:
 
   symbol-observable@1.2.0: {}
 
-  tailwind-merge@3.2.0: {}
+  tailwind-merge@3.3.0: {}
 
   tailwindcss@4.1.6: {}
 
