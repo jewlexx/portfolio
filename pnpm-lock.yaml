@@ -18,13 +18,13 @@ importers:
         specifier: ^17.0.0
         version: 17.0.0
       '@contentful/vercel-nextjs-toolkit':
-        specifier: ^1.4.1
+        specifier: ^1.6.0
         version: 1.6.0(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
       '@tabler/icons-react':
-        specifier: ^3.31.0
+        specifier: ^3.33.0
         version: 3.33.0(react@19.1.0)
       '@tailwindcss/postcss':
-        specifier: ^4.1.4
+        specifier: ^4.1.7
         version: 4.1.7
       '@types/hast':
         specifier: ^3.0.4
@@ -39,19 +39,19 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
       '@vercel/toolbar':
-        specifier: ^0.1.36
-        version: 0.1.36(@vercel/analytics@1.5.0(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0))(@vercel/speed-insights@1.2.0(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0))(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: ^0.1.37
+        version: 0.1.37(@vercel/analytics@1.5.0(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0))(@vercel/speed-insights@1.2.0(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0))(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       babel-plugin-react-compiler:
-        specifier: ^19.0.0-beta-ebf51a3-20250411
+        specifier: 19.0.0-beta-ebf51a3-20250411
         version: 19.0.0-beta-ebf51a3-20250411
       caniuse-lite:
-        specifier: ^1.0.30001715
+        specifier: ^1.0.30001718
         version: 1.0.30001718
       contentful:
-        specifier: ^11.5.14
-        version: 11.5.22
+        specifier: ^11.5.23
+        version: 11.5.23
       contentful-import:
-        specifier: ^9.4.99
+        specifier: ^9.4.101
         version: 9.4.101(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.32.1(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.27.0(jiti@2.4.2)))(eslint-plugin-n@16.6.2(eslint@9.27.0(jiti@2.4.2)))(eslint-plugin-promise@6.6.0(eslint@9.27.0(jiti@2.4.2)))
       date-fns:
         specifier: ^4.1.0
@@ -63,7 +63,7 @@ importers:
         specifier: ^3.2.0
         version: 3.2.0(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       framer-motion:
-        specifier: ^12.7.4
+        specifier: ^12.12.1
         version: 12.12.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       gray-matter:
         specifier: ^4.0.3
@@ -72,10 +72,10 @@ importers:
         specifier: ^11.11.1
         version: 11.11.1
       markdown-to-jsx:
-        specifier: ^7.7.4
+        specifier: ^7.7.6
         version: 7.7.6(react@19.1.0)
       next:
-        specifier: ^15.3.1
+        specifier: ^15.3.2
         version: 15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       postcss:
         specifier: ^8.5.3
@@ -90,7 +90,7 @@ importers:
         specifier: ^19.1.0
         version: 19.1.0(react@19.1.0)
       react-hook-form:
-        specifier: ^7.56.0
+        specifier: ^7.56.4
         version: 7.56.4(react@19.1.0)
       react-icons:
         specifier: ^5.5.0
@@ -105,16 +105,16 @@ importers:
         specifier: ^1.2.2
         version: 1.2.2
       tailwind-merge:
-        specifier: ^3.2.0
+        specifier: ^3.3.0
         version: 3.3.0
       tailwindcss:
-        specifier: ^4.1.4
+        specifier: ^4.1.7
         version: 4.1.7
       theme-change:
         specifier: ^2.5.0
         version: 2.5.0
       ts-pattern:
-        specifier: ^5.7.0
+        specifier: ^5.7.1
         version: 5.7.1
       use-sound:
         specifier: ^5.0.0
@@ -124,22 +124,22 @@ importers:
         version: 6.0.3
     devDependencies:
       '@eslint/compat':
-        specifier: ^1.2.8
+        specifier: ^1.2.9
         version: 1.2.9(eslint@9.27.0(jiti@2.4.2))
       '@next/eslint-plugin-next':
-        specifier: ^15.3.1
+        specifier: ^15.3.2
         version: 15.3.2
       '@tailwindcss/typography':
         specifier: ^0.5.16
         version: 0.5.16(tailwindcss@4.1.7)
       '@types/bun':
-        specifier: ^1.2.10
+        specifier: ^1.2.13
         version: 1.2.13
       '@types/react':
-        specifier: ^19.1.2
+        specifier: ^19.1.4
         version: 19.1.4
       '@types/react-dom':
-        specifier: ^19.1.2
+        specifier: ^19.1.5
         version: 19.1.5(@types/react@19.1.4)
       '@types/rss':
         specifier: ^0.0.32
@@ -151,22 +151,22 @@ importers:
         specifier: ^10.4.21
         version: 10.4.21(postcss@8.5.3)
       contentful-management:
-        specifier: ^11.52.1
+        specifier: ^11.52.2
         version: 11.52.2(debug@4.4.1)
       contentful-typescript-codegen:
         specifier: ^3.4.0
         version: 3.4.0(prettier@3.5.3)
       cssnano:
-        specifier: ^7.0.6
+        specifier: ^7.0.7
         version: 7.0.7(postcss@8.5.3)
       daisyui:
-        specifier: ^5.0.27
+        specifier: ^5.0.35
         version: 5.0.35
       dotenv:
         specifier: ^16.5.0
         version: 16.5.0
       eslint:
-        specifier: ^9.25.0
+        specifier: ^9.27.0
         version: 9.27.0(jiti@2.4.2)
       eslint-plugin-react:
         specifier: ^7.37.5
@@ -190,7 +190,7 @@ importers:
         specifier: ^5.8.3
         version: 5.8.3
       typescript-eslint:
-        specifier: ^8.30.1
+        specifier: ^8.32.1
         version: 8.32.1(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.3)
 
 packages:
@@ -825,6 +825,9 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
+  '@next/env@15.1.6':
+    resolution: {integrity: sha512-d9AFQVPEYNr+aqokIiPLNK/MTyt3DWa/dpKveiAaVccUadFbhFEvY6FXYX2LJO2Hv7PHnLBu2oWwB4uBuHjr/w==}
+
   '@next/env@15.3.2':
     resolution: {integrity: sha512-xURk++7P7qR9JG1jJtLzPzf0qEvqCN0A/T3DXf8IPMKo9/6FfjxtEffRJIIew/bIL4T3C2jLLqBor8B/zVlx6g==}
 
@@ -1258,8 +1261,8 @@ packages:
       react-dom:
         optional: true
 
-  '@vercel/microfrontends@1.1.0':
-    resolution: {integrity: sha512-w7SeCV10hsLh3xUB4M1xsqbBSo+ry5PPL9/pkX9St5ZDRUHGZT/UEQd4vhOcSgwObn/1gbcuV0Il/unXmPty9A==}
+  '@vercel/microfrontends@1.2.0':
+    resolution: {integrity: sha512-w+WcDU8pN3gkGEMMBx8xcAV/C3/0qxK0az0X7yBVtX8kRPAKucthRZRrI+QWjoTe652zpKhhBi/JOlipS2PzNg==}
     hasBin: true
     peerDependencies:
       '@sveltejs/kit': '>=1'
@@ -1311,8 +1314,8 @@ packages:
   '@vercel/stega@0.1.2':
     resolution: {integrity: sha512-P7mafQXjkrsoyTRppnt0N21udKS9wUmLXHRyP9saLXLHw32j/FgUJ3FscSWgvSqRs4cj7wKZtwqJEvWJ2jbGmA==}
 
-  '@vercel/toolbar@0.1.36':
-    resolution: {integrity: sha512-hEY4dx2XkR6p7uWT1pvP9brVWGM8cY6Ga9WG7utAsmayie+wNRKN/oVSGAVWTp4A55S0bYZshYBKwoZ7ng9FxA==}
+  '@vercel/toolbar@0.1.37':
+    resolution: {integrity: sha512-upGpxs2922rURbgfFEE6Fhn0C4TpApJc4zlXPFpghHekbL8jVrbjMPQtL10lt0FWEte+RkpMHa0bzLVHAMcJcA==}
     peerDependencies:
       next: '>=11.0.0'
       react: '>=17'
@@ -1676,8 +1679,8 @@ packages:
       ts-node:
         optional: true
 
-  contentful@11.5.22:
-    resolution: {integrity: sha512-Qptc8jDPFqR4e0q1+p7mvAxTriCcH3TSDIK6E5/rgIMrbTOTsXyoPnw4JkNBQMLrg7CchHIWgXTM0SIjwJe67A==}
+  contentful@11.5.23:
+    resolution: {integrity: sha512-Jp1dAuxb7YbN0OCUU19ObJguJ9+l4VEUYYmf9xBPb4s//52SzAOIxvab/gFECA9DC41yjMdo1J03dE96bxUc2w==}
     engines: {node: '>=18'}
 
   convert-source-map@2.0.0:
@@ -4095,8 +4098,8 @@ packages:
   tailwindcss@4.1.7:
     resolution: {integrity: sha512-kr1o/ErIdNhTz8uzAYL7TpaUuzKIE6QPQ4qmSdxnoX/lo+5wmUHQA6h3L5yIqEImSRnAAURDirLu/BgiXGPAhg==}
 
-  tapable@2.2.1:
-    resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
+  tapable@2.2.2:
+    resolution: {integrity: sha512-Re10+NauLTMCudc7T5WLFLAwDhQ0JWdrMK+9B2M8zR5hRExKmsRDCBA7/aV/pNJFltmBFO5BAMlQFi/vq3nKOg==}
     engines: {node: '>=6'}
 
   tar@7.4.3:
@@ -4330,8 +4333,8 @@ packages:
     peerDependencies:
       zod: ^3.24.4
 
-  zod@3.24.4:
-    resolution: {integrity: sha512-OdqJE9UDRPwWsrHjLN2F8bPxvwJBK22EHLWtanu0LSYr5YqzsaaW3RMgmjwr8Rypg5k+meEJdSPXJZXE/yqOMg==}
+  zod@3.25.7:
+    resolution: {integrity: sha512-YGdT1cVRmKkOg6Sq7vY7IkxdphySKnXhaUmFI4r4FcuFVNgpCb9tZfNwXbT6BPjD5oz0nubFsoo9pIqKrDcCvg==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -4993,6 +4996,8 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
+  '@next/env@15.1.6': {}
+
   '@next/env@15.3.2': {}
 
   '@next/eslint-plugin-next@15.3.2':
@@ -5379,8 +5384,9 @@ snapshots:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 
-  '@vercel/microfrontends@1.1.0(@vercel/analytics@1.5.0(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0))(@vercel/speed-insights@1.2.0(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0))(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@vercel/microfrontends@1.2.0(@vercel/analytics@1.5.0(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0))(@vercel/speed-insights@1.2.0(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0))(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
+      '@next/env': 15.1.6
       ajv: 8.17.1
       commander: 12.1.0
       cookie: 0.4.0
@@ -5405,10 +5411,10 @@ snapshots:
 
   '@vercel/stega@0.1.2': {}
 
-  '@vercel/toolbar@0.1.36(@vercel/analytics@1.5.0(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0))(@vercel/speed-insights@1.2.0(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0))(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@vercel/toolbar@0.1.37(@vercel/analytics@1.5.0(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0))(@vercel/speed-insights@1.2.0(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0))(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@tinyhttp/app': 1.3.0
-      '@vercel/microfrontends': 1.1.0(@vercel/analytics@1.5.0(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0))(@vercel/speed-insights@1.2.0(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0))(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@vercel/microfrontends': 1.2.0(@vercel/analytics@1.5.0(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0))(@vercel/speed-insights@1.2.0(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0))(next@15.3.2(@babel/core@7.27.1)(babel-plugin-react-compiler@19.0.0-beta-ebf51a3-20250411)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       chokidar: 3.6.0
       execa: 5.1.1
       fast-glob: 3.3.3
@@ -5849,7 +5855,7 @@ snapshots:
       meow: 9.0.0
       prettier: 3.5.3
 
-  contentful@11.5.22:
+  contentful@11.5.23:
     dependencies:
       '@contentful/content-source-maps': 0.11.16
       '@contentful/rich-text-types': 16.8.5
@@ -6093,7 +6099,7 @@ snapshots:
   enhanced-resolve@5.18.1:
     dependencies:
       graceful-fs: 4.2.11
-      tapable: 2.2.1
+      tapable: 2.2.2
 
   entities@4.5.0: {}
 
@@ -6309,8 +6315,8 @@ snapshots:
       '@babel/plugin-proposal-private-methods': 7.18.6(@babel/core@7.27.1)
       eslint: 9.27.0(jiti@2.4.2)
       hermes-parser: 0.25.1
-      zod: 3.24.4
-      zod-validation-error: 3.4.1(zod@3.24.4)
+      zod: 3.25.7
+      zod-validation-error: 3.4.1(zod@3.25.7)
     transitivePeerDependencies:
       - supports-color
 
@@ -8587,7 +8593,7 @@ snapshots:
 
   tailwindcss@4.1.7: {}
 
-  tapable@2.2.1: {}
+  tapable@2.2.2: {}
 
   tar@7.4.3:
     dependencies:
@@ -8854,10 +8860,10 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  zod-validation-error@3.4.1(zod@3.24.4):
+  zod-validation-error@3.4.1(zod@3.25.7):
     dependencies:
-      zod: 3.24.4
+      zod: 3.25.7
 
-  zod@3.24.4: {}
+  zod@3.25.7: {}
 
   zwitch@2.0.4: {}
