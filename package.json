@@ -80,6 +80,7 @@
     "string-width-cjs": "npm:string-width"
   },
   "trustedDependencies": [
+    "@tailwindcss/oxide",
     "@vercel/speed-insights",
     "sharp"
   ],
