@@ -1,6 +1,6 @@
 "use server";
 
-import { redirect, RedirectType } from "next/navigation";
+import { redirect } from "next/navigation";
 import { z } from "zod";
 
 const searchEngines = {
