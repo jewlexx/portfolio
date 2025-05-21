@@ -46,13 +46,13 @@
     "theme-change": "^2.5.0",
     "ts-pattern": "^5.7.1",
     "use-sound": "^5.0.0",
-    "vfile": "^6.0.3"
+    "vfile": "^6.0.3",
+    "zod": "^3.25.9"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.9",
     "@next/eslint-plugin-next": "^15.3.2",
     "@tailwindcss/typography": "^0.5.16",
-    "@types/bun": "^1.2.13",
     "@types/react": "^19.1.4",
     "@types/react-dom": "^19.1.5",
     "@types/rss": "^0.0.32",

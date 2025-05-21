@@ -3,17 +3,6 @@ import { performSearch } from "./actions";
 import { SiDuckduckgo, SiStartpage } from "react-icons/si";
 import { FaGoogle, FaYandexInternational } from "react-icons/fa";
 
-const searchEngines = {
-  duckDuckGo: (query: string) =>
-    `https://duckduckgo.com/?q=${encodeURIComponent(query)}`,
-  google: (query: string) =>
-    `https://www.google.com/search?q=${encodeURIComponent(query)}`,
-  startpage: (query: string) =>
-    `https://www.startpage.com/do/search?q=${encodeURIComponent(query)}`,
-  yandex: (query: string) =>
-    `https://yandex.com/search/?text=${encodeURIComponent(query)}`,
-};
-
 export default function Page() {
   return (
     <div className="flex h-screen flex-col items-center justify-center">
@@ -27,6 +16,7 @@ export default function Page() {
             className="input"
             name="search"
             placeholder="Search"
+            required
           />
 
           <label className="label">Pick your engine</label>
@@ -36,6 +26,7 @@ export default function Page() {
               type="radio"
               value="duckDuckGo"
               className="radio"
+              required
             ></input>
             <SiDuckduckgo />
             DuckDuckGo
@@ -46,6 +37,7 @@ export default function Page() {
               value="google"
               type="radio"
               className="radio"
+              required
             ></input>
             <FaGoogle />
             Google
@@ -56,6 +48,7 @@ export default function Page() {
               value="startpage"
               type="radio"
               className="radio"
+              required
             ></input>
             <SiStartpage />
             Startpage
@@ -66,6 +59,7 @@ export default function Page() {
               value="yandex"
               type="radio"
               className="radio"
+              required
             ></input>
             <FaYandexInternational />
             Yandex
