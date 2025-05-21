@@ -25,6 +25,7 @@ import { Introduction } from "$/components/Header";
 import AnybrowserDisplay from "$/components/AnybrowserDisplay";
 import * as anybrowser from "$/assets/images/anybrowser";
 import { EMAIL } from "$/consts";
+import CollapsibleIcon from "$/components/CollapsibleIcon";
 
 export default function Home() {
   return (
@@ -43,10 +44,12 @@ export default function Home() {
         <h2 id="who-am-i">Who am I?</h2>
         <p>I am a developer, working in a variety of areas, including:</p>
         <ul className="list">
-          <SubListItem href="https://github.com/jewlexx/fauxchat">
+          <CollapsibleIcon
+            title="Desktop Applications"
+            icon={<IoDesktopOutline />}
+          >
             <IoDesktopOutline />
-            Desktop Applications
-          </SubListItem>
+          </CollapsibleIcon>
           <SubListItem href="/#who-am-i">
             <IoGlobeOutline />
             Web Applications
