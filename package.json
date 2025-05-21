@@ -84,6 +84,5 @@
     "@tailwindcss/oxide",
     "@vercel/speed-insights",
     "sharp"
-  ],
-  "packageManager": "pnpm@10.11.0"
+  ]
 }
