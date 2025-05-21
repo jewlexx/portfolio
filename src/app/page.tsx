@@ -8,9 +8,10 @@ import {
   SiReact,
   SiNextdotjs,
   SiSvelte,
+  SiTauri,
 } from "react-icons/si";
-import { FaJava } from "react-icons/fa";
-import { FiCpu } from "react-icons/fi";
+import { FaJava, FaDiscord } from "react-icons/fa";
+import { FiCpu, FiPackage } from "react-icons/fi";
 import {
   IoSpeedometerOutline,
   IoLibraryOutline,
@@ -48,20 +49,36 @@ export default function Home() {
             title="Desktop Applications"
             icon={<IoDesktopOutline />}
           >
-            <IoDesktopOutline />
+            <SubListItem href="https://github.com/jewlexx/fauxchat">
+              <SiTauri />
+              Tauri
+            </SubListItem>
           </CollapsibleIcon>
-          <SubListItem href="/#who-am-i">
-            <IoGlobeOutline />
-            Web Applications
-          </SubListItem>
-          <SubListItem href="https://github.com/winpax/sfsu">
-            <HiOutlineCommandLine />
-            CLI Applications
-          </SubListItem>
-          <SubListItem href="https://github.com/jewlexx/discord-presence">
-            <IoLibraryOutline />
-            API Libraries
-          </SubListItem>
+          <CollapsibleIcon title="Web Applications" icon={<IoGlobeOutline />}>
+            <SubListItem href="/#who-am-i">
+              <SiNextdotjs />
+              Next.js
+            </SubListItem>
+            <SubListItem href="https://winpax.cordor.dev">
+              <SiReact />
+              React
+            </SubListItem>
+          </CollapsibleIcon>
+          <CollapsibleIcon
+            title="CLI Applications"
+            icon={<HiOutlineCommandLine />}
+          >
+            <SubListItem href="https://github.com/winpax/sfsu">
+              <FiPackage />
+              Package Manager
+            </SubListItem>
+          </CollapsibleIcon>
+          <CollapsibleIcon title="API Libraries" icon={<IoLibraryOutline />}>
+            <SubListItem href="https://github.com/jewlexx/discord-presence">
+              <FaDiscord />
+              Discord Presence
+            </SubListItem>
+          </CollapsibleIcon>
         </ul>
 
         <p className="!m-0">As well as:</p>
