@@ -1,6 +1,7 @@
 import type { ComponentProps, ReactElement } from "react";
-import { type IconType } from "react-icons/lib";
+import Link from "next/link";
 
+import { type IconType } from "react-icons/lib";
 import {
   SiC,
   SiRust,
@@ -36,8 +37,7 @@ export default function Home() {
         <ProgressBarLink href="/projects">
           some of my best projects
         </ProgressBarLink>
-        , or return to the{" "}
-        <a href="https://www.google.com">ever-expansive web</a>.
+        , or return to the <Link href="/engine">ever-expansive web</Link>.
       </p>
       <section className="mt-10 space-y-4">
         <h2 id="who-am-i">Who am I?</h2>
