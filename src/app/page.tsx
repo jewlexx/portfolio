@@ -8,9 +8,10 @@ import {
   SiReact,
   SiNextdotjs,
   SiSvelte,
+  SiTauri,
 } from "react-icons/si";
-import { FaJava } from "react-icons/fa";
-import { FiCpu } from "react-icons/fi";
+import { FaJava, FaDiscord } from "react-icons/fa";
+import { FiCpu, FiPackage } from "react-icons/fi";
 import {
   IoSpeedometerOutline,
   IoLibraryOutline,
@@ -25,6 +26,7 @@ import { Introduction } from "$/components/Header";
 import AnybrowserDisplay from "$/components/AnybrowserDisplay";
 import * as anybrowser from "$/assets/images/anybrowser";
 import { EMAIL } from "$/consts";
+import CollapsibleIcon from "$/components/CollapsibleIcon";
 
 export default function Home() {
   return (
@@ -43,22 +45,40 @@ export default function Home() {
         <h2 id="who-am-i">Who am I?</h2>
         <p>I am a developer, working in a variety of areas, including:</p>
         <ul className="list">
-          <SubListItem href="https://github.com/jewlexx/fauxchat">
-            <IoDesktopOutline />
-            Desktop Applications
-          </SubListItem>
-          <SubListItem href="/#who-am-i">
-            <IoGlobeOutline />
-            Web Applications
-          </SubListItem>
-          <SubListItem href="https://github.com/winpax/sfsu">
-            <HiOutlineCommandLine />
-            CLI Applications
-          </SubListItem>
-          <SubListItem href="https://github.com/jewlexx/discord-presence">
-            <IoLibraryOutline />
-            API Libraries
-          </SubListItem>
+          <CollapsibleIcon
+            title="Desktop Applications"
+            icon={<IoDesktopOutline />}
+          >
+            <SubListItem href="https://github.com/jewlexx/fauxchat">
+              <SiTauri />
+              Tauri
+            </SubListItem>
+          </CollapsibleIcon>
+          <CollapsibleIcon title="Web Applications" icon={<IoGlobeOutline />}>
+            <SubListItem href="/#who-am-i">
+              <SiNextdotjs />
+              Next.js
+            </SubListItem>
+            <SubListItem href="https://winpax.cordor.dev">
+              <SiReact />
+              React
+            </SubListItem>
+          </CollapsibleIcon>
+          <CollapsibleIcon
+            title="CLI Applications"
+            icon={<HiOutlineCommandLine />}
+          >
+            <SubListItem href="https://github.com/winpax/sfsu">
+              <FiPackage />
+              Package Manager
+            </SubListItem>
+          </CollapsibleIcon>
+          <CollapsibleIcon title="API Libraries" icon={<IoLibraryOutline />}>
+            <SubListItem href="https://github.com/jewlexx/discord-presence">
+              <FaDiscord />
+              Discord Presence
+            </SubListItem>
+          </CollapsibleIcon>
         </ul>
 
         <p className="!m-0">As well as:</p>
