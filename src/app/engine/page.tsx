@@ -1,9 +1,11 @@
-import { performSearch } from "./actions";
+import { getSelectedEngine, performSearch } from "./actions";
 
 import { SiDuckduckgo, SiStartpage } from "react-icons/si";
 import { FaGoogle, FaYandexInternational } from "react-icons/fa";
 
-export default function Page() {
+export default async function Page() {
+  const selectedEngine = await getSelectedEngine();
+
   return (
     <div className="flex h-screen flex-col items-center justify-center">
       <form action={performSearch} className="w-96">
@@ -20,50 +22,15 @@ export default function Page() {
           />
 
           <label className="label">Pick your engine</label>
-          <label className="label">
-            <input
-              name="engine"
-              type="radio"
-              value="duckDuckGo"
-              className="radio"
-              required
-            ></input>
-            <SiDuckduckgo />
-            DuckDuckGo
-          </label>
-          <label className="label">
-            <input
-              name="engine"
-              value="google"
-              type="radio"
-              className="radio"
-              required
-            ></input>
-            <FaGoogle />
-            Google
-          </label>
-          <label className="label">
-            <input
-              name="engine"
-              value="startpage"
-              type="radio"
-              className="radio"
-              required
-            ></input>
-            <SiStartpage />
-            Startpage
-          </label>
-          <label className="label">
-            <input
-              name="engine"
-              value="yandex"
-              type="radio"
-              className="radio"
-              required
-            ></input>
-            <FaYandexInternational />
-            Yandex
-          </label>
+          <select
+            name="engine"
+            className="select select-bordered mt-2 w-full"
+            defaultValue={selectedEngine}
+          >
+            <option value="duckDuckGo">DuckDuckGo</option>
+            <option value="google">Google</option>
+            <option value="startpage">StartPage</option>
+          </select>
 
           <button className="btn btn-neutral mt-4">Search</button>
         </fieldset>
