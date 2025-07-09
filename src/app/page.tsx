@@ -139,11 +139,6 @@ export default function Home() {
           at <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.
         </p>
       </section>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(88px,1fr))]">
-        {Object.values(anybrowser).map((image) => {
-          return <AnybrowserDisplay image={image} key={image.alt} />;
-        })}
-      </div>
     </main>
   );
 }
