@@ -1,8 +1,5 @@
 import { getSelectedEngine, performSearch } from "./actions";
 
-import { SiDuckduckgo, SiStartpage } from "react-icons/si";
-import { FaGoogle, FaYandexInternational } from "react-icons/fa";
-
 export default async function Page() {
   const selectedEngine = await getSelectedEngine();
 

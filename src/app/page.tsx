@@ -24,8 +24,6 @@ import { HiOutlineCommandLine } from "react-icons/hi2";
 import Collapsible from "$/components/Collapsible";
 import { ProgressBarLink } from "$/components/ProgressBar";
 import { Introduction } from "$/components/Header";
-import AnybrowserDisplay from "$/components/AnybrowserDisplay";
-import * as anybrowser from "$/assets/images/anybrowser";
 import { EMAIL } from "$/consts";
 import CollapsibleIcon from "$/components/CollapsibleIcon";
 
