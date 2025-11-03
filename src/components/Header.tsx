@@ -50,7 +50,7 @@ export default function Header() {
         rel="prefetch"
       >
         <Image
-          className="glass size-16 rounded-full lg:size-32"
+          className="glass min-h-16 min-w-16 rounded-full lg:size-32"
           src={WomanTechnologist}
           alt="Juliette Cordor"
         />
@@ -70,7 +70,8 @@ export default function Header() {
           Blog
         </HeaderLink>
       </span>
-      <span className="float-left !m-0 !mb-8 flex self-start !p-0 lg:bottom-5 lg:left-5 lg:flex-col">
+
+      <span className="float-left flex lg:bottom-5 lg:left-5 lg:!mb-8 lg:flex-col lg:self-start lg:!p-0">
         {linksAbridged.map((linkProps) => (
           <IconLink key={linkProps.title} {...linkProps} />
         ))}
