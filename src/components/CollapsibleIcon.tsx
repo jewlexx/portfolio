@@ -19,7 +19,10 @@ export default function CollapsibleIcon(props: {
 
   return (
     <>
-      <h3 className="flex items-center">
+      <h3
+        className="flex cursor-pointer items-center"
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <motion.button
           aria-label={`Toggle ${props.title}`}
           animate={{
@@ -30,7 +33,6 @@ export default function CollapsibleIcon(props: {
               stiffness: 200,
             },
           }}
-          onClick={() => setIsOpen(!isOpen)}
           className="float-left mr-3 -ml-8"
         >
           <IoIosArrowDropdown />
