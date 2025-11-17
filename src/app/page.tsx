@@ -30,7 +30,7 @@ import CollapsibleIcon from "$/components/CollapsibleIcon";
 export default function Home() {
   return (
     <main className="prose lg:prose-xl px-5">
-      <h1 className="!mt-10 flex items-center gap-2">🧑‍🚀 Hello, Traveller!</h1>
+      <h1 className="!mt-10 flex items-center gap-2">👩‍🚀 Hello, Traveller!</h1>
       <Introduction />
       <p>
         Feel free to check out{" "}
