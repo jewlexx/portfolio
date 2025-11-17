@@ -2,7 +2,7 @@ import type { AnchorHTMLAttributes, HTMLAttributes } from "react";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 
-import WomanTechnologist from "$/assets/images/emojis/woman-technologist.svg";
+import WomanTechnologist from "$/assets/images/emojis/memoji.png";
 import IconLink from "$/components/IconLink";
 import { linksAbridged } from "$/links";
 import { ProgressBarLink } from "$/components/ProgressBar";

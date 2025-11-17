@@ -1,6 +1,6 @@
 import { type NextRequest } from "next/server";
 import { ImageResponse } from "next/og";
-import WomanTechnologist from "$/assets/images/emojis/woman-technologist.svg";
+import WomanTechnologist from "$/assets/images/emojis/memoji.png";
 
 export async function GET(request: NextRequest) {
   try {

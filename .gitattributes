@@ -2,6 +2,7 @@ src/assets/images/pfp.jpg filter=lfs diff=lfs merge=lfs -text
 src/assets/audio filter=lfs diff=lfs merge=lfs -text
 src/assets/audio/switch-on.wav filter=lfs diff=lfs merge=lfs -text
 src/assets/images/emojis filter=lfs diff=lfs merge=lfs -text
+src/assets/images/emojis/memoji.png filter=lfs diff=lfs merge=lfs -text
 src/assets/images/emojis/woman-technologist.svg filter=lfs diff=lfs merge=lfs -text
 src/assets/images/index.ts.disabled filter=lfs diff=lfs merge=lfs -text
 src/assets/audio/click-out.mp3 filter=lfs diff=lfs merge=lfs -text
