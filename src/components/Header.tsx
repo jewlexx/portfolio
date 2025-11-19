@@ -41,7 +41,7 @@ function HeaderLink({
 export default function Header() {
   return (
     <nav
-      className="bg-base-200 m-4 flex max-h-screen shrink grow-0 items-center justify-between rounded-tr-xl rounded-br-xl px-4 py-4 shadow-md not-lg:rounded-xl lg:m-0 lg:flex-col"
+      className="bg-base-200 m-4 flex max-h-screen shrink grow-0 flex-col items-center justify-between rounded-tr-xl rounded-br-xl px-4 py-4 shadow-md not-lg:rounded-xl sm:break-after-all sm:wrap-anywhere lg:m-0"
       role="navigation"
     >
       <ProgressBarLink
@@ -50,7 +50,7 @@ export default function Header() {
         rel="prefetch"
       >
         <Image
-          className="glass min-h-16 min-w-16 rounded-full lg:size-32"
+          className="glass size-32 rounded-full lg:min-h-16 lg:min-w-16"
           src={WomanTechnologist}
           alt="Juliette Cordor"
         />
@@ -60,7 +60,7 @@ export default function Header() {
         <Introduction />
       </h3>
 
-      <span className="flex w-full items-center justify-center gap-4 lg:flex-col">
+      <span className="flex w-full items-center justify-center gap-4 sm:wrap-anywhere lg:flex-col">
         <HeaderLink href="/projects">
           <FaProjectDiagram />
           Projects
