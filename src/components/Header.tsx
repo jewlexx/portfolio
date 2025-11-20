@@ -55,11 +55,9 @@ export default function Header() {
           alt="Juliette Cordor"
         />
       </ProgressBarLink>
-
       <h3 className="px-4 not-lg:hidden">
         <Introduction />
       </h3>
-
       <span className="flex w-full items-center justify-center gap-4 sm:wrap-anywhere lg:flex-col">
         <HeaderLink href="/projects">
           <FaProjectDiagram />
@@ -70,7 +68,6 @@ export default function Header() {
           Blog
         </HeaderLink>
       </span>
-
       <span className="float-left flex lg:bottom-5 lg:left-5 lg:!mb-8 lg:flex-col lg:self-start lg:!p-0">
         {linksAbridged.map((linkProps) => (
           <IconLink key={linkProps.title} {...linkProps} />
@@ -78,7 +75,7 @@ export default function Header() {
       </span>
 
       <a
-        className="absolute bottom-4 !m-0 flex items-center justify-center gap-1 !p-0 opacity-75"
+        className="absolute bottom-4 !m-0 flex items-center justify-center gap-1 !p-0 opacity-75 not-lg:hidden"
         href="https://github.com/jewlexx/portfolio"
         target="_blank"
         rel="noopener noreferrer"
