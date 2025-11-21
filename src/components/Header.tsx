@@ -75,7 +75,7 @@ export default function Header() {
       </span>
 
       <a
-        className="absolute bottom-4 !m-0 flex items-center justify-center gap-1 !p-0 opacity-75 not-lg:hidden"
+        className="bottom-4 !m-0 flex items-center justify-center gap-1 !p-0 opacity-75 not-lg:hidden"
         href="https://github.com/jewlexx/portfolio"
         target="_blank"
         rel="noopener noreferrer"
