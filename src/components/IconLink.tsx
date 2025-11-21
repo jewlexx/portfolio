@@ -42,7 +42,6 @@ export default function IconLink({
     <Link
       role="button"
       href={adjustedUrl}
-      title={title}
       target={local ? undefined : "_blank"}
       rel={local ? undefined : "noopener noreferrer"}
       className={`btn btn-circle lg:btn-lg m-1 [&>svg]:!text-white ${className}`}
