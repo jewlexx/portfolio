@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     "/api/anybrowser": ["./src/assets/images/anybrowser/*"],
   },
-  experimental: { reactCompiler: true },
+  reactCompiler: true,
 };
 
 const withVercelToolbar = createVercelToolbar({

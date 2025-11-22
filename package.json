@@ -6,7 +6,7 @@
     "build": "next build",
     "contentful-typescript-codegen": "contentful-typescript-codegen --output src/content/blog/types.d.ts",
     "dev": "next dev --turbopack",
-    "lint": "next lint --no-cache",
+    "lint": "eslint --no-cache .",
     "start": "next start"
   },
   "dependencies": {
@@ -31,11 +31,11 @@
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.11.1",
     "markdown-to-jsx": "^9.0.0",
-    "next": "^15.3.2",
+    "next": "16.0.3",
     "postcss": "^8.5.3",
     "python-shell": "^5.0.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
     "react-hook-form": "^7.56.4",
     "react-icons": "^5.5.0",
     "remark": "^15.0.1",
@@ -51,13 +51,12 @@
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.0",
-    "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.27.0",
-    "@next/eslint-plugin-next": "^15.3.2",
+    "@next/eslint-plugin-next": "16.0.3",
     "@tailwindcss/typography": "^0.5.16",
     "@types/bun": "^1.2.13",
-    "@types/react": "^19.1.4",
-    "@types/react-dom": "^19.1.5",
+    "@types/react": "19.2.6",
+    "@types/react-dom": "19.2.3",
     "@types/rss": "^0.0.32",
     "@types/twemoji-parser": "^13.1.4",
     "autoprefixer": "^10.4.21",
@@ -67,6 +66,7 @@
     "daisyui": "^5.0.35",
     "dotenv": "^17.0.0",
     "eslint": "^9.27.0",
+    "eslint-config-next": "16.0.3",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-compiler": "latest",
     "postcss-preset-env": "^10.1.6",
@@ -78,7 +78,9 @@
   },
   "overrides": {
     "wrap-ansi-cjs": "npm:wrap-ansi",
-    "string-width-cjs": "npm:string-width"
+    "string-width-cjs": "npm:string-width",
+    "@types/react": "19.2.6",
+    "@types/react-dom": "19.2.3"
   },
   "trustedDependencies": [
     "@tailwindcss/oxide",
