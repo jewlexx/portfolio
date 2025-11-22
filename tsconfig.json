@@ -15,7 +15,7 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "plugins": [
       {
@@ -34,9 +34,10 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "scripts/twemoji.ts",
-    "getContentfulEnvironment.ts"
+    "getContentfulEnvironment.ts",
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules",
+    "node_modules"
   ]
 }

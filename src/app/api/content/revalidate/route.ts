@@ -7,7 +7,7 @@ export async function POST(request: Request) {
   const secret = headers.get("ContentfulWebhookSecret");
 
   if (secret === process.env.CONTENTFUL_WEBHOOKS_SECRET) {
-    revalidateTag("posts");
+    revalidateTag("posts", "max");
 
     revalidatePath("/rss.xml");
     revalidatePath("/sitemap.xml");
