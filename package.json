@@ -47,7 +47,7 @@
     "ts-pattern": "^5.7.1",
     "use-sound": "^5.0.0",
     "vfile": "^6.0.3",
-    "zod": "^3.25.9"
+    "zod": "^4.0.0"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.9",
