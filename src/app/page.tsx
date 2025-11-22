@@ -1,4 +1,4 @@
-import type { ComponentProps, ReactElement } from "react";
+import { type ComponentProps, type ReactElement } from "react";
 import Link from "next/link";
 
 import { type IconType } from "react-icons/lib";
@@ -143,6 +143,24 @@ export default function Home() {
 
 type IconElement = ReactElement<ComponentProps<IconType>>;
 
+function InnerContent({
+  Icon,
+  name,
+  remainingChildren,
+}: {
+  Icon: IconElement;
+  name: string;
+  remainingChildren: ReactElement;
+}) {
+  return (
+    <li className="list-row">
+      <div className="[&>svg]:size-5">{Icon}</div>
+      <div>{name}</div>
+      {remainingChildren}
+    </li>
+  );
+}
+
 function SubListItem({
   langCode,
   href,
@@ -154,16 +172,6 @@ function SubListItem({
 }) {
   const [Icon, name, remainingChildren] = children;
 
-  function InnerContent() {
-    return (
-      <li className="list-row">
-        <div className="[&>svg]:size-5">{Icon}</div>
-        <div>{name}</div>
-        {remainingChildren}
-      </li>
-    );
-  }
-
   const link =
     href ??
     (langCode &&
@@ -172,10 +180,20 @@ function SubListItem({
   if (link) {
     return (
       <a href={link} rel="noreferrer" target="_blank">
-        <InnerContent />
+        <InnerContent
+          Icon={Icon}
+          name={name}
+          remainingChildren={remainingChildren}
+        />
       </a>
     );
   } else {
-    return <InnerContent />;
+    return (
+      <InnerContent
+        Icon={Icon}
+        name={name}
+        remainingChildren={remainingChildren}
+      />
+    );
   }
 }
