@@ -44,20 +44,23 @@ export default function Header() {
       className="bg-base-200 m-4 flex max-h-screen shrink grow-0 flex-col items-center justify-between rounded-tr-xl rounded-br-xl px-4 py-4 shadow-md not-lg:rounded-xl sm:break-after-all sm:wrap-anywhere lg:m-0"
       role="navigation"
     >
-      <ProgressBarLink
-        className="decoration-0 transition-transform hover:scale-110"
-        href="/"
-        rel="prefetch"
-      >
-        <Image
-          className="glass size-32 rounded-full lg:min-h-16 lg:min-w-16"
-          src={WomanTechnologist}
-          alt="Juliette Cordor"
-        />
-      </ProgressBarLink>
-      <h3 className="px-4 not-lg:hidden">
-        <Introduction />
-      </h3>
+      <span className="flex min-w-full flex-col items-center justify-center gap-5">
+        <ProgressBarLink
+          className="decoration-0 transition-transform hover:scale-110"
+          href="/"
+          rel="prefetch"
+        >
+          <Image
+            className="glass size-32 rounded-full lg:min-h-16 lg:min-w-16"
+            src={WomanTechnologist}
+            alt="Juliette Cordor"
+          />
+        </ProgressBarLink>
+        <h3 className="px-4 text-4xl font-bold not-lg:hidden">
+          Juliette Cordor{" "}
+        </h3>
+      </span>
+
       <span className="flex w-full items-center justify-center gap-4 sm:wrap-anywhere lg:flex-col">
         <HeaderLink href="/projects">
           <FaProjectDiagram />
@@ -68,21 +71,24 @@ export default function Header() {
           Blog
         </HeaderLink>
       </span>
-      <span className="float-left flex lg:bottom-5 lg:left-5 lg:!mb-8 lg:flex-col lg:self-start lg:!p-0">
-        {linksAbridged.map((linkProps) => (
-          <IconLink key={linkProps.title} {...linkProps} />
-        ))}
-      </span>
 
-      <a
-        className="bottom-4 !m-0 flex items-center justify-center gap-1 !p-0 opacity-75 not-lg:hidden"
-        href="https://github.com/jewlexx/portfolio"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaGithub />
-        This website is open source!
-      </a>
+      <span className="bottom-0 flex min-w-full flex-col items-center justify-center gap-4">
+        <span className="float-left flex lg:left-5 lg:mb-8! lg:flex-col lg:self-start lg:p-0!">
+          {linksAbridged.map((linkProps) => (
+            <IconLink key={linkProps.title} {...linkProps} />
+          ))}
+        </span>
+
+        <a
+          className="m-0 flex items-center gap-1 p-0 opacity-50 not-lg:hidden"
+          href="https://github.com/jewlexx/portfolio"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaGithub />
+          This website is open source!
+        </a>
+      </span>
     </nav>
   );
 }
