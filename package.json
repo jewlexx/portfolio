@@ -55,7 +55,7 @@
     "@next/eslint-plugin-next": "^16.0.3",
     "@tailwindcss/typography": "^0.5.19",
     "@types/bun": "^1.3.3",
-    "@types/react": "19.2.6",
+    "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "@types/rss": "^0.0.32",
     "@types/twemoji-parser": "^13.1.4",
@@ -80,7 +80,7 @@
   "overrides": {
     "wrap-ansi-cjs": "npm:wrap-ansi",
     "string-width-cjs": "npm:string-width",
-    "@types/react": "19.2.6",
+    "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3"
   },
   "trustedDependencies": [
