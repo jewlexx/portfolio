@@ -41,7 +41,7 @@ function HeaderLink({
 export default function Header() {
   return (
     <nav
-      className="bg-base-200 m-4 flex max-h-screen shrink grow-0 flex-col items-center justify-between rounded-tr-xl rounded-br-xl px-4 py-4 shadow-md not-lg:rounded-xl sm:break-after-all sm:wrap-anywhere lg:m-0"
+      className="bg-base-200 m-4 flex max-h-screen shrink grow-0 flex-col items-center justify-between rounded-tr-xl rounded-br-xl px-4 py-4 shadow-md not-lg:rounded-xl sm:break-after-all sm:wrap-anywhere"
       role="navigation"
     >
       <span className="flex min-w-full flex-col items-center justify-center gap-5">
