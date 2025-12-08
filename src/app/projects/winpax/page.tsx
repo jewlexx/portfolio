@@ -3,10 +3,6 @@ import { projects } from "./projects";
 import orgIcon from "$/assets/images/org-icon.webp";
 import Project from "./_components/Project";
 
-const title = "Winpax";
-const description =
-  "Creating blazing fast, package management solutions for the Windows platform.";
-
 // Page never changes
 export const dynamic = "force-static";
 
@@ -22,7 +18,10 @@ export default function Home() {
           priority
           placeholder="blur"
         />
-        <p className="text-xl">{description}</p>
+        <p className="text-xl">
+          Creating blazing fast, package management solutions for the Windows
+          platform.
+        </p>
       </div>
 
       {projects.map((project, index) => (

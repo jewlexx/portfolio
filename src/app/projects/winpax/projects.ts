@@ -1,5 +1,5 @@
 import sfsuIcon from "$/assets/images/sfsu-logo.png";
-import Project from "../_components/Project";
+import Project from "./_components/Project";
 
 export const projects: React.ComponentProps<typeof Project>[] = [
   {
