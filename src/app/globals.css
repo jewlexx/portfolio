@@ -6,6 +6,14 @@
     luxury --prefersdark; */
 }
 
+@utility column {
+  @apply flex flex-col items-center justify-center;
+}
+
+@utility hero-image {
+  @apply rounded-box mt-16 mb-1 bg-stone-100;
+}
+
 @plugin "daisyui/theme" {
   name: "juliette";
   default: true;

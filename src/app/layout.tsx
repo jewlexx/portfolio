@@ -9,6 +9,7 @@ import { twitterConfiguration } from "$/consts";
 import { knownTheme } from "$/theme";
 import Header from "$/components/Header";
 import "./globals.css";
+import { Back } from "$/components/Back";
 
 const inter = DM_Sans({ subsets: ["latin"], preload: true });
 
@@ -50,6 +51,7 @@ export default async function RootLayout({
           " min-h-screen grid-cols-[25fr_75fr] gap-4 *:max-h-screen *:overflow-auto lg:grid"
         }
       >
+        <Back />
         <ProgressBar className="progress-bar">
           <Header />
           <div className="py-5">{children}</div>
