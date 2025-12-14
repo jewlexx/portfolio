@@ -1,7 +1,11 @@
 import { type Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { IconBrandGit, IconLink as LinkIcon } from "@tabler/icons-react";
+import {
+  IconBrandGit,
+  IconLink as LinkIcon,
+  IconDownload,
+} from "@tabler/icons-react";
 
 import PubDate from "$/components/PubDate";
 import Shield from "$/components/Shield";
@@ -9,8 +13,8 @@ import IconLink from "$/components/IconLink";
 import { twitterConfiguration } from "$/consts";
 import { getProjectBySlug, getProjectSlugs } from "$/content/projects";
 import markdownToHtml from "$/content/markdown";
-import DownloadForm from "./DownloadForm";
 import Markdown from "$/components/MarkdownWrapper";
+import { match } from "ts-pattern";
 
 import "$/styles/project.css";
 
@@ -51,6 +55,45 @@ export async function generateMetadata(props: {
   };
 }
 
+export function justifyRepoLink(repo: string) {
+  return match(repo)
+    .when(
+      (repo) => repo.startsWith("http://"),
+      () => repo.replace("http://", "https://"),
+    )
+    .when(
+      (repo) => repo.startsWith("https://"),
+      () => repo,
+    )
+    .when(
+      (repo) => /^[a-zA-Z0-9\-_.]+\/[a-zA-Z0-9\-_.]+$/.test(repo),
+      () => `https://github.com/${repo}`,
+    )
+    .when(
+      (repo) => /^[a-zA-Z0-9\-_.]+$/.test(repo),
+      () => `https://github.com/jewlexx/${repo}`,
+    )
+    .otherwise(() => null);
+}
+
+export function githubRelease(repo: string | undefined): string | undefined {
+  if (!repo) {
+    return undefined;
+  }
+
+  const repoUrl = justifyRepoLink(repo);
+
+  if (!repoUrl) {
+    return undefined;
+  }
+
+  if (repoUrl.startsWith("https://github.com/")) {
+    return `${repoUrl}/releases/latest`;
+  }
+
+  return undefined;
+}
+
 export default async function Page(props: {
   params: Promise<{ slug: string }>;
 }) {
@@ -71,6 +114,7 @@ export default async function Page(props: {
     hideHero,
     homepage,
     heroImage,
+    download,
   } = post;
 
   const content = await markdownToHtml(post.content || "");
@@ -115,7 +159,7 @@ export default async function Page(props: {
               <IconLink
                 url={repo}
                 icon={IconBrandGit}
-                title="Git Source link"
+                title="Git Source"
                 className="btn-secondary"
               />
             )}
@@ -123,11 +167,18 @@ export default async function Page(props: {
               <IconLink
                 url={homepage}
                 icon={LinkIcon}
-                title="Homepage link"
+                title="Homepage"
                 className="btn-secondary"
               />
             )}
-            <DownloadForm post={post} />
+            {download && (
+              <IconLink
+                url={githubRelease(repo) ?? "#"}
+                title="Download"
+                icon={IconDownload}
+                className="btn-secondary"
+              />
+            )}
           </span>
           <hr />
         </div>
