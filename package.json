@@ -69,7 +69,7 @@
     "eslint": "^9.39.2",
     "eslint-config-next": "^16.0.10",
     "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-compiler": "^19.1.0-rc.2",
+    "eslint-plugin-react-compiler": "rc",
     "eslint-plugin-react-hooks": "^7.0.1",
     "postcss-preset-env": "^10.5.0",
     "prettier": "^3.7.4",
