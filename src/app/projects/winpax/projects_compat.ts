@@ -13,7 +13,7 @@ export default function appendProject(projects: ProjectInfo[]): ProjectInfo[] {
       // aproximate date
       pubDate: "",
       heroImage:
-        "https://cordor.dev/api/og?title=Winpax&image=https%3A%2F%2Fcordor.dev%2Femojis%package.svg&backgroundColor=rgba(0%2C0%2C0%2C0)&fontColor=black",
+        "https://cordor.dev/api/og?title=Winpax&image=https%3A%2F%2Fcordor.dev%2Femojis%2Fpackage.svg&backgroundColor=rgba(0%2C0%2C0%2C0)&fontColor=black",
     },
   ];
 }
