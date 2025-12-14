@@ -32,7 +32,7 @@
     "highlight.js": "^11.11.1",
     "markdown-to-jsx": "^9.1.1",
     "motion": "^12.23.25",
-    "next": "16.0.7",
+    "next": "16.0.8",
     "postcss": "^8.5.6",
     "python-shell": "^5.0.0",
     "react": "19.2.1",
