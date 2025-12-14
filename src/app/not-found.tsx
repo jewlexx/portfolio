@@ -1,11 +1,7 @@
 "use client";
 
-import { IBM_Plex_Mono } from "next/font/google";
-
 import { usePathname } from "next/navigation";
 import "$/styles/error.css";
-
-const ibmPlexMono = IBM_Plex_Mono({ weight: "400", subsets: ["latin"] });
 
 const cowsay404 = `
  _____
@@ -22,9 +18,7 @@ export default function NotFound() {
   const pathname = usePathname();
 
   return (
-    <main
-      className={`${ibmPlexMono.className} terminal text-green-terminal-400`}
-    >
+    <main className="terminal text-green-terminal-400">
       <p className="">$ curl {pathname}</p>
       <p>curl: (22) The requested URL returned error: 404</p>
       <br />
