@@ -16,8 +16,6 @@ import markdownToHtml from "$/content/markdown";
 import Markdown from "$/components/MarkdownWrapper";
 import { match } from "ts-pattern";
 
-import "$/styles/project.css";
-
 export function generateStaticParams() {
   return getProjectSlugs().map((slug) => ({ slug }));
 }

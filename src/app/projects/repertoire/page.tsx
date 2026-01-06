@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 
-import "$/styles/project.css";
-
 export const metadata: Metadata = {
   title: "Repertoire",
   description: "A simple way to manage eScripts from one app",
