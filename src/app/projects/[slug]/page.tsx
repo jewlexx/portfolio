@@ -126,7 +126,7 @@ export default async function Page(props: {
           <Image width={500} height={200} src={heroImage} alt="" />
         )}
       </div>
-      <div className="prose">
+      <div className="project-main">
         <div className="title">
           <h1>{title}</h1>
           <i>{description}</i>
