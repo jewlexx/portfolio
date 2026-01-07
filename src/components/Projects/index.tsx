@@ -23,6 +23,7 @@ export default function Projects({ posts }: { posts: ProjectInfo[] }) {
               <h1>
                 {post.emoji} {post.title}
               </h1>
+              <i>{post.description}</i>
             </a>
           </li>
         ))}
