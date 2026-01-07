@@ -16,8 +16,6 @@ import markdownToHtml from "$/content/markdown";
 import Markdown from "$/components/MarkdownWrapper";
 import { match } from "ts-pattern";
 
-import "$/styles/project.css";
-
 export function generateStaticParams() {
   return getProjectSlugs().map((slug) => ({ slug }));
 }
@@ -126,7 +124,7 @@ export default async function Page(props: {
           <Image width={500} height={200} src={heroImage} alt="" />
         )}
       </div>
-      <div className="prose">
+      <div className="project-main">
         <div className="title">
           <h1>{title}</h1>
           <i>{description}</i>

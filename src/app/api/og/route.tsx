@@ -15,56 +15,54 @@ export async function GET(request: NextRequest) {
     const fontColor = searchParams.get("fontColor") ?? "white";
 
     return new ImageResponse(
-      (
+      <div
+        style={{
+          backgroundColor: backgroundEnabled ? backgroundColor : undefined,
+          backgroundSize: "150px 150px",
+          height: "100%",
+          width: "100%",
+          display: "flex",
+          textAlign: "center",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+          flexWrap: "nowrap",
+        }}
+      >
         <div
           style={{
-            backgroundColor: backgroundEnabled ? backgroundColor : undefined,
-            backgroundSize: "150px 150px",
-            height: "100%",
-            width: "100%",
             display: "flex",
-            textAlign: "center",
             alignItems: "center",
             justifyContent: "center",
-            flexDirection: "column",
-            flexWrap: "nowrap",
+            justifyItems: "center",
           }}
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            alt="Profile Picture"
+            height={200}
+            width={200}
+            src={imageUrl}
+            style={{ margin: "0 30px" }}
+          />
+        </div>
+        {title && (
           <div
             style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              justifyItems: "center",
+              fontSize: 60,
+              fontStyle: "normal",
+              letterSpacing: "-0.025em",
+              color: fontColor,
+              marginTop: 30,
+              padding: "0 120px",
+              lineHeight: 1.4,
+              whiteSpace: "pre-wrap",
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              alt="Profile Picture"
-              height={200}
-              width={200}
-              src={imageUrl}
-              style={{ margin: "0 30px" }}
-            />
+            {title}
           </div>
-          {title && (
-            <div
-              style={{
-                fontSize: 60,
-                fontStyle: "normal",
-                letterSpacing: "-0.025em",
-                color: fontColor,
-                marginTop: 30,
-                padding: "0 120px",
-                lineHeight: 1.4,
-                whiteSpace: "pre-wrap",
-              }}
-            >
-              {title}
-            </div>
-          )}
-        </div>
-      ),
+        )}
+      </div>,
       {
         width: 1200,
         height: 630,

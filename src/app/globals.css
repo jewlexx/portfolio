@@ -87,6 +87,47 @@
 @plugin "@tailwindcss/typography";
 
 @layer components {
+  .heroImage {
+    width: 100%;
+  }
+
+  .heroImage img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+  }
+
+  .project-main {
+    @apply prose;
+
+    width: 720px;
+    max-width: calc(100% - 2em);
+    margin: auto;
+    padding: 1em;
+    color: rgb(var(--gray-dark));
+  }
+
+  .title h1 {
+    margin: 0 0 0.5em 0;
+  }
+
+  .date {
+    margin-bottom: 0.5em;
+    color: rgb(var(--gray));
+  }
+
+  .lastUpdatedOn {
+    font-style: italic;
+  }
+
+  .linksContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+
   .computing-code {
     font-family: "Fira Code", monospace;
     padding: 0.25rem 0.5rem;
