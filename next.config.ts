@@ -1,5 +1,6 @@
 import { type NextConfig } from "next";
 import createVercelToolbar from "@vercel/toolbar/plugins/next";
+import { RemotePattern } from "next/dist/shared/lib/image-config";
 
 function composePlugins(...plugins: ((config: NextConfig) => NextConfig)[]) {
   return (config: NextConfig) => {
@@ -16,6 +17,7 @@ const nextConfig: NextConfig = {
       { hostname: "http.cat" },
       { hostname: "cordor.dev" },
     ],
+    dangerouslyAllowLocalIP: process.env.NODE_ENV === "development",
   },
   pageExtensions: ["ts", "tsx", "js", "jsx"],
   outputFileTracingIncludes: {
@@ -23,6 +25,10 @@ const nextConfig: NextConfig = {
   },
   reactCompiler: true,
 };
+
+if (process.env.NODE_ENV === "development") {
+  nextConfig.images?.remotePatterns?.push({ hostname: "127.0.0.1" });
+}
 
 const withVercelToolbar = createVercelToolbar({
   enableInProduction: false,
