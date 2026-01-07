@@ -1,4 +1,13 @@
+import Image from "next/image";
 import type { Metadata } from "next";
+
+import productImages from "./images";
+
+const productImageComponents = Object.entries(productImages).map(
+  ([key, image]) => {
+    return <Image src={image} alt={`${key} page`} key={key} height={384} />;
+  },
+);
 
 export const metadata: Metadata = {
   title: "Repertoire",
@@ -26,6 +35,9 @@ export default function Page() {
 									</div>
 								)
 							} */}
+          </div>
+          <div className="flex flex-wrap justify-center gap-8 portrait:*:not-first:hidden">
+            {productImageComponents}
           </div>
           {/* {shields && (
             <p className="flex flex-wrap justify-center gap-2">
