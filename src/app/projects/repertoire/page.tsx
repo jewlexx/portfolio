@@ -2,6 +2,8 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 import productImages from "./images";
+import { IconBrandApple, IconBrandAndroid } from "@tabler/icons-react";
+import IconLink from "$/components/IconLink";
 
 const productImageComponents = Object.entries(productImages).map(
   ([key, image]) => {
@@ -39,6 +41,7 @@ export default function Page() {
           <div className="flex flex-wrap justify-center gap-8 portrait:*:not-first:hidden">
             {productImageComponents}
           </div>
+
           {/* {shields && (
             <p className="flex flex-wrap justify-center gap-2">
               {shields?.map((shield) => (
@@ -48,6 +51,18 @@ export default function Page() {
           )} */}
 
           <span className="linksContainer">
+            <IconLink
+              url="https://testflight.apple.com/join/gq97wtCk"
+              icon={IconBrandApple}
+              title="Download iOS Beta"
+              className="btn-secondary"
+            />
+            <IconLink
+              url="https://gitlab.com/cordor/repertoire/-/releases"
+              icon={IconBrandAndroid}
+              title="Download Android Beta"
+              className="btn-secondary"
+            />
             {/* {repo && (
               <IconLink
                 url={repo}

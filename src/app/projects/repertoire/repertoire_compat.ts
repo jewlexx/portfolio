@@ -10,7 +10,7 @@ export const repertoireInfo = {
   // aproximate date
   pubDate: "",
   heroImage:
-    "https://cordor.dev/api/og?title=Repertoire&image=https%3A%2F%2Fcordor.dev%2Femojis%2Fsparkles.svg&backgroundColor=rgba(0%2C0%2C0%2C0)&fontColor=black",
+    "https://cordor.dev/api/og?title=Repertoire&image=https%3A%2F%2Fcordor.dev%2Ficons%2Frepertoire.png&backgroundColor=rgba(0%2C0%2C0%2C0)&fontColor=black",
 };
 
 export default function appendProject(projects: ProjectInfo[]): ProjectInfo[] {
