@@ -1,13 +1,23 @@
 import Image from "next/image";
 import type { Metadata } from "next";
-
-import productImages from "./images";
 import { IconBrandApple, IconBrandAndroid } from "@tabler/icons-react";
+
 import IconLink from "$/components/IconLink";
+import repertoireIcon from "$/../public/icons/repertoire.png";
+import productImages from "./images";
 
 const productImageComponents = Object.entries(productImages).map(
   ([key, image]) => {
-    return <Image src={image} alt={`${key} page`} key={key} height={384} />;
+    return (
+      <Image
+        src={image}
+        alt={`${key} page`}
+        key={key}
+        height={384}
+        loading="lazy"
+        placeholder="blur"
+      />
+    );
   },
 );
 
@@ -19,14 +29,19 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <article>
-      <div className="heroImage">
-        {/* {heroImage && !hideHero && (
-          <Image width={500} height={200} src={heroImage} alt="" />
-        )} */}
-      </div>
       <div className="project-main">
         <div className="title">
-          <h1>{metadata.title as string}</h1>
+          <span className="mb-4 flex gap-4">
+            <Image
+              className="m-0 p-0"
+              loading="eager"
+              src={repertoireIcon}
+              alt="Repertoire Icon"
+              width={64}
+              height={64}
+            />
+            <h1 className="mb-0 self-center">{metadata.title as string}</h1>
+          </span>
           <i>{metadata.description as string}</i>
           <div className="date">
             {/* {pubDate && <PubDate pubDate={new Date(pubDate)} />} */}

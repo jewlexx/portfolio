@@ -13,7 +13,7 @@ export const repertoireInfo: ProjectInfo = {
   // aproximate date
   pubDate: "",
   profileImage: imageUrl,
-  heroImage: `${nextUrl}/api/og?image=${imageUrl}&backgroundColor=rgba(0%2C0%2C0%2C0)&fontColor=black`,
+  heroImage: `${nextUrl}/hero-images/repertoire.png`,
 };
 
 export default function appendProject(projects: ProjectInfo[]): ProjectInfo[] {
