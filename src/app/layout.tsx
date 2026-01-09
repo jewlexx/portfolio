@@ -10,6 +10,7 @@ import { knownTheme } from "$/theme";
 import Header from "$/components/Header";
 import "./globals.css";
 import { Back } from "$/components/Back";
+import { twMerge } from "tailwind-merge";
 
 const inter = DM_Sans({ subsets: ["latin"], preload: true });
 
@@ -46,10 +47,10 @@ export default async function RootLayout({
   return (
     <html lang="en" data-theme={knownTheme.light}>
       <body
-        className={
-          inter.className +
-          " min-h-screen grid-cols-[25fr_75fr] gap-4 *:max-h-screen *:overflow-auto lg:grid"
-        }
+        className={twMerge(
+          inter.className,
+          "min-h-screen grid-cols-[25fr_75fr] gap-4 *:max-h-screen *:overflow-auto lg:grid",
+        )}
       >
         <Back />
         <ProgressBar className="progress-bar">

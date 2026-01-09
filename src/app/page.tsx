@@ -30,7 +30,7 @@ import CollapsibleIcon from "$/components/CollapsibleIcon";
 export default function Home() {
   return (
     <main className="prose lg:prose-xl px-5">
-      <h1 className="!mt-10 flex items-center gap-2">👩‍🚀 Hello, Traveller!</h1>
+      <h1 className="mt-10! flex items-center gap-2">👩‍🚀 Hello, Traveller!</h1>
       <Introduction />
       <p>
         Feel free to check out{" "}
@@ -79,8 +79,8 @@ export default function Home() {
           </CollapsibleIcon>
         </ul>
 
-        <p className="!m-0">As well as:</p>
-        <ul className="list !mt-0">
+        <p className="m-0!">As well as:</p>
+        <ul className="list mt-0!">
           <Collapsible title="Low level code">
             <SubListItem href="https://github.com/jewlexx/do-not-enter">
               <FiCpu />
