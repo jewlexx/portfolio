@@ -14,6 +14,7 @@ const productImageComponents = Object.entries(productImages).map(
         alt={`${key} page`}
         key={key}
         height={384}
+        quality={25}
         loading="lazy"
         placeholder="blur"
       />
@@ -46,6 +47,9 @@ export default function Page() {
               alt="Repertoire Icon"
               width={64}
               height={64}
+              quality={25}
+              placeholder="blur"
+              preload
             />
             <h1 className="mb-0 self-center">{metadata.title as string}</h1>
           </span>

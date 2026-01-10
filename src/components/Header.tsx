@@ -56,7 +56,6 @@ export default function Header() {
             width={128}
             height={128}
             quality={25}
-            loading="eager"
             placeholder="blur"
             alt="Juliette Cordor"
           />
