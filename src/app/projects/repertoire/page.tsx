@@ -24,6 +24,13 @@ const productImageComponents = Object.entries(productImages).map(
 export const metadata: Metadata = {
   title: "Repertoire",
   description: "A simple way to manage eScripts from one app",
+  openGraph: {
+    type: "article",
+    authors: ["Juliette Cordor"],
+    images: {
+      url: "/hero-images/repertoire.png",
+    },
+  },
 };
 
 export default function Page() {

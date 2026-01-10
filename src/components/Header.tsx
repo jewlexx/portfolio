@@ -53,8 +53,9 @@ export default function Header() {
           <Image
             className="glass size-32 rounded-full lg:min-h-16 lg:min-w-16"
             src={WomanTechnologist}
-            width={64}
-            height={64}
+            width={128}
+            height={128}
+            quality={25}
             loading="eager"
             placeholder="blur"
             alt="Juliette Cordor"
