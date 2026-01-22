@@ -1,6 +1,6 @@
-import { ProjectInfo } from "$/projects";
+import type { Project } from "$/projects";
 
-export default function appendProject(projects: ProjectInfo[]): ProjectInfo[] {
+export default function appendProject(projects: Project[]): Project[] {
   return [
     ...projects,
     {

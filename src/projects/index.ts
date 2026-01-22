@@ -1,45 +1,54 @@
 import fs from "fs";
 import { join } from "path";
 
+import { z } from "astro/zod";
 import { match } from "ts-pattern";
 import matter from "gray-matter";
 import { Arch, Os, parseArch, parseOs } from "$/arch";
 
 const projectsDirectory = join(process.cwd(), "src/content/projects");
 
-export interface Metadata {
-  featured?: boolean;
-  title: string;
-  description: string;
-  emoji?: string;
-  pubDate: string;
-  repo?: string;
-  homepage?: string;
-  heroImage?: string;
-  profileImage?: string;
-  shields?: Shield[];
-  toy?: boolean;
-  hideHero?: boolean;
-  download?: Download;
-}
+export const archSchema = z.nativeEnum(Arch);
 
-export interface Download {
-  src: "github";
-  infoExtractor: string;
-  arch: Arch[];
-  os: Os[];
-}
+export const osSchema = z.nativeEnum(Os);
 
-export interface Shield {
-  alt?: string;
-  src?: string;
-  href?: string;
-}
+export const downloadSchema = z.object({
+  src: z.literal("github"),
+  infoExtractor: z.string().transform((input) => new RegExp(input)),
+  arch: z.array(archSchema),
+  os: z.array(osSchema),
+});
+export type Download = z.infer<typeof downloadSchema>;
 
-export interface ProjectInfo extends Metadata {
-  slug: string;
-  content: string;
-}
+export const shieldSchema = z.object({
+  alt: z.string().optional(),
+  src: z.string().optional(),
+  href: z.string().optional(),
+});
+export type Shield = z.infer<typeof shieldSchema>;
+
+export const metadataSchema = z.object({
+  featured: z.boolean().optional(),
+  title: z.string(),
+  description: z.string(),
+  emoji: z.string().optional(),
+  pubDate: z.string(),
+  repo: z.string().optional(),
+  homepage: z.string().optional(),
+  heroImage: z.string().optional(),
+  profileImage: z.string().optional(),
+  shields: z.array(shieldSchema).optional(),
+  toy: z.boolean().optional(),
+  hideHero: z.boolean().optional(),
+  download: downloadSchema.optional(),
+});
+export type Metadata = z.infer<typeof metadataSchema>;
+
+export const projectSchema = metadataSchema.extend({
+  slug: z.string(),
+  content: z.string().optional(),
+});
+export type Project = z.infer<typeof projectSchema>;
 
 export function getProjectSlugs() {
   return fs
@@ -48,7 +57,7 @@ export function getProjectSlugs() {
     .map((file) => file.replace(".md", ""));
 }
 
-export function getProjectBySlug(slug: string): ProjectInfo | null {
+export function getProjectBySlug(slug: string): Project | null {
   try {
     return getProjectBySlugInner(slug);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -57,7 +66,7 @@ export function getProjectBySlug(slug: string): ProjectInfo | null {
   }
 }
 
-function getProjectBySlugInner(slug: string): ProjectInfo | null {
+function getProjectBySlugInner(slug: string): Project | null {
   const fullPath = join(projectsDirectory, `${slug}.md`);
 
   if (!fs.existsSync(fullPath)) {
@@ -127,7 +136,7 @@ export function getAllProjects() {
     .sort(sortProject);
 }
 
-export function sortProject(a: ProjectInfo, b: ProjectInfo) {
+export function sortProject(a: Project, b: Project) {
   if (a.featured) {
     return -1;
   }
