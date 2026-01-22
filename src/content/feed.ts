@@ -1,5 +1,5 @@
 import RSS, { type FeedOptions } from "rss";
-import { getAllProjects, type ProjectInfo } from "./projects";
+import { getAllProjects, type ProjectInfo } from "../projects";
 import { BASE_URL } from "$/consts";
 import { getAllPosts } from "./blog/api";
 import { IBlogPostFields } from "./blog/types";
@@ -14,7 +14,7 @@ export async function generateRssFeed(): Promise<RSS>;
 export async function generateRssFeed(rssOptions: RSSOPtions): Promise<RSS>;
 
 export async function generateRssFeed(
-  rssOptions: RSSOPtions = { projects: true, blog: true }
+  rssOptions: RSSOPtions = { projects: true, blog: true },
 ) {
   const feedOptions: FeedOptions = {
     title: "Juliette Cordor's Portfolio | RSS Feed",

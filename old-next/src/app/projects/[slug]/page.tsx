@@ -11,7 +11,7 @@ import PubDate from "$/components/PubDate";
 import Shield from "$/components/Shield";
 import IconLink from "$/components/IconLink";
 import { twitterConfiguration } from "$/consts";
-import { getProjectBySlug, getProjectSlugs } from "$/content/projects";
+import { getProjectBySlug, getProjectSlugs } from "$/projects";
 import markdownToHtml from "$/content/markdown";
 import Markdown from "$/components/MarkdownWrapper";
 import { match } from "ts-pattern";

@@ -1,4 +1,4 @@
-import { ProjectInfo } from "$/content/projects";
+import { ProjectInfo } from "$/projects";
 
 const nextUrl = process.env.NEXT_PUBLIC_URL;
 const imageUrl = encodeURIComponent(`${nextUrl}/icons/repertoire.png`);

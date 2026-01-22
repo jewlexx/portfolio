@@ -1,14 +1,11 @@
 ---
-import {
-  getAllProjects,
-  sortProject,
-  type ProjectInfo,
-} from "$/content/projects";
+import { sortProject, type ProjectInfo } from "$/projects";
 
 import ProjectsComponent from "$/components/Projects";
 import appendProject from "$/computing_compat/appendProject";
 import appendWinpax from "$/projects/winpax/projects_compat";
 import Layout from "$/layouts/Layout.astro";
+import { getCollection } from "astro:content";
 
 const nextUrl = Astro.site;
 const imageUrl = encodeURIComponent(`${nextUrl}/icons/repertoire.png`);
@@ -30,8 +27,9 @@ function appendRepertoire(projects: ProjectInfo[]): ProjectInfo[] {
   return [...projects, repertoireInfo];
 }
 
+const postsCollection = await getCollection("projects");
 const posts = appendRepertoire(
-  appendWinpax(appendProject(getAllProjects())),
+  appendWinpax(appendProject(postsCollection.map((post) => post.data) as any)),
 ).sort(sortProject);
 ---
 

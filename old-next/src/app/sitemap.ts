@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-import { getAllProjects, ProjectInfo } from "$/content/projects";
+import { getAllProjects, ProjectInfo } from "$/projects";
 import { BASE_URL } from "$/consts";
 import { IBlogPostFields } from "$/content/blog/types";
 import { getAllPosts } from "$/content/blog/api";

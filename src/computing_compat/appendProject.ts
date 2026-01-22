@@ -1,4 +1,4 @@
-import type { ProjectInfo } from "$/content/projects";
+import type { ProjectInfo } from "$/projects";
 
 export default function appendProject(projects: ProjectInfo[]): ProjectInfo[] {
   return [
