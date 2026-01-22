@@ -71,7 +71,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-compiler": "rc",
     "eslint-plugin-react-hooks": "^7.0.1",
-    "postcss-preset-env": "^10.5.0",
+    "postcss-preset-env": "^11.0.0",
     "prettier": "^3.7.4",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "twemoji-parser": "^14.0.0",
