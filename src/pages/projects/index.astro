@@ -29,7 +29,15 @@ function appendRepertoire(projects: ProjectInfo[]): ProjectInfo[] {
 
 const postsCollection = await getCollection("projects");
 const posts = appendRepertoire(
-  appendWinpax(appendProject(postsCollection.map((post) => post.data) as any)),
+  appendWinpax(
+    appendProject(
+      postsCollection.map((post) => ({
+        ...post.data,
+        slug: post.id,
+        content: post.body!,
+      })),
+    ),
+  ),
 ).sort(sortProject);
 ---
 
