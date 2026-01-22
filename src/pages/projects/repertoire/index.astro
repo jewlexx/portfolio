@@ -1,0 +1,119 @@
+---
+import { IconBrandApple, IconBrandAndroid } from "@tabler/icons-react";
+import IconLink from "$/components/IconLink";
+import repertoireIcon from "$/../public/icons/repertoire.png";
+import productImages from "$/projects/repertoire/images";
+import Project from "$/layouts/Project.astro";
+
+const metadata = {
+  title: "Repertoire",
+  description: "A simple way to manage eScripts from one app",
+  openGraph: {
+    type: "article",
+    authors: ["Juliette Cordor"],
+    images: {
+      url: "/hero-images/repertoire.png",
+    },
+  },
+};
+---
+
+<Project>
+  <div class="project-main">
+    <div class="title">
+      <span class="mb-4 flex gap-4">
+        <img
+          class="m-0 p-0"
+          loading="eager"
+          src={repertoireIcon.src}
+          alt="Repertoire Icon"
+          width={64}
+          height={64}
+        />
+        <h1 class="mb-0 self-center">{metadata.title as string}</h1>
+      </span>
+      <i>{metadata.description as string}</i>
+      <div class="date">
+        {/* {pubDate && <PubDate pubDate={new Date(pubDate)} />} */}
+        {
+          /* {
+								updatedDate && (
+									<div class="last-updated-on">
+										Last updated on <FormattedDate date={updatedDate} />
+									</div>
+								)
+							} */
+        }
+      </div>
+      <div
+        class="flex flex-wrap justify-center gap-8 portrait:*:not-first:hidden"
+      >
+        {
+          Object.entries(productImages).map(([key, image]) => {
+            return (
+              <img
+                src={image.src}
+                alt={`${key} page`}
+                height={384}
+                class="h-96"
+                loading="lazy"
+              />
+            );
+          })
+        }
+      </div>
+
+      {
+        /* {shields && (
+            <p class="flex flex-wrap justify-center gap-2">
+              {shields?.map((shield) => (
+                <Shield {...shield} key={shield.src} />
+              ))}
+            </p>
+          )} */
+      }
+
+      <span class="linksContainer">
+        <IconLink
+          url="https://testflight.apple.com/join/gq97wtCk"
+          icon={IconBrandApple}
+          title="Download iOS Beta"
+          class="btn-secondary"
+        />
+        <IconLink
+          url="https://gitlab.com/cordor/repertoire/-/releases"
+          icon={IconBrandAndroid}
+          title="Download Android Beta"
+          class="btn-secondary"
+        />
+        {
+          /* {repo && (
+              <IconLink
+                url={repo}
+                icon={IconBrandGit}
+                title="Git Source"
+                class="btn-secondary"
+              />
+            )}
+            {homepage && (
+              <IconLink
+                url={homepage}
+                icon={LinkIcon}
+                title="Homepage"
+                class="btn-secondary"
+              />
+            )}
+            {download && (
+              <IconLink
+                url={githubRelease(repo) ?? "#"}
+                title="Download"
+                icon={IconDownload}
+                class="btn-secondary"
+              />
+            )} */
+        }
+      </span>
+      <hr />
+    </div>
+  </div>
+</Project>

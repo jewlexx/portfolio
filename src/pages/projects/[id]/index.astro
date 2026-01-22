@@ -15,6 +15,7 @@ import {
   IconLink as LinkIcon,
   IconDownload,
 } from "@tabler/icons-react";
+import Project from "$/layouts/Project.astro";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -88,84 +89,82 @@ const {
 } = projectContent.data;
 ---
 
-<Layout>
-  <article>
-    <div class="heroImage">
-      {
-        heroImage && !hideHero && (
-          <img width={500} height={200} src={heroImage} alt="" />
-        )
-      }
-    </div>
-    <div class="project-main">
-      <div class="title">
-        <h1>{title}</h1>
-        <i>{description}</i>
-        <div class="date">
-          {pubDate && <PubDate pubDate={new Date(pubDate)} />}
-          {
-            /* {
+<Project>
+  <div class="heroImage">
+    {
+      heroImage && !hideHero && (
+        <img width={500} height={200} src={heroImage} alt="" />
+      )
+    }
+  </div>
+  <div class="project-main">
+    <div class="title">
+      <h1>{title}</h1>
+      <i>{description}</i>
+      <div class="date">
+        {pubDate && <PubDate pubDate={new Date(pubDate)} />}
+        {
+          /* {
 								updatedDate && (
 									<div class="last-updated-on">
 										Last updated on <FormattedDate date={updatedDate} />
 									</div>
 								)
 							} */
-          }
-        </div>
-        {
-          toy && (
-            <p>
-              🤏 This is a mini project, meaning it&apo;s all here. There&apos;s
-              nothing else to it.
-            </p>
-          )
         }
-        {
-          shields && (
-            <p class="flex flex-wrap justify-center gap-2">
-              {shields?.map((shield) => (
-                <Shield {...shield} />
-              ))}
-            </p>
-          )
-        }
-
-        <span class="linksContainer">
-          {
-            repo && (
-              <IconLink
-                url={repo}
-                icon={IconBrandGit}
-                title="Git Source"
-                class="btn-secondary"
-              />
-            )
-          }
-          {
-            homepage && (
-              <IconLink
-                url={homepage}
-                icon={LinkIcon}
-                title="Homepage"
-                class="btn-secondary"
-              />
-            )
-          }
-          {
-            download && (
-              <IconLink
-                url={githubRelease(repo) ?? "#"}
-                title="Download"
-                icon={IconDownload}
-                class="btn-secondary"
-              />
-            )
-          }
-        </span>
-        <hr />
       </div>
-      <Content />
+      {
+        toy && (
+          <p>
+            🤏 This is a mini project, meaning it&apo;s all here. There&apos;s
+            nothing else to it.
+          </p>
+        )
+      }
+      {
+        shields && (
+          <p class="flex flex-wrap justify-center gap-2">
+            {shields?.map((shield) => (
+              <Shield {...shield} />
+            ))}
+          </p>
+        )
+      }
+
+      <span class="linksContainer">
+        {
+          repo && (
+            <IconLink
+              url={repo}
+              icon={IconBrandGit}
+              title="Git Source"
+              class="btn-secondary"
+            />
+          )
+        }
+        {
+          homepage && (
+            <IconLink
+              url={homepage}
+              icon={LinkIcon}
+              title="Homepage"
+              class="btn-secondary"
+            />
+          )
+        }
+        {
+          download && (
+            <IconLink
+              url={githubRelease(repo) ?? "#"}
+              title="Download"
+              icon={IconDownload}
+              class="btn-secondary"
+            />
+          )
+        }
+      </span>
+      <hr />
     </div>
-  </article>
-</Layout>
+    <Content />
+  </div>
+</Project>
