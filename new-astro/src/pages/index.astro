@@ -1,16 +1,46 @@
 ---
-
+import { Introduction } from "$/components/Header.tsx";
+import { EMAIL } from "$/consts";
+import { ItemList } from "$/components/Home/index.tsx";
+import Layout from "$/layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <main class="prose lg:prose-xl px-5">
+    <h1 class="mt-10! flex items-center gap-2">👩‍🚀 Hello, Traveller!</h1>
+    <Introduction />
+    <p>
+      Feel free to check out{" "}
+      <a href="/projects"> some of my best projects </a>
+      , or return to the <a href="/engine">ever-expansive web</a>.
+    </p>
+    <section class="mt-10 space-y-4">
+      <h2 id="who-am-i">Who am I?</h2>
+      <p>I am a developer, working in a variety of areas, including:</p>
+
+      <ItemList />
+
+      <p class="m-0!">As well as:</p>
+
+      <p>
+        I am also a big fan of{" "}
+        <a href="https://github.com/jewlexx">open source</a>, and I love to help
+        people out with their projects.
+      </p>
+      <p>
+        If you want to get in touch, you can find me on{" "}
+        <a href="https://x.com/jewelexx">Twitter (X)</a>,{" "}
+        <a href="https://github.com/jewlexx">GitHub</a>, or shoot me an email at <a
+          href={`mailto:${EMAIL}`}>{EMAIL}</a
+        >.
+      </p>
+    </section>
+  </main>
+</Layout>

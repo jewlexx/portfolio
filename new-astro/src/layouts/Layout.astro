@@ -1,0 +1,18 @@
+---
+import Header from "$/components/Header";
+import { knownTheme } from "$/theme";
+import "../styles/global.css";
+---
+
+<html lang="en" data-theme={knownTheme.light}>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body
+    class="min-h-screen grid-cols-[25fr_75fr] gap-4 *:max-h-screen *:overflow-auto lg:grid"
+  >
+    <!-- <Back /> -->
+    <Header />
+    <slot />
+  </body>
+</html>
