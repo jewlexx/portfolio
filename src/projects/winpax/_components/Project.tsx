@@ -1,0 +1,60 @@
+"use client";
+
+import { useState } from "react";
+import Image, { type StaticImageData } from "next/image";
+import Link from "next/link";
+import { motion } from "motion/react";
+import { springTransition } from "../transitions";
+import Header from "./Project/Header";
+
+export interface Props {
+  title: string;
+  description: string;
+  link: Link;
+  alternate?: boolean;
+}
+
+interface Link {
+  label: string;
+  href: string;
+  image: StaticImageData | string;
+}
+
+function HeroImage({ link }: Props) {
+  return (
+    <Image
+      src={link.image}
+      alt={link.label}
+      width={1200}
+      height={630}
+      quality={75}
+      className="rounded-box max-w-[50vw] bg-stone-100"
+      {...(typeof link.image === "string" ? {} : { placeholder: "blur" })}
+    />
+  );
+}
+
+export default function Project(props: Props) {
+  const [hovered, setHovered] = useState(false);
+
+  const { link } = props;
+
+  return (
+    <motion.a
+      transition={springTransition}
+      layout
+      className="card bg-base-100 m-5 max-w-[50vw] min-w-[50vw] shadow-xl"
+      href={link.href}
+      aria-label={link.label}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onFocus={() => setHovered(true)}
+      onBlur={() => setHovered(false)}
+      tabIndex={0}
+    >
+      <HeroImage {...props} />
+
+      <Header {...props} hovered={hovered} />
+    </motion.a>
+  );
+}

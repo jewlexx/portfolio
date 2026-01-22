@@ -1,7 +1,5 @@
 import { type ProjectInfo } from "$/content/projects";
 
-import Image from "next/image";
-
 export default function Projects({ posts }: { posts: ProjectInfo[] }) {
   return (
     <section className="min-h-full min-w-full">
@@ -12,12 +10,11 @@ export default function Projects({ posts }: { posts: ProjectInfo[] }) {
             key={post.slug}
           >
             <a className="no-underline" href={`/projects/${post.slug}`}>
-              <Image
+              <img
                 src={post.heroImage!}
                 alt={`${post.title} Hero Image`}
                 width={1200 / 4}
                 height={630 / 4}
-                quality={25}
                 // width = 1200 height = 630
                 className="w-300"
               />

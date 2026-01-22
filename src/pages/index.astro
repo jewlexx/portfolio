@@ -11,7 +11,7 @@ import Layout from "$/layouts/Layout.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>Juliette Cordor's Portfolio</title>
   </head>
   <main class="prose lg:prose-xl px-5">
     <h1 class="mt-10! flex items-center gap-2">👩‍🚀 Hello, Traveller!</h1>
@@ -25,9 +25,7 @@ import Layout from "$/layouts/Layout.astro";
       <h2 id="who-am-i">Who am I?</h2>
       <p>I am a developer, working in a variety of areas, including:</p>
 
-      <ItemList />
-
-      <p class="m-0!">As well as:</p>
+      <ItemList client:load />
 
       <p>
         I am also a big fan of{" "}

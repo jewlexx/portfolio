@@ -1,0 +1,42 @@
+---
+import {
+  getAllProjects,
+  sortProject,
+  type ProjectInfo,
+} from "$/content/projects";
+
+import ProjectsComponent from "$/components/Projects";
+import appendProject from "$/computing_compat/appendProject";
+import appendWinpax from "$/projects/winpax/projects_compat";
+import Layout from "$/layouts/Layout.astro";
+
+const nextUrl = Astro.site;
+const imageUrl = encodeURIComponent(`${nextUrl}/icons/repertoire.png`);
+
+const repertoireInfo: ProjectInfo = {
+  featured: true,
+  emoji: "💊",
+  slug: "repertoire",
+  content: "",
+  title: "Repertoire",
+  description: "A simple application for managing eScripts",
+  // aproximate date
+  pubDate: "",
+  profileImage: imageUrl,
+  heroImage: "/hero-images/repertoire.png",
+};
+
+function appendRepertoire(projects: ProjectInfo[]): ProjectInfo[] {
+  return [...projects, repertoireInfo];
+}
+
+const posts = appendRepertoire(
+  appendWinpax(appendProject(getAllProjects())),
+).sort(sortProject);
+---
+
+<Layout>
+  <main>
+    <ProjectsComponent posts={posts} />
+  </main>
+</Layout>
