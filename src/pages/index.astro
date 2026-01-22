@@ -1,5 +1,4 @@
 ---
-import { Introduction } from "$/components/Header.tsx";
 import { EMAIL } from "$/consts";
 import { ItemList } from "$/components/Home/index.tsx";
 import Layout from "$/layouts/Layout.astro";
@@ -10,7 +9,11 @@ import Head from "$/components/Head.astro";
   <Head />
   <main class="prose lg:prose-xl px-5">
     <h1 class="mt-10! flex items-center gap-2">👩‍🚀 Hello, Traveller!</h1>
-    <Introduction />
+    <p>
+      My name is <span class="font-bold">Juliette</span>, and you have landed on
+      my <span class="font-bold">silly little site</span>
+      &trade;.
+    </p>
     <p>
       Feel free to check out{" "}
       <a href="/projects"> some of my best projects </a>

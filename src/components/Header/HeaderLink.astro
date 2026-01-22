@@ -1,0 +1,14 @@
+---
+const props = Astro.props;
+---
+
+<sl
+  {...props}
+  class:list={[
+    "btn btn-ghost lg:btn-block text-xl hover:font-bold xl:text-3xl",
+    props.class,
+  ]}
+  href={props.href}
+>
+  <slot />
+</sl>

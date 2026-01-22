@@ -4,7 +4,6 @@ import PubDate from "$/components/PubDate";
 import Shield from "$/components/Shield";
 import IconLink from "$/components/IconLink";
 import { twitterConfiguration } from "$/consts";
-import { getProjectBySlug, getProjectSlugs } from "$/projects";
 import { match } from "ts-pattern";
 import { getEntry } from "astro:content";
 import {
@@ -14,7 +13,7 @@ import {
 } from "@tabler/icons-react";
 import Project from "$/layouts/Project.astro";
 import Head from "$/components/Head.astro";
-import type { metadata } from "motion/react-client";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -112,7 +111,7 @@ const {
   <div class="heroImage">
     {
       heroImage && !hideHero && (
-        <img width={500} height={200} src={heroImage} alt="" />
+        <Image width={500} height={200} src={heroImage} alt="" />
       )
     }
   </div>

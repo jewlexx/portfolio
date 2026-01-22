@@ -1,0 +1,73 @@
+---
+import type { AnchorHTMLAttributes, HTMLAttributes } from "react";
+import { twMerge } from "tailwind-merge";
+
+import WomanTechnologist from "$/assets/images/emojis/memoji.png";
+import IconLink from "$/components/IconLink";
+import { linksAbridged } from "$/links";
+import { FaBlog, FaGithub } from "react-icons/fa6";
+import { FaProjectDiagram } from "react-icons/fa";
+import Image from "astro/components/Image.astro";
+import HeaderLink from "./Header/HeaderLink.astro";
+---
+
+<nav
+  class="bg-base-200 m-4 flex max-h-screen shrink grow-0 flex-col items-center justify-between rounded-tr-xl rounded-br-xl px-4 py-4 shadow-md not-lg:rounded-xl sm:break-after-all sm:wrap-anywhere"
+  role="navigation"
+>
+  <span class="flex min-w-full flex-col items-center justify-center gap-5">
+    <a
+      class="decoration-0 transition-transform hover:scale-110"
+      href="/"
+      rel="prefetch"
+    >
+      <Image
+        class="glass size-32 rounded-full lg:min-h-16 lg:min-w-16"
+        src={WomanTechnologist}
+        width={128}
+        height={128}
+        alt="Juliette Cordor"
+      />
+    </a>
+    <h3 class="px-4 text-4xl font-bold not-lg:hidden">
+      Juliette Cordor{" "}
+    </h3>
+  </span>
+
+  <span
+    class="flex w-full items-center justify-center gap-4 sm:wrap-anywhere lg:flex-col"
+  >
+    <HeaderLink href="/projects">
+      <FaProjectDiagram />
+      Projects
+    </HeaderLink>
+    <HeaderLink href="/blog" class="gap-4">
+      <FaBlog />
+      Blog
+    </HeaderLink>
+  </span>
+
+  <span
+    class="bottom-0 flex min-w-full flex-col items-center justify-center gap-4"
+  >
+    <span
+      class="float-left flex lg:left-5 lg:mb-8! lg:flex-col lg:self-start lg:p-0!"
+    >
+      {
+        linksAbridged.map((linkProps) => (
+          <IconLink key={linkProps.title} {...linkProps} />
+        ))
+      }
+    </span>
+
+    <a
+      class="m-0 flex items-center gap-1 p-0 opacity-50 not-lg:hidden"
+      href="https://github.com/jewlexx/portfolio"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <FaGithub />
+      This website is open source!
+    </a>
+  </span>
+</nav>
