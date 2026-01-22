@@ -7,8 +7,10 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react()],
+  site: "https://www.cordor.dev",
+  trailingSlash: "always",
 
+  integrations: [react()],
   vite: {
     plugins: [tailwindcss()],
   },

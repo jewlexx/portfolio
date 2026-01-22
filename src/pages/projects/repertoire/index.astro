@@ -4,6 +4,7 @@ import IconLink from "$/components/IconLink";
 import repertoireIcon from "$/../public/icons/repertoire.png";
 import productImages from "$/projects/repertoire/images";
 import Project from "$/layouts/Project.astro";
+import Head from "$/components/Head.astro";
 
 const metadata = {
   title: "Repertoire",
@@ -19,6 +20,11 @@ const metadata = {
 ---
 
 <Project>
+  <Head
+    title={metadata.title}
+    description={metadata.description}
+    ogImages={["/hero-images/repertoire.png"]}
+  />
   <div class="project-main">
     <div class="title">
       <span class="mb-4 flex gap-4">

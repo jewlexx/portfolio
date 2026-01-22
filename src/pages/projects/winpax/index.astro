@@ -3,16 +3,18 @@ import { projects } from "$/projects/winpax/projects";
 import orgIcon from "$/assets/images/org-icon.webp";
 import Project from "$/projects/winpax/_components/Project";
 import Layout from "$/layouts/Layout.astro";
+import Head from "$/components/Head.astro";
+
+const description =
+  "Creating blazing fast, package management solutions for the Windows platform.";
 ---
 
 <Layout>
+  <Head title="Winpax" description={description} />
   <main class="column">
     <div class="column prose mt-12 mb-4 gap-4">
       <img src={orgIcon.src} alt="Winpax Icon" width="150" height="150" />
-      <p class="text-xl">
-        Creating blazing fast, package management solutions for the Windows
-        platform.
-      </p>
+      <p class="text-xl">{description}</p>
     </div>
 
     {

@@ -13,6 +13,8 @@ import {
   IconDownload,
 } from "@tabler/icons-react";
 import Project from "$/layouts/Project.astro";
+import Head from "$/components/Head.astro";
+import type { metadata } from "motion/react-client";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -101,6 +103,12 @@ const {
 ---
 
 <Project>
+  <Head
+    title={title}
+    description={description}
+    ogImages={heroImage ? [heroImage] : undefined}
+  />
+
   <div class="heroImage">
     {
       heroImage && !hideHero && (

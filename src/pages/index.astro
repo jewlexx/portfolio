@@ -3,16 +3,11 @@ import { Introduction } from "$/components/Header.tsx";
 import { EMAIL } from "$/consts";
 import { ItemList } from "$/components/Home/index.tsx";
 import Layout from "$/layouts/Layout.astro";
+import Head from "$/components/Head.astro";
 ---
 
 <Layout>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Juliette Cordor's Portfolio</title>
-  </head>
+  <Head />
   <main class="prose lg:prose-xl px-5">
     <h1 class="mt-10! flex items-center gap-2">👩‍🚀 Hello, Traveller!</h1>
     <Introduction />

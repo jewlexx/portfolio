@@ -5,6 +5,7 @@ import ProjectsComponent from "$/components/Projects";
 import appendWinpax from "$/projects/winpax/projects_compat";
 import Layout from "$/layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import Head from "$/components/Head.astro";
 
 const nextUrl = Astro.site;
 const imageUrl = encodeURIComponent(`${nextUrl}/icons/repertoire.png`);
@@ -39,6 +40,10 @@ const posts = appendRepertoire(
 ---
 
 <Layout>
+  <Head
+    title="Projects"
+    description="Juliette Cordor's collection of highlighted projects"
+  />
   <main>
     <ProjectsComponent posts={posts} />
   </main>
