@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { projects } from "./projects";
 import orgIcon from "$/assets/images/org-icon.webp";
 import Project from "./_components/Project";
@@ -10,14 +9,7 @@ export default function Home() {
   return (
     <main className="column">
       <div className="column prose mt-12 mb-4 gap-4">
-        <Image
-          src={orgIcon}
-          alt="Winpax Icon"
-          width="150"
-          height="150"
-          priority
-          placeholder="blur"
-        />
+        <img src={orgIcon.src} alt="Winpax Icon" width="150" height="150" />
         <p className="text-xl">
           Creating blazing fast, package management solutions for the Windows
           platform.

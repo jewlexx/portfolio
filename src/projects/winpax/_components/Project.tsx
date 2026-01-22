@@ -1,8 +1,4 @@
-"use client";
-
 import { useState } from "react";
-import Image, { type StaticImageData } from "next/image";
-import Link from "next/link";
 import { motion } from "motion/react";
 import { springTransition } from "../transitions";
 import Header from "./Project/Header";
@@ -17,17 +13,16 @@ export interface Props {
 interface Link {
   label: string;
   href: string;
-  image: StaticImageData | string;
+  image: string;
 }
 
 function HeroImage({ link }: Props) {
   return (
-    <Image
+    <img
       src={link.image}
       alt={link.label}
       width={1200}
       height={630}
-      quality={75}
       className="rounded-box max-w-[50vw] bg-stone-100"
       {...(typeof link.image === "string" ? {} : { placeholder: "blur" })}
     />

@@ -20,11 +20,30 @@ import Project from "$/layouts/Project.astro";
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
   const slugs = projects.map((project) => project.id);
-  return slugs.map((id) => ({
+  const projectSlugs = slugs.map((id) => ({
     params: {
       id,
     },
   }));
+
+  return [
+    ...projectSlugs,
+    {
+      params: {
+        id: "winpax",
+      },
+    },
+    {
+      params: {
+        id: "repertoire",
+      },
+    },
+    {
+      params: {
+        id: "computing",
+      },
+    },
+  ];
 }
 
 function justifyRepoLink(repo: string) {

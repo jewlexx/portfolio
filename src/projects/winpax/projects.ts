@@ -9,7 +9,7 @@ export const projects: React.ComponentProps<typeof Project>[] = [
     link: {
       label: "SFSU Website",
       href: "/projects/sfsu",
-      image: sfsuIcon,
+      image: sfsuIcon.src,
     },
   },
   {

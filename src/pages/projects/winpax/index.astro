@@ -1,0 +1,24 @@
+---
+import { projects } from "$/projects/winpax/projects";
+import orgIcon from "$/assets/images/org-icon.webp";
+import Project from "$/projects/winpax/_components/Project";
+import Layout from "$/layouts/Layout.astro";
+---
+
+<Layout>
+  <main class="column">
+    <div class="column prose mt-12 mb-4 gap-4">
+      <img src={orgIcon.src} alt="Winpax Icon" width="150" height="150" />
+      <p class="text-xl">
+        Creating blazing fast, package management solutions for the Windows
+        platform.
+      </p>
+    </div>
+
+    {
+      projects.map((project, index) => (
+        <Project client:load {...project} alternate={index % 2 === 1} />
+      ))
+    }
+  </main>
+</Layout>
