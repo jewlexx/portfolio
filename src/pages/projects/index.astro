@@ -1,8 +1,7 @@
 ---
-import { sortProject, type ProjectInfo } from "$/projects";
+import { sortProject, type Project } from "$/projects";
 
 import ProjectsComponent from "$/components/Projects";
-import appendProject from "$/computing_compat/appendProject";
 import appendWinpax from "$/projects/winpax/projects_compat";
 import Layout from "$/layouts/Layout.astro";
 import { getCollection } from "astro:content";
@@ -10,7 +9,7 @@ import { getCollection } from "astro:content";
 const nextUrl = Astro.site;
 const imageUrl = encodeURIComponent(`${nextUrl}/icons/repertoire.png`);
 
-const repertoireInfo: ProjectInfo = {
+const repertoireInfo: Project = {
   featured: true,
   emoji: "💊",
   slug: "repertoire",
@@ -23,20 +22,18 @@ const repertoireInfo: ProjectInfo = {
   heroImage: "/hero-images/repertoire.png",
 };
 
-function appendRepertoire(projects: ProjectInfo[]): ProjectInfo[] {
+function appendRepertoire(projects: Project[]): Project[] {
   return [...projects, repertoireInfo];
 }
 
 const postsCollection = await getCollection("projects");
 const posts = appendRepertoire(
   appendWinpax(
-    appendProject(
-      postsCollection.map((post) => ({
-        ...post.data,
-        slug: post.id,
-        content: post.body!,
-      })),
-    ),
+    postsCollection.map((post) => ({
+      ...post.data,
+      slug: post.id,
+      content: post.body!,
+    })),
   ),
 ).sort(sortProject);
 ---

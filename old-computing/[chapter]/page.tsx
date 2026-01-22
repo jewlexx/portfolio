@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { type ChapterRange, getChapterData } from "$/computing_compat/chapter";
+import { type ChapterRange, getChapterData } from "../computing_compat/chapter";
 import GoNext from "../next";
 import Markdown from "$/components/MarkdownWrapper";
 
