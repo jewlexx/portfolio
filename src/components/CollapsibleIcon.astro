@@ -1,0 +1,23 @@
+---
+import { IoIosArrowDropdown } from "react-icons/io";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div id="container" x-data="{ expanded: false }">
+  <h3 class="flex cursor-pointer items-center" @click="expanded = ! expanded">
+    <button aria-label={`Toggle ${title}`} class="float-left mr-3 -ml-8">
+      <IoIosArrowDropdown />
+    </button>
+    <span class="[&>svg]:mr-2 [&>svg]:size-5"><slot name="icon" /></span>
+    {title}
+  </h3>
+
+  <div x-show="expanded" x-collapse>
+    <slot />
+  </div>
+</div>

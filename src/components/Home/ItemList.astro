@@ -1,0 +1,107 @@
+---
+import { FaDiscord, FaJava } from "react-icons/fa";
+import { FiPackage, FiCpu } from "react-icons/fi";
+import { HiOutlineCommandLine } from "react-icons/hi2";
+import {
+  IoDesktopOutline,
+  IoGlobeOutline,
+  IoLibraryOutline,
+  IoSpeedometerOutline,
+} from "react-icons/io5";
+import {
+  SiTauri,
+  SiNextdotjs,
+  SiReact,
+  SiRust,
+  SiC,
+  SiTypescript,
+  SiSvelte,
+} from "react-icons/si";
+import { SubListItem } from ".";
+import Collapsible from "../Collapsible";
+import CollapsibleIcon from "../CollapsibleIcon.astro";
+---
+
+<>
+  <ul class="list">
+    <CollapsibleIcon title="Desktop Applications">
+      <IoDesktopOutline slot="icon" />
+      <SubListItem href="https://github.com/jewlexx/fauxchat">
+        <SiTauri />
+        Tauri
+      </SubListItem>
+    </CollapsibleIcon>
+    <CollapsibleIcon title="Web Applications">
+      <IoGlobeOutline slot="icon" />
+      <SubListItem href="/#who-am-i">
+        <SiNextdotjs />
+        Next.js
+      </SubListItem>
+      <SubListItem href="https://winpax.cordor.dev">
+        <SiReact />
+        React
+      </SubListItem>
+    </CollapsibleIcon>
+    <CollapsibleIcon title="CLI Applications">
+      <HiOutlineCommandLine slot="icon" />
+      <SubListItem href="https://github.com/winpax/sfsu">
+        <FiPackage />
+        Package Manager
+      </SubListItem>
+    </CollapsibleIcon>
+    <CollapsibleIcon title="API Libraries">
+      <IoLibraryOutline slot="icon" />
+      <SubListItem href="https://github.com/jewlexx/discord-presence">
+        <FaDiscord />
+        Discord Presence
+      </SubListItem>
+    </CollapsibleIcon>
+  </ul>
+
+  <p class="m-0!">As well as:</p>
+  <ul class="list mt-0!">
+    <Collapsible title="Low level code">
+      <SubListItem href="https://github.com/jewlexx/do-not-enter">
+        <FiCpu />
+        Kernel/OS Implementation
+      </SubListItem>
+      <SubListItem href="https://github.com/winpax/miniature">
+        <IoSpeedometerOutline />
+        Low level optimisations
+      </SubListItem>
+    </Collapsible>
+
+    <Collapsible title="Various Languages">
+      <SubListItem langCode="rust">
+        <SiRust />
+        Rust
+      </SubListItem>
+      <SubListItem langCode="c">
+        <SiC />C
+      </SubListItem>
+      <SubListItem langCode="java">
+        <FaJava />
+        Java
+      </SubListItem>
+      <SubListItem langCode="typescript">
+        <SiTypescript />
+        TypeScript
+      </SubListItem>
+    </Collapsible>
+
+    <Collapsible title="Various web frameworks">
+      <SubListItem>
+        <SiReact />
+        React
+      </SubListItem>
+      <SubListItem>
+        <SiNextdotjs />
+        Next.js
+      </SubListItem>
+      <SubListItem>
+        <SiSvelte />
+        Svelte
+      </SubListItem>
+    </Collapsible>
+  </ul>
+</>

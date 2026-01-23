@@ -1,5 +1,3 @@
-"use client";
-
 import type { ComponentProps, ReactElement, ReactNode } from "react";
 import { useState } from "react";
 

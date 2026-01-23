@@ -1,6 +1,6 @@
 ---
 import { EMAIL } from "$/consts";
-import { ItemList } from "$/components/Home/index.tsx";
+import ItemList from "$/components/Home/ItemList.astro";
 import Layout from "$/layouts/Layout.astro";
 import Head from "$/components/Head.astro";
 ---
@@ -23,7 +23,7 @@ import Head from "$/components/Head.astro";
       <h2 id="who-am-i">Who am I?</h2>
       <p>I am a developer, working in a variety of areas, including:</p>
 
-      <ItemList client:load />
+      <ItemList />
 
       <p>
         I am also a big fan of{" "}
