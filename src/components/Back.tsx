@@ -1,7 +1,4 @@
-"use client";
-
 import { AnimatePresence, motion } from "motion/react";
-import { useRouter, usePathname } from "next/navigation";
 import { IoArrowBack } from "react-icons/io5";
 
 export function Back() {

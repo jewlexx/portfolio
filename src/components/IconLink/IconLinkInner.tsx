@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { Icon } from "@tabler/icons-react";
+import type { Icon } from "@tabler/icons-react";
 
 export default function IconLinkInner({
   icon: Icon,
@@ -21,7 +20,7 @@ export default function IconLinkInner({
   "use client";
 
   return (
-    <Link
+    <a
       role="button"
       href={adjustedUrl}
       target={local ? undefined : "_blank"}
@@ -31,6 +30,6 @@ export default function IconLinkInner({
     >
       <Icon title={alt ?? title} />
       <p className="not-lg:hidden">{title}</p>
-    </Link>
+    </a>
   );
 }

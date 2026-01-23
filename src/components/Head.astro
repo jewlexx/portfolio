@@ -1,0 +1,40 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  ogType?: string;
+  ogImages?: string[];
+}
+
+export const defaultTitle = "Juliette Cordor";
+export const defaultDescription = "Juliette Cordor's section of the internet";
+
+const {
+  title = defaultTitle,
+  description = defaultDescription,
+  ogType = "website",
+  ...props
+} = Astro.props;
+---
+
+<title>{title}</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title={title}
+  href={new URL("rss.xml", Astro.site)}
+/>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+<meta property="og:title" content={title} />
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={Astro.site} />
+<meta property="og:authors" content="Juliette Cordor" />
+<meta property="og:description" content={description} />
+{
+  props.ogImages?.map((image) => {
+    <meta property="og:image" content={image} />;
+  })
+}

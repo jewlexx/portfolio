@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { type ProjectInfo } from "$/content/projects";
+import { type ProjectInfo } from "$/projects";
 
 import styles from "./index.module.css";
 

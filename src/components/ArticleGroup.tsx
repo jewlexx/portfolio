@@ -1,6 +1,5 @@
 import ShortDate from "$/components/ShortDate";
-import { IBlogPostFields } from "$/content/blog/types";
-import { ProgressBarLink } from "./ProgressBar";
+import type { IBlogPostFields } from "$/content/blog/types";
 
 export default function ArticleGroup({
   year,
@@ -15,7 +14,7 @@ export default function ArticleGroup({
       <ul className="list bg-base-100 rounded-box shadow-md">
         {articles.map((article) => {
           return (
-            <ProgressBarLink
+            <a
               href={`/blog/${article.slug}`}
               key={article.slug}
               className="no-underline hover:[&>li]:underline"
@@ -31,7 +30,7 @@ export default function ArticleGroup({
                   )}
                 </div>
               </li>
-            </ProgressBarLink>
+            </a>
           );
         })}
       </ul>

@@ -1,0 +1,42 @@
+---
+import { EMAIL } from "$/consts";
+import ItemList from "$/components/Home/ItemList.astro";
+import Layout from "$/layouts/Layout.astro";
+import Head from "$/components/Head.astro";
+---
+
+<Layout>
+  <Head />
+  <main class="prose lg:prose-xl px-5">
+    <h1 class="mt-10! flex items-center gap-2">👩‍🚀 Hello, Traveller!</h1>
+    <p>
+      My name is <span class="font-bold">Juliette</span>, and you have landed on
+      my <span class="font-bold">silly little site</span>
+      &trade;.
+    </p>
+    <p>
+      Feel free to check out{" "}
+      <a href="/projects"> some of my best projects </a>
+      , or return to the <a href="/engine">ever-expansive web</a>.
+    </p>
+    <section class="mt-10 space-y-4">
+      <h2 id="who-am-i">Who am I?</h2>
+      <p>I am a developer, working in a variety of areas, including:</p>
+
+      <ItemList />
+
+      <p>
+        I am also a big fan of{" "}
+        <a href="https://github.com/jewlexx">open source</a>, and I love to help
+        people out with their projects.
+      </p>
+      <p>
+        If you want to get in touch, you can find me on{" "}
+        <a href="https://x.com/jewelexx">Twitter (X)</a>,{" "}
+        <a href="https://github.com/jewlexx">GitHub</a>, or shoot me an email at <a
+          href={`mailto:${EMAIL}`}>{EMAIL}</a
+        >.
+      </p>
+    </section>
+  </main>
+</Layout>

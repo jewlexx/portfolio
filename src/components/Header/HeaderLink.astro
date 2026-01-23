@@ -1,0 +1,16 @@
+---
+import { twMerge } from "tailwind-merge";
+
+const { class: className, ...props } = Astro.props;
+---
+
+<a
+  {...props}
+  class={twMerge(
+    "btn btn-ghost lg:btn-block text-xl hover:font-bold xl:text-3xl",
+    className,
+  )}
+  data-astro-prefetch="hover"
+>
+  <slot />
+</a>

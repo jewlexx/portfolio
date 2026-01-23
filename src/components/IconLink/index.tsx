@@ -1,5 +1,5 @@
 import { type HTMLAttributes, useMemo } from "react";
-import { Icon } from "@tabler/icons-react";
+import type { Icon } from "@tabler/icons-react";
 import IconLinkInner from "./IconLinkInner";
 
 interface Props {
