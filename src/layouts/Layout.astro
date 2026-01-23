@@ -11,8 +11,9 @@ import "../styles/global.css";
   <body
     class="min-h-screen grid-cols-[25fr_75fr] gap-4 *:max-h-screen *:overflow-auto lg:grid"
   >
-    <!-- <Back /> -->
     <Header />
-    <slot />
+    <div class="pt-4">
+      <slot />
+    </div>
   </body>
 </html>
