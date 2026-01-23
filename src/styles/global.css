@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+[x-cloak] {
+  display: none !important;
+}
+
 @plugin "daisyui" {
   /* themes:
     cupcake --default,

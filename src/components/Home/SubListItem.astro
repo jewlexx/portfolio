@@ -1,0 +1,30 @@
+---
+import InnerContent from "./InnerContent.astro";
+
+interface Props {
+  langCode?: string;
+  href?: string;
+  title: string;
+}
+
+const { langCode } = Astro.props;
+
+const link =
+  Astro.props.href ??
+  (langCode &&
+    `https://github.com/jewlexx?tab=repositories&q=&type=&language=${langCode}&sort=stargazers`);
+---
+
+{
+  link ? (
+    <a href={link} rel="noreferrer" target="_blank">
+      <InnerContent name={Astro.props.title}>
+        <slot />
+      </InnerContent>
+    </a>
+  ) : (
+    <InnerContent name={Astro.props.title}>
+      <slot />
+    </InnerContent>
+  )
+}
