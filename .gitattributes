@@ -31,3 +31,4 @@ src/projects/repertoire/images/home[[:space:]]page.png filter=lfs diff=lfs merge
 src/projects/repertoire/images/script[[:space:]]page.png filter=lfs diff=lfs merge=lfs -text
 src/projects/repertoire/images/settings[[:space:]]page.png filter=lfs diff=lfs merge=lfs -text
 public/icons/repertoire.png filter=lfs diff=lfs merge=lfs -text
+public/icons/repertoire.webp filter=lfs diff=lfs merge=lfs -text
