@@ -1,4 +1,4 @@
-import pkg from "../package.json";
+import pkg from "../old-next/package.json";
 
 const unpinDeps = (deps: Record<string, string>) => {
   const unpinnedDeps = Object.entries(deps).reduce((acc, [name, version]) => {

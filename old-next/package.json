@@ -89,9 +89,5 @@
     "@vercel/speed-insights",
     "sharp",
     "unrs-resolver"
-  ],
-  "patchedDependencies": {
-    "eslint-plugin-react-hooks@7.0.1": "patches/eslint-plugin-react-hooks@7.0.1.patch",
-    "eslint-plugin-react-compiler@19.1.0-rc.2": "patches/eslint-plugin-react-compiler@19.1.0-rc.2.patch"
-  }
+  ]
 }
