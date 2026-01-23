@@ -1,34 +1,19 @@
 ---
-import { sortProject, type Project } from "$/projects";
+import { sortProject } from "$/projects";
 
 import ProjectsComponent from "$/components/Projects.astro";
 import appendWinpax from "$/projects/winpax/projects_compat";
 import Layout from "$/layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import Head from "$/components/Head.astro";
+import { appendRepertoire } from "$/projects/repertoire/compat";
 
 const nextUrl = Astro.site;
 const imageUrl = encodeURIComponent(`${nextUrl}/icons/repertoire.png`);
 
-const repertoireInfo: Project = {
-  featured: true,
-  emoji: "💊",
-  slug: "repertoire",
-  content: "",
-  title: "Repertoire",
-  description: "A simple application for managing eScripts",
-  // aproximate date
-  pubDate: "",
-  profileImage: imageUrl,
-  heroImage: "/hero-images/repertoire.webp",
-};
-
-function appendRepertoire(projects: Project[]): Project[] {
-  return [...projects, repertoireInfo];
-}
-
 const postsCollection = await getCollection("projects");
 const posts = appendRepertoire(
+  imageUrl,
   appendWinpax(
     postsCollection.map((post) => ({
       ...post.data,
