@@ -7,7 +7,7 @@ import IconLink from "$/components/IconLink";
 import { linksAbridged } from "$/links";
 import { FaBlog, FaGithub } from "react-icons/fa6";
 import { FaProjectDiagram } from "react-icons/fa";
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 import HeaderLink from "./Header/HeaderLink.astro";
 ---
 
@@ -27,6 +27,7 @@ import HeaderLink from "./Header/HeaderLink.astro";
         width={128}
         height={128}
         alt="Juliette Cordor"
+        loading="eager"
       />
     </a>
     <h3 class="px-4 text-4xl font-bold not-lg:hidden">
