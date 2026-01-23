@@ -23,7 +23,6 @@
     "astro": "^5.16.12",
     "date-fns": "^4.1.0",
     "gray-matter": "^4.0.3",
-    "markdown-to-jsx": "^9.6.0",
     "motion": "^12.28.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "python-shell": "^5.0.0",
