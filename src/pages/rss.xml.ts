@@ -16,7 +16,6 @@ export async function GET(context) {
       projectsCollection.map((post) => ({
         ...post.data,
         slug: post.id,
-        content: post.body!,
       })),
     ),
   );
