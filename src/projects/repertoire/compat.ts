@@ -1,7 +1,10 @@
-import type { Project } from "..";
+import { projectSchema, type Project } from "..";
 
-export function repertoireInfo(imageUrl: string): Project {
-  return {
+export function appendRepertoire(
+  imageUrl: string,
+  projects: Project[],
+): Project[] {
+  const repertoireInfo = projectSchema.parse({
     featured: true,
     emoji: "💊",
     slug: "repertoire",
@@ -12,12 +15,7 @@ export function repertoireInfo(imageUrl: string): Project {
     pubDate: "",
     profileImage: imageUrl,
     heroImage: "/hero-images/repertoire.webp",
-  };
-}
+  });
 
-export function appendRepertoire(
-  imageUrl: string,
-  projects: Project[],
-): Project[] {
-  return [...projects, repertoireInfo(imageUrl)];
+  return [...projects, repertoireInfo];
 }

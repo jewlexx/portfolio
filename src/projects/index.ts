@@ -28,7 +28,7 @@ export const shieldSchema = z.object({
 export type Shield = z.infer<typeof shieldSchema>;
 
 export const metadataSchema = z.object({
-  featured: z.boolean().optional(),
+  featured: z.boolean().optional().default(false),
   title: z.string(),
   description: z.string(),
   emoji: z.string().optional(),
@@ -37,9 +37,9 @@ export const metadataSchema = z.object({
   homepage: z.string().optional(),
   heroImage: z.string().optional(),
   profileImage: z.string().optional(),
-  shields: z.array(shieldSchema).optional(),
-  toy: z.boolean().optional(),
-  hideHero: z.boolean().optional(),
+  shields: z.array(shieldSchema).optional().default([]),
+  toy: z.boolean().optional().default(false),
+  hideHero: z.boolean().optional().default(false),
   download: downloadSchema.optional(),
 });
 export type Metadata = z.infer<typeof metadataSchema>;

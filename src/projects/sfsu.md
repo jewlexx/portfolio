@@ -1,5 +1,4 @@
 ---
-featured: true
 emoji: ⚡
 title: Stupid Fast Scoop Utils
 description: Super fast replacements and additions to scoop commands written in Rust
