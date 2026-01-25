@@ -33,3 +33,5 @@ src/projects/repertoire/images/settings[[:space:]]page.png filter=lfs diff=lfs m
 public/icons/repertoire.png filter=lfs diff=lfs merge=lfs -text
 public/hero-images/exam-progress.png filter=lfs diff=lfs merge=lfs -text
 public/hero-images/repertoire.webp filter=lfs diff=lfs merge=lfs -text
+public/hero-images/sprinkles.png filter=lfs diff=lfs merge=lfs -text
+public/hero-images/winpax.png filter=lfs diff=lfs merge=lfs -text

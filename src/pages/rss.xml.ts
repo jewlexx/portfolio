@@ -6,13 +6,15 @@ import { appendRepertoire } from "$/projects/repertoire/compat";
 
 export async function GET(context) {
   const nextUrl = context.site;
-  const imageUrl = encodeURIComponent(`${nextUrl}/icons/repertoire.png`);
+  const imageUrl = `${nextUrl}/icons/repertoire.png`;
+  const winpaxHero = `${nextUrl}/hero-images/winpax.png`;
 
   const projectsCollection = await getCollection("projects");
 
   const projects = appendRepertoire(
     imageUrl,
     appendWinpax(
+      winpaxHero,
       projectsCollection.map((post) => ({
         ...post.data,
         slug: post.id,

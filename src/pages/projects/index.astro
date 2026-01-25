@@ -9,12 +9,14 @@ import Head from "$/components/Head.astro";
 import { appendRepertoire } from "$/projects/repertoire/compat";
 
 const nextUrl = Astro.site;
-const imageUrl = encodeURIComponent(`${nextUrl}/icons/repertoire.png`);
+const imageUrl = `${nextUrl}/icons/repertoire.png`;
+const winpaxHero = `${nextUrl}/hero-images/winpax.png`;
 
 const postsCollection = await getCollection("projects");
 const posts = appendRepertoire(
   imageUrl,
   appendWinpax(
+    winpaxHero,
     postsCollection.map((post) => ({
       ...post.data,
       slug: post.id,
