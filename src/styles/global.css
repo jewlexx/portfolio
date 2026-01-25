@@ -158,6 +158,11 @@
     --btn-fg: var(--color-github-content);
   }
 
+  .btn-gitlab {
+    --btn-color: var(--color-gitlab);
+    --btn-fg: var(--color-gitlab-content);
+  }
+
   .btn-twitch {
     --btn-color: var(--color-twitch);
     --btn-fg: var(--color-twitch-content);
@@ -205,6 +210,9 @@
 }
 
 @theme {
+  --color-gitlab: #e8533c;
+  --color-gitlab-content: oklch(88.34% 0.019 251.473);
+
   --color-github: #ff507a;
   --color-github-content: oklch(88.34% 0.019 251.473);
 
@@ -232,7 +240,7 @@
   --color-epidemic: #ff82c2;
   --color-epidemic-content: oklch(88.34% 0.019 251.473);
 
-  --color-youtube: #ff0000;
+  --color-youtube: #f74040;
   --color-youtube-content: oklch(88.34% 0.019 251.473);
 
   --color-green-terminal-50: #e7ffe4;

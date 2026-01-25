@@ -10,6 +10,7 @@ import {
   IconMusic,
   IconBrandYoutube,
   IconLink,
+  IconBrandGitlab,
 } from "@tabler/icons-react";
 
 import IconLinkComponent from "$/components/IconLink";
@@ -17,6 +18,12 @@ import IconLinkComponent from "$/components/IconLink";
 export type Links = ComponentProps<typeof IconLinkComponent>[];
 
 export const links = [
+  {
+    title: "Gitlab",
+    url: "gitlab.com/cordor",
+    icon: IconBrandGitlab,
+    className: "btn-gitlab",
+  },
   {
     title: "GitHub",
     url: "github.com/jewlexx",
@@ -100,8 +107,8 @@ export const linksSupportMe: Links = [
 
 export const linksFindMe: Links = [
   links.find((link) => link.title === "GitHub")!,
-  links.find((link) => link.title === "Twitter")!,
+  links.find((link) => link.title === "Gitlab")!,
+  links.find((link) => link.title === "Bluesky")!,
   links.find((link) => link.title === "Twitch")!,
   links.find((link) => link.title === "YouTube")!,
-  links.find((link) => link.title === "Bluesky")!,
 ];
