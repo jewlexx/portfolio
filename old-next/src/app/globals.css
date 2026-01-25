@@ -201,11 +201,14 @@
 }
 
 @theme {
+  --color-off-white: oklch(88.34% 0.019 251.473);
+  --color-off-black: oklch(15.496% 0.023 81.519);
+
   --color-github: #ff507a;
-  --color-github-content: oklch(88.34% 0.019 251.473);
+  --color-github-content: var(--color-off-white);
 
   --color-twitch: #9146ff;
-  --color-twitch-content: oklch(15.496% 0.023 81.519);
+  --color-twitch-content: var(--color-off-black);
 
   --color-twitter: #1da1f2;
   --color-twitter-content: oklch(88.34% 0.019 251.473);

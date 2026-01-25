@@ -9,7 +9,7 @@ import { Image } from "astro:assets";
 
 const metadata = {
   title: "Repertoire",
-  description: "A simple way to manage eScripts from one app",
+  description: "A simple application for managing eScripts",
   openGraph: {
     type: "article",
     authors: ["Juliette Cordor"],
@@ -37,9 +37,11 @@ const metadata = {
           width={64}
           height={64}
         />
-        <h1 class="mb-0 self-center">{metadata.title as string}</h1>
+        <h1 class="mb-0 self-center">{metadata.title}</h1>
       </span>
-      <i>{metadata.description as string}</i>
+      <i class="text-sm">🇦🇺 Australia Only</i>
+      <br />
+      <i>{metadata.description}</i>
       <div class="date">
         {/* {pubDate && <PubDate pubDate={new Date(pubDate)} />} */}
         {
@@ -121,6 +123,24 @@ const metadata = {
         }
       </span>
       <hr />
+      <p>
+        Repertoire is a simplistic application to help users manage their
+        eScripts.
+      </p>
+      <p>
+        It provides a single list of all your scripts, along with pages
+        dedicated to that medication.
+      </p>
+      <p>
+        The app provides the script's QR code, ready to be scanned at any
+        pharmacy that accepts eScripts, as well as relevant information like
+        remaining repeats.
+      </p>
+      <p>
+        If you would like to download the app, use one of the links above for
+        iOS or Android, and please feel free to leave feedback directly from
+        within the app.
+      </p>
     </div>
   </div>
 </Project>
