@@ -1,0 +1,50 @@
+---
+import Layout from "$/layouts/Layout.astro";
+import { linksSupportMe, linksFindMe } from "$/links";
+---
+
+<Layout
+  ><div class="flex flex-col gap-4 md:grid md:grid-cols-2">
+    <div class="flex flex-col items-center gap-4">
+      <h1 class="text-3xl font-bold">Support Me</h1>
+      <div
+        class="flex min-w-[25vw] flex-col flex-wrap items-center justify-center gap-4 [&>a]:w-full"
+      >
+        {
+          linksSupportMe.map((link) => (
+            <a
+              href={`https://${link.url}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class={`btn ${link.className}`}
+            >
+              <link.icon size={24} />
+              {link.prettyTitle ?? link.title}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center gap-4">
+      <h1 class="text-3xl font-bold">Find Me</h1>
+      <div
+        class="flex min-w-[25vw] flex-col flex-wrap items-center justify-center gap-4 [&>a]:w-full"
+      >
+        {
+          linksFindMe.map((link) => (
+            <a
+              href={`https://${link.url}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class={`btn ${link.class}`}
+            >
+              <link.icon size={24} />
+              {link.prettyTitle ?? link.title}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Layout>
