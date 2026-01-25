@@ -9,12 +9,12 @@ import "../styles/global.css";
     <meta charset="utf-8" />
   </head>
   <body
-    class="min-h-screen grid-cols-[22rem_100fr] gap-4 *:max-h-screen *:overflow-auto lg:grid"
+    class="min-h-screen grid-cols-[22rem_100fr] gap-4 *:max-h-screen *:overflow-auto lg:grid overflow-y-hidden"
   >
     <script src="$/scripts/scroll-listener.ts"></script>
     <Header />
 
-    <div class="pt-4" x-data="bodydata" @scroll="handleScroll">
+    <div class="pt-4 pb-4" x-data="bodydata" @scroll="handleScroll">
       <slot />
     </div>
   </body>
