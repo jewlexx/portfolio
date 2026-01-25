@@ -7,23 +7,28 @@ import Layout from "$/layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import Head from "$/components/Head.astro";
 import { appendRepertoire } from "$/projects/repertoire/compat";
+import FeaturedProject from "$/components/FeaturedProject.astro";
+import Projects from "$/components/Projects.astro";
 
 const nextUrl = Astro.site;
 const imageUrl = `${nextUrl}/icons/repertoire.png`;
 const winpaxHero = `${nextUrl}/hero-images/winpax.png`;
 
-const postsCollection = await getCollection("projects");
-const posts = appendRepertoire(
+const projectsCollection = await getCollection("projects");
+const projects = appendRepertoire(
   imageUrl,
   appendWinpax(
     winpaxHero,
-    postsCollection.map((post) => ({
-      ...post.data,
-      slug: post.id,
-      content: post.body!,
+    projectsCollection.map((project) => ({
+      ...project.data,
+      slug: project.id,
+      content: project.body!,
     })),
   ),
 ).sort(sortProject);
+
+const featuredProject = projects.find((project) => project.featured);
+const unfeaturedProjects = projects.filter((project) => !project.featured);
 ---
 
 <Layout>
@@ -32,6 +37,7 @@ const posts = appendRepertoire(
     description="Juliette Cordor's collection of highlighted projects"
   />
   <main>
-    <ProjectsComponent posts={posts} />
+    {featuredProject && <FeaturedProject project={featuredProject} />}
+    <Projects projects={unfeaturedProjects} />
   </main>
 </Layout>
