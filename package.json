@@ -12,6 +12,7 @@
     "@astrojs/alpinejs": "^0.4.9",
     "@astrojs/react": "^4.4.2",
     "@astrojs/rss": "^4.0.15",
+    "@astrojs/sitemap": "^3.7.0",
     "@contentful/rich-text-react-renderer": "^16.1.6",
     "@contentful/rich-text-types": "^17.2.5",
     "@tabler/icons-react": "^3.36.1",

@@ -1,5 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
 
-Allow: /api/og/*
+Sitemap: https://cordor.dev/sitemap-index.xml
