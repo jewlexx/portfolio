@@ -1,12 +1,12 @@
 {
   "name": "new-astro",
-  "type": "module",
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
-    "dev": "astro dev",
+    "astro": "astro",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "astro dev",
+    "preview": "astro preview"
   },
   "dependencies": {
     "@alpinejs/collapse": "^3.15.4",
@@ -14,26 +14,16 @@
     "@astrojs/react": "^4.4.2",
     "@astrojs/rss": "^4.0.15",
     "@astrojs/sitemap": "^3.7.0",
-    "@contentful/rich-text-react-renderer": "^16.1.6",
-    "@contentful/rich-text-types": "^17.2.5",
     "@tabler/icons-react": "^3.36.1",
     "@tailwindcss/vite": "^4.1.18",
-    "@types/alpinejs": "^3.13.11",
-    "@types/react": "^19.2.9",
-    "@types/react-dom": "^19.2.3",
     "alpinejs": "^3.15.4",
     "astro": "^5.16.12",
     "date-fns": "^4.1.0",
     "gray-matter": "^4.0.3",
-    "motion": "^12.28.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "python-shell": "^5.0.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-icons": "^5.5.0",
-    "remark": "^15.0.1",
-    "remark-html": "^16.0.1",
-    "rss": "^1.2.2",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18",
     "ts-pattern": "^5.9.0",
@@ -41,8 +31,11 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
+    "@types/alpinejs": "^3.13.11",
     "@types/alpinejs__collapse": "^3.13.4",
     "@types/node": "^25.0.10",
+    "@types/react": "^19.2.9",
+    "@types/react-dom": "^19.2.3",
     "daisyui": "^5.5.14"
   }
 }
