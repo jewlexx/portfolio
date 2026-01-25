@@ -1,7 +1,4 @@
 ---
-import type { AnchorHTMLAttributes, HTMLAttributes } from "react";
-import { twMerge } from "tailwind-merge";
-
 import WomanTechnologist from "$/assets/images/emojis/memoji.png";
 import IconLink from "$/components/IconLink";
 import { linksAbridged } from "$/links";
@@ -55,9 +52,10 @@ import HeaderLink from "./Header/HeaderLink.astro";
       class="float-left flex lg:left-5 lg:mb-8! lg:flex-col lg:self-start lg:p-0!"
     >
       {
-        linksAbridged.map((linkProps) => (
-          <IconLink key={linkProps.title} {...linkProps} />
-        ))
+        linksAbridged.map((linkProps) => {
+          linkProps.title = linkProps.prettyTitle ?? linkProps.title;
+          return <IconLink key={linkProps.title} {...linkProps} />;
+        })
       }
     </span>
 

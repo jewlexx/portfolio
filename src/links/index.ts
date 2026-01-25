@@ -57,7 +57,7 @@ export const links = [
   },
   {
     title: "Links",
-    prettyTitle: "My links",
+    prettyTitle: "All of My links",
     url: "/links",
     local: true,
     icon: IconLink,
@@ -94,10 +94,11 @@ export const links = [
 
 // Subset of links to be displayed in the header
 export const linksAbridged: Links = [
-  links.find((link) => link.title === "GitHub")!,
-  links.find((link) => link.title === "Bluesky")!,
-  links.find((link) => link.title === "RSS Feed")!,
+  // links.find((link) => link.title === "GitHub")!,
+  // links.find((link) => link.title === "Bluesky")!,
   links.find((link) => link.title === "Links")!,
+  links.find((link) => link.title === "RSS Feed")!,
+  links.find((link) => link.title === "Ko-Fi")!,
 ];
 
 export const linksSupportMe: Links = [
