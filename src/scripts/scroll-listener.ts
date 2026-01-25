@@ -1,11 +1,18 @@
 document.addEventListener("alpine:init", () => {
   const expandedData = {
-    expanded: true,
+    _expanded: true,
+    get expanded() {
+      if (window.innerWidth >= 1024) {
+        return true;
+      } else {
+        return this._expanded;
+      }
+    },
     toggle() {
-      this.expanded = !this.expanded;
+      this._expanded = !this._expanded;
     },
     set(newValue: boolean) {
-      this.expanded = newValue;
+      this._expanded = newValue;
     },
   };
   window.Alpine.store("header", expandedData);
