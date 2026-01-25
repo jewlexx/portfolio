@@ -11,8 +11,6 @@ export default function appendProject(
     title: "Winpax",
     description:
       "Creating blazing fast, package management solutions for the Windows platform.",
-    // aproximate date
-    pubDate: "",
     heroImage: imageUrl,
   });
 

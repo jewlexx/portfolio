@@ -11,8 +11,6 @@ export function appendRepertoire(
     content: "",
     title: "Repertoire",
     description: "A simple application for managing eScripts",
-    // aproximate date
-    pubDate: "",
     profileImage: imageUrl,
     heroImage: "/hero-images/repertoire.webp",
   });

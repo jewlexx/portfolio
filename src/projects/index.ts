@@ -32,7 +32,7 @@ export const metadataSchema = z.object({
   title: z.string(),
   description: z.string(),
   emoji: z.string().optional(),
-  pubDate: z.string(),
+  pubDate: z.string().optional(),
   repo: z.string().optional(),
   homepage: z.string().optional(),
   heroImage: z.string().optional(),
