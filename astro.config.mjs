@@ -12,7 +12,13 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://www.cordor.dev",
   prefetch: true,
-  integrations: [react(), alpinejs(), sitemap()],
+  integrations: [
+    react(),
+    alpinejs({
+      entrypoint: "./src/alpine.ts",
+    }),
+    sitemap(),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },
