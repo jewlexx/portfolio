@@ -1,4 +1,3 @@
-import type { ComponentProps } from "react";
 import {
   IconBrandGithub,
   IconBrandLinktree,
@@ -13,47 +12,48 @@ import {
   IconBrandGitlab,
 } from "@tabler/icons-react";
 
-import IconLinkComponent from "$/components/IconLink";
+import IconLinkComponent from "$/components/IconLink.astro";
+import type { ComponentProps } from "astro/types";
 
 export type Links = ComponentProps<typeof IconLinkComponent>[];
 
-export const links = [
+export const links: Links = [
   {
     title: "Gitlab",
     url: "gitlab.com/cordor",
     icon: IconBrandGitlab,
-    className: "btn-gitlab",
+    class: "btn-gitlab",
   },
   {
     title: "GitHub",
     url: "github.com/jewlexx",
     icon: IconBrandGithub,
-    className: "btn-github",
+    class: "btn-github",
   },
   {
     title: "Bluesky",
     url: "bsky.app/profile/cordor.dev",
     icon: IconBrandBluesky,
-    className: "btn-bluesky",
+    class: "btn-bluesky",
   },
   {
     title: "Twitter",
     url: "twitter.com/jewelexx",
     icon: IconBrandTwitter,
-    className: "btn-twitter",
+    class: "btn-twitter",
   },
   {
     title: "Twitch",
     url: "twitch.tv/digifem",
     icon: IconBrandTwitch,
-    className: "btn-twitch",
+    class: "btn-twitch",
   },
 
   {
     title: "Linktree",
     url: "linktr.ee/jewelexx",
     icon: IconBrandLinktree,
-    className: "btn-linktree",
+    class: "btn-linktree",
   },
   {
     title: "Links",
@@ -61,34 +61,34 @@ export const links = [
     url: "/links",
     local: true,
     icon: IconLink,
-    className: "btn-mylinks",
+    class: "btn-mylinks",
   },
   {
     title: "RSS Feed",
     prettyTitle: "Keep up to date",
     url: "/rss.xml",
     icon: IconRss,
-    className: "btn-rss",
+    class: "btn-rss",
   },
   {
     title: "Ko-Fi",
     prettyTitle: "Buy me a coffee",
     url: "ko-fi.com/jewelexx",
     icon: IconCoffee,
-    className: "btn-kofi",
+    class: "btn-kofi",
   },
   {
     title: "Epidemic Sound",
     prettyTitle: "Music I use",
     url: "share.epidemicsound.com/nm2hwt",
     icon: IconMusic,
-    className: "btn-epidemic",
+    class: "btn-epidemic",
   },
   {
     title: "YouTube",
     url: "youtube.com/@unfilmic",
     icon: IconBrandYoutube,
-    className: "btn-youtube",
+    class: "btn-youtube",
   },
 ] as const;
 

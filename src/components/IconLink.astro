@@ -1,0 +1,54 @@
+---
+import type { Icon } from "@tabler/icons-react";
+import IconLinkInner from "./IconLink/IconLinkInner.astro";
+
+interface Props {
+  title: string;
+  prettyTitle?: string;
+  url: string;
+  icon: Icon;
+  local?: boolean;
+  disabled?: boolean;
+  alt?: string;
+  class?: string;
+  [key: string]: unknown;
+}
+
+const {
+  title,
+  url: originalUrl,
+  icon: Icon,
+  local = false,
+  alt,
+  class: className,
+  ...rest
+} = Astro.props;
+
+function adjustUrl(url: string) {
+  // Local url
+  if (url.startsWith("/")) {
+    return url;
+  }
+
+  // External url
+  if (!url.startsWith("http")) {
+    return `https://${url}`;
+  } else {
+    return url;
+  }
+}
+
+const adjustedUrl = adjustUrl(originalUrl);
+
+const linkProps = { ...rest, color: undefined, prettyTitle: undefined };
+---
+
+<IconLinkInner
+  adjustedUrl={adjustedUrl}
+  class={className}
+  linkProps={linkProps}
+  local={local}
+  icon={Icon}
+  alt={alt}
+  title={title}
+/>
