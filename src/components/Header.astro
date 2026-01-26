@@ -13,6 +13,7 @@ import HeaderLink from "./Header/HeaderLink.astro";
   :class="$store.header.expanded && 'flex-col'"
   role="navigation"
   x-data
+  transition:persist
 >
   <span class="flex
   flex-col

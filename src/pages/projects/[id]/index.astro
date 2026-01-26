@@ -88,6 +88,7 @@ const { Content } = await render(projectContent);
 
 const {
   title,
+  emoji,
   description,
   repo,
   pubDate,
@@ -116,7 +117,10 @@ const {
   </div>
   <div class="project-main">
     <div class="title">
-      <h1>{title}</h1>
+      <h1>
+        {emoji}
+        {title}
+      </h1>
       <i>{description}</i>
       <div class="date">
         {pubDate && <PubDate pubDate={new Date(pubDate)} />}

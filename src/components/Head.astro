@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from "astro:transitions";
 interface Props {
   title?: string;
   description?: string;
@@ -39,3 +40,4 @@ const {
     <meta property="og:image" content={image} />;
   })
 }
+<ClientRouter />
