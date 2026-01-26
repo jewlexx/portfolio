@@ -1,6 +1,5 @@
 ---
 import type { Icon } from "@tabler/icons-react";
-import IconLinkInner from "./IconLink/IconLinkInner.astro";
 
 interface Props {
   title: string;
@@ -16,6 +15,7 @@ interface Props {
 
 const {
   title,
+  prettyTitle,
   url: originalUrl,
   icon: Icon,
   local = false,
@@ -43,12 +43,14 @@ const adjustedUrl = adjustUrl(originalUrl);
 const linkProps = { ...rest, color: undefined, prettyTitle: undefined };
 ---
 
-<IconLinkInner
-  adjustedUrl={adjustedUrl}
-  class={className}
-  linkProps={linkProps}
-  local={local}
-  icon={Icon}
-  alt={alt}
-  title={title}
-/>
+<a
+  role="button"
+  href={adjustedUrl}
+  target={local ? undefined : "_blank"}
+  rel={local ? undefined : "noopener noreferrer"}
+  class={`btn not-lg:btn-circle! btn-rounded lg:btn-lg m-1 lg:flex lg:justify-between ${className}`}
+  {...linkProps}
+>
+  <Icon title={alt ?? title} />
+  <p class="not-lg:hidden">{prettyTitle ?? title}</p>
+</a>

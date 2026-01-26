@@ -1,4 +1,5 @@
 ---
+import IconLink from "$/components/IconLink.astro";
 import Layout from "$/layouts/Layout.astro";
 import { linksSupportMe, linksFindMe } from "$/links";
 ---
@@ -10,19 +11,7 @@ import { linksSupportMe, linksFindMe } from "$/links";
       <div
         class="flex min-w-[25vw] flex-col flex-wrap items-center justify-center gap-4 [&>a]:w-full"
       >
-        {
-          linksSupportMe.map((link) => (
-            <a
-              href={`https://${link.url}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              class={`btn ${link.className}`}
-            >
-              <link.icon size={24} />
-              {link.prettyTitle ?? link.title}
-            </a>
-          ))
-        }
+        {linksSupportMe.map((link) => <IconLink {...link} />)}
       </div>
     </div>
 
@@ -31,19 +20,7 @@ import { linksSupportMe, linksFindMe } from "$/links";
       <div
         class="flex min-w-[25vw] flex-col flex-wrap items-center justify-center gap-4 [&>a]:w-full"
       >
-        {
-          linksFindMe.map((link) => (
-            <a
-              href={`https://${link.url}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              class={`btn ${link.className}`}
-            >
-              <link.icon size={24} />
-              {link.prettyTitle ?? link.title}
-            </a>
-          ))
-        }
+        {linksFindMe.map((link) => <IconLink {...link} />)}
       </div>
     </div>
   </div>
