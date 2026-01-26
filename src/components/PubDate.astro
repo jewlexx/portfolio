@@ -1,0 +1,18 @@
+---
+import FormattedDate from "$/components/FormattedDate.astro";
+
+interface Props {
+  released?: boolean;
+  pubDate: Date | undefined;
+}
+
+const { pubDate, released } = Astro.props;
+---
+
+{
+  pubDate && (
+    <small class="text-sm text-gray-800 italic">
+      {released ? "Released" : "Published"} on <FormattedDate date={pubDate} />
+    </small>
+  )
+}

@@ -1,0 +1,25 @@
+---
+interface Props {
+  enabled?: boolean;
+  href?: string;
+  // new_tab: boolean;
+  src?: string;
+  alt?: string;
+  class?: string;
+}
+
+const { enabled = true, href, src, alt, class: className } = Astro.props;
+---
+
+{
+  enabled && (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      class={`mr-2 inline-block ${className}`}
+    >
+      <img src={src} alt={alt} />
+    </a>
+  )
+}

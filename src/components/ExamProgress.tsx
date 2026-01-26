@@ -1,5 +1,3 @@
-"use client";
-
 import { useMemo, useState } from "react";
 
 // We need total questions, total marks to work out marks per minute
