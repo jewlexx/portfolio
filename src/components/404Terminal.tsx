@@ -3,7 +3,6 @@ import {
   Terminal,
   TypingAnimation,
 } from "$/components/ui/terminal";
-import { number } from "astro:schema";
 
 export default function ErrorTerminal({
   errorMessage,
