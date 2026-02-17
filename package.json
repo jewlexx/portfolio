@@ -38,6 +38,7 @@
     "@types/node": "^25.0.10",
     "@types/react": "^19.2.9",
     "@types/react-dom": "^19.2.3",
-    "daisyui": "^5.5.14"
+    "daisyui": "^5.5.14",
+    "vite": "^7.3.1"
   }
 }
