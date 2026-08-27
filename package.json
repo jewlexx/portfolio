@@ -9,16 +9,16 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@alpinejs/collapse": "^3.15.12",
-    "@astrojs/alpinejs": "^0.5.0",
-    "@astrojs/check": "^0.9.9",
-    "@astrojs/react": "^5.0.7",
+    "@alpinejs/collapse": "^3.16.3",
+    "@astrojs/alpinejs": "^1.0.0",
+    "@astrojs/check": "^0.9.10",
+    "@astrojs/react": "^6.0.4",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.3",
     "@tabler/icons-react": "^3.44.0",
     "@tailwindcss/vite": "^4.3.0",
     "alpinejs": "^3.15.12",
-    "astro": "^6.4.4",
+    "astro": "^7.2.8",
     "date-fns": "^4.4.0",
     "gray-matter": "^4.0.3",
     "prettier-plugin-tailwindcss": "^0.8.0",
@@ -28,14 +28,14 @@
     "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.3.0",
     "ts-pattern": "^5.9.0",
-    "typescript": "^6.0.3",
+    "typescript": "^6",
     "use-sound": "^5.0.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
     "@types/alpinejs": "^3.13.11",
     "@types/alpinejs__collapse": "^3.13.4",
-    "@types/node": "^25.9.1",
+    "@types/node": "^26.4.0",
     "@types/react": "^19.2.16",
     "@types/react-dom": "^19.2.3",
     "daisyui": "^5.5.20"
